@@ -1398,5 +1398,257 @@ const PROMPTS_DATA = [
     "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
     "prompt": "You are an expert marketing script writer. Please create a UGC-style ad for my [product], focusing on [customer persona] who need quick results. The script must be no longer than [time limit] seconds, and should start by highlighting the urgency of their problem. Walk through the main features—[benefit 1], [benefit 2], [benefit 3]—and how they address this urgency. End with a CTA prompting viewers to [action]. Ask me any questions regarding features or audience specifics before you begin.",
     "category": "Facebook Ads"
+  },
+  {
+    "title": "Code Performance Optimizer",
+    "category": "Coding",
+    "description": "Paste any function and get back specific optimizations for performance, memory usage, and time complexity with before-and-after examples.",
+    "method": "Copy the prompt below into your preferred LLM, then paste your code snippet where indicated.",
+    "prompt": "Go through the following function and suggest optimizations to improve its performance, memory usage, and time complexity. For each suggestion, explain why it improves performance and show the optimized version.\n\nProvide your analysis in this format:\n1. Current complexity analysis (time and space)\n2. Identified bottlenecks\n3. Optimization suggestions with explanations\n4. Optimized code with comments\n5. New complexity analysis after optimization\n\nHere is the code:\n[paste your code here]"
+  },
+  {
+    "title": "Senior Code Reviewer",
+    "category": "Coding",
+    "description": "Get a senior developer-level code review covering readability, best practices, modularity, naming conventions, and potential improvements.",
+    "method": "Paste the prompt into any LLM along with your code. Works with any programming language.",
+    "prompt": "Analyze my project code like a senior developer. Review it thoroughly, then provide detailed feedback.\n\nCover these areas:\n1. Code readability and naming conventions\n2. Modularity and separation of concerns\n3. Potential bugs or edge cases\n4. Security vulnerabilities\n5. Performance considerations\n6. Best practices specific to this language\n7. What is done well (be specific)\n8. Priority-ranked list of improvements\n\nFor each issue, explain WHY it matters and show the fix. End with an overall quality rating (1-10) and the top 3 things to fix first.\n\nHere is the code:\n[paste your code here]"
+  },
+  {
+    "title": "Bug Debugger",
+    "category": "Coding",
+    "description": "Describe the expected vs actual output and paste your code. Get a root cause analysis with a fix you can apply immediately.",
+    "method": "Copy the prompt, fill in what the code should do, what it actually does, and paste your code snippet.",
+    "prompt": "I need help debugging this code. It is supposed to do [EXPECTED OUTPUT], but instead it produces [ACTUAL OUTPUT].\n\nPlease:\n1. Identify the root cause of the bug\n2. Explain step-by-step why the current code produces the wrong output\n3. Provide the corrected code with comments explaining each change\n4. List any other potential issues you notice\n5. Suggest a test case that would have caught this bug\n\nHere is the code:\n[paste your code here]"
+  },
+  {
+    "title": "Code Refactoring Assistant",
+    "category": "Coding",
+    "description": "Paste messy or complex code and get a clean, modular, well-named refactored version that follows language best practices.",
+    "method": "Paste the prompt into any LLM along with the code you want refactored. Specify the programming language.",
+    "prompt": "Refactor the following code to be more readable, modular, and aligned with best practices.\n\nYour refactoring should:\n1. Break complex functions into smaller, reusable pieces\n2. Improve variable and function naming to be self-documenting\n3. Remove redundant code and unnecessary complexity\n4. Add appropriate error handling where missing\n5. Follow the language's style guide and conventions\n6. Preserve all existing functionality\n\nProvide:\n- The refactored code with clear comments\n- A summary of every change you made and why\n- Any additional suggestions you held back on\n\nLanguage: [LANGUAGE]\nHere is the code:\n[paste your code here]"
+  },
+  {
+    "title": "Unit Test Generator",
+    "category": "Coding",
+    "description": "Paste a function and get comprehensive unit tests covering normal operations, edge cases, invalid inputs, and boundary conditions.",
+    "method": "Copy the prompt, specify your testing framework, and paste the function you want tested.",
+    "prompt": "Write comprehensive unit tests for this function using [TESTING FRAMEWORK].\n\nCover these scenarios:\n1. Normal/expected inputs (at least 3 cases)\n2. Edge cases (empty inputs, single elements, boundaries)\n3. Invalid inputs (wrong types, null, undefined)\n4. Boundary conditions (max/min values, overflow)\n5. Error handling (expected exceptions)\n\nFor each test:\n- Give it a descriptive name that explains what it tests\n- Include a brief comment on why this test matters\n- Use arrange-act-assert pattern\n\nAlso suggest any additional test scenarios specific to this function's logic.\n\nHere is the function:\n[paste your code here]"
+  },
+  {
+    "title": "REST API Builder",
+    "category": "Coding",
+    "description": "Describe what your API endpoint should do and get production-ready code with input validation, error handling, and proper status codes.",
+    "method": "Copy the prompt, fill in the framework and endpoint details.",
+    "prompt": "Write a REST API endpoint using [FRAMEWORK] that:\n\nEndpoint: [METHOD] [PATH]\nPurpose: [WHAT IT DOES]\nRequired fields: [LIST FIELDS]\n\nThe implementation should include:\n1. Input validation for all fields with clear error messages\n2. Proper HTTP status codes (200, 201, 400, 401, 404, 500)\n3. Error handling with try-catch and meaningful responses\n4. Request/response type definitions\n5. Basic rate limiting or auth middleware placeholder\n6. Example request and response payloads\n7. Brief inline comments explaining the logic\n\nWrite clean, production-ready code that follows RESTful conventions."
+  },
+  {
+    "title": "Database Schema Designer",
+    "category": "Coding",
+    "description": "Describe your application and get a complete database schema with tables, relationships, indexes, and best practices baked in.",
+    "method": "Copy the prompt and describe what your application does. Specify your database type (PostgreSQL, MySQL, MongoDB, etc.).",
+    "prompt": "Generate a database schema for a [TYPE OF APPLICATION].\n\nDatabase: [PostgreSQL / MySQL / MongoDB / etc.]\n\nProvide:\n1. All necessary tables/collections with columns/fields\n2. Data types chosen with reasoning\n3. Primary keys, foreign keys, and relationships\n4. Indexes for common query patterns\n5. Constraints (unique, not null, check, default values)\n6. A visual representation of relationships (text-based ERD)\n7. Example seed data for testing\n8. Notes on scaling considerations\n\nFollow database normalization best practices while keeping queries efficient for the expected access patterns.\n\nApplication description: [DESCRIBE YOUR APP]"
+  },
+  {
+    "title": "CI/CD Pipeline Generator",
+    "category": "Coding",
+    "description": "Describe your tech stack and deployment target to get a complete GitHub Actions workflow for testing, building, and deploying your app.",
+    "method": "Copy the prompt and fill in your tech stack and hosting provider details.",
+    "prompt": "Generate a GitHub Actions CI/CD workflow that does the following:\n\n1. Triggers on push to main and pull requests\n2. Runs linting and formatting checks\n3. Runs the full test suite\n4. Builds the application\n5. Deploys to [HOSTING PROVIDER] on success (only on main branch)\n\nTech stack: [YOUR STACK]\nNode version: [VERSION]\nTest command: [COMMAND]\nBuild command: [COMMAND]\n\nInclude:\n- Caching for dependencies to speed up builds\n- Environment variable handling for secrets\n- Separate jobs for test and deploy\n- Status badges markdown for the README\n- Comments explaining each step\n\nMake it production-ready and follow GitHub Actions best practices."
+  },
+  {
+    "title": "System Design Evaluator",
+    "category": "Coding",
+    "description": "Describe your system architecture and get an expert evaluation covering scalability, redundancy, performance, and specific improvement suggestions.",
+    "method": "Copy the prompt and describe your current system architecture in as much detail as possible.",
+    "prompt": "Evaluate this system design for a production application.\n\nAnalyze these dimensions:\n1. Scalability: Can it handle 10x and 100x current load? Where are the bottlenecks?\n2. Reliability: What happens when each component fails? Are there single points of failure?\n3. Performance: What is the expected latency for key operations? Where can it be optimized?\n4. Security: Are there vulnerabilities in the data flow or access patterns?\n5. Cost: Is the architecture cost-efficient? Where is money being wasted?\n6. Maintainability: How easy is it to debug, update, and extend?\n\nFor each issue found, provide:\n- Severity (Critical / High / Medium / Low)\n- The specific problem\n- Your recommended solution\n- Trade-offs of the solution\n\nEnd with a prioritized action plan.\n\nHere is the architecture:\n[DESCRIBE YOUR ARCHITECTURE]"
+  },
+  {
+    "title": "Error Message Fixer",
+    "category": "Coding",
+    "description": "Paste any error message and your stack trace. Get a clear explanation of what went wrong and step-by-step instructions to fix it.",
+    "method": "Copy the prompt and paste your error message along with any relevant code context.",
+    "prompt": "I am getting this error:\n\n[PASTE ERROR MESSAGE AND STACK TRACE]\n\nPlease:\n1. Explain in plain English what this error means\n2. Identify the most likely root cause\n3. Provide a step-by-step fix with code examples\n4. Explain how to prevent this error in the future\n5. If there are multiple possible causes, list them in order of likelihood\n\nMy tech stack: [LANGUAGE/FRAMEWORK]\nRelevant code context:\n[PASTE RELEVANT CODE IF AVAILABLE]"
+  },
+  {
+    "title": "Article Outline Builder",
+    "category": "Writing",
+    "description": "Give it your topic and audience. Get a structured article outline with section goals, key questions to answer, and a compelling opening hook.",
+    "method": "Copy the prompt and fill in your topic and target audience.",
+    "prompt": "Create a detailed, logical outline for an article about [TOPIC].\n\nTarget audience: [AUDIENCE]\nArticle length: [WORD COUNT]\nGoal: [INFORM / PERSUADE / EDUCATE / ENTERTAIN]\n\nYour outline should include:\n1. A compelling headline (3 options)\n2. A hook for the introduction (narrative, data-led, or question-based)\n3. 5-7 main sections, each with:\n   - Section heading\n   - Key points to cover (3-4 bullets)\n   - One specific example, stat, or story to include\n   - The question this section answers for the reader\n4. A conclusion with a clear takeaway and call to action\n5. SEO keywords to naturally weave throughout\n\nMake the structure scannable and engaging for online readers."
+  },
+  {
+    "title": "Content Clarity Editor",
+    "category": "Writing",
+    "description": "Paste any draft and get it edited for flow, structure, and readability while keeping your original voice and tone intact.",
+    "method": "Copy the prompt and paste your draft text below it.",
+    "prompt": "Edit this draft to improve flow, structure, and readability while preserving my original tone, intent, and key messages.\n\nSpecifically:\n1. Fix awkward phrasing and unclear sentences\n2. Improve paragraph transitions\n3. Cut unnecessary words and fluff (aim to reduce length by 15-20%)\n4. Strengthen weak openings and closings of sections\n5. Ensure consistent tone throughout\n6. Flag any claims that need sources or evidence\n\nProvide:\n- The edited version with changes highlighted in [brackets]\n- A summary of the major changes and why you made them\n- 3 suggestions for further improvement I could make myself\n\nHere is the draft:\n[PASTE YOUR DRAFT]"
+  },
+  {
+    "title": "AI Text Humanizer",
+    "category": "Writing",
+    "description": "Paste AI-generated text and get it rewritten to sound natural, varied, and human. Removes robotic patterns and overused AI phrases.",
+    "method": "Paste the prompt into any LLM along with the text you want humanized.",
+    "prompt": "Rewrite the following text to sound completely natural and human-written.\n\nRules:\n1. Vary sentence length (mix short punchy sentences with longer ones)\n2. Remove ALL overused AI phrases: 'delve into', 'it's important to note', 'in today's landscape', 'leverage', 'streamline', 'foster', 'not just X but Y', 'the reality is'\n3. Use contractions naturally (don't, it's, we're)\n4. Add personality and specific details where generic language exists\n5. Use active voice over passive voice\n6. Break up long paragraphs\n7. Replace formal/stiff language with conversational alternatives\n8. Remove unnecessary hedging ('might', 'perhaps', 'it could be argued')\n\nThe rewrite should pass AI detection tools and read like a real person wrote it.\n\nHere is the text:\n[PASTE TEXT]"
+  },
+  {
+    "title": "Email Reply Drafter",
+    "category": "Writing",
+    "description": "Paste the email you received and specify your goal. Get two reply versions: one concise and one detailed, both professional and clear.",
+    "method": "Copy the prompt, paste the email you need to reply to, and specify the tone and goal.",
+    "prompt": "Draft a reply to the email below.\n\nReply tone: [Professional / Friendly / Firm / Apologetic]\nGoal: [Accept / Decline / Negotiate / Inform / Follow-up]\nKey points to include: [YOUR POINTS]\n\nGuidelines:\n- Address every point in the original email\n- Be clear about next steps and expectations\n- Match the formality level of the original\n- Avoid passive-aggressive language\n\nProvide two versions:\n1. Concise version (under 100 words, gets straight to the point)\n2. Detailed version (adds context and warmth)\n\nHere is the email to reply to:\n[PASTE EMAIL]"
+  },
+  {
+    "title": "Hook and Title Generator",
+    "category": "Writing",
+    "description": "Describe your content and get 10 scroll-stopping title options plus 3 opening hook variations to grab readers in the first sentence.",
+    "method": "Copy the prompt and describe your content topic and target audience.",
+    "prompt": "Generate titles and opening hooks for content about [TOPIC].\n\nTarget audience: [AUDIENCE]\nPlatform: [Blog / Newsletter / LinkedIn / YouTube / Twitter]\nTone: [Professional / Casual / Provocative / Inspirational]\n\nProvide:\n1. 10 title options using different formulas:\n   - 2 using numbers/lists\n   - 2 using questions\n   - 2 using strong claims or contrarian takes\n   - 2 using curiosity gaps\n   - 2 using benefit-focused language\n\n2. 3 opening hook variations:\n   - One starting with a surprising stat or fact\n   - One starting with a relatable story or scenario\n   - One starting with a bold statement or question\n\nEach title should be under 70 characters and optimized for clicks without being clickbait."
+  },
+  {
+    "title": "Business Plan Generator",
+    "category": "Business",
+    "description": "Describe your idea and get a structured business plan with market analysis, revenue model, competitive positioning, and a 90-day action plan.",
+    "method": "Copy the prompt and fill in your business idea details. Works best with as much context as possible.",
+    "prompt": "Create a comprehensive business plan for the following idea:\n\nBusiness idea: [DESCRIBE YOUR IDEA]\nTarget market: [WHO IS THIS FOR]\nBudget: [STARTING BUDGET]\nTimeline: [WHEN YOU WANT TO LAUNCH]\n\nInclude these sections:\n1. Executive Summary (elevator pitch in 3 sentences)\n2. Problem Statement (what pain point you solve)\n3. Solution (how your product/service fixes it)\n4. Target Market Analysis (size, demographics, behavior)\n5. Competitive Landscape (who else does this, your advantage)\n6. Revenue Model (how you make money, pricing strategy)\n7. Marketing Strategy (how you reach customers)\n8. Financial Projections (month 1-12 revenue estimates)\n9. Key Metrics to Track (the 5 numbers that matter most)\n10. 90-Day Action Plan (week-by-week milestones)\n\nBe specific with numbers and timelines, not vague."
+  },
+  {
+    "title": "Pitch Deck Outline Builder",
+    "category": "Business",
+    "description": "Enter your startup details and get a 10-slide pitch deck outline with talking points, data suggestions, and what investors want to see on each slide.",
+    "method": "Copy the prompt and fill in your startup information.",
+    "prompt": "Create a 10-slide pitch deck outline for my startup.\n\nCompany: [NAME]\nWhat we do: [ONE SENTENCE]\nStage: [Pre-seed / Seed / Series A]\nAsking for: [AMOUNT]\nKey metric: [YOUR BEST NUMBER]\n\nFor each slide, provide:\n- Slide title\n- 3-4 bullet points of content\n- What data or visual to include\n- The one thing investors should remember from this slide\n\nSlide structure:\n1. Title slide with hook\n2. Problem\n3. Solution\n4. Market size (TAM/SAM/SOM)\n5. Business model\n6. Traction and metrics\n7. Competitive advantage\n8. Team\n9. Financial projections\n10. The ask and use of funds\n\nMake it concise. Investors spend 3 minutes on average per deck."
+  },
+  {
+    "title": "SWOT Analysis Generator",
+    "category": "Business",
+    "description": "Describe your business or product and get a detailed SWOT analysis with actionable strategies for each quadrant.",
+    "method": "Copy the prompt and describe your business, product, or project.",
+    "prompt": "Create a detailed SWOT analysis for:\n\nBusiness/Product: [NAME]\nIndustry: [INDUSTRY]\nCurrent stage: [STARTUP / GROWING / ESTABLISHED]\nMain competitors: [LIST 2-3]\n\nFor each quadrant, provide:\n\nStrengths (5 items):\n- What you do well, with evidence\n- Strategy: How to leverage each strength\n\nWeaknesses (5 items):\n- Honest assessment of gaps\n- Strategy: How to address or mitigate each\n\nOpportunities (5 items):\n- External trends you can capitalize on\n- Strategy: Specific action to seize each opportunity\n\nThreats (5 items):\n- External risks to watch\n- Strategy: How to defend against each threat\n\nEnd with: Top 3 strategic priorities based on this analysis."
+  },
+  {
+    "title": "Financial Forecast Builder",
+    "category": "Business",
+    "description": "Provide your business numbers and get a 12-month revenue forecast with expense breakdown, cash flow projection, and key assumptions explained.",
+    "method": "Copy the prompt and fill in your current business financials.",
+    "prompt": "Build a 12-month financial forecast for my business.\n\nCurrent numbers:\n- Monthly revenue: [AMOUNT]\n- Monthly expenses: [AMOUNT]\n- Growth rate (month over month): [PERCENTAGE]\n- Customer acquisition cost: [AMOUNT]\n- Average revenue per customer: [AMOUNT]\n- Current customer count: [NUMBER]\n\nProvide:\n1. Month-by-month revenue projection (table format)\n2. Expense breakdown by category\n3. Cash flow forecast showing when you hit profitability\n4. Key assumptions behind each projection\n5. Best case, base case, and worst case scenarios\n6. The 3 levers that have the biggest impact on the forecast\n7. Warning signs to watch for that mean projections are off\n\nBe realistic, not optimistic. Use conservative estimates."
+  },
+  {
+    "title": "Competitor Analysis Framework",
+    "category": "Business",
+    "description": "Name your competitors and get a structured comparison covering pricing, features, positioning, strengths, weaknesses, and where you can win.",
+    "method": "Copy the prompt and list your competitors along with your own product details.",
+    "prompt": "Create a competitive analysis for my business.\n\nMy product: [NAME AND WHAT IT DOES]\nCompetitors to analyze: [LIST 3-5 COMPETITORS]\n\nFor each competitor, analyze:\n1. Positioning (who they target and how they describe themselves)\n2. Pricing model and price points\n3. Key features (what they offer that I should know about)\n4. Strengths (what they do better than others)\n5. Weaknesses (where they fall short)\n6. Customer sentiment (what reviews say)\n\nThen provide:\n- A comparison matrix (table format)\n- Gaps in the market none of them are filling\n- My strongest differentiation opportunities\n- Specific messaging angles to position against each competitor\n- Features I should prioritize building based on competitive gaps"
+  },
+  {
+    "title": "Cold Email Sequence Writer",
+    "category": "Sales",
+    "description": "Describe your product and target buyer. Get a 3-email outreach sequence with subject lines, personalization tips, and follow-up timing.",
+    "method": "Copy the prompt and fill in your product and prospect details.",
+    "prompt": "Write a 3-email cold outreach sequence.\n\nMy product: [WHAT YOU SELL]\nTarget buyer: [JOB TITLE AND COMPANY TYPE]\nKey pain point we solve: [MAIN PROBLEM]\nBest proof point: [CASE STUDY, STAT, OR SOCIAL PROOF]\n\nFor each email provide:\n- Subject line (under 50 characters, optimized for open rate)\n- Preview text\n- Email body (under 100 words each)\n- Clear CTA\n- When to send relative to the previous email\n\nEmail 1: Initial outreach (lead with their pain point)\nEmail 2: Follow-up with proof (send 3 days later)\nEmail 3: Breakup email (send 5 days after email 2)\n\nRules:\n- No generic openers ('I hope this finds you well')\n- Each email should stand alone (assume they did not read the previous one)\n- Include a personalization placeholder [PERSONAL NOTE] in each\n- Keep it conversational, not salesy"
+  },
+  {
+    "title": "Sales Call Analyzer",
+    "category": "Sales",
+    "description": "Paste a sales call transcript and get a breakdown of missed opportunities, objection handling quality, and specific improvements for next time.",
+    "method": "Copy the prompt and paste your sales call transcript or detailed notes.",
+    "prompt": "Analyze this sales call transcript and provide actionable feedback.\n\nEvaluate:\n1. Opening (did the rep build rapport and set an agenda?)\n2. Discovery (were the right questions asked? were pain points uncovered?)\n3. Objection handling (how well were concerns addressed?)\n4. Value proposition (was the pitch relevant to the prospect's needs?)\n5. Closing (was there a clear next step?)\n6. Missed opportunities (moments where the rep could have gone deeper)\n\nProvide:\n- Overall score (1-10)\n- Top 3 things done well\n- Top 3 things to improve with specific alternative phrases\n- Exact moments where the conversation could have been redirected\n- A suggested follow-up email based on the conversation\n\nTranscript:\n[PASTE TRANSCRIPT]"
+  },
+  {
+    "title": "Weekly Productivity Planner",
+    "category": "Productivity",
+    "description": "List your goals and tasks for the week. Get a time-blocked schedule with priorities, energy management, and built-in buffer time.",
+    "method": "Copy the prompt and list your weekly tasks and goals.",
+    "prompt": "Create a weekly productivity plan for me.\n\nMy goals this week: [LIST YOUR GOALS]\nMy tasks: [LIST ALL TASKS]\nWork hours: [START TIME] to [END TIME]\nHigh-energy time: [MORNING / AFTERNOON]\nMeetings already scheduled: [LIST TIMES]\n\nProvide:\n1. Tasks ranked by priority using the Eisenhower Matrix\n2. A day-by-day time-blocked schedule (Monday to Friday)\n3. Place deep work in my high-energy window\n4. Group similar tasks together for batching\n5. Build in 15-minute breaks every 90 minutes\n6. Leave 20% buffer time for unexpected work\n7. Identify tasks that can be delegated or eliminated\n8. End each day with a 10-minute planning block for the next day\n\nFormat as a clean, easy-to-follow table."
+  },
+  {
+    "title": "Meeting Notes to Action Items",
+    "category": "Productivity",
+    "description": "Paste raw meeting notes or a transcript. Get a structured summary with decisions, action items, owners, deadlines, and open questions.",
+    "method": "Copy the prompt and paste your meeting notes or transcript below it.",
+    "prompt": "Process these raw meeting notes into a structured format.\n\n1. Meeting Summary (3-4 sentences covering what was discussed and outcome)\n\n2. Key Decisions Made (numbered list with context)\n\n3. Action Items Table:\n   | # | Task | Owner | Deadline | Priority |\n   |---|------|-------|----------|----------|\n\n4. Open Questions (unresolved items needing follow-up)\n\n5. Parking Lot (topics raised but not discussed, for future meetings)\n\n6. Next Steps (immediate actions and next meeting date/agenda)\n\nBe thorough. Do not miss any commitments or deadlines mentioned. If owners are unclear, flag it. If deadlines were not specified, suggest reasonable ones.\n\nHere are the meeting notes:\n[PASTE NOTES]"
+  },
+  {
+    "title": "Problem-Solving Framework",
+    "category": "Productivity",
+    "description": "Describe any problem or decision you are stuck on. Get 3 potential solutions with pros, cons, and a clear recommended next step.",
+    "method": "Copy the prompt and describe your problem or decision in detail.",
+    "prompt": "I am stuck on this problem and need structured thinking to move forward.\n\nThe problem: [DESCRIBE YOUR PROBLEM]\nContext: [RELEVANT BACKGROUND]\nConstraints: [TIME, BUDGET, RESOURCES]\nWhat I have tried: [PREVIOUS ATTEMPTS]\n\nProvide:\n1. Reframe the problem in one clear sentence\n2. Three potential solutions, each with:\n   - Description of the approach\n   - Pros (3 specific advantages)\n   - Cons (3 specific disadvantages)\n   - Estimated time and effort\n   - Risk level (low/medium/high)\n3. Your recommended solution with reasoning\n4. A specific first action I can take in the next 30 minutes\n5. How I will know if the solution is working (success metrics)\n\nBe direct. Tell me what you would actually do in this situation."
+  },
+  {
+    "title": "Workflow Optimization Audit",
+    "category": "Productivity",
+    "description": "Describe any repetitive process or workflow. Get inefficiencies identified, automation opportunities, and a streamlined alternative.",
+    "method": "Copy the prompt and describe your current workflow step by step.",
+    "prompt": "Review my current workflow and make it more efficient.\n\nProcess name: [NAME]\nHow often I do this: [DAILY / WEEKLY / MONTHLY]\nTime it currently takes: [DURATION]\n\nCurrent steps:\n[LIST YOUR STEPS]\n\nAnalyze and provide:\n1. Inefficiencies identified (which steps are wasteful or redundant)\n2. Steps that can be automated (and what tools to use)\n3. Steps that can be eliminated entirely\n4. Steps that can be batched or reordered\n5. A streamlined version of the workflow with estimated time savings\n6. Tools or templates that would speed this up\n7. A checklist version I can reuse every time\n\nGoal: reduce the time this takes by at least 40%."
+  },
+  {
+    "title": "30-Day Learning Plan",
+    "category": "Education",
+    "description": "Pick any subject you want to learn. Get a structured 30-day plan with daily lessons, practice exercises, and milestones to track progress.",
+    "method": "Copy the prompt and fill in the subject, your current level, and available study time.",
+    "prompt": "Create a 30-day study plan for mastering [SUBJECT].\n\nMy current level: [BEGINNER / INTERMEDIATE / ADVANCED]\nTime available per day: [HOURS]\nLearning style: [READING / VIDEO / HANDS-ON / MIX]\nGoal: [WHAT I WANT TO BE ABLE TO DO AFTER 30 DAYS]\n\nProvide:\n1. Week-by-week breakdown with themes\n2. Daily lessons (30 entries) with:\n   - Topic to study\n   - Specific resource or activity\n   - Practice exercise\n   - Estimated time\n3. Weekly milestones to check understanding\n4. A mini-project for each week to apply what I learned\n5. A final assessment or capstone project for day 30\n6. Recommended free resources (websites, videos, tools)\n\nMake it progressive. Each day should build on the previous one."
+  },
+  {
+    "title": "Explain Any Concept Simply",
+    "category": "Education",
+    "description": "Name any complex topic and get it explained in simple language with analogies, examples, and follow-up questions to deepen understanding.",
+    "method": "Copy the prompt and replace [CONCEPT] with whatever you want to understand.",
+    "prompt": "Explain [CONCEPT] in the simplest possible way.\n\nRules:\n1. Start with a one-sentence definition a 12-year-old would understand\n2. Use 2-3 real-world analogies that make the concept click\n3. Break it into parts if it has multiple components\n4. Give one concrete example showing the concept in action\n5. Explain why this concept matters (why should I care?)\n6. List common misconceptions people have about it\n7. End with a memorable one-liner summary\n\nThen provide:\n- 3 follow-up questions I should explore next to deepen my understanding\n- Brief answers to each follow-up question\n- One resource recommendation for going deeper\n\nUse zero jargon. If a technical term is unavoidable, define it immediately."
+  },
+  {
+    "title": "Quiz and Test Generator",
+    "category": "Education",
+    "description": "Give it any topic and difficulty level. Get a complete quiz with multiple choice, short answer, and scenario-based questions plus an answer key.",
+    "method": "Copy the prompt and specify the topic, difficulty level, and number of questions.",
+    "prompt": "Generate a comprehensive quiz about [TOPIC].\n\nDifficulty: [BEGINNER / INTERMEDIATE / ADVANCED]\nNumber of questions: [NUMBER]\n\nInclude a mix of:\n1. Multiple choice questions (4 options each, only one correct)\n2. True/False questions with explanation of why\n3. Short answer questions\n4. One scenario-based question that tests application, not just memorization\n\nFor each question:\n- Make wrong answers plausible (not obviously wrong)\n- Vary the cognitive level (recall, understanding, application, analysis)\n\nProvide:\n- The complete quiz (questions only, no answers visible)\n- A separate answer key with:\n  - Correct answer\n  - Brief explanation of WHY it is correct\n  - Common mistake students make on this question\n\nMake it challenging but fair."
+  },
+  {
+    "title": "AI Image Prompt Engineer",
+    "category": "Creative",
+    "description": "Describe any image in plain language and get a detailed, structured prompt optimized for Midjourney, DALL-E, or Stable Diffusion.",
+    "method": "Copy the prompt and describe the image you want to create.",
+    "prompt": "I want to create an AI-generated image. Convert my description into an optimized prompt.\n\nMy description: [DESCRIBE WHAT YOU WANT]\nStyle: [PHOTOREALISTIC / ILLUSTRATION / ANIME / OIL PAINTING / etc.]\nPlatform: [MIDJOURNEY / DALL-E / STABLE DIFFUSION]\nAspect ratio: [16:9 / 1:1 / 9:16]\n\nGenerate a detailed prompt that includes:\n1. Subject description with specific details\n2. Composition and framing (close-up, wide angle, bird's eye, etc.)\n3. Lighting (golden hour, dramatic, studio, neon, etc.)\n4. Color palette and mood\n5. Style references and artistic influences\n6. Technical quality tags (8K, ultra-detailed, professional, etc.)\n7. Negative prompt (what to avoid)\n\nProvide 3 prompt variations:\n- Version A: Most faithful to my description\n- Version B: More artistic/creative interpretation\n- Version C: Simplified for consistent results"
+  },
+  {
+    "title": "Brand Name Generator",
+    "category": "Creative",
+    "description": "Describe your product, audience, and vibe. Get 20 brand name options with domain availability tips, logo direction, and tagline pairings.",
+    "method": "Copy the prompt and fill in your product and brand details.",
+    "prompt": "Generate brand name options for my business.\n\nWhat it does: [DESCRIBE YOUR PRODUCT/SERVICE]\nTarget audience: [WHO IS IT FOR]\nBrand personality: [MODERN / PLAYFUL / PREMIUM / TECHNICAL / WARM]\nIndustry: [YOUR INDUSTRY]\nNames to avoid sounding like: [COMPETITORS]\n\nProvide 20 name options across these styles:\n- 4 invented/coined words (like Spotify, Figma)\n- 4 real word combinations (like Airbnb, YouTube)\n- 4 descriptive names (like General Electric, Whole Foods)\n- 4 metaphorical names (like Amazon, Apple)\n- 4 abbreviated or acronym-based (like IBM, HBO)\n\nFor each name:\n- The name\n- Why it works for this brand\n- Potential .com domain (or alternative like .io, .co)\n- A tagline that pairs with it\n\nHighlight your top 3 recommendations and explain why."
+  },
+  {
+    "title": "Video Script Writer",
+    "category": "Creative",
+    "description": "Describe your video topic, platform, and length. Get a complete script with hook, scenes, transitions, b-roll suggestions, and CTA.",
+    "method": "Copy the prompt and fill in your video details.",
+    "prompt": "Write a complete video script.\n\nTopic: [YOUR TOPIC]\nPlatform: [YouTube / TikTok / Instagram Reels / Course]\nTarget length: [DURATION]\nTone: [Educational / Entertaining / Inspirational / Sales]\nTarget audience: [WHO IS WATCHING]\n\nProvide:\n1. Hook (first 3 seconds that stop the scroll)\n2. Introduction (establish credibility and promise value)\n3. Main content broken into clear sections with:\n   - What to say (script)\n   - What to show on screen (b-roll or visual notes)\n   - Transition to next section\n4. Call to action (what viewers should do next)\n5. End screen suggestion\n\nAlso include:\n- 3 thumbnail title options\n- A one-sentence video description for SEO\n- 5 relevant hashtags\n\nWrite it conversationally. No one watches a video that sounds like a blog post."
+  },
+  {
+    "title": "Job Description Writer",
+    "category": "Business",
+    "description": "Specify the role, level, and team. Get a compelling job description that attracts the right candidates and sets clear expectations.",
+    "method": "Copy the prompt and fill in the role details.",
+    "prompt": "Write a compelling job description.\n\nRole: [JOB TITLE]\nLevel: [JUNIOR / MID / SENIOR / LEAD]\nTeam: [WHICH DEPARTMENT]\nCompany type: [STARTUP / AGENCY / ENTERPRISE / REMOTE-FIRST]\nLocation: [REMOTE / HYBRID / ONSITE + CITY]\n\nInclude:\n1. An opening paragraph that sells the opportunity (not the company history)\n2. What this person will actually do (5-7 specific responsibilities)\n3. What success looks like in the first 90 days\n4. Required skills (only what is truly required, max 5)\n5. Nice-to-have skills (3-4 items)\n6. What we offer (compensation range, benefits, culture)\n7. How to apply\n\nRules:\n- Avoid generic phrases like 'fast-paced environment' and 'rockstar'\n- Be specific about the actual work, not vague corporate speak\n- Include salary range (transparency attracts better candidates)\n- Keep it under 600 words"
+  },
+  {
+    "title": "Interview Question Generator",
+    "category": "Business",
+    "description": "Specify the role and what you need to evaluate. Get structured interview questions with scoring criteria and what good answers look like.",
+    "method": "Copy the prompt and fill in the role and evaluation criteria.",
+    "prompt": "Generate interview questions for a [ROLE] position.\n\nKey skills to evaluate: [LIST 3-5 SKILLS]\nExperience level: [JUNIOR / MID / SENIOR]\nTeam culture: [DESCRIBE YOUR TEAM]\n\nProvide 15 questions across these categories:\n1. Technical/skill-based (5 questions)\n2. Behavioral/situational (5 questions using STAR format prompts)\n3. Culture and motivation (3 questions)\n4. Problem-solving (2 scenario-based questions)\n\nFor each question:\n- The question itself\n- What you are really evaluating\n- What a strong answer includes\n- Red flags to watch for\n- A follow-up probe question\n\nAlso include:\n- 3 questions the candidate should ask YOU (and what their questions reveal)\n- A suggested scoring rubric (1-5 scale) for comparing candidates"
+  },
+  {
+    "title": "Customer Onboarding Email Sequence",
+    "category": "Business",
+    "description": "Describe your product and new user journey. Get a 5-email onboarding sequence that guides users to their first success moment.",
+    "method": "Copy the prompt and describe your product and ideal user journey.",
+    "prompt": "Create a 5-email onboarding sequence for new users of my product.\n\nProduct: [WHAT IT DOES]\nFirst success moment: [THE AHA MOMENT FOR NEW USERS]\nAverage time to value: [HOW LONG UNTIL USERS SEE RESULTS]\nCommon drop-off point: [WHERE USERS GET STUCK]\n\nEmail sequence:\n1. Welcome email (sent immediately after signup)\n2. Quick win email (sent day 1, gets them to complete one action)\n3. Feature highlight (sent day 3, shows a key feature they might miss)\n4. Social proof (sent day 5, customer story or use case)\n5. Check-in (sent day 7, asks if they need help, offers upgrade)\n\nFor each email provide:\n- Subject line (under 50 characters)\n- Email body (under 150 words)\n- One clear CTA button text\n- Send timing\n\nTone should be helpful, not pushy. Guide, do not sell."
+  },
+  {
+    "title": "Customer Feedback Analyzer",
+    "category": "Business",
+    "description": "Paste customer reviews, survey responses, or support tickets. Get a structured analysis with themes, sentiment, and prioritized action items.",
+    "method": "Copy the prompt and paste your customer feedback data.",
+    "prompt": "Analyze this customer feedback and extract actionable insights.\n\nFeedback source: [REVIEWS / SURVEYS / SUPPORT TICKETS / SOCIAL]\n\nProvide:\n1. Overall sentiment breakdown (positive / neutral / negative with percentages)\n2. Top 5 themes mentioned most frequently\n3. For each theme:\n   - Number of mentions\n   - Representative quotes\n   - Severity (critical / important / nice-to-have)\n   - Suggested action\n4. Unexpected insights (things you did not expect to find)\n5. Comparison: what customers love most vs. what frustrates them most\n6. Priority action list (top 5 things to fix or improve, ranked by impact)\n7. Suggested response templates for the most common complaints\n\nHere is the feedback:\n[PASTE FEEDBACK DATA]"
   }
 ];
