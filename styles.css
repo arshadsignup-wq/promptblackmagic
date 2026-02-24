@@ -281,22 +281,10 @@ body::before {
   animation: fadeUp 0.8s 0.55s both;
 }
 
-.hero-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--purple), #9333ea);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
 .hero-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 24px var(--purple-glow);
-}
-
-.hero-cta:hover::before {
-  opacity: 1;
+  background: linear-gradient(135deg, var(--purple), #9333ea);
 }
 
 /* ========================================
