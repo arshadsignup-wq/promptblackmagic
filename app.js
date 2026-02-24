@@ -89,7 +89,7 @@
     promptsGrid.innerHTML = filtered.map((p, i) => {
       const globalIdx = getGlobalIndex(p);
       return `
-        <a class="prompt-card" href="prompt.html?id=${globalIdx}" target="_blank" rel="noopener" style="animation-delay: ${Math.min(i * 0.04, 0.5)}s">
+        <a class="prompt-card" href="prompt.html?prompt=${p._slug}" target="_blank" rel="noopener" style="animation-delay: ${Math.min(i * 0.04, 0.5)}s">
           <div class="card-header">
             <h2 class="card-title">${escapeHtml(p.title)}</h2>
             <span class="card-category">${escapeHtml(p.category)}</span>

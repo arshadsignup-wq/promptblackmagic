@@ -31,10 +31,20 @@
     'use strict';
 
     const params = new URLSearchParams(window.location.search);
-    const id = parseInt(params.get('id'), 10);
     const page = document.getElementById('detail-page');
 
-    if (isNaN(id) || id < 0 || id >= PROMPTS_DATA.length) {
+    // Resolve prompt by slug or legacy id
+    let id;
+    const slugParam = params.get('prompt');
+    const idParam = params.get('id');
+
+    if (slugParam && PROMPTS_SLUG_INDEX.hasOwnProperty(slugParam)) {
+      id = PROMPTS_SLUG_INDEX[slugParam];
+    } else if (idParam !== null) {
+      id = parseInt(idParam, 10);
+    }
+
+    if (id === undefined || isNaN(id) || id < 0 || id >= PROMPTS_DATA.length) {
       page.innerHTML = '<div class="detail-card" style="margin-top:60px"><p class="detail-error">Prompt not found.</p></div>';
       return;
     }
@@ -65,10 +75,10 @@
     const nextId = id < PROMPTS_DATA.length - 1 ? id + 1 : null;
 
     const prevLink = prevId !== null
-      ? `<a href="prompt.html?id=${prevId}" class="detail-nav-btn">${icons.prev}<span>${escapeHtml(PROMPTS_DATA[prevId].title)}</span></a>`
+      ? `<a href="prompt.html?prompt=${PROMPTS_DATA[prevId]._slug}" class="detail-nav-btn">${icons.prev}<span>${escapeHtml(PROMPTS_DATA[prevId].title)}</span></a>`
       : '<span></span>';
     const nextLink = nextId !== null
-      ? `<a href="prompt.html?id=${nextId}" class="detail-nav-btn detail-nav-next"><span>${escapeHtml(PROMPTS_DATA[nextId].title)}</span>${icons.next}</a>`
+      ? `<a href="prompt.html?prompt=${PROMPTS_DATA[nextId]._slug}" class="detail-nav-btn detail-nav-next"><span>${escapeHtml(PROMPTS_DATA[nextId].title)}</span>${icons.next}</a>`
       : '<span></span>';
 
     page.innerHTML = `

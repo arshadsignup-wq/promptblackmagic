@@ -2142,3 +2142,25 @@ const PROMPTS_DATA = [
     "prompt": "You are a business idea validation agent. Your job is to rigorously stress-test my idea and give me an honest, data-informed assessment of whether it's worth pursuing.\n\nMy idea: [DESCRIBE YOUR IDEA IN DETAIL]\nTarget customer: [WHO WOULD PAY FOR THIS]\nHow I'd make money: [REVENUE MODEL]\nMy resources: [BUDGET, SKILLS, TIME AVAILABLE, TEAM]\nTimeline: [WHEN I WANT TO LAUNCH]\n\nValidation protocol:\n\n1. PROBLEM VALIDATION\n   - Is this a real problem or an imagined one?\n   - How painful is this problem? (Vitamin vs. painkiller)\n   - How are people currently solving it? (Existing alternatives)\n   - Would people actually pay to solve this? (Willingness to pay signals)\n   - How large is the addressable market?\n\n2. SOLUTION VALIDATION\n   - Does my proposed solution actually solve the problem?\n   - Is it 10x better than current alternatives, or just marginally better?\n   - What's the simplest version I could test? (MVP definition)\n   - What are the critical assumptions that must be true for this to work?\n\n3. MARKET ANALYSIS\n   - Market size estimation (TAM, SAM, SOM)\n   - Growth trajectory of this market\n   - Key competitors (direct and indirect)\n   - What would a competitor need to crush me?\n   - Timing: Why now? What's changed that makes this viable?\n\n4. BUSINESS MODEL STRESS TEST\n   - Unit economics: What would customer acquisition cost (CAC) and lifetime value (LTV) likely look like?\n   - Pricing analysis: What could I charge? What are similar things priced at?\n   - Break-even analysis: How many customers/sales to cover costs?\n   - Scalability: Does this get easier or harder as it grows?\n\n5. RISK ASSESSMENT\n   - Top 5 reasons this could fail\n   - For each risk: likelihood, severity, and mitigation\n   - What's the \"kill zone\" (point of no return where I should stop if things aren't working)?\n   - Regulatory, legal, or technical risks?\n\n6. VERDICT\n   - GO / PROCEED WITH CAUTION / NO-GO\n   - Confidence level in this verdict\n   - If GO: The exact first 3 steps to take this week\n   - If PROCEED WITH CAUTION: What needs to be validated before committing\n   - If NO-GO: What adjacent ideas might work better"
   }
 ];
+
+// Slug utility
+function generateSlug(title) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/[\s]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+// Build slug → index lookup
+var PROMPTS_SLUG_INDEX = {};
+for (var i = 0; i < PROMPTS_DATA.length; i++) {
+  var slug = generateSlug(PROMPTS_DATA[i].title);
+  // Handle duplicate slugs by appending index
+  if (PROMPTS_SLUG_INDEX.hasOwnProperty(slug)) {
+    slug = slug + '-' + i;
+  }
+  PROMPTS_SLUG_INDEX[slug] = i;
+  PROMPTS_DATA[i]._slug = slug;
+}
