@@ -243,6 +243,61 @@ body::before {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Hero prompt count */
+.hero-count {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+  color: var(--text-muted);
+  margin-top: 18px;
+  animation: fadeUp 0.8s 0.45s both;
+}
+
+.hero-count span {
+  color: var(--purple-light);
+  font-weight: 700;
+}
+
+/* Hero CTA button */
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 14px 32px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+  border: none;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.8s 0.55s both;
+}
+
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--purple), #9333ea);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 24px var(--purple-glow);
+}
+
+.hero-cta:hover::before {
+  opacity: 1;
+}
 
 /* ========================================
    CONTROLS — SEARCH & FILTERS
@@ -794,14 +849,40 @@ body::before {
   border-radius: 3px;
 }
 
+/* Action buttons container */
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  animation: cardEnter 0.6s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 /* Big CTA copy button */
 .detail-copy-cta {
-  width: 100%;
+  flex: 1;
   padding: 18px;
   font-size: 1rem;
   border-radius: var(--radius);
-  margin-bottom: 32px;
-  animation: cardEnter 0.6s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  margin-bottom: 0;
+}
+
+/* Share / Copy Link button */
+.detail-share-btn {
+  padding: 18px 24px;
+  font-size: 0.9rem;
+  border-radius: var(--radius);
+  background: transparent;
+  border: 1px solid var(--purple);
+  color: var(--purple-light);
+}
+
+.detail-share-btn::before {
+  display: none;
+}
+
+.detail-share-btn:hover {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: var(--purple-light);
 }
 
 /* Prompt navigation */
@@ -1096,6 +1177,10 @@ footer::before {
     width: 100%;
     justify-content: center;
     margin-top: 4px;
+  }
+
+  .detail-actions {
+    flex-direction: column;
   }
 
   .detail-nav-footer {
