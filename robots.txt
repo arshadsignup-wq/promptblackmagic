@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /prompt.html
 
 Sitemap: https://www.promptblackmagic.com/sitemap.xml

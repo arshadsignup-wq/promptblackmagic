@@ -61,11 +61,6 @@
     });
   }
 
-  // ── Get the global index of a prompt ──
-  function getGlobalIndex(prompt) {
-    return PROMPTS_DATA.indexOf(prompt);
-  }
-
   // ── Render prompt cards ──
   function renderPrompts() {
     const filtered = getFilteredPrompts();
@@ -89,7 +84,6 @@
     const arrowSvg = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
 
     promptsGrid.innerHTML = filtered.map((p, i) => {
-      const globalIdx = getGlobalIndex(p);
       return `
         <a class="prompt-card" href="/prompts/${p._slug}/" style="animation-delay: ${Math.min(i * 0.04, 0.5)}s">
           <div class="card-header">
