@@ -1041,6 +1041,65 @@ footer::before {
   line-height: 1.6;
 }
 
+/* Newsletter form */
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  max-width: 360px;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: var(--transition);
+  min-width: 0;
+}
+
+.newsletter-input::placeholder {
+  color: var(--text-muted);
+}
+
+.newsletter-input:focus {
+  border-color: var(--border-glow);
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.15);
+}
+
+.newsletter-btn {
+  padding: 10px 20px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--purple);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+  background: var(--purple-light);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+/* Ad container */
+.ad-container {
+  width: 100%;
+  max-width: 728px;
+  margin: 32px auto;
+  min-height: 90px;
+  text-align: center;
+}
+
 .footer-email {
   display: inline-flex;
   align-items: center;
