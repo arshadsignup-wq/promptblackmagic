@@ -2140,6 +2140,1206 @@ const PROMPTS_DATA = [
     "description": "Pitch a business or product idea and the agent stress-tests it from every angle: market size, competition, unit economics, risks, and a go/no-go verdict.",
     "method": "Describe your idea in as much detail as possible. The more context you provide about your resources and market, the more useful the validation will be.",
     "prompt": "You are a business idea validation agent. Your job is to rigorously stress-test my idea and give me an honest, data-informed assessment of whether it's worth pursuing.\n\nMy idea: [DESCRIBE YOUR IDEA IN DETAIL]\nTarget customer: [WHO WOULD PAY FOR THIS]\nHow I'd make money: [REVENUE MODEL]\nMy resources: [BUDGET, SKILLS, TIME AVAILABLE, TEAM]\nTimeline: [WHEN I WANT TO LAUNCH]\n\nValidation protocol:\n\n1. PROBLEM VALIDATION\n   - Is this a real problem or an imagined one?\n   - How painful is this problem? (Vitamin vs. painkiller)\n   - How are people currently solving it? (Existing alternatives)\n   - Would people actually pay to solve this? (Willingness to pay signals)\n   - How large is the addressable market?\n\n2. SOLUTION VALIDATION\n   - Does my proposed solution actually solve the problem?\n   - Is it 10x better than current alternatives, or just marginally better?\n   - What's the simplest version I could test? (MVP definition)\n   - What are the critical assumptions that must be true for this to work?\n\n3. MARKET ANALYSIS\n   - Market size estimation (TAM, SAM, SOM)\n   - Growth trajectory of this market\n   - Key competitors (direct and indirect)\n   - What would a competitor need to crush me?\n   - Timing: Why now? What's changed that makes this viable?\n\n4. BUSINESS MODEL STRESS TEST\n   - Unit economics: What would customer acquisition cost (CAC) and lifetime value (LTV) likely look like?\n   - Pricing analysis: What could I charge? What are similar things priced at?\n   - Break-even analysis: How many customers/sales to cover costs?\n   - Scalability: Does this get easier or harder as it grows?\n\n5. RISK ASSESSMENT\n   - Top 5 reasons this could fail\n   - For each risk: likelihood, severity, and mitigation\n   - What's the \"kill zone\" (point of no return where I should stop if things aren't working)?\n   - Regulatory, legal, or technical risks?\n\n6. VERDICT\n   - GO / PROCEED WITH CAUTION / NO-GO\n   - Confidence level in this verdict\n   - If GO: The exact first 3 steps to take this week\n   - If PROCEED WITH CAUTION: What needs to be validated before committing\n   - If NO-GO: What adjacent ideas might work better"
+  },
+
+  {
+    title: `Objection-Busting UGC Video Ad`,
+    description: `Create a UGC video script that tackles a common objection or myth head-on using the PAS framework and finishes with a straightforward call to action.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing script writer. I want a UGC video ad showcasing how my [product] tackles a common objection or myth among [customer persona]. The video should be no longer than [time limit] seconds and begin with a provocative question. Use the PAS (Problem-Agitate-Solution) framework, emphasizing [benefit 1], [benefit 2], and [benefit 3]. Finish with a straightforward CTA to [action]. Make sure to confirm the exact objection before drafting the script.`,
+    category: `Social Media`
+  },
+
+  {
+    title: `Day-In-The-Life UGC Video Ad`,
+    description: `Develop a UGC video narrative that begins with a relatable “day in the life” moment, uses a Hook–Problem–Solution flow, and ends with a direct CTA.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing script writer. Help me develop a UGC video ad for my [product] that resonates with [customer persona], showing them how this solution fits into their daily routine. Keep it under [time limit] seconds, and open with a relatable “day-in-the-life” snapshot. Use the Hook–Problem–Solution method to highlight [benefit 1], [benefit 2], and [benefit 3]. End with a direct CTA guiding them to [action]. Please ask any key questions before starting.`,
+    category: `Social Media`
+  },
+
+  {
+    title: `Comedic UGC Video Ad`,
+    description: `Write a playful UGC video ad script that hooks viewers with humor in the first few seconds and highlights three main benefits before a clear CTA.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing script writer. Please create a UGC ad for [product] aimed at [customer persona], and use a comedic twist to hook viewers within the first [few] seconds. Keep the entire video under [time limit]. Highlight how [benefit 1], [benefit 2], and [benefit 3] solve a specific pain point in a lighthearted way. Conclude with a clear CTA encouraging them to [action]. Make sure to clarify the tone and comedic boundaries before you begin writing.`,
+    category: `Social Media`
+  },
+
+  {
+    title: `Testimonial-Style UGC Video Ad`,
+    description: `Craft a short user-generated video script that opens with a “before and after” testimonial to showcase key benefits and drive action.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing script writer. I need a UGC video ad script for my [product] targeting [customer persona], using a testimonial-style narrative. The video must be no longer than [time limit] seconds and start with a quick “before and after” comparison. Focus on [benefit 1], [benefit 2], and [benefit 3] that the user experienced. End with an irresistible CTA that prompts viewers to [action]. Please ask me questions about my product and audience before drafting the script.`,
+    category: `Social Media`
+  },
+
+  {
+    title: `UGC Story-Solution Video Ad Script`,
+    description: `Develop a story-solution UGC script that starts with a personal anecdote, presents your product as the answer, and ends with a strong call to action.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing script writer. Please help me craft a UGC video ad that shows [customer persona] how my [product] helps them achieve [goal or outcome]. The script should be under [time limit] seconds, starting with a personal anecdote that resonates. Incorporate the Story-Solution approach: present the user’s everyday struggle, reveal the product as the solution, and emphasize [benefit 1], [benefit 2], [benefit 3]. Close with a strong CTA telling them to [action]. Ask me any questions before you start writing.`,
+    category: `Social Media`
+  },
+
+  {
+    title: `UGC Video Ad Script (AIDA Framework)`,
+    description: `Create a concise UGC video ad script with the AIDA model to capture attention, build desire, and prompt a clear CTA.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing script writer. I need a UGC video ad script that speaks directly to [customer persona] and demonstrates how my [product] addresses their biggest [problem or challenge]. The video should be no longer than [time limit] seconds, opening with a surprising fact to grab attention. Use the AIDA (Attention, Interest, Desire, Action) framework, focusing on [benefit 1], [benefit 2], and [benefit 3]. End with a compelling CTA that motivates viewers to [action]. Make sure to ask me questions before you begin.`,
+    category: `Social Media`
+  },
+
+  {
+    title: `UGC Video Ad Script (PAS Framework)`,
+    description: `Write a short UGC video ad script using the Problem-Agitate-Solution framework to hook viewers emotionally and drive action.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing script writer. Please help me create a UGC video ad script that targets [customer persona] and highlights how my [product] can improve their lives. It should be no longer than [time limit] seconds and have an [emotional] opening hook. Please use the PAS (Problem-Agitate-Solution) framework and highlight [benefit 1], [benefit 2], and [benefit 3]. End with a clear CTA that encourages viewers to [action]. Make sure to ask me questions before you begin.`,
+    category: `Social Media`
+  },
+
+  {
+    title: `Health & Fitness Launch Campaign Strategy`,
+    description: `Blend influencer marketing, performance ads, and community campaigns to launch a health or fitness product with buzz and sales.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. I have a [health/fitness product] ready to launch and want a blend of influencer marketing, performance ads, and community-building campaigns. Please outline the steps to create buzz, share user stories, and drive sales. Make sure to ask me about my brand ambassadors, competitor landscape, and promotional calendar at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `D2C Product Scaling Strategy`,
+    description: `Use paid search and social campaigns with audience targeting and remarketing to maximize ROI on direct-to-consumer products.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. I’d like to scale my [D2C product line] using paid search and social campaigns, but my budget is tight. Offer a strategic approach to maximize ROI through smart audience targeting and remarketing. Don’t forget to ask me about my best-selling items, profit margins, and ad platform preferences at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Creative Agency Lead Generation Plan`,
+    description: `Craft case studies, targeted ads, and networking events to strengthen an agency’s online portfolio and generate leads.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. My [creative agency or freelance business] needs a stronger portfolio presence online and more consistent lead generation. Suggest a marketing strategy involving case studies, targeted ads, and networking events. Ask me about my existing client base, brand style, and any niche specialties at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Financial Services Credibility Builder`,
+    description: `Use LinkedIn content, client testimonials, and webinars to enhance credibility and attract high-value financial services clients.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. I’d like to enhance my [financial services] brand credibility and attract more high-value clients. Develop a plan that leverages professional LinkedIn content, client testimonials, and possibly webinar series. Make sure you ask me about my certification, trust markers, and typical client pain points at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Food & Beverage Regional Expansion Strategy`,
+    description: `Implement localized SEO, blogger partnerships, and in-store sampling to expand a food and beverage brand regionally.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. My [food/beverage business] wants to expand regionally through both online channels and local outreach. Offer a strategy that includes localized SEO, partnerships with regional bloggers, and in-store samples. Don’t forget to ask me about my supply chain, distribution range, and brand story at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Lifestyle Brand Community Growth Plan`,
+    description: `Deploy Instagram Reels, UGC prompts, and loyalty programs to foster community engagement and lift website conversions.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. I run a [lifestyle brand] that wants to grow an engaged social community and increase website conversions. Suggest a plan that involves Instagram Reels, user-generated content, and a loyalty program. Be sure to ask me about my social media presence, average order value, and brand values at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Educational Platform Enrollment Booster`,
+    description: `Leverage affiliate partnerships, influencer outreach, and lead magnets to increase enrollment for an educational offering.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. My [educational platform or online course] needs an enrollment boost, and I’m open to affiliate marketing and collaborations. Propose a plan that involves partnerships with influencers or complementary brands, as well as lead magnets. Make sure to ask me about my curriculum highlights, target learners, and existing affiliate networks at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Retailer E-commerce Integration Plan`,
+    description: `Integrate click-and-collect, personalized email marketing, and local digital ads to connect store and e-commerce sales.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. I’m working with a [brick-and-mortar retailer] that wants to step into e-commerce while maintaining store foot traffic. Please outline a plan that integrates click-and-collect, personalized email marketing, and local digital ads. Make sure you ask me about my store layout, inventory, and target radius at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `App User Acquisition & Retention Strategy`,
+    description: `Combine referral incentives, in-app promotions, and influencer collaborations to acquire users and boost retention.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. My [app or digital tool] requires a strong user acquisition plan and a clear retention strategy. Propose a mix of referral incentives, in-app promotions, and influencer collaborations. Remember to ask me about the app’s unique features, user analytics, and any prior marketing efforts at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Rebranding Marketing Plan`,
+    description: `Align content updates, social media, and SEO tactics with a new brand identity to support a small business rebrand.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. I’m rebranding my [small business] and need a fresh marketing approach that aligns with the new brand identity. Develop a strategy that includes content updates, social media, and search engine optimization. Please ask me questions about my rebranding timeline, updated value proposition, and target audience at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Coaching Practice Growth Blueprint`,
+    description: `Design a growth framework using webinars, case studies, and networking events to attract higher-paying clients and showcase expertise.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. I want to refine my [coaching/consulting] practice by attracting higher-paying clients and showcasing my expertise. Propose a strategy that leverages webinars, case studies, and networking events. Don’t forget to ask me questions about my target industries, personal brand, and success stories at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Nonprofit Marketing Strategy`,
+    description: `Balance social advocacy, email fundraising, and local partnerships to raise awareness and drive donations for a nonprofit.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. My [nonprofit organization] needs help raising awareness and generating more donations. Suggest a plan that balances social media advocacy, email fundraising campaigns, and local partnerships. Make sure to ask me about our mission statement, donor demographics, and any existing volunteer networks at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `SaaS User Re-Engagement Plan`,
+    description: `Suggest referral programs, content partnerships, and retention tactics to reignite user growth and engagement for a SaaS product.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. My [software/SaaS] product has plateaued in user growth. I’m looking for innovative ways to reignite interest, such as referral programs or content partnerships. Please suggest a plan that prioritizes user engagement and retention. Make sure to ask me about my product features, existing customer base, and KPIs at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Generational Brand Refresh Strategy`,
+    description: `Define a brand refresh strategy—including visual updates, platform choices, and influencer collaborations—to engage a younger audience.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. I’d like to shift my [well-established company] toward a younger demographic, without alienating my core audience. Outline a strategy that includes brand refreshes, platform selection, and influencer collaborations. Be sure to ask me about my current brand identity, key messaging, and any generational insights I have at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Startup Go-To-Market Playbook`,
+    description: `Recommend PR outreach, beta testing, and event sponsorship tactics to attract early adopters and build credibility for a startup launch.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. My [startup] needs an effective go-to-market plan that focuses on building credibility and attracting early adopters. Please recommend strategies involving PR outreach, beta testing, and event sponsorships. Don’t forget to ask me questions about my unique value proposition, competitive landscape, and timeline at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `B2B Positioning & LinkedIn Outreach Strategy`,
+    description: `Craft a B2B positioning strategy that leverages LinkedIn outreach, thought leadership content, and targeted webinars for decision-makers.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. I’m launching a [B2B service] and need guidance on how to position myself to business decision-makers. Propose a strategy that uses LinkedIn outreach, thought leadership content, and targeted webinars. Make sure you ask me about my ideal client profile, pain points I solve, and sales process at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Multi-Step Sales Funnel Strategy Guide`,
+    description: `A comprehensive plan for building a B2B sales funnel with a whitepaper magnet, nurturing sequence, and final sales-call conversion approach.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I’m looking to improve lead quality for my [B2B SaaS product] and need a multi-step sales funnel. Please propose a strategy that includes a whitepaper lead magnet, a nurturing email sequence, and a final sales call approach. Don’t forget to ask me about the industries I’m targeting, any case studies or data I can share, and how quickly I want to move leads through the funnel.`,
+    category: `Business`
+  },
+
+  {
+    title: `Local Business Digital Advertising Strategy`,
+    description: `Balance paid ads, community engagement, and loyalty initiatives to drive growth for a local business while maintaining personal connections.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. My [local business] wants to expand into digital advertising while still maintaining a personal connection with the community. Please outline a strategy that balances online ads, community events, and customer loyalty initiatives. Be sure to ask me questions about my local audience, marketing history, and brand personality at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `GA4 Enhanced Ecommerce Setup Guide`,
+    description: `Walk through the complete GA4 enhanced ecommerce implementation to ensure all product views, add-to-carts, and purchases are accurately tracked.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `I want to set up Google analytics enhanced e-commerce on my [shopify/woocommerce] store. Can you please walk me through all of the required steps, one by one?`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `Multi-Channel Marketing Plan`,
+    description: `Combine email marketing, retargeting ads, and social outreach into a cohesive plan to engage both existing customers and new prospects.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. I want to develop a multi-channel approach for my [eCommerce brand], targeting both existing customers and new prospects. Please integrate email marketing, retargeting ads, and social media outreach in a cohesive plan. Remember to ask me about my typical customer journey, key product categories, and any promotional calendar at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Comprehensive Online Growth Strategy`,
+    description: `Develop an integrated strategy for growing your online presence by balancing SEO, content marketing, paid ads, and social media.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. I need a comprehensive plan to grow my [type of business] and reach more customers online. Please focus on both organic and paid channels, and consider how my [unique selling proposition] can be communicated effectively. Make sure to ask me questions about my current resources, target audience, and overall goals at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `Brand Awareness Campaign Planner`,
+    description: `Outline an awareness-building campaign using social media, influencer partnerships, and standout content to launch a new offering.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert marketing strategist. I’m looking to create a brand awareness campaign for my [new product/service] in a highly competitive market. Please advise on the right mix of social media, influencer partnerships, and content marketing to stand out. Make sure to ask me questions about my target demographics, budget, and any upcoming launch dates at the end.`,
+    category: `Business`
+  },
+
+  {
+    title: `GA4 Property Upgrade Guide`,
+    description: `Provide step-by-step instructions for upgrading your existing Analytics property to GA4 while preserving historical data and goals.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `I need to upgrade to a GA4 property with Google Analytics on my [shopify/woocommerce] store. Can you please walk me through all of the required steps, one by one?`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `GA4 Custom Conversion Setup`,
+    description: `Explain how to configure GA4 custom conversion events to fire when key user actions occur, so you can measure specific business goals.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `I want to set up a custom conversion on Google Analytics to fire when [conversion event]. Please walk me through how to set this up on my [shopify/woocommerce] store.`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `Google Analytics Local vs. Non-Local Traffic Analysis`,
+    description: `Use geographic reports in Google Analytics to compare local versus non-local user behavior and optimize location-based site interactions.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert Google Analytics specialist. I want to optimize my [local service business] website, and I’m curious how users from my area behave compared to those from outside. Show me how to use geographical reports, segment local vs. non-local traffic, and analyze which pages they interact with most. Make sure to ask me about my location targeting goals, services offered, and any geolocation issues I might have.`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `Google Analytics Multi-Channel Campaign Audit`,
+    description: `Set up UTM parameters, track multi-channel funnels in Google Analytics, and determine which campaigns deliver the strongest conversions.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert Google Analytics specialist. I’m trying to evaluate the effectiveness of my marketing campaigns, from email to social media to PPC ads. Please advise how to set up proper UTM parameters, track multi-channel funnels, and identify which campaigns drive conversions. Don’t forget to ask me about my campaign naming conventions, marketing channels, and the specific metrics I consider success.`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `Google Analytics Discrepancy Troubleshooter`,
+    description: `Identify and resolve common tracking mismatches between Google Analytics and other platforms by aligning data sources and attribution settings.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert Google Analytics specialist. I’ve noticed discrepancies between my Google Analytics data and my [CRM or other analytics tool]. Can you help me identify common causes of tracking discrepancies and set up a system that aligns these data sources better? Please ask me about my lead flow, attribution settings, and how I define conversions in each platform.`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `Google Analytics Migration Planning Guide`,
+    description: `Plan your migration from Universal Analytics to Google Analytics 4, preserving goals, audiences, and historical data throughout the transition.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert Google Analytics specialist. I’d like to switch from Universal Analytics to GA4, but I’m unsure how to migrate settings like goals and audiences. Please walk me through the steps needed to ensure I don’t lose historical data or essential tracking configurations. Ask me about the custom dimensions, events, or segments I currently rely on.`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `Google Analytics Custom Dashboard Builder`,
+    description: `Explain how to create and share custom dashboards in Google Analytics to monitor KPIs like engagement, bounce rate, and session duration.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert Google Analytics specialist. I need to set up custom dashboards for my [marketing team], focusing on metrics like user engagement, bounce rate, and average session duration. Could you explain how to create these dashboards and share them within my organization? Please remember to ask me about which KPIs matter most to our goals and the data we need at a glance.`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `Google Analytics Bounce Rate Analysis`,
+    description: `Guide you through segmenting users, building custom reports, and analyzing content performance to pinpoint pages driving high bounce rates.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert Google Analytics specialist. My [blog or content site] is seeing a high bounce rate, and I’d like to figure out which pages lead to the biggest drop-offs. Could you guide me through segmenting users, building custom reports, and analyzing content performance? Be sure to ask me about my current content strategy, audience demographics, and how I measure content success.`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `Google Analytics Funnel Visualization Guide`,
+    description: `Help build a multi-step funnel report in Google Analytics that visualizes user progression from entry to conversion.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert Google Analytics specialist. I’m struggling to create a proper funnel visualization for my [online store]. Could you help me build a multi-step funnel report, from the product page view to checkout completion? Make sure to ask me about my eCommerce platform, the steps in my checkout process, and any existing conversion events.`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `Google Analytics Cross-Domain Tracking Guide`,
+    description: `Guide on setting up cross-domain tracking in Google Analytics to follow users across multiple sites and understand session continuity.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert Google Analytics specialist. I want to compare traffic and conversions between my [old website] and my [new website]. Can you guide me in setting up cross-domain tracking and help me interpret differences in user sessions? Remember to ask about my domain structure, the type of data I’ve collected so far, and the key performance indicators I’m most interested in.`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `Google Analytics 4 Event Tracking Setup`,
+    description: `Show how to configure both standard and custom events in Google Analytics 4 to measure key user actions and conversion goals.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert Google Analytics specialist. I need help understanding how to configure events in GA4 for my [website or app]. Please show me how to set up basic events (like clicks or form submissions) and custom events for specific user actions. Be sure to ask me about my main conversion goals and any particular user behaviors I’d like to measure.`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `Google Analytics 4 Setup Guide`,
+    description: `Walk through the steps to install and verify Google Analytics 4 tracking code, ensuring accurate data collection on your site.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert Google Analytics specialist. I’ve just created a [type of website] and I’m unsure how to properly install GA4. Please walk me through the setup process, including where to place the tracking code and how to verify data is flowing. Make sure to ask me questions about the platform I’m using and what metrics I want to track.`,
+    category: `Tracking & Pixels`
+  },
+
+  {
+    title: `Case Study Lead Magnet Funnel Design`,
+    description: `Build a lead funnel around case study downloads, then create a nurturing email series that guides prospects to a sales call.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I’d like to build trust and authority for my [professional services firm] through case studies. Propose a strategy that collects leads in exchange for an in-depth case study download, followed by a nurturing sequence leading to a sales call. Make sure to ask me about the case study content, who I want to attract, and the end goal of converting these leads.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Subscription Offer Lead Magnet Plan`,
+    description: `Plan a subscription-based lead magnet by positioning incentives, setting up a short funnel, and maintaining engagement via email.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. My [subscription box service] needs more consistent lead flow, so I’m considering a discount code or a small freebie as my lead magnet. Please detail how I should position this incentive on my homepage, set up a short funnel, and keep leads engaged via email. Don’t forget to ask about my target customers, the average subscription length, and any unique selling points.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Lead Form Placement & Follow-Up Guide`,
+    description: `Analyze landing page design and headlines to determine optimal lead-form placement and follow-up email cadence for sales calls.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I’m uploading a screenshot of my newly revamped landing page for a [coaching program]. Please analyze the design, headlines, and overall user flow, and suggest where to place my lead magnet opt-in form. Also, recommend how many follow-up emails I should send before directing them to a sales call. Ask me about my brand voice, pricing strategy, and typical results for clients.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Virtual Event Lead Magnet Blueprint`,
+    description: `Map out the registration funnel, speaker promotion tactics, and follow-up emails needed to convert a virtual summit into paid attendees.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I’m planning a [virtual summit] with multiple speakers as my lead magnet to attract new subscribers. Could you help me outline the registration funnel, speaker promotion strategy, and the email sequence to upsell an all-access pass? Make sure you ask me about my summit theme, target audience, and any existing partnerships.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Referral Campaign Framework`,
+    description: `Design a “refer a friend” program with referral mechanics, tracking setup, and email nurture sequences to maximize participation.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I’d like to implement a “refer a friend” campaign for my [digital product], where existing users get rewards for bringing in new leads. Can you advise on how to structure the referral page, set up tracking, and follow-up email sequences to maximize participation? Please ask me about my product features, current user base, and the type of incentives I can offer.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Cause-Driven Lead Magnet Strategy`,
+    description: `Develop a landing page, onboarding sequence, and recurring-donation CTA that inspires supporters to sign up and commit to your cause.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I run a [nonprofit or cause-driven organization] and want to create a lead magnet that encourages supporters to sign up for updates or donations. Please help me develop an effective landing page, email onboarding series, and a final CTA for recurring donations. Don’t forget to ask me about our cause, donor demographics, and current engagement levels.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Consultation Offer Lead Magnet Planner`,
+    description: `Refine landing page messaging, scheduling workflows, and post-signup email series to turn free consultations into long-term clients.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. My [financial services firm] wants to use a free consultation offer as a lead magnet, but we struggle to convert consultation calls into long-term clients. Please help me refine the landing page messaging, the scheduling process, and the post-call email follow-ups. Ask me about my ideal client profile, how my consultations are structured, and what ROI I’m aiming for.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Quiz-Style Lead Magnet Strategy`,
+    description: `Outline how to structure quiz questions, design email follow-ups, and convert quiz completions into paying customers with upsell touchpoints.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I want to build a quiz-style lead magnet for my [online course or membership]. Can you outline how to structure the quiz questions, what type of email follow-ups to send, and how to transition quiz completions into paying customers? Make sure to ask me about the subject matter of my course, quiz outcomes, and any upsells I have in mind.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Popup Incentive Optimization Guide`,
+    description: `Optimize exit-intent popups by timing triggers, crafting incentives, and planning drip sequences to drive repeat engagement or sales.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I’m currently using an exit-intent popup with a coupon code as a lead magnet for my [eCommerce store]. Could you help me optimize the popup timing, the incentive offered, and the email drip sequence that follows to drive repeat sales? Be sure to ask me about my average order value, product categories, and any seasonal promotions.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Automated Funnel Alignment Audit`,
+    description: `Assess each stage of your funnel for alignment, identify missing steps, and recommend the ideal number and timing of automated emails.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I’m uploading a screenshot of my sales funnel diagram, from ad click to email sign-up and final purchase. Can you assess whether each stage is properly aligned, suggest any missing steps, and recommend how many emails I should include in my automated sequence? Don’t forget to ask me about conversion rates at each stage, my typical customer journey, and any existing marketing assets.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Landing Page Audit & Optimization Guide`,
+    description: `An audit framework to evaluate landing page clarity, CTA effectiveness, and quick fixes to improve conversions for any lead magnet.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I’m uploading a screenshot of my current landing page. Can you evaluate its structure, the clarity of my lead magnet’s promise, and my call-to-action effectiveness? I’d also like recommendations for any quick fixes to boost conversions. Ask me about my typical conversion rate, target audience, and any brand guidelines I need to follow.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `Ebook Lead Magnet Strategy Guide`,
+    description: `A strategy guide for using an ebook as a magnet: designing the signup page, segmenting leads, and automating follow-on email flows.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I have a [local service business] and plan to use an eBook as a lead magnet to collect emails. Could you suggest how to design the landing page, segment my leads once they download the eBook, and create an automated email flow that moves them toward booking a consultation? Make sure to ask about my unique selling proposition, local market, and the main topics my eBook will cover.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Webinar Funnel Blueprint`,
+    description: `A blueprint for a webinar-based funnel that starts with a free signup page, continues with a follow-up email series, and culminates in a paid offer.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I’m launching a [coaching program] and want to create a powerful sales funnel that starts with a free webinar as my lead magnet. Please outline how to structure my webinar signup page, the follow-up emails, and a final offer to convert leads into paying clients. Ask me about my coaching niche, typical client pain points, and any success stories I can showcase.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Scarcity-Focused Landing Page Template`,
+    description: `A rewrite guide emphasizing limited availability or countdown timers to create FOMO and conclude with a direct purchase invitation.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. Take a look at my basic landing page layout (link: [insert link]) for [product/service] and revise it into a 600-word page focusing on scarcity. Emphasize how limited availability or a ticking clock heightens the need to buy now. End with a direct CTA. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `Lead Magnet Funnel Planner`,
+    description: `A strategic planner for selecting and positioning the right lead magnet, designing its landing page, and mapping the nurturing email sequence.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert lead generation strategist. I’m trying to build a lead funnel for my [service-based business], and I’d like to offer a compelling lead magnet. Please advise on the best format for the magnet, how to position it on my landing page, and which email drip sequence would nurture new leads most effectively. Make sure to ask me questions about my target audience, core offer, and the kind of content I can provide.`,
+    category: `Sales`
+  },
+
+  {
+    title: `Consulting Services Landing Page Template`,
+    description: `A page outline that addresses upfront objections with bullet points clarifying pricing, ROI, and the unique approach, ending in a discovery-call CTA.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. I need a 500-word landing page for my [consulting package] that addresses common objections up front. Use bullet points to clarify pricing, ROI, and the unique approach I offer. Conclude with a CTA that encourages readers to book a discovery call. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `FAB (Features-Advantages-Benefits) Landing Page Template`,
+    description: `A detailed page using the Features-Advantages-Benefits framework plus social proof to justify a premium investment and reassure readers.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. I want a 750-word landing page for my [premium product], detailing why it’s worth the investment. Use the FAB (Features, Advantages, Benefits) method, and sprinkle in some social proof. Wrap up with a CTA that reassures readers they’re making a smart choice. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `Hook–Story–Offer Landing Page Template`,
+    description: `A brief landing page using a hook, a relatable story, and a direct offer to engage visitors and drive subscriptions or sign-ups.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. Please create a 450-word landing page for my [digital subscription] using the Hook–Story–Offer format. Start with a strong hook, share a compelling user success story, then present the main offer. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `Event & Webinar Landing Page Template`,
+    description: `A template for events or webinars that highlights unique takeaways, key speaker insights, and ends with a strong registration call to action.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. Write a 550-word landing page for my [event or webinar], focusing on the unique insights and takeaways attendees will receive. Integrate a short speaker bio or key highlights to build credibility, and close with a CTA that prompts immediate registration. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `AIDA Framework Landing Page Template`,
+    description: `A page scaffold following Attention-Interest-Desire-Action to grab attention, outline member benefits, and guide readers toward conversion.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. I’m launching a [membership site] and need a 600-word landing page using the AIDA (Attention, Interest, Desire, Action) framework. Open with a bold statement, elaborate on what members gain, and end with a CTA that prompts sign-ups. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `Before-and-After Narrative Landing Page Template`,
+    description: `A narrative-driven layout that uses a “before and after” storyline to showcase transformation and close with an outcome-focused prompt.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. I’d like a 500-word landing page that highlights the transformation offered by my [product/service]. Use a “before and after” narrative, detailing how life improves once the customer adopts my solution. End with a CTA that capitalizes on this improved future. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `Social Proof Landing Page Template`,
+    description: `A layout centered on client success stories and social proof snippets to build trust and encourage visitors to book a consultation or purchase.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. Create a 700-word landing page for my [service-based business] centered on social proof. Include compelling snippets from client testimonials, highlight real results, and finish with a CTA that encourages readers to book a consultation. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `Hero’s Journey Landing Page Template`,
+    description: `A versatile template structured around the Hero’s Journey to paint a “before” and “after” scenario and drive action with a clear call to action.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. Please craft a 750-word landing page for my [high-ticket coaching program] using the Hero’s Journey structure. Paint a picture of the “before” state, reveal the solution, and illustrate the triumphant “after.” Wrap up with a CTA encouraging readers to book a call or sign up. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `Bullet-Point Feature Landing Page Copy`,
+    description: `A 400-word landing page that uses bullet points to spotlight key features and benefits of your physical product, concluding with a direct purchase CTA.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. Draft a 400-word landing page for my [physical product] using bullet points to highlight key features and benefits. Emphasize how it solves a common pain point, and conclude with a direct CTA to purchase. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `FAQ-Style Landing Page Template`,
+    description: `A landing page format built like an FAQ to address common objections and questions, ending with a compelling enrollment or signup prompt.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. I need a 600-word page for my [online course] that’s built around an FAQ style, addressing common objections and questions. End with a CTA that reinforces the value of enrollment. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `Urgency & Testimonial Landing Page Template`,
+    description: `A concise page design that leverages urgency, exclusivity, and at least one testimonial to boost credibility and prompt immediate action.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. Take my existing sales funnel page (link: [insert link]) for [product/service] and transform it into a concise 500-word landing page focusing on urgency and exclusivity. Incorporate at least one testimonial to boost credibility, and close with a powerful CTA. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `FOMO-Driven Landing Page Copy`,
+    description: `A 700-word landing page emphasizing FOMO for your digital product, weaving in social proof or testimonials and ending with a scarcity-driven CTA.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. I’m looking for a 700-word page that emphasizes the “fear of missing out” (FOMO) for my [digital product], incorporating a limited-time offer. Weave in social proof or short testimonials, and end with a CTA that underlines the scarcity of the deal. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `Storytelling Landing Page Rewrite`,
+    description: `A concise 500-word storytelling rewrite of your existing landing page, starting with an anecdote, introducing the solution, and wrapping up with a sign-up CTA.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. Analyze my current landing page (link: [insert link]) for my [subscription service], then rewrite it into a concise 500-word page using a storytelling approach. Start with a relatable anecdote, introduce the solution, and wrap up with a CTA urging immediate sign-up. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `PAS Framework Landing Page Copy`,
+    description: `A 600-word landing page crafted with the Problem-Agitate-Solution framework, highlighting your audience’s pain point, urgency, and a compelling CTA.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert landing page copywriting specialist. I need a 600-word landing page using the PAS (Problem, Agitate, Solution) framework for my [product/service]. Highlight the biggest pain point my audience faces, deepen the sense of urgency, then clearly demonstrate how my [product/service] provides the solution. Include a compelling CTA at the end. Make sure to ask me detailed questions about my product/service and target audience so you can complete the task to the best of your ability.`,
+    category: `Content & SEO`
+  },
+
+  {
+    title: `Weekly News Summary & Analysis Newsletter`,
+    description: `A weekly roundup that begins with a quick summary of web-sourced headlines and then offers a 300-word piece on how those trends impact your audience.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. I want a weekly newsletter for my [business/niche], kicked off with a quick summary of any relevant headlines discovered through web search. Then, include a 300-word piece explaining how these headlines might affect our customers. Make sure to ask me detailed questions about my position within the industry, the type of updates subscribers expect, and how direct or casual I want the tone so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Monthly Thought Leadership & Q&A Newsletter`,
+    description: `A monthly brand-focused newsletter that opens with a 300-word thought leadership article and closes with a concise Q&A answering common customer questions.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. Please create a monthly newsletter for my [business/niche] featuring a 300-word thought leadership article and a concise Q&A section where we answer common customer questions. No need to research outside news this time—stick to brand-focused content. Ask me detailed questions about my usual customer inquiries, brand tone, and the kind of credibility I want to build so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Bi-Weekly Behind-the-Scenes Newsletter`,
+    description: `A bi-weekly behind-the-scenes newsletter featuring a 300-word look at operations, a bullet list of industry news, and a CTA inviting further engagement.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. I’d like a bi-weekly newsletter for my [business/niche] that offers a 300-word “behind the scenes” look at our operation, plus a short bullet list of any relevant industry news you find via web search. End with a CTA inviting subscribers to learn more or reach out. Make sure to ask me detailed questions about my brand story, what aspects are most interesting to reveal, and how we typically address industry trends so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Tip-of-the-Week Newsletter`,
+    description: `A weekly “tip of the week” email with a 200-word actionable advice segment and a 300-word deeper dive—all original, brand-centric content.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. My [business/niche] needs a weekly “tip of the week” newsletter, featuring a 200-word actionable advice segment and a 300-word deeper dive on the same topic. No need for external research, just focus on original, brand-centric content. Ask me detailed questions about the level of complexity, brand voice, and how I want to engage readers so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Monthly Authority Positioning Newsletter`,
+    description: `A monthly positioning newsletter that recaps major developments in your field and delivers a 300-word insights piece tying those updates back to your offerings.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. I need a monthly newsletter for my [business/niche] that positions us as a go-to source of information. Kindly search the web for any major developments in the past month and provide a brief summary. After that, include a 300-word insights piece that ties those developments back to our offerings. Make sure to ask me detailed questions about my branding, audience segmentation, and desired call-to-action so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Weekly Product Spotlight Newsletter`,
+    description: `A weekly update that keeps subscribers excited with a 200-word highlight of a featured product or service, followed by a 300-word customer story or testimonial.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. I want a weekly newsletter for my [business/niche] that keeps subscribers excited about new offerings. Open with a 200-word highlight of a featured product/service, and then share a 300-word story or testimonial from a happy customer. Please ask me detailed questions about the product range, brand identity, and subscriber expectations so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Educational Monthly Newsletter`,
+    description: `A monthly email focused on education, combining a 300-word tutorial or step-by-step guide with a brief update on recent milestones or announcements.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. Create a monthly newsletter for my [business/niche] that focuses on education. Include a 300-word tutorial or step-by-step guide, plus a short update on any recent milestones or announcements. No need to look up external news unless you think it’s relevant. Be sure to ask me detailed questions about my audience’s skill level, brand tone, and the type of knowledge or tools we offer so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Bi-Weekly Thought Leadership Newsletter`,
+    description: `A bi-weekly newsletter that underscores your thought leadership with a 100-word trend summary and a 250–300-word editorial linking trends to your solutions.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. My [business/niche] requires a bi-weekly newsletter that underscores our thought leadership. Start by searching the web for relevant trends, and include a 100-word summary of the top story. Then, write a 250–300 word editorial linking that trend to our solutions. Ask me detailed questions about my brand identity, audience needs, and any pressing topics we should address so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Insights-Focused Weekly Newsletter`,
+    description: `A weekly “insights” email centered on a single theme, featuring a 300-word analysis or how-to guide and ending with a concise CTA.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. I need a weekly “insights” newsletter for my [business/niche]. Focus on a single theme or topic each week, share a 300-word analysis or how-to guide, and end with a short CTA. No web search required. Please ask me detailed questions about my brand’s core expertise, audience preferences, and the kind of results or inspiration I want to offer so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Weekly BTS & Opinion Newsletter`,
+    description: `Plan a weekly newsletter with a brief behind-the-scenes update and a 300-word opinion piece, ending with a clear CTA for reader interaction.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. Please create a weekly newsletter for my [business/niche] with two main components: a short behind-the-scenes update (no web search needed) and a 300-word opinion piece on a hot topic in our industry. Wrap it up with a clear CTA encouraging readers to interact or share feedback. Make sure to ask me detailed questions about my typical reader profile, brand personality, and messaging goals so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Quarterly Highlights Newsletter`,
+    description: `Develop a quarterly newsletter highlighting major accomplishments and upcoming plans, paired with a 300-word market-relevant article.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. I’d like a quarterly newsletter for my [business/niche] to highlight our biggest accomplishments and upcoming plans. First, conduct a quick web search to see if there are any major industry updates we should mention. Then, craft a 300-word main article that ties these updates to our future plans. Make sure to ask me detailed questions about our brand pillars, audience interests, and overall positioning so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Monthly Success Story Newsletter`,
+    description: `Compose a monthly newsletter showcasing a customer success story and a 300-word editorial with actionable advice or insights.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. I want a monthly newsletter for my [business/niche] that showcases a customer success story in about 200 words, plus a 300-word editorial offering advice or insights. You don’t need to research external news; focus on internal achievements and tips. Please ask me detailed questions about my brand’s tone, target customer pain points, and any data or testimonials I have so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Bi-Weekly Trends Newsletter`,
+    description: `Outline a bi-weekly newsletter that summarizes industry headlines and includes a 200–300-word editorial linking trends to your offerings.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. I’d like a bi-weekly newsletter for my [business/niche] that keeps subscribers updated on industry trends. Search the web for the latest headlines relevant to my field, then write a concise summary of each. Close with a 200–300 word editorial that connects those trends to my products or services. Be sure to ask me detailed questions about my audience, brand identity, and any specific calls-to-action I’d like to include so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Monthly Engagement Newsletter`,
+    description: `Create a monthly newsletter focused on customer engagement with a 200-word success highlight and a 300-word educational piece.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. I need a monthly newsletter for my [business/niche] focusing on customer engagement. No external web searches are necessary—just craft a 200-word highlight of recent successes or milestones, followed by a 300-word educational piece that offers valuable tips or insights for subscribers. Please ask me detailed questions about my customer base, the type of content they respond to, and my brand’s overall messaging so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Weekly News Corner Newsletter`,
+    description: `Write a weekly newsletter template featuring a “news corner” with current events and a 300-word spotlight article tied to your brand.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email newsletter writer. I want a weekly newsletter for my [business/niche] that features a brief “news corner” referencing current events or trends. First, search the web to find 1–2 relevant stories, then summarize them for my subscribers. Include a 300-word spotlight article that demonstrates how these trends connect to my brand. Make sure to ask me detailed questions about my target audience, brand voice, and any must-include updates so you can complete the task to the best of your ability.`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Inbox Standout Subject Line Generator`,
+    description: `Design playful or bold subject lines that address common pain points or solutions to help your emails stand out in crowded inboxes.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `We want to create an email with a subject line that stands out in our subscribers' inboxes. Can you help us come up with a subject line that's [insert tone, e.g., playful or bold], [insert adjective], and mentions [insert a common pain point or a solution that our product/service provides]?`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Campaign Subject Line Creator`,
+    description: `Develop campaign subject lines in a chosen tone—intriguing, controversial, or funny—that include your product or service or a standout feature.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `We want to create an email campaign that grabs our subscribers' attention. Can you help us come up with a subject line that's [insert tone, e.g., intriguing, controversial or funny], [insert adjective], and mentions [insert product/service name or a specific feature]?`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Sale Subject Line Ideator`,
+    description: `Come up with urgent or persuasive subject lines for sale emails that mention discount percentages or specific products to prompt clicks.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `We're having a sale and want to create an email with a subject line that's [insert tone, e.g., urgent or persuasive] and mentions [insert the discount percentage or a specific product/service name] in the subject line. Can you help us brainstorm some options?`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Special Offer Subject Line Generator`,
+    description: `Create attention-grabbing subject lines for special offers by combining specified adjectives and tones with your product or service name.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `Our product/service is [insert product/service name] and we're running a special offer. Can you come up with a subject line that's [adjective], [adjective], and [insert tone, e.g., playful or urgent]?`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Product Launch Subject Line Generator`,
+    description: `Brainstorm subject lines for a new product launch email using a defined tone and highlighting a key benefit or unique selling point.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `We're launching a new product/service soon and want to send an email to our subscribers. Can you help us create a subject line that's [insert tone, e.g., mysterious or exciting], [insert adjective], and mentions [insert a benefit or unique selling point of the product/service]?`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Email Subject Line Brainstormer`,
+    description: `Generate ten engaging email subject line ideas, mindful of character limits, to boost open rates for any pasted email content.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert email copywriter. Pasted below is the subject of my latest email. Provide me with 10 ideas for subject lines that will encourage the reader to open the email. Bear in mind the character visibility limit in most common email platforms such as Gmail. [paste email content here]`,
+    category: `Email Marketing`
+  },
+
+  {
+    title: `Creative Cover Letter Writer`,
+    description: `Produce an informal yet professional cover letter for creative or startup roles, balancing uniqueness with the role’s requirements.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in creative cover letter writing. I’d like something less formal for a [startup/creative industry] role, yet still professional. Ask me about the role’s requirements, my unique attributes, and how informal or playful the letter can be.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Reworked Cover Letter Tailor`,
+    description: `Customize an existing cover letter draft for a specific job posting by focusing on your key accomplishments and preferred style.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert at reworking existing cover letters. I have a draft that feels generic, and I need it customized for a [specific job posting]. Ask me about the posting’s details, my biggest accomplishments, and the language style I prefer.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Culture-Fit Cover Letter`,
+    description: `Write a targeted cover letter that demonstrates how you’ll fit into a company’s culture, highlighting teamwork style and relevant experiences.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in targeted cover letters. I’m applying to a [company size/type], and I need a cover letter that addresses how I’ll fit into their team culture. Ask me about my teamwork style, relevant experiences, and the brand image they project.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Problem-Solving Cover Letter`,
+    description: `Craft a cover letter that emphasizes your ability to solve a particular problem, using examples of past successes and a tone suited to the employer.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert cover letter specialist. I want a letter that focuses on my ability to solve [type of problem] for a prospective employer. Make sure to ask me about examples of problem-solving in my past jobs, the employer’s known challenges, and the letter’s tone.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `One-Page Concise Cover Letter`,
+    description: `Compose a concise, one-page cover letter that clearly states your top three strengths and unique traits.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in concise cover letters. The company requests a one-page letter for [position], so clarity is key. Please ask me about my top three strengths, the role’s main challenge, and any unique traits I should highlight.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Leadership Cover Letter`,
+    description: `Draft a cover letter emphasizing leadership abilities and measurable results for a management or senior role.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert cover letter writer. I need a letter focused on leadership abilities and measurable results for a [management or leadership role]. Ask me about my leadership philosophy, past team achievements, and the employer’s strategic goals.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Certification-Focused Cover Letter`,
+    description: `Emphasize recent certifications or education in your cover letter to show how they enhance your fit for the role.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert cover letter consultant. I want a letter that addresses my recent [certification/education], emphasizing how it improves my fit for [role]. Ask me about the program’s relevance, the specific position tasks, and my career aspirations.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Company-Research Cover Letter`,
+    description: `Personalize a cover letter by referencing company research, recent projects, and the tone you wish to strike.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in personalized cover letters. I need a letter that demonstrates I’ve researched the company in [sector], mentioning a recent project or initiative of theirs. Ask me about the employer’s background, my related experiences, and the tone I want to strike.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Transferable Skills Cover Letter`,
+    description: `Produce a persuasive cover letter explaining transferable skills to facilitate a transition between industries.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in persuasive job application writing. I’m transitioning from [previous industry] to [new industry], and I need a cover letter that explains my transferable skills. Make sure to ask me about my past experiences, the new role’s responsibilities, and the core message I want to convey.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Narrative Cover Letter`,
+    description: `Tell a story of your career growth with a narrative-style cover letter that aligns with the company’s mission.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in narrative-style cover letters. I’d like my application to tell a story of my growth in [industry/skill area]. Make sure to ask me about the turning points in my career, the position’s requirements, and the company’s mission.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Personal Brand Cover Letter`,
+    description: `Write a cover letter that builds your personal brand and helps you stand out in a crowded applicant pool.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in professional branding through cover letters. I’m aiming to stand out in a crowded applicant pool for [position level]. Ask me about my career highlights, personal brand, and any key differentiators so you can complete the task effectively.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Niche Role Resume Highlight`,
+    description: `Highlight very specific industry competencies, jargon, certifications, and achievements that resonate with niche specialists`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in specialized resumes. I’m applying for a [niche role], so I need to highlight very specific industry competencies. Ask me about relevant jargon, certifications, and achievements that resonate with specialists.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Skill & Tech Cover Letter`,
+    description: `Craft a cover letter that highlights one soft skill and one technical skill tailored to the company environment.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert cover letter coach. I want a letter that highlights my [soft skill] and [technical skill], tailored to a [type of company] environment. Please ask me about my work style, notable projects, and how I want to position myself.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Unique Experience Cover Letter`,
+    description: `Compose a cover letter showcasing your unique experiences and how they demonstrate value for the role.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in writing compelling cover letters. I want a letter that showcases my unique experiences in [type of role] and demonstrates how I can add value. Be sure to ask me about my relevant accomplishments, the position requirements, and my preferred tone.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Domain-Focused Cover Letter`,
+    description: `Develop a letter that clearly communicates your passion for a specific domain and addresses any gaps in your history`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert cover letter consultant. I need a letter that clearly communicates my passion for [specific domain] and addresses any gaps in my employment history. Ask me about my work background, key achievements, and the company culture I’m targeting.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Impactful Cover Letter`,
+    description: `Write a concise, impactful cover letter that highlights your top skills and aligns with the employer’s core values`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in crafting professional cover letters. I’m applying for a role in [industry/field], and I need a concise, impactful letter that highlights my top skills. Please ask me about my career goals, core strengths, and the employer’s values so you can complete the task to the best of your ability.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `International CV Adaptation`,
+    description: `Tailor your CV for international positions by aligning with local formatting norms, language requirements, and optional sections.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in international CV writing. I plan to apply for positions in [country/region], so I need a resume that aligns with local conventions. Ask me about the country’s formatting norms, language, and whether I need sections like a photo or personal statement.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Minimalist Resume Design`,
+    description: `Create a clean, easy-to-read resume focusing on two to three main achievements and core competencies.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in minimalistic resume design. I’d like a clean, easy-to-read CV focusing on my 2–3 main achievements and competencies. Ask me about the job positions I’m targeting, the style preferences, and any data points I can use.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `CV Revamp & Formatting`,
+    description: `Revamp an outdated resume by updating roles, skills, achievements, and including extracurricular or volunteer work.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert CV revisionist. I have an old resume with outdated formatting and no recent info. I need it revamped with new roles, skills, and achievements. Ask me about my new positions, key metrics, and any extracurricular or volunteer work to include.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Skills-Based CV Builder`,
+    description: `Build a skills-based CV that emphasizes your ability to handle fast-paced or technical tasks, citing key projects and challenges overcome.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert resume writer. I need a skills-based CV that highlights my ability to handle [type of tasks] in a [fast-paced/tech/creative] environment. Ask me about top projects, the complexity of tasks, and how I overcame challenges.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Job-Posting Tailored CV`,
+    description: `Customize your resume to incorporate job-specific keywords and structure that match the posting’s requirements.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in customizing resumes for job postings. I have a job description that stresses [key requirement]. Ask me about how my background fits that requirement, keywords to incorporate, and how to structure the CV for best impact.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Leadership CV Specialist`,
+    description: `Showcase your leadership and management experience by detailing team sizes, budgets managed, and quantifiable results.`,
+    method: ``,
+    prompt: ``,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Transferable Skills CV`,
+    description: `Craft a CV that emphasizes transferable skills when switching industries, highlighting past roles, career goals, and certifications.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer`,
+    prompt: `You are an expert resume consultant. I’m switching industries from [old industry] to [new industry], and I need a CV that focuses on transferable skills. Ask me about my past roles, new career goals, and any certifications or education I should highlight.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Functional Resume Format`,
+    description: `Format a functional resume to showcase key competencies and achievements under each skill, with brief employer mentions.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in functional resumes. I want to emphasize my [key competencies] rather than listing jobs in order. Ask me about my strongest skill sets, achievements under each skill, and how to briefly mention previous employers.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Visual Design CV Template`,
+    description: `Design a sleek, icon- or color-block resume format suitable for creative or tech roles, tailored to your design preferences.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in designing visually appealing CVs. I’d like a sleek format with icons or color blocks suitable for [creative/tech roles]. Ask me about design preferences, brand colors, and how minimalistic or detailed I want the layout.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `ATS-Friendly Resume Designer`,
+    description: `Design a modern, ATS-friendly resume layout featuring your top accomplishments, relevant keywords, and structured sections.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in modern resume formats. I’d like a clear, ATS-friendly resume layout for [position level]. Ask me about my top accomplishments, relevant keywords, and the structure I prefer.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Tech Startup Mentor`,
+    description: `Mentor on building scalable, tech-based products in emerging niches with strong problem-solution fit, tech capabilities, and funding paths.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert startup mentor. I’d like to consider building a scalable, tech-based product in [emerging niche], focusing on problem-solution fit. Ask me about the user problems I find most pressing, my tech capabilities, and potential funding options.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Career Progression CV Coach`,
+    description: `Coach you to highlight career progression from entry-level to advanced roles by structuring key responsibilities and notable accomplishments.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert CV coach. I want to highlight my career progression from [entry-level role] to [advanced role], ensuring potential employers see my growth. Ask me about each step in my career, key responsibilities, and notable accomplishments.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Hybrid CV Layout`,
+    description: `Create a hybrid resume balancing skill-based sections with a traditional chronological layout for your job type.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer`,
+    prompt: `You are an expert in hybrid CVs. I need a resume that balances my skills-based sections with a traditional chronological layout for [job type]. Ask me about my top skills, relevant jobs, and how I want to demonstrate progression.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `One-Page CV Creator`,
+    description: `Create a concise one-page resume that summarizes your years of experience, key projects, and measurable results.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in concise CV creation. I need a one-page resume that sums up my [years of experience] in [field]. Please ask me about major projects, my unique selling points, and whether I have any big data or metrics to include.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Streamlined Resume Writer`,
+    description: `Write a streamlined CV emphasizing your core skill set, career timeline, and major achievements in a clear, compelling format.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert resume writer. I need a streamlined CV that emphasizes my [core skill set] for a [role/industry]. Ask me about my career timeline, major achievements, and how I want to organize sections.`,
+    category: `Resume & Career`
+  },
+
+  {
+    title: `Franchise & Licensing Strategy Advisor`,
+    description: `Advise on franchising or licensing business concepts vs. building from scratch, balancing budget, model choice, and timeline.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert business strategist. I’m open to franchising or licensing a business concept in [sector], but I also want custom ideas. Ask me about my willingness to follow an existing model vs. building from scratch, budget constraints, and timeline.`,
+    category: `Business`
+  },
+
+  {
+    title: `MVP Ideation Facilitator`,
+    description: `Guide you through rapid MVP testing by defining prototyping resources, user feedback loops, and success metrics.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in MVP (minimum viable product) ideation. I want to quickly test a few concepts in [technology or platform]. Ask me about my prototyping resources, user feedback loops, and what success metrics matter most.`,
+    category: `Business`
+  },
+
+  {
+    title: `Micro-Business Generator`,
+    description: `Recommend micro-business concepts with low capital requirements, outlining available funds, scale goals, and rapid-return strategies.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in low-budget business generation. I want suggestions for micro-businesses that require minimal capital in [field/vertical]. Ask me about available funds, the scale I’m aiming for, and how quickly I need to see returns.`,
+    category: `Business`
+  },
+
+  {
+    title: `Service Offering Ideation Expert`,
+    description: `Ideate service-based offerings with online growth potential by focusing on delivery style, audience needs, and your special talents.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert creative thinker. I want business ideas that revolve around offering [type of service], with the potential to grow online. Ask me about my service delivery style, audience pain points, and any special talent I have.`,
+    category: `Business`
+  },
+
+  {
+    title: `Passion Project Business Coach`,
+    description: `Coach you on launching passion-aligned ventures that match your hobbies, potential collaborators, and time investment.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert business coach for passion projects. I’m searching for ideas that align with my personal hobbies in [area of interest]. Ask me about my skill level, potential collaboration opportunities, and how much time I can invest.`,
+    category: `Business`
+  },
+
+  {
+    title: `Digital Entrepreneurship Idea Generator`,
+    description: `Suggest online-based business models requiring minimal startup capital, aligned with your available time, technical know-how, and growth objectives.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in digital entrepreneurship. I need several online-based business ideas aligned with [interest/skill], requiring minimal startup capital. Please ask me about my available time, technical know-how, and growth goals.`,
+    category: `Business`
+  },
+
+  {
+    title: `Trend-Based Business Repurposing Guide`,
+    description: `Transform existing trends or apps into unique business opportunities by leveraging your brand’s differentiators and audience preferences.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in re-purposing existing trends into new business ideas. I’d like to ride the wave of [popular trend or app], but with a unique twist. Ask me about my brand’s differentiators, audience preferences, and revenue model preferences.`,
+    category: `Business`
+  },
+
+  {
+    title: `Sustainable Business Concept Advisor`,
+    description: `Propose eco-friendly, ethical business concepts aligned with your sustainability goals, budget constraints, and customer base.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in sustainable business ideas. I want concepts that focus on [eco-friendly or ethical practices]. Ask me about the specific sustainability goals, my budget constraints, and potential customer base.`,
+    category: `Business`
+  },
+
+  {
+    title: `Subscription Model Ideation Coach`,
+    description: `Offer subscription or membership-based business ideas informed by your content or product capabilities, target demographics, and pricing.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert ideation coach. I’m looking for a few business ideas that focus on subscription or membership models in [broad niche]. Ask me about my content or product creation abilities, target demographics, and typical price range.`,
+    category: `Business`
+  },
+
+  {
+    title: `Local Business Concept Developer`,
+    description: `Develop storefront or service concepts based on local market demand, competition, and your envisioned day-to-day operations.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in local-based business concepts. I want to find ideas for a [type of location], possibly a small storefront or service. Ask me about the local market demand, competition, and how I envision day-to-day operations.`,
+    category: `Business`
+  },
+
+  {
+    title: `Product & Service Innovation Consultant`,
+    description: `Explore gaps in your industry by ideating new product or service offerings that solve key problems and leverage your unique resources.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in brainstorming new products or services. I’d like to explore gaps in the [industry/sector] that my brand could fill. Ask me about the problems I want to solve, my audience’s main pain points, and any unique resources I have.`,
+    category: `Business`
+  },
+
+  {
+    title: `Creative Business Modeling Consultant`,
+    description: `Design innovative side-hustle or small venture models in your niche, considering local market dynamics, your passions, and complexity comfort.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in creative business modeling. I’d like ideas for side hustles or small ventures in [niche/sector]. Ask me about my local market, passions, and the level of complexity I’m comfortable with.`,
+    category: `Business`
+  },
+
+  {
+    title: `Business Turnaround Specialist`,
+    description: `Craft revitalization strategies to turn around declining businesses by diagnosing root issues, financials, and prior corrective efforts.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in turning around struggling businesses. My [company] is experiencing a decline, and I need a revitalization strategy. Ask me about the root issues, financials, and any previous attempts to fix them so you can produce the best plan.`,
+    category: `Business`
+  },
+
+  {
+    title: `Growth Hacking Strategist`,
+    description: `Generate rapid user acquisition strategies through growth hacking tactics tailored to your marketing channels and budget.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in growth hacking. I want a strategy to rapidly acquire more users or clients for my [product/service]. Ask me about my marketing channels, budget, and any existing growth experiments.`,
+    category: `Business`
+  },
+
+  {
+    title: `Business Model Innovation Consultant`,
+    description: `Innovate your business model by adding recurring revenue streams or subscription offerings aligned with your customer journey.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in business model innovation. I’m looking for ways to add recurring revenue streams or subscription models to my [business]. Ask me about existing offerings, pricing, and the customer journey so you can complete the task effectively.`,
+    category: `Business`
+  },
+
+  {
+    title: `Corporate Market Entry Advisor`,
+    description: `Advise on entering new markets or regions with your product/service using current market data, competitor landscape, and risk assessment.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert corporate strategist. I’d like a plan to enter a new market or region with my [product/service]. Ask me about current market data, competitive landscape, and the level of risk I can handle.`,
+    category: `Business`
+  },
+
+  {
+    title: `Strategic Pivot Planning Guide`,
+    description: `Create a pivot plan to reposition your business or niche in response to demand shifts by leveraging core values and new opportunities.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in strategic pivoting. I need to reposition my [business/niche] due to shifts in demand. Ask me about the old positioning, new opportunities, and my core brand values so you can create a pivot plan.`,
+    category: `Business`
+  },
+
+  {
+    title: `Long-Term Strategic Planner`,
+    description: `Develop a long-term strategy for market expansion and operational efficiency by addressing goals, bottlenecks, and timelines.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in long-term planning. I want a strategy for my [small or medium-sized enterprise] that addresses market expansion and operational efficiency. Ask me about my goals, existing bottlenecks, and desired timeline.`,
+    category: `Business`
+  },
+
+  {
+    title: `Business Scaling Strategist`,
+    description: `Formulate a roadmap to scale your business over a set timeframe by aligning revenue goals, target audience, and resource allocation.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert business strategist. I need a roadmap to scale my [type of business] over the next [timeframe]. Ask me about my current revenue, target audience, and resources so you can form a comprehensive strategy.`,
+    category: `Business`
+  },
+
+  {
+    title: `SWOT Analysis Strategist`,
+    description: `Conduct a thorough SWOT analysis to leverage strengths, address weaknesses, and capitalize on market opportunities.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in SWOT analysis. I need a thorough strategy that leverages strengths, addresses weaknesses, and capitalizes on [market opportunities]. Ask me about my current performance, major threats, and unique selling points.`,
+    category: `Business`
+  },
+
+  {
+    title: `Business Ideation & Brainstorming Guide`,
+    description: `Generate fresh, viable business ideas tailored to your strengths, resources, and target market preferences.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in ideation and brainstorming. I need fresh, viable business ideas related to [industry or trend]. Please ask me about my strengths, resources, and target market preferences so you can complete the task to the best of your ability.`,
+    category: `Business`
+  },
+
+  {
+    title: `Startup Strategy Coach`,
+    description: `Provide startups and small businesses a clear path to secure investment or scale operations through traction, revenue streams, and investor expectations.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert strategy coach. My [startup or small business] needs a clear path to secure investment or scale operations. Ask me about traction, revenue streams, and investor expectations so you can craft a compelling strategic approach.`,
+    category: `Business`
+  },
+
+  {
+    title: `Emerging Venture Idea Generator`,
+    description: `Identify and propose new venture concepts in emerging markets or technologies based on your budget, skill set, and timeline.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert business strategist. I’m looking for a list of new venture ideas that tap into [emerging market or technology]. Ask me about my budget, skill set, and time horizon so you can propose suitable concepts.`,
+    category: `Business`
+  },
+
+  {
+    title: `Strategic Partnerships Facilitator`,
+    description: `Plan strategic partnerships and alliances to grow your business by defining partner types, mutual benefits, and collaboration goals.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in strategic partnerships. I want to form alliances or collaborations to grow my [business]. Ask me about my network, the types of partners I seek, and how I define mutual benefit.`,
+    category: `Business`
+  },
+
+  {
+    title: `Scenario Planning Strategist`,
+    description: `Develop strategic plans for best-case, worst-case, and contingency scenarios by assessing market trends, risk tolerance, and resources.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in scenario planning. I want to develop strategies for various market conditions (best case, worst case, etc.) for my [business]. Ask me about current trends, risk tolerance, and contingency resources.`,
+    category: `Business`
+  },
+
+  {
+    title: `Brand Extension Strategist`,
+    description: `Explore product line extensions or new services aligned with your brand identity, customer needs, and distribution channels.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer`,
+    prompt: `You are an expert in brand expansion. I’d like to explore product line extensions or new services for my [business/niche]. Ask me about my brand identity, customer needs, and distribution channels so you can propose a strategic approach.`,
+    category: `Business`
+  },
+
+  {
+    title: `Digital Transformation Strategist`,
+    description: `Modernize your traditional business through digital transformation by integrating online tools, workflows, and change management.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert in digital transformation. I want to modernize my [traditional/offline business] by incorporating online tools and processes. Ask me about current workflows, budget for tech solutions, and my readiness for organizational change.`,
+    category: `Business`
+  },
+
+  {
+    title: `3–5 Year Strategic Planner`,
+    description: `Outline a 3–5-year strategic plan for your organization with goals, milestones, KPIs, and resource allocation.`,
+    method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
+    prompt: `You are an expert strategic planner. I’d like a 3- to 5-year plan for my [organization], outlining goals, milestones, and success metrics. Ask me about the mission, key performance indicators, and resource allocation.`,
+    category: `Business`
   }
 ];
 
