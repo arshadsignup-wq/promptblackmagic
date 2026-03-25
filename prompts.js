@@ -3340,7 +3340,910 @@ const PROMPTS_DATA = [
     method: `Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.`,
     prompt: `You are an expert strategic planner. I’d like a 3- to 5-year plan for my [organization], outlining goals, milestones, and success metrics. Ask me about the mission, key performance indicators, and resource allocation.`,
     category: `Business`
-  }
+  },
+  {
+    "title": "Market Expansion Planning Expert",
+    "description": "Design an expansion plan to enter new markets or launch product lines based on reasons for growth, target demographics, and available resources.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in expansion plans. My [existing business] wants to enter a new market or launch a new product line. Ask me about my reasons for expansion, the target demographic, and the resources I have in place.",
+    "category": "Business"
+},
+  {
+    "title": "Real Estate Venture Planner",
+    "description": "Plan a real estate development or investment venture with property type selection, financing options, location analysis, and exit strategy.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in real estate business plans. I’m planning a [property development or investment] venture and need a comprehensive plan. Ask me about property type, location, financing options, and exit strategy.",
+    "category": "Business"
+},
+  {
+    "title": "Social Enterprise Business Plan Consultant",
+    "description": "Balance profit and social impact in a social enterprise business plan by defining your mission, revenue model, and impact measurement.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in social enterprise business plans. I want to balance profit with social impact in my [venture idea]. Ask me about the social problems I address, my revenue model, and how I measure impact.",
+    "category": "Business"
+},
+  {
+    "title": "Nonprofit Business Plan Architect",
+    "description": "Outline a nonprofit plan covering mission, fundraising strategies, impact metrics, and donor targeting for your cause.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in nonprofit business plans. I need a plan for my [cause or organization], outlining mission, fundraising strategies, and impact metrics. Ask me about my vision, target communities, and potential donor base.",
+    "category": "Business"
+},
+  {
+    "title": "Tech Startup Business Roadmapper",
+    "description": "Roadmap technology startup milestones, MVP goals, user acquisition strategies, funding needs, and team capabilities.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in technology-focused business plans. My [tech startup] requires a roadmap that includes product development milestones, user acquisition goals, and monetization models. Ask me about my MVP state, funding needs, and team capabilities.",
+    "category": "Business"
+},
+  {
+    "title": "Franchise Business Plan Specialist",
+    "description": "Develop a franchise-ready business plan outlining costs, operations, scalability, and budget/timeline considerations.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in franchise-related business plans. I’m considering franchising a [type of business] and need a plan that clarifies costs, operations, and scalability. Ask me about my franchise strategy, budget, and timeline.",
+    "category": "Business"
+},
+  {
+    "title": "eCommerce Business Plan Developer",
+    "description": "Craft a comprehensive eCommerce plan detailing product sourcing, logistics, shipping strategy, and digital marketing approach.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in eCommerce business plans. I need a plan for my [online store], detailing product sourcing, logistics, and digital marketing approach. Ask me about my product range, shipping strategy, and branding.",
+    "category": "Business"
+},
+  {
+    "title": "TikTok Content Calendar Planner",
+    "description": "Create a weekly TikTok content calendar balancing trends, original concepts, and resource constraints.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in planning TikTok content calendars. I want a weekly schedule for my [account], balancing trends with original concepts. Ask me about the time I can devote, any seasonal or event tie-ins, and my editing resources.",
+    "category": "Social Media"
+},
+  {
+    "title": "Pivot Strategy Business Planner",
+    "description": "Revise your current business model plan to address new target customers and revenue streams based on pivot rationale and resources.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in pivot-based business plans. My current [business model] isn’t working, and I need a revised plan that addresses new target customers and revenue streams. Ask me about the pivot rationale, resources, and any changes in operations.",
+    "category": "Business"
+},
+  {
+    "title": "Formal Investment-Ready Business Plan Guide",
+    "description": "Develop a detailed investment or loan-ready business plan with your business model, cash flow forecasts, and competitor overview.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in formal business plans. I’m seeking [investment/loan], so I need a detailed document outlining my [business model], cash flow forecasts, and growth plans. Ask me about the required structure, my financial assumptions, and competitor overview.",
+    "category": "Business"
+},
+  {
+    "title": "Data-Driven Business Plan Researcher",
+    "description": "Create a data-driven business plan with market statistics, competitive analysis depth, and tailored data sourcing for your sector.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in business plan research. I want a data-driven plan with relevant market statistics for my [sector]. Ask me about the data sources, the scope of market analysis, and how in-depth the competitive section should be.",
+    "category": "Business"
+},
+  {
+    "title": "Business Plan Storytelling Strategist",
+    "description": "Craft a strategic business plan that highlights your brand story, core team, market differentiation, and leadership bios to stand out.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert business plan strategist. I need a plan that highlights my [brand story], core team, and market differentiation. Ask me about the brand background, leadership bios, and how I plan to stand out from competition.",
+    "category": "Business"
+},
+  {
+    "title": "Lean Business Planning Facilitator",
+    "description": "Outline a lean business plan using a canvas approach by defining the problem you solve, key metrics, partnerships, and available resources.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in lean business planning. I’d like a plan for my [small business] using a lean canvas approach. Ask me about the problem I solve, key metrics, and any partnerships or resources I have.",
+    "category": "Business"
+},
+  {
+    "title": "Startup Go-to-Market Plan Consultant",
+    "description": "Create a concise go-to-market and revenue model plan for your startup, focusing on product features, timelines, and proof of concept.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert business plan consultant. I want a concise plan (around [page count]) for my [startup], focusing on go-to-market tactics and revenue model. Ask me about my product features, timeline, and any existing proof of concept.",
+    "category": "Business"
+},
+  {
+    "title": "Business Plan Development Expert",
+    "description": "Draft a comprehensive business plan covering market analysis, marketing strategies, and financial projections based on your USP and funding goals.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in writing business plans. I need a plan for my [venture idea] that covers market analysis, marketing strategies, and financial projections. Ask me about my target audience, unique selling proposition, and funding goals.",
+    "category": "Business"
+},
+  {
+    "title": "Competitor Matrix Consultant",
+    "description": "Build a quick competitor matrix rating 5–10 companies on factors like price, quality, and brand presence according to your benchmarks.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert competitor research consultant. I’d like a quick competitor matrix that rates [5–10 companies] on key factors (price, quality, brand presence). Ask me about the weighting of each factor and my benchmark for “success.”",
+    "category": "Business"
+},
+  {
+    "title": "Strategic Competitive Threats Identifier",
+    "description": "Identify potential industry disruptors and future threats by examining market trends, R&D capacity, and proactive adaptation strategies.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in strategic competitor analysis. I want to identify future threats in [industry], including potential disruptors. Ask me about the trends I see, my R&D capacity, and how proactive I can be in adapting.",
+    "category": "Business"
+},
+  {
+    "title": "Social Media Audit for Competitors",
+    "description": "Review rival brands’ social presence to identify engagement rates, content styles, and best practices for your own audits.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in competitor social media audits. Please evaluate the social presence of [rival brands], focusing on engagement rates and content styles. Ask me about my social media goals, which platforms to compare, and the style I aim for.",
+    "category": "Business"
+},
+  {
+    "title": "Emerging Competitor Discovery Toolkit",
+    "description": "Spot rising competitors in your niche before they gain traction by monitoring chosen channels, early signals, and required search depth.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in discovering emerging competitors. I need to spot new entrants in [niche/market] before they gain traction. Ask me about the channels I monitor, any early warning signs, and how in-depth I want the search to be.",
+    "category": "Business"
+},
+  {
+    "title": "Data-Driven Competitor Performance Report",
+    "description": "Create a performance report comparing your online metrics—traffic, social following, SEO—to competitors using your key KPIs and tools.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in data-driven competitor analysis. I want a report comparing my online performance to that of [competitors], including traffic, social following, and SEO metrics. Ask me about which KPIs matter most and the tools I might use.",
+    "category": "Business"
+},
+  {
+    "title": "Product Feature Breakdown Analyst",
+    "description": "Break down competitor software, app, or product features in terms of functionality, UI, user feedback, and known differentiators.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in competitor product feature breakdowns. I want to see how my [software/app/product] compares in terms of functionality, UI, and user reviews. Ask me about the core functionalities that define success, user feedback, and any known competitor features.",
+    "category": "Business"
+},
+  {
+    "title": "Competitor Content Strategy Evaluator",
+    "description": "Evaluate industry leaders’ blogs, videos, and social content to refine your own strategy, aligned with your content goals and voice.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in competitor content strategies. Please evaluate the blog, video, or social media content of [industry leaders], so I can refine my own. Ask me about my content goals, brand voice, and how I plan to measure success.",
+    "category": "Business"
+},
+  {
+    "title": "Local Competitor Insights Analyst",
+    "description": "Gather insights on nearby competitors for your local business by considering region, consumer base, and offline data like foot traffic.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in local competitor analysis. My [local/regional business] needs insights on nearby competitors. Ask me about my region, consumer base, and whether we want to incorporate offline data like foot traffic or local partnerships.",
+    "category": "Business"
+},
+  {
+    "title": "Brand Perception Benchmark Report",
+    "description": "Assess how your brand image stacks up against competitors through reviews, social presence, and reputation data.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in brand perception analysis. I want to see how my brand image compares to [competitors], focusing on reviews, social presence, and overall reputation. Ask me for any brand guidelines, target audience details, and the competitor list.",
+    "category": "Business"
+},
+  {
+    "title": "Pricing Strategy & Analysis Consultant",
+    "description": "Analyze sector pricing and promotions to uncover rival strategies, then craft a pricing plan that differentiates your offerings.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in pricing analysis. I’d like to see how rivals in [my sector] structure their prices and promotions, then find a strategy that sets me apart. Ask me about my cost structure, perceived value, and pricing goals.",
+    "category": "Business"
+},
+  {
+    "title": "Product Comparison Benchmarking Tool",
+    "description": "Benchmark your product or service against similar competitor offerings by evaluating features, names, and the metrics you consider crucial.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in product comparison. I want to benchmark my [product/service] against similar offerings from [competitors]. Ask me about my unique features, competitor names, and the metrics I consider crucial.",
+    "category": "Business"
+},
+  {
+    "title": "SWOT Competitor Analysis Framework",
+    "description": "Compare your brand to specific competitors using a SWOT framework—market share, image, growth—and lever your positioning details.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in SWOT-based competitor analysis. Please compare my [brand] to [specific competitor or general group], focusing on market share, brand image, and growth. Ask me for details on how I position myself and any known competitor data.",
+    "category": "Business"
+},
+  {
+    "title": "Competitor Intelligence Mapping Guide",
+    "description": "Map leading companies’ marketing tactics across channels from social media to SEO, specifying your scope and planned use of insights.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in competitor intelligence. I need to map out the marketing tactics used by leading [companies in my industry], from social media to SEO. Ask me about my marketing channels, the competitor scope, and how I plan to use the insights.",
+    "category": "Business"
+},
+  {
+    "title": "Market Research & Player Profiling Guide",
+    "description": "Identify the top 3–5 niche players, assess their strengths—pricing, branding, product features—and tailor the depth of analysis to your needs.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert market researcher. I want to explore my [niche], identifying the top 3–5 players and their strengths. Ask me about the factors that matter most—pricing, branding, product features—and how in-depth I need the analysis.",
+    "category": "Business"
+},
+  {
+    "title": "Competitive Landscape Analysis Specialist",
+    "description": "Provide a detailed comparison of your business versus competitors by focusing on differentiators, target customers, and data requirements.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in competitor analysis. I need a detailed comparison of [competitors] to see how my [business] can stand out. Ask me about my main differentiators, target customers, and any specific data I want to gather.",
+    "category": "Business"
+},
+  {
+    "title": "eCommerce Product Line Expansion Advisor",
+    "description": "Generate fresh product line ideas by analyzing your sales data, brand identity, and upcoming market trends to keep customers engaged.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in expanding product lines for existing eCommerce stores. I have a core range but need fresh ideas to keep customers interested. Ask me about sales data, brand identity, and any upcoming trends I should tap into.",
+    "category": "Business"
+},
+  {
+    "title": "Digital-Physical Hybrid Product Strategy",
+    "description": "Develop hybrid product ideas pairing digital components with physical items, ensuring synergy and strategic pricing.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in digital-physical hybrid ideas. I’d like to pair a digital component (like an online course) with a physical product in my [eCommerce offering]. Ask me about my expertise area, how I see the synergy working, and pricing strategies.",
+    "category": "Business"
+},
+  {
+    "title": "Local Artisanal Product Curation Planner",
+    "description": "Plan exclusive collaborations with local artisans by defining your region, store theme, and marketing approach for curated product offerings.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in local/artisanal product curation. I want to collaborate with local makers or artisans to offer exclusive items. Ask me about my region, typical store theme, and how I envision marketing these collaborations.",
+    "category": "Business"
+},
+  {
+    "title": "Subscription Box Concept Planner",
+    "description": "Build a subscription box model with curated product sets, defining themes, frequency, and fulfillment management.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in subscription box concepts. I want to build recurring revenue by offering curated product sets in my [niche]. Ask me about frequency, typical product themes, and how I’ll manage fulfillment.",
+    "category": "Business"
+},
+  {
+    "title": "Data-Driven Product Ideation",
+    "description": "Use analytics and trend data to propose product ideas that align with popular search terms and market demands.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in data-driven product ideation. I’d like suggestions based on trending search terms or popular categories relevant to my [store]. Ask me about my analytics sources, brand style, and how fast I can bring products to market.",
+    "category": "Business"
+},
+  {
+    "title": "Personalization Product Design Ideas",
+    "description": "Create customizable product concepts using personalization technology, production timelines, and user input methods.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in personalization-based products. I want ideas that let customers customize or personalize items in my [store]. Ask me about available technology, typical production times, and how I plan to handle user inputs.",
+    "category": "Business"
+},
+  {
+    "title": "Premium Luxury Product Concept Guide",
+    "description": "Design higher-end, exclusive product concepts for your brand focusing on budget, luxury defined, and brand story.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in premium/luxury product idea creation. I want higher-end items for my [eCommerce brand], focusing on exclusivity. Ask me about the brand story, typical customer’s budget, and what “luxury” means in my context.",
+    "category": "Business"
+},
+  {
+    "title": "eCommerce Product Mentorship Guide",
+    "description": "Provide mentorship on product concepts using your manufacturing capabilities, budget, and target audience insights.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert eCommerce product mentor. I have manufacturing capabilities but no clear direction. Ask me about my production process, budget, and target audience so you can propose suitable product ideas.",
+    "category": "Business"
+},
+  {
+    "title": "Seasonal Product Concept Planner",
+    "description": "Plan limited-run seasonal products for holidays or events, considering target audience, sales peaks, and brand aesthetics.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in seasonal product concepts. I want to create limited-run items for holidays or events in my [store]. Ask me about the holidays I want to target, typical sales peaks, and brand aesthetics.",
+    "category": "Business"
+},
+  {
+    "title": "Upsell & Cross-Sell Product Ideas",
+    "description": "Suggest complementary upsell and cross-sell products based on your best sellers, brand identity, and margin targets.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in upsell and cross-sell product ideas. My [store] sells [category], and I’d like to expand with complementary items. Ask me about my best sellers, brand identity, and margins so you can suggest relevant additions.",
+    "category": "Business"
+},
+  {
+    "title": "Niche Product Development Concepts",
+    "description": "Conceive product ideas tailored to a specific subculture or hobby, informed by competitor offerings and customer pain points.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in niche product development. I want ideas that cater to a specific subculture or hobby for my [online shop]. Ask me about my knowledge of that niche, competitor products, and typical customer pain points.",
+    "category": "Business"
+},
+  {
+    "title": "Viral Instagram Post Planner",
+    "description": "Recommend content ideas and emotional triggers to help your brand’s Instagram posts quickly gain viral traction.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in creating viral Instagram posts. I want content that can quickly gain traction for my [brand]. Ask me about my brand voice, the type of emotional triggers I’m open to, and any visual constraints so you can craft a strategy.",
+    "category": "Social Media"
+},
+  {
+    "title": "Digital Product Generation Plan",
+    "description": "Develop printable, template, or online service offerings for your eCommerce presence, specifying skills and launch timelines.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in digital product generation. I’d like to add printables, templates, or online services to my [eCommerce presence]. Ask me about my creative skills, target price range, and how quickly I want to launch.",
+    "category": "Business"
+},
+  {
+    "title": "eCommerce Product Ideation",
+    "description": "Generate new product ideas for your online store that appeal to your target audience based on niche, preferences, and pricing.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in product ideation for eCommerce. I want new product concepts to add to my [online store], appealing to my [target audience]. Ask me about my niche, customer preferences, and pricing thresholds so you can propose ideas effectively.",
+    "category": "Business"
+},
+  {
+    "title": "eCommerce Trend Spotting",
+    "description": "Identify emerging product trends in eCommerce by evaluating styles, materials, and branding approaches within your category.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in trend spotting for eCommerce. I want to identify emerging products that could fit within my [broad category]. Ask me about the styles, materials, or functionalities I’m interested in, as well as my branding approach.",
+    "category": "Business"
+},
+  {
+    "title": "Eco-Friendly Product Brainstorming",
+    "description": "Brainstorm sustainable, zero-waste product ideas aligned with your brand values and preferred materials.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in eco-friendly product brainstorming. I want sustainable or zero-waste item ideas for my [store]. Ask me about the materials I prefer, the type of audience I attract, and any brand values I hold.",
+    "category": "Business"
+},
+  {
+    "title": "Instagram Competitor Benchmark Analysis",
+    "description": "Benchmark your Instagram account against competitors to find content gaps by defining metrics and success criteria.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in Instagram competitor analysis. I need to benchmark my [account] against similar players in my [niche] to find content gaps. Ask me about the competitors I have in mind, what metrics I track, and how I define success.",
+    "category": "Business"
+},
+  {
+    "title": "Instagram Hashtag Optimization",
+    "description": "Compile effective niche-specific Instagram hashtags balancing reach and relevance based on your industry and analytics tools.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in Instagram hashtag research. I’d like a set of effective, niche-specific tags for my [content], balancing reach and relevance. Ask me about my industry, typical post frequency, and what analytics tools I might use.",
+    "category": "Social Media"
+},
+  {
+    "title": "Instagram Highlights Organization Strategy",
+    "description": "Organize your Instagram highlight reels into thematic categories with consistent colors and design templates.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in Instagram highlight strategy. I want to organize my highlight reels to showcase categories like [customer testimonials], [product demos], and more. Ask me about the segments that matter to my audience, brand color usage, and any design templates I have.",
+    "category": "Social Media"
+},
+  {
+    "title": "Instagram Live Engagement Sessions",
+    "description": "Plan live Instagram sessions with Q&A or demos, covering topics, promotion tactics, and session formats.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in Instagram Live sessions. I want to host live streams that engage my [followers], offering Q&A or demos. Ask me about the topics I can cover, how I’ll promote the sessions, and the format of each live.",
+    "category": "Social Media"
+},
+  {
+    "title": "Follower-to-Customer Conversion Strategy",
+    "description": "Design a strategy to drive traffic and conversions from Instagram to your website or store with tracked CTAs and link usage.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in converting Instagram followers to customers. I want a strategy that drives traffic from [account] to my [website/store]. Ask me about my link usage, calls-to-action, and how I track conversions.",
+    "category": "Social Media"
+},
+  {
+    "title": "User-Generated Content Strategy",
+    "description": "Create a plan to incentivize and feature follower-generated content with hashtags and rewards tailored to your audience.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in user-generated content strategies. I need a plan to encourage followers of my [brand/niche] to create and share content. Ask me about incentives, hashtags, and how I’ll feature user submissions.",
+    "category": "Social Media"
+},
+  {
+    "title": "Instagram Micro-Influencer Collaboration",
+    "description": "Outline strategies for partnering with micro-influencers and complementary brands to grow your Instagram presence.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in Instagram collaborations. I’d like to work with micro-influencers or complementary brands to grow my [account]. Ask me about my budget, brand alignment, and how I typically handle partnerships.",
+    "category": "Social Media"
+},
+  {
+    "title": "Instagram Weekly Content Series",
+    "description": "Develop a recurring weekly Instagram theme based on your brand pillars, posting frequency, and preferred visual style.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in Instagram content series. I want a recurring weekly theme (e.g., tips, Q&A, product highlights) for my [brand/niche]. Ask me about my brand’s messaging pillars, typical posting frequency, and the style of visuals I prefer.",
+    "category": "Social Media"
+},
+  {
+    "title": "Instagram Aesthetic Planning Guide",
+    "description": "Design a cohesive Instagram feed aesthetic with consistent color schemes, layouts, and content style guidelines.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in Instagram aesthetic planning. I want my feed to look cohesive for my [brand], including consistent color schemes and layouts. Ask me about my brand palette, typical photo style, and any competitor feeds I admire.",
+    "category": "Business"
+},
+  {
+    "title": "Instagram Analytics Interpretation Report",
+    "description": "Help interpret your Instagram insights—reach, saves, and profile visits—to guide your content strategy and objectives.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in Instagram analytics interpretation. I need help understanding my [account]’s insights—like reach, saves, and profile visits—to guide my strategy. Ask me about my current stats, audience demographics, and main objectives.",
+    "category": "Social Media"
+},
+  {
+    "title": "Instagram Reels Growth Strategy",
+    "description": "Outline a Reels strategy using short, viral-friendly videos tailored to your audience’s interests and success metrics.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in Reels strategy. I’d like to utilize short, viral-friendly videos to grow my [Instagram presence]. Please ask me about the style of videos I can produce, my audience’s interests, and how I measure success so you can complete the task to the best of your ability.",
+    "category": "Social Media"
+},
+  {
+    "title": "Instagram Storytelling Blueprint",
+    "description": "Craft compelling Instagram story ideas that showcase behind-the-scenes moments or user experiences in your niche.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in Instagram storytelling. I want to craft compelling stories for my [business/niche] that highlight behind-the-scenes or user experiences. Ask me about my content schedule, brand tone, and any unique aspects to showcase.",
+    "category": "Social Media"
+},
+  {
+    "title": "Instagram Engagement Tactics Guide",
+    "description": "Suggest tactics to boost likes, comments, and shares on Instagram by refining post themes, CTAs, and hashtag strategies.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in Instagram engagement tactics. I need ideas to boost likes, comments, and shares on my [account]. Ask me about my content themes, brand voice, and any hashtags I currently use.",
+    "category": "Social Media"
+},
+  {
+    "title": "Instagram Follower Growth Strategist",
+    "description": "Develop a content plan to increase Instagram followers through consistent posting, brand alignment, and audience targeting.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert Instagram growth strategist. I want to increase my followers for my [brand/personal profile] through consistent content. Please ask me about my target audience, posting frequency, and brand style so you can complete the task to the best of your ability.",
+    "category": "Social Media"
+},
+  {
+    "title": "Organic TikTok Profile Growth Strategist",
+    "description": "Advise on consistently growing your TikTok profile organically, leveraging brand style, follower insights, and marketing funnels.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in boosting TikTok profiles organically. I’m not ready for paid ads, but I want consistent growth and brand recognition. Ask me about my current follower count, brand style, and any marketing funnels I might connect to so you can craft a strategy.",
+    "category": "Social Media"
+},
+  {
+    "title": "Viral TikTok Analysis Framework",
+    "description": "Analyze successful viral TikTok videos in your field to identify replicable elements, measure success, and adapt strategies.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in analyzing viral TikTok videos. I’d like to study successful examples in my [field] to see what we can replicate or adapt. Ask me about the type of viral content that appeals to me, brand boundaries, and how I measure success.",
+    "category": "Social Media"
+},
+  {
+    "title": "TikTok UGC Campaign Blueprint",
+    "description": "Design a TikTok campaign to encourage your audience to create videos around your brand or challenge, complete with incentives and guidelines.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in user-generated content for TikTok. I want to encourage my audience to create videos around my [brand/challenge]. Ask me about my incentives, hashtag branding, and any guidelines for participants.",
+    "category": "Social Media"
+},
+  {
+    "title": "TikTok Hook-In Three-Second Script",
+    "description": "Teach techniques to hook TikTok viewers in the first three seconds using opening styles, visuals, and brand-aligned elements.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in hooking viewers in the first 3 seconds on TikTok. I need tips on how to grab attention for my [content/niche]. Ask me about my typical opening style, brand tone, and the visual elements I can use.",
+    "category": "Social Media"
+},
+  {
+    "title": "TikTok Narrative Mini-Series Builder",
+    "description": "Build a narrative-driven mini-series on TikTok that captivates viewers with a clear storyline, characters, and brand message.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in storytelling on TikTok. I want to build a mini-series that captivates viewers about [topic or product]. Ask me about the storyline I have in mind, character roles (if any), and the overall brand narrative.",
+    "category": "Social Media"
+},
+  {
+    "title": "Visual Content Brainstorming Guide",
+    "description": "Develop concepts for eye-catching graphics or carousel posts that highlight key topics or features using your brand’s visual style and data points.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in visual content brainstorming. I want a series of eye-catching graphics or carousel posts that highlight [topic/feature]. Ask me about the design style, brand color palette, and any data or stats to feature.",
+    "category": "Social Media"
+},
+  {
+    "title": "TikTok Analytics Insight Report",
+    "description": "Interpret your TikTok profile data—watch time, repeat views, and retention—to tailor advice for improving engagement.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in TikTok analytics. I want to interpret my [profile] data like watch time, repeat views, and audience retention. Ask me about my current engagement, the age range of my audience, and the number of posts so you can tailor your advice.",
+    "category": "Social Media"
+},
+  {
+    "title": "TikTok Music & Sound Selector",
+    "description": "Help select the best music and soundtracks for TikTok videos to match your brand vibe, licensing needs, and mood goals.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in music and sound selection on TikTok. I want to pick the best soundtracks for my [videos] to match the brand vibe. Ask me about my brand tone, any licensing concerns, and how I want to set the mood in each clip.",
+    "category": "Social Media"
+},
+  {
+    "title": "Cross-Platform TikTok Promotion Guide",
+    "description": "Plan how to share your TikTok content on other platforms for additional reach, adapting formats to each channel’s audience and style.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in cross-promoting TikTok content. I want to share my TikTok videos on other platforms for additional reach. Ask me about the social channels I use, my audience demographics, and how I typically adapt content.",
+    "category": "Social Media"
+},
+  {
+    "title": "TikTok Engagement Tactics Playbook",
+    "description": "Recommend tactics to increase comments, shares, and likes on TikTok by refining hooks, CTAs, and content formats.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in TikTok engagement tactics. My [profile] sees views, but I need more comments, shares, and likes. Ask me about the type of content I post, how I currently hook viewers, and any calls-to-action I include.",
+    "category": "Social Media"
+},
+  {
+    "title": "TikTok Challenges & Duets Planner",
+    "description": "Generate ideas for creating or participating in TikTok challenges and duets that align with your brand theme and collaboration style.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in TikTok challenges and duets. I want to create or participate in challenges that get my [brand] noticed. Ask me about my content theme, collaboration style, and any brand guidelines to maintain consistency.",
+    "category": "Social Media"
+},
+  {
+    "title": "TikTok Video Script Framework",
+    "description": "Provide a framework for short TikTok clips that promote your product or service authentically without feeling overly salesy.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in TikTok video scripting. I’d like a framework for short clips that promote my [product/service] organically, without seeming too salesy. Ask me about my unique selling points, audience pain points, and desired video length.",
+    "category": "Social Media"
+},
+  {
+    "title": "TikTok Brand Voice Developer",
+    "description": "Develop a consistent TikTok video style and tone that leverages platform humor and trends while respecting brand guidelines.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in TikTok brand voice development. I want to keep a consistent style in my videos while leveraging platform humor or trends. Ask me about my brand vibe, any comedic boundaries, and the main message I want to send.",
+    "category": "Social Media"
+},
+  {
+    "title": "TikTok Trend Discovery Toolkit",
+    "description": "Identify trending sounds, challenges, and hashtags on TikTok to boost visibility for your target audience and brand personality.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in TikTok trend discovery. I need to stay on top of trending sounds, challenges, or hashtags to boost visibility for my [account]. Ask me about my target audience, brand personality, and how frequently I can create new content.",
+    "category": "Social Media"
+},
+  {
+    "title": "TikTok Organic Growth Guide",
+    "description": "Outline a strategy to build your TikTok account organically with short, engaging videos based on your niche and posting cadence.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in TikTok organic growth. I want to build my [brand/personal] account from scratch, focusing on short, engaging videos. Ask me about my niche, posting frequency, and any content ideas I already have.",
+    "category": "Social Media"
+},
+  {
+    "title": "Emotional Appeal Social Script",
+    "description": "Craft a social media script that tugs at heartstrings for your brand or cause and closes with a subtle call to action.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in emotional appeal through social media scripts. I want a piece that tugs at heartstrings for my [cause/brand], ending with a subtle CTA. Ask me about the emotional angle, brand values, and the message I want to leave with viewers.",
+    "category": "Social Media"
+},
+  {
+    "title": "User Engagement Video Script",
+    "description": "Create video scripts that prompt viewers to comment or share opinions, with clear discussion prompts and brand-safe boundaries.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in user engagement scripts. I want a video that prompts viewers to comment or share opinions on [topic]. Ask me about the type of discussion I want, any brand safe boundaries, and how to position the question effectively.",
+    "category": "Social Media"
+},
+  {
+    "title": "Dramatic Hook Video Script",
+    "description": "Craft dramatic hook scripts that start with a bold problem statement before quickly presenting your solution.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in dramatic hooks for social media. I need a script that starts with a bold statement or problem statement for [topic], then quickly explains my solution. Ask me about the key pain point, brand style, and desired video length.",
+    "category": "Social Media"
+},
+  {
+    "title": "Tips & Tricks Video Script",
+    "description": "Produce scripts covering a set number of tips in under a time limit, aligned with your audience’s level and brand personality.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in “tips & tricks” social media videos. I want a script that covers [number of tips] related to [topic], in under [time limit] seconds. Ask me about my audience’s knowledge level, brand personality, and the main call-to-action I want.",
+    "category": "Social Media"
+},
+  {
+    "title": "Co-Created Influencer Video Framework",
+    "description": "Outline a framework for a co-created video with an influencer, detailing style, brand alignment, and collaboration goals.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in influencer collaboration scripts. I want a framework for a co-created video with an influencer in my [niche]. Ask me about the influencer’s style, brand alignment, and the end goal of the collaboration.",
+    "category": "Social Media"
+},
+  {
+    "title": "BTS Video Script Guide",
+    "description": "Guide the creation of behind-the-scenes video scripts showcasing production steps with a casual, friendly tone.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in behind-the-scenes video scripting. I’d like to showcase how we create [product/service], with a casual, friendly tone. Ask me about the production steps, brand aesthetics, and length constraints so you can write a fitting script.",
+    "category": "Social Media"
+},
+  {
+    "title": "Testimonial Video Script",
+    "description": "Write testimonial-style video scripts highlighting customer success stories, brand tone, and the main benefit in time constraints.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in testimonial-style video scripting. I want a script that highlights a [customer success story] in under [time limit] seconds. Please ask me about the specific customer details, brand tone, and the main benefit showcased.",
+    "category": "Social Media"
+},
+  {
+    "title": "Brand Storytelling Video Script",
+    "description": "Script videos that reveal your brand’s backstory and mission by sharing origin stories, key values, and turning points.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in brand storytelling for social media. I need a script for a [platform] video that reveals my brand’s backstory and mission. Ask me about my origin story, key values, and any must-mention turning points.",
+    "category": "Social Media"
+},
+  {
+    "title": "Call-To-Action Video Scripts",
+    "description": "Develop short video scripts that drive immediate action for offers or trials by targeting pain points and brand voice.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in call-to-action video scripts. I want a short piece that drives immediate action for [offer/free trial/promo]. Ask me about the offer’s specifics, target user pain points, and the brand’s voice so you can tailor the script effectively.",
+    "category": "Social Media"
+},
+  {
+    "title": "Comedic Social Video Scripting",
+    "description": "Create lighthearted, comedic video scripts that respect brand boundaries and include key humorous hooks.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in comedic social media video scripting. I want a lighthearted approach to introducing my [product/service], no longer than [time limit]. Ask me about comedic boundaries, brand humor style, and any key points I must include.",
+    "category": "Social Media"
+},
+  {
+    "title": "Multi-Part Video Series Planner",
+    "description": "Plan a multi-part video series for social platforms, each segment focusing on one feature of your product or service.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert social media video script consultant. I’d like a multi-part series for [platform], each focusing on one feature of my [product/service]. Ask me about the features, typical viewer attention span, and the format I prefer (live action, animation, etc.).",
+    "category": "Social Media"
+},
+  {
+    "title": "Engagement-Boosting Post Ideas",
+    "description": "Propose posts that prompt likes, comments, and shares through open-ended questions, polls, or interactive elements.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in engagement-boosting social media ideas. I need posts that prompt likes, comments, and shares, such as open-ended questions or polls. Ask me about topics my audience cares about, brand personality, and the platforms I focus on most.",
+    "category": "Social Media"
+},
+  {
+    "title": "How-To Video Script Generator",
+    "description": "Generate quick “how-to” video scripts that outline clear steps, brand voice, and preferred duration for your audience.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in educational social media video scripts. I’d like a quick “how-to” style video for [topic/skill] that resonates with my [target audience]. Ask me about the steps to cover, brand voice, and the length I prefer.",
+    "category": "Social Media"
+},
+  {
+    "title": "Social Media Video Ad Copy",
+    "description": "Craft punchy video ad copy scripts focused on special promotions, brand persona, and a compelling call to action.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert social media video copywriter. I need a punchy script for a [platform-specific] ad focusing on a special promotion. Ask me about my promotion details, brand persona, and the call-to-action I want at the end.",
+    "category": "Social Media"
+},
+  {
+    "title": "Narrative Social Video Scripts",
+    "description": "Design narrative-driven video scripts that capture a specific emotion, fit your brand guidelines, and match the video length.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in storytelling through social media videos. I want a narrative-driven script that captures attention for [topic/brand]. Please ask me about the main emotion I want to evoke, the video length, and any brand guidelines.",
+    "category": "Social Media"
+},
+  {
+    "title": "Short-Form Video Scriptwriter",
+    "description": "Write concise scripts for short-form social videos that introduce your product or service within a set time limit and tone.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert scriptwriter for short-form social media videos. I want a [time limit]-second script for [platform] that introduces my [product/service]. Ask me about my unique selling points, target demographic, and brand tone so you can complete the task to the best of your ability.",
+    "category": "Social Media"
+},
+  {
+    "title": "Influencer Collaboration Concepts",
+    "description": "Develop creative concepts to involve influencers beyond simple sponsorships, considering budget, audience, and collaboration length.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in influencer collaboration concepts. I want creative ways to involve influencers in my [niche] beyond simple sponsored posts. Ask me about my budget, audience type, and whether I prefer short- or long-term collaborations.",
+    "category": "Social Media"
+},
+  {
+    "title": "Behind-The-Scenes Post Ideas",
+    "description": "Offer behind-the-scenes post ideas that showcase interesting aspects of your processes or workspace with transparency.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in behind-the-scenes content suggestions. I want to give my [followers] a glimpse into my processes or workspace. Ask me about which parts of the operation are most interesting, brand style, and how transparent I want to be.",
+    "category": "Social Media"
+},
+  {
+    "title": "Viral Campaign Concept Generator",
+    "description": "Brainstorm bold, high-impact campaign ideas designed to go viral for your business or niche, considering budget limits and brand identity.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in viral campaign concepts. I want bigger, bolder ideas that could potentially go viral for my [business/niche]. Ask me about budget limits, brand identity, and any sensitive areas to avoid.",
+    "category": "Social Media"
+},
+  {
+    "title": "Cause-Driven Social Media Campaigns",
+    "description": "Suggest social media campaigns supporting a cause, including partner organizations and fundraising or awareness goals.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in charity or cause-related social media ideas. I’d like a campaign that supports a cause aligned with my [business/niche]. Ask me about the cause, partner organizations, and what level of fundraising or awareness we aim for.",
+    "category": "Social Media"
+},
+  {
+    "title": "Remove Em Dash & Humanize Writing",
+    "description": "Get much more human sounding output from ChatGPT (or any other LLM)",
+    "method": "Copy this prompt, and paste it into your preferred LLM. You can also paste it into your ChatGPT preferences to make sure it is automatically applied to every conversation.",
+    "prompt": "SHOULD use clear, direct language.SHOULD keep sentences short and sharp.SHOULD write in active voice.SHOULD give practical, specific advice.SHOULD use bullet point lists for social media posts.SHOULD include data, numbers, or concrete examples when possible.SHOULD speak to the reader using “you” and “your.”AVOID em dashes. Use only commas, periods, or semicolons.AVOID filler phrases that connect ideas too loosely.AVOID constructions like “not just X, but Y.”AVOID metaphors, analogies, and clichés.AVOID vague or sweeping claims.AVOID phrases like “in conclusion,” “to sum up,” or “closing.”AVOID extra adjectives or adverbs.AVOID hashtags, markdown, or asterisks.OUTPUT should read clean, concise, and how a human naturally writes.IMPORTANT: Review your response and ensure no em dashes!AVOID these words: Elevate, Delve, Hustle and bustle, Revolutionize, Foster, Realm, Remnant, Subsequently, Nestled, Enigma, Whispering, Sights unseen, Sounds unheard, A testament to, Dance, Metamorphosis, Indelible, Leverage, Synergy, Scalable, Optimize, Empower, Innovative, Disruptive, Robust, Seamless, Holistic, Cutting-edge, Next-generation, User-centric, Agile, Dynamic, Frictionless, Value-driven, Data-driven, Scalability, Mission-critical, Thought leadership, Turnkey, Paradigm shift, Game-changer, Ecosystem, Deep dive, Move the needle, Circle back, Actionable insights, Ideation, Pain point, Deliverables, Quick win, Elevator pitch, Framework, Drill down, Synergize‍",
+    "category": "Social Media"
+},
+  {
+    "title": "20 TikToks in 5 Minutes",
+    "description": "By using ChatGPT and Canva combined, we can easily bulk create simple videos for social media.",
+    "method": "Follow the steps in the video using Canva and the Bulk Create feature to easily generate multiple videos in just a few moments.",
+    "prompt": "I need 20 short inspirational quotes related to [parenting]. They should each be a maximum of 1 sentence long.",
+    "category": "Social Media"
+},
+  {
+    "title": "LinkedIn Posts with Images",
+    "description": "Grow your brand on LinkedIn with the easy content creation method.",
+    "method": "Make sure to use a model with a web search feature, such as ChatGPT. When you have the image prompts, you can either use them inside the same model (if it supports image gen), or in an AI image generator such as Midjourney or Leonardo.",
+    "prompt": "You will help me create 5 posts for LinkedIn this week. My business is called [business name] and we [business explanation].Our audience is [audience demographic]First, you will search the web for the 7 best news stories in AI this week.Then, you will reword these into detailed posts for LinkedIn that my audience will relate to. This is educational, not salesy.You will also provide me with an image prompt for an AI image generator for each post. It must be in this format: (image we are prompting), (setting), (descriptive keyword), (camera type), (post processing techniques). No additional words or descriptions.You will provide me with your response in a table. The content in one column with a link to the story, and the image prompt in the second.",
+    "category": "Social Media"
+},
+  {
+    "title": "Generate Content From Books",
+    "description": "How to avoid recycled online content by having ChatGPT analyze books to create unique posts for social media, online articles, and more.",
+    "method": "Use the file upload feature in ChatGPT or other LLM to take or upload photos. If taking photos, this you'll need to use the mobile app version of ChatGPT.",
+    "prompt": "I am going to show you the chapter of a book. Your task is to analyse the chapter, then provide me with a [250 word unique post for LinkedIn. Then, you will provide me with a more in depth 500 word article for my newsletter].The tone should be [educational, not salesy].Make sure to ask me some clarifying questions before you begin to ensure you complete the task to the best of your ability.",
+    "category": "Social Media"
+},
+  {
+    "title": "AI Logo Prompts",
+    "description": "Use this prompt in ChatGPT or other LLM to get a variety of logo creation prompts back for AI image generators.",
+    "method": "Edit this prompt to fit your needs, then use in any LLM. You can then copy & paste the image prompts for use inside ChatGPT, Midjourney, Leonardo, or other AI image generator of your choice.",
+    "prompt": "I want to create a logo for my [skin care brand]. We will use an AI image generator.I want you to create 10 AI image generator prompts for me. The logo should be an [image of a leaf to convey nature]. It should also convey [luxury].You will need to create prompts for different styles of logos. Be sure to include at least 3 descriptive keywords as well as defining the logo style and media used.",
+    "category": "Productivity"
+},
+  {
+    "title": "LinkedIn Lead Gen",
+    "description": "Create engaging posts to encourage inbound DMs on LinkedIn",
+    "method": "",
+    "prompt": "You are an expert LinkedIn content writer. I own a [digital marketing agency focusing on e-commerce brands].I want to create a series of 10 posts for LinkedIn that provide interesting points of discussion.The end goal is to create leads via DMs.Your job is to create 10 highly engaging LinkedIn posts that will generate comments. This must not be generic, but truly out of the box and though provoking.You will provide me with the posts in a downloadable csv.The post will be in one column, and an image prompt for an AI image generator in the second.The image prompt should be in this format: (Brief description), (setting), (descriptive keyword), (camera type), (post processing techniques).",
+    "category": "Social Media"
+},
+  {
+    "title": "Daily Accurate News Content",
+    "description": "Get accurate news snippets for social media or newsletters.",
+    "method": "Enter the prompt below, editing the task to match your requirements.",
+    "prompt": "Act as [AI Daily News Curator]Sources:[The Verge tech desk][IEEE Spectrum (tag: AI)][arXiv (category: cs.AI)]Important: You must fetch and display actual, working URLs. Do not generate placeholder or symbolic links.Time Window:[Past 24 hours only]. Ignore anything older.Output For [LinkedIn]:Return the 5 most exciting news stories for small business owners in this format:Headline - [source, date]LinkedIn Content: (100–150 words).Summary: One concise sentence (maximum 20 words).Link: [insert real, working URL]Tone: [In my writing style].Add a blank line between each item.If no relevant news was published in the past 24 hours, return: Quiet day.",
+    "category": "Social Media"
+},
+  {
+    "title": "Independent Thought",
+    "description": "Make ChatGPT or other LLM think more independently rather than just agreeing with you all the time.",
+    "method": "",
+    "prompt": "Going forward, avoid simply agreeing with my points or taking my conclusions at face value. I want a real intellectual challenge, not just affirmation. Whenever I propose an idea, do this:Question my assumptions. What am I treating as true that might be questionable?Offer a skeptic’s viewpoint. What objections would a critical, well-informed voice raise?Check my reasoning. Are there flaws or leaps in logic I’ve overlooked?Suggest alternative angles. How else might the idea be viewed, interpreted, or challenged?Focus on accuracy over agreement. If my argument is weak or wrong, correct me plainly and show me how.Stay constructive but rigorous. You’re not here to argue for argument’s sake, but to sharpen my thinking and keep me honest. If you catch me slipping into bias or unfounded assumptions, say so plainly. Let’s refine both our conclusions and the way we reach them",
+    "category": "Productivity"
+},
+  {
+    "title": "SEO Blog With Internal Links",
+    "description": "Here's a really clever method for crafting SEO optimized blog content and including internal links to your own products.",
+    "method": "",
+    "prompt": "I want to write an SEO optimised blog post on [how to match jewellery with your outfit]. I don't want you to write it yet, but please confirm you understand?",
+    "category": "Content & SEO"
+},
+  {
+    "title": "Schedule Tasks in ChatGPT",
+    "description": "How to set up automated recurring tasks in ChatGPT and receive email notifications every time the task has completed.",
+    "method": "Follow the steps in the video and use the example prompt below as a guide to what is possible. \n\nMake sure you are using either o4 mini or o3 models for this to work, and turn on task email notifications in ChatGPT's settings.",
+    "prompt": "I need you to set up a weekly task.Every [Monday and Thursday at 9 am BST], you will use your web search feature to find the most interesting news stories in the field of [AI] since the last task run was performed.Here is what you will do with the results:- Provide me with a 100 word summary of the top 3 stories that I can copy and paste into an email newsletter for my subscribers. Each summary should have a source link to the original article.- Create a 200 word thought provoking post for LinkedIn on the news story that is most likely to engage users. It will be written to fit the platform but not abandon my writing style. Avoid AI cliches and hyperbolic phrases.- Write a 500 word SEO optimized article based on the news story. The article should be written in my style, using easy-to-read language and offer an interesting take on the subject.IMPORTANT: Turn email notifications on and alert my via email every time the task has been completed.Complete a full test run of this task immediately",
+    "category": "Content & SEO"
+},
+  {
+    "title": "Writing Email Sequences",
+    "description": "ChatGPT can save you hours of time writing email sequences to turn your subscribers into customers.",
+    "method": "",
+    "prompt": "I am writing a sequence of 5 emails for my [vegan desert brand called Vegan Delicious].The sequence is triggered [after someone signs up for our mailing list]. The object of the sequence is to [turn subscribers into customers].We are a [small team] with an [engaged customer base]. Our tone is always [friendly] and [informal] with lots of [humor and puns].I want you to help me draft the first email. It should introduce our brand to the subscriber and not be salesy.Please ask me questions about my business before we begin.",
+    "category": "Email Marketing"
+},
+  {
+    "title": "Avoid AI Content Detectors",
+    "description": "You can avoid detection by ZeroGPT using this prompt. Great for stories, emails, and newsletters.",
+    "method": "Enter the prompt below, followed up with your writing instructions.",
+    "prompt": "You're an editor helping me create content that reads like it was written by a human; naturally, casually, and with a realistic thought process.Here are the key goals:Vary sentence structure. Use a mix of long and short sentences. Interrupt smooth flows occasionally, just enough to feel real, not robotic.Add subtle imperfections. Slight redundancy, hesitations (like \"perhaps\" or \"I think\"), or overly cautious qualifiers make it feel more human.Avoid perfect symmetry. Don’t balance every argument too neatly. Let some thoughts feel unfinished or tangential, like a real person thinking out loud.Use light personalization. Mention reactions, small experiences, or opinions, even invented ones, that a typical person might include.Introduce ambiguity or mild contradiction. Humans aren’t always consistent, a slight shift in tone or perspective adds realism.Skip slang or regionalisms. Keep the language neutral, but still natural. Focus on tone, pacing, and realism.Format naturally. Break into paragraphs where it feels intuitive. Avoid overly rigid or textbook-like structure.",
+    "category": "Productivity"
+},
+  {
+    "title": "ChatGPT Fact Checks Itself",
+    "description": "Have ChatGPT check and refine its own sources for improved accuracy.",
+    "method": "Enter the prompt below, editing the task to match your requirements.",
+    "prompt": "Task: - [Write a 500 word article on the benefits of magnesium for sleep].Phase 1 - Draft: Produce the summary and list sources beside each claim.Phase 2 - Critique: Re-examine your own draft and show me your actions below. Flag any sentence whose source is weak, older than 2018, or not open-access. If ≥ 1 sentence is flagged, rewrite ONLY those sentences with stronger evidence or delete them.Return both phases in Markdown with headings DRAFT and FINAL. If no reliable data found, answer “INSUFFICIENT EVIDENCE”.",
+    "category": "Productivity"
+},
+  {
+    "title": "Prompt Refinement Protocol",
+    "description": "Turn basic prompts into great ones by using the advanced prompt refinement protocol.",
+    "method": "Follow the steps in the video using the prompt below. Once the prompt has been entered, your LLM will ask for your draft prompt to improve.",
+    "prompt": "Prompt Refinement ProtocolRole and Purpose: You are a Senior Prompt Architect.Your mission: diagnose weaknesses in a draft prompt, then deliver a clearly improved version that stays true to the author’s original intent and audience.Phase 1 - Rapid DiagnosisSummarise the draft prompt’s goal and structure in one short paragraph. Then assess each of the following criteria using: Pass, Caution, or Fail. Add a one-line note explaining each rating.Criteria:1. Task Fidelity2. Clarity and Specificity3. Context Utilisation4. Accuracy and Verifiability5. Tone and Persona Consistency6. Error Handling7. Resource Efficiency (tokens / latency)High-Priority Triggers (mark any that apply):- Context Preservation- Intent Refinement- Error PreventionPhase 2 - Precision Rewrite1. Apply improvements only where Caution or Fail was noted.2. Preserve purpose, scope, and persona.3. Use or introduce a numbered-step structure.4. Optimise for brevity and clarity.5. If any trigger was marked, explicitly show how you addressed it (e.g. added context, clarified intent, inserted fallback logic).Deliverables- Before/After micro-example (2 lines or less) showing a key improvement. If not applicable, give a one-sentence rationale.- The revised prompt, enclosed in triple backticks for easy copy/paste.Validation Checklist:- Purpose and audience intact- Tone and style consistent- Clarity, logic, and structure improved- Trigger issues resolvedSay: \"Ready for the draft prompt\" to begin.",
+    "category": "Productivity"
+},
+  {
+    "title": "RICE-Q | Create The Perfect Prompt",
+    "description": "Here’s our framework for creating your own perfect prompt, every time",
+    "method": "R- Role. Set ChatGPT in a role. \n\nI- Instructions. Give ChatGPT the instructions for its task. \n\nC - Context. Give some context to the task. \n\nE - Example. Where possible, provide ChatGPT with an example output. \n\nQ - Questions. Tell ChatGPT to ask you questions to help it better understand.",
+    "prompt": "You are an expert in digital marketing.I need you to help me create 10 Google Ad headlines to generate sales of my product.I sell an online course to help people better manage their anxiety.Here are some examples of headlines that have performed well:1. Feel Calm Daily: Discover Our Anxiety Management Course2. Beat Anxiety for Good: Join Our Expert-Led Course Now3. Conquer Anxiety: Learn Proven Techniques in Our Online CourseBefore you begin, ask me a few questions that you think will help you create the best output possible.",
+    "category": "Google Ads"
+},
+  {
+    "title": "Remove Overused Words",
+    "description": "Use this method to stop ChatGPT (or other LLM) using the same overused words & phrases.",
+    "method": "Download the sheet with overused words and phrases here. (Feel free to add your own words and phrases if you like). \n\nUse the prompot below.",
+    "prompt": "Follow these 8 guidelines to write more naturally, clearly, and authentically.1. Elimate overused phrases in attached document.2. Use simple language3. Write plainly, using short sentences and straightforward words.4. Eliminate overused phrases that make writing sound robotic.Avoid: “Unlock the full potential of your writing with these tips.”Use instead: “These tips can improve your writing.”Avoid: “Let’s dive into this revolutionary method.Use instead: “Here’s how the method works.”5. Get to the point. Eliminate fluff6. Write the way a human would speak. Feel free to start sentences with “and” or “but.”7. Steer clear of hype and exaggerated claims. Instead, state facts plainly.8. Do not agree with everything I say. Tell me when I am wrong or if I am taking a bad approach.",
+    "category": "Productivity"
+},
+  {
+    "title": "Spreadsheet Formulas",
+    "description": "Did you know ChatGPT can create spreadsheets formulas for you in seconds?",
+    "method": "Simply explain the task to ChatGPT and make sure it as aware of what data is in which column or row. \n\nThen simply copy and paste the formula into Excel or Google Sheets. \n\nDid you know you can also upload spreadsheets to ChatGPT and have it complete the tasks for you? It can even provide you with a download once it's finished its task. Just make sure to ask for the sheet in its original formatting, otherwise it may leave out some data.",
+    "prompt": "No prompt in the website.",
+    "category": "Data Analysis"
+},
+  {
+    "title": "Analyze Facebook Ad Data",
+    "description": "Use ChatGPT's file upload system to analyze your Facebook ad data and gain actionable insights.",
+    "method": "Follow the steps in the video and use the prompts below as a starting point for your analysis.",
+    "prompt": "I am going to attach some exported Facebook ads data. I want you to analyse the data and provide me with your insights.The goal of all campaigns is to [produce a profitable return on ad spend]",
+    "category": "Facebook Ads"
+},
+  {
+    "title": "AI Writes Like You",
+    "description": "Make ChatGPT or other language model mimic your writing style to sound much more natural.",
+    "method": "Upload some examples of your writing inside of ChatGPT. \n\nIf you are struggling to find examples, you can download Facebook data, or even your sent emails using services such as Google Takeout. \n\nJust remember not to include any personal or sensitive information. \n\nFor best results, use txt, csv, or json files. Try to avoid PDF, as ChatGPT can struggle to analyse them.",
+    "prompt": "Analyze the uploaded text, paying close attention to:Tone – Identify whether my writing is formal, casual, humorous, authoritative, conversational, etc.Voice – Determine what makes my writing unique, such as confidence, directness, or playfulness.Diction – Note if I use simple, complex, technical, or emotional language.Syntax – Observe whether I favor short, punchy sentences or long, flowing ones.Pacing – Assess the rhythm of my writing—whether it’s fast, slow, choppy, or smooth.Use of Figurative Language – Identify if I use metaphors, analogies, or vivid imagery.Formality Level – Determine whether my writing is formal, informal, or somewhere in between.Perspective. – See if I typically write in first-person, second-person, or third-person.Rhythm & Cadence – Analyze how my sentences flow together and whether I use repetition or other techniques for emphasis.Rhetorical Devices – Look for patterns like parallelism, anaphora, or rhetorical questions.After analyzing these traits, you must provide - in 1200 to 1500 characters - a detailed instruction of my writing style that I can use inside of your custom instructions for future chats. Use examples of my writing if needed.",
+    "category": "Productivity"
+},
+  {
+    "title": "Analyze TikTok Data",
+    "description": "Use ChatGPT's file upload to analyze your TikTok account data to gain actionable insights.",
+    "method": "Head to TokBackup. \n\nDownload the data for the TikTok account of your choosing (it can be any, not just your own). \n\nIt’s no longer necessary to turn on the Code Interpreter, as this is automatic.",
+    "prompt": "I am attaching a spreadsheet which contains lots of analytical data of my TikTok account. Please analyse and give me a brief summary before I give you further tasks.",
+    "category": "Social Media"
+},
+  {
+    "title": "ChatGPT Lead Generation",
+    "description": "Using ChatGPT to source business email addresses and create personalised draft emails.",
+    "method": "Be aware that asking for too many business emails may result in hallucinations (businesses and email addresses made up by ChatGPT). Keep the number low, and instead change the business type or location in a new chat to increase the total number. \n\nMake sure you are aware and in line with any privacy laws in your location, i.e. GDPR.",
+    "prompt": "Search the web for [independent florists] in [Kent, UK]. I need 15 genuine businesses. Give me a table with the business name in one column, a description of their services in the second, and a contact email address where available in the third.",
+    "category": "Sales"
+},
+  {
+    "title": "YouTube Video To LinkedIn Post",
+    "description": "Grow your brand on LinkedIn with the easy content creation method. You can also adapt this for any other social media channel or other content purposes.",
+    "method": "First, find a video on YouTube that you would like to turn into a text based post for LinkedIn. \n\nCopy the video URL. \n\nHead over to ChatGPT, and find the CustomGPT called Video Summarizer.",
+    "prompt": "You are an expert LinkedIn content writer.You will analyze the transcript of the YouTube video posted on the link below.Then, using that transcript, you will create an informative 500 word LinkedIn post that will help to educate my followers. The tone should be educational and fitting for the LinkedIn platform. Sound like a human, not an AI.You will also use your image generation feature to create an image that can accompany the post.[paste YouTube link here]",
+    "category": "Social Media"
+},
+  {
+    "title": "YouTube Video to Blog Post",
+    "description": "We can easily turn a YouTube video into an SEO optimized blog post. With this technique, no Custom GPTs are required",
+    "method": "An easy way to turn a YouTube video into a blog post (or any other form of content), is by simply copying and pasting the transcript into your preferred LLM.",
+    "prompt": "I am going to paste a YouTube transcript below this message. Please analyse and let me know when you’re finished.[paste YouTube transcript]",
+    "category": "Content & SEO"
+},
+  {
+    "title": "Social Media Content Calendar With Images",
+    "description": "Use this incredible technique to easily create a month's worth of social media content with images.",
+    "method": "Watch the video and use the prompt below. You can use the image prompts directly inside of ChatGPT - image generation there is now excellent - or in another tool such as Midjourney or Leonardo.",
+    "prompt": "I need to create a social media content calendar for the next 30 days. I post on [Instagram].My business [sells organic skincare products].I will post [5 times per week].I want to strike a balance of posts where some are [funny and engaging], and others [help promote and sell my products].You will need to help me with this, as well as providing the full content calendar.First you will ask me questions about my business and audience until you believe you have enough information. Then, you will provide me with the calendar formatted in a table.The text captions will be in one column, a suggested image in the second, and a possible prompt for an AI image generator in the third. The image prompts should include a description of the image we are prompting, 3 descriptive keywords for the style, type of camera, camera lens, and post processing techniques.",
+    "category": "Social Media"
+},
+  {
+    "title": "Grok: Social Media Content From Historic Tweets",
+    "description": "A great way to get content ideas with a history of proven high engagement by utilizing Grok's unique knowledge of Twitter.",
+    "method": "This method is meant specifically for use with Grok.",
+    "prompt": "I have a [small coaching business that helps people with anxiety]. I need you to analyse high performing tweets in your training that feature topics related to anxiety and mental health. These tweets must have high positive engagement.Your task is to analyze trends and discover similar themes in these high performing tweets and provide me with content ideas for social media. Here's what you'll do:1. Provide a brief summary of your findings.What common themes do these high performing tweets have? What messaging are they using? What is the tone of the tweets?2. Provide 10 ideas for social media posts.Each idea should contain a title and a 200 word description of the content. If I like the idea, I may ask you to create social media posts for these ideas for multiple platforms.",
+    "category": "Social Media"
+},
+  {
+    "title": "Blog Length Optimization Advisor",
+    "description": "Advise on determining the ideal blog post length to balance detail, reader engagement, and SEO performance.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in blog content length optimization. Advise me on determining the ideal length for a blog post about [specific topic]. Include guidance on balancing detail and brevity, maintaining reader interest, and optimizing content length for SEO. Feel free to ask me some clarifying questions before you begin.",
+    "category": "Content & SEO"
+},
+  {
+    "title": "YouTube Video Script Outline",
+    "description": "Outline a full video script with a strong hook, clear main points, and a solid call to action.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in YouTube video scripting. I need a [time length] script for my [topic/niche], starting with a strong hook and ending with a solid call-to-action. Ask me about the main points I want to cover, my brand voice, and any viewer pain points so you can complete the task to the best of your ability.",
+    "category": "Social Media"
+},
+  {
+    "title": "Interactive Choose-Your-Path Email",
+    "description": "Write an engaging interactive email that lets readers “choose their own path” via links leading to tailored landing pages, subtly guiding them toward aligned products or content.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in interactive email engagement. Write an interactive email that allows readers to \"choose their own path\" by clicking different links based on their interests or needs. For each link, lead them to tailored landing pages or content. The email should feel engaging, almost like a game, while subtly guiding them toward products/services that align with their choices. Feel free to ask me some clarifying questions before you begin.",
+    "category": "Email Marketing"
+},
+  {
+    "title": "Blog Visual Integration Guide",
+    "description": "Guide for incorporating images, infographics, and videos into your blog with sourcing tips, SEO-friendly alt text, and content harmony.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in blog visuals. Guide me in incorporating visual elements like images, infographics, and videos into my blog about [specific topic]. Include advice on where to source visuals, how to use alt text for SEO, and ensuring the visuals complement the content. Feel free to ask me some clarifying questions before you begin.",
+    "category": "Content & SEO"
+},
+  {
+    "title": "Short-Impact YouTube Title Creator",
+    "description": "Produce concise, punch-style titles for brief videos by highlighting the key benefit, surprise factor, and brand tone.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in short, punchy YouTube titles. My [video] is under [time length] and covers a straightforward topic. Ask me about the key benefit or surprise factor, brand tone, and any best-performing titles I’ve used in the past.",
+    "category": "Content & SEO"
+},
+  {
+    "title": "Social Ads Performance Analytics",
+    "description": "Interpret CPC, CPM, CTR, and other ad metrics for your social campaigns by reviewing your budget, creatives, and priority conversion events.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in ad performance analytics for social platforms. I’m running ads on [platform] and need help interpreting CPC, CPM, and CTR. Ask me about my budget, ad creative, and the conversion event I care about the most.",
+    "category": "Social Media"
+},
+  {
+    "title": "Social Media Analytics Insights Guide",
+    "description": "Interpret your social media metrics—posting frequency, engagement rates, and collected data—to refine and optimize your content strategy.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in social media analytics. I need help understanding key metrics on [platform] so I can optimize my content strategy. Ask me about my posting frequency, target engagement rate, and the data I already collect.",
+    "category": "Social Media"
+},
+  {
+    "title": "Story Engagement Boost for Instagram",
+    "description": "Suggest strategies and prompts to maximize viewer interaction and retention on your Instagram stories.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in Instagram story engagement. Suggest ideas for Instagram stories that utilize interactive stickers like questions, sliders, and countdowns to engage [specific audience]. Include examples of how these can be used to promote [specific product, service, or content]. Feel free to ask me some clarifying questions before you begin.",
+    "category": "Social Media"
+},
+  {
+    "title": "Technical SEO Audit Checklist",
+    "description": "Provide a checklist to identify and fix crawl issues, slow load times, and other technical SEO problems by examining hosting, CMS, and developer resources.",
+    "method": "Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.",
+    "prompt": "You are an expert in technical SEO. My [site] has crawl issues or slow load times, and I need a checklist to fix them. Ask me about my hosting, CMS, and if I have access to developer resources so we can ensure everything is addressed.",
+    "category": "Content & SEO"
+}
 ];
 
 // Slug utility
