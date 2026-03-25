@@ -159,7 +159,7 @@ Be thorough. If a page requires scrolling or clicking through tabs to reveal dat
       </div>
       <ul class="tips-list">
           <li>Always include error-handling instructions in agent prompts. Tell the AI what to do when a step fails or produces unexpected results.</li>
-          <li>Specify the tools and APIs the agent should use — ambiguity about available resources leads to hallucinated capabilities.</li>
+          <li>Specify the tools and APIs the agent should use - ambiguity about available resources leads to hallucinated capabilities.</li>
           <li>Include success criteria so the agent knows when to stop iterating. Without clear goals, agents can loop indefinitely.</li>
       </ul>
     </div>
@@ -237,7 +237,7 @@ Be thorough. If a page requires scrolling or clicking through tabs to reveal dat
     </div>
   </footer>
 
-  <!-- Copy/Share JS (minimal — no content rendering) -->
+  <!-- Copy/Share JS (minimal - no content rendering) -->
   <script>
   (function() {
     var promptText = "You are a data collection agent. Your task is to gather structured data from the web based on my requirements.\n\nWhat I need: [DESCRIBE THE DATA YOU WANT]\nSources to check: [LIST WEBSITES, DIRECTORIES, OR TYPES OF SOURCES]\nFormat needed: [TABLE / CSV / JSON / BULLET LIST]\nNumber of entries: [HOW MANY RESULTS YOU WANT]\n\nCollection protocol:\n\n1. PLANNING\n   - Identify the best sources for this data\n   - Determine what fields to extract from each source\n   - Plan the navigation path (which pages to visit, how to find the data)\n\n2. COLLECTION\n   - Visit each source systematically\n   - Extract all requested fields for each entry\n   - If data is spread across multiple pages, follow pagination or links\n   - Note the source URL for each data point\n\n3. CLEANING\n   - Standardize formatting across all entries (dates, currencies, units)\n   - Remove duplicates\n   - Flag entries with missing or suspicious data\n   - Normalize text (consistent capitalization, remove extra whitespace)\n\n4. VALIDATION\n   - Cross-reference key data points across sources where possible\n   - Flag any outliers or data that seems incorrect\n   - Note confidence level for each entry (VERIFIED / LIKELY / UNCONFIRMED)\n\n5. DELIVERY\n   - Present the clean dataset in the requested format\n   - Include a summary: total entries collected, sources used, any gaps\n   - Provide the methodology so the collection can be repeated later\n\nBe thorough. If a page requires scrolling or clicking through tabs to reveal data, do it. If the first source doesn't have enough data, find additional sources. Quality and completeness matter more than speed.";

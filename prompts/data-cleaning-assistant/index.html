@@ -148,7 +148,7 @@ Also provide:
         <h2>Pro Tips for Data Analysis</h2>
       </div>
       <ul class="tips-list">
-          <li>Ask the AI to suggest which statistical methods or visualizations best suit your specific data and question — don&#39;t let it default to generic charts.</li>
+          <li>Ask the AI to suggest which statistical methods or visualizations best suit your specific data and question - don&#39;t let it default to generic charts.</li>
           <li>Include your tool preferences (Excel, Python, SQL, Tableau) so the AI provides code or formulas you can actually use.</li>
           <li>Request the AI to explain its analytical reasoning, not just provide answers. Understanding the &quot;why&quot; lets you validate findings and apply the approach to future analyses.</li>
       </ul>
@@ -222,7 +222,7 @@ Also provide:
     </div>
   </footer>
 
-  <!-- Copy/Share JS (minimal — no content rendering) -->
+  <!-- Copy/Share JS (minimal - no content rendering) -->
   <script>
   (function() {
     var promptText = "Act as a senior data analyst. I need help cleaning and preprocessing a dataset before analysis.\n\nDataset description:\n- Source: [WHERE THE DATA COMES FROM]\n- Number of rows: [APPROXIMATE]\n- Number of columns: [NUMBER]\n- Column names and types: [LIST THEM, e.g., name (text), date (mixed formats), revenue (numbers with $ signs)]\n- Tool I am using: [PYTHON PANDAS / SQL / EXCEL / R]\n\nKnown issues:\n[DESCRIBE YOUR DATA PROBLEMS, e.g.:\n- Date column has mixed formats (MM/DD/YYYY and YYYY-MM-DD)\n- Price column has some entries with $ signs and commas\n- About 15% of the email column is blank\n- Duplicate rows based on customer_id\n- Some names have extra whitespace or inconsistent capitalization]\n\nFor each issue, provide:\n1. What the problem is and why it matters for analysis\n2. The recommended approach to fix it\n3. The exact code to implement the fix (in my preferred tool)\n4. A validation check to confirm the fix worked\n\nAlso provide:\n- A summary statistics check I should run after cleaning\n- A data quality report template I can reuse\n- Suggestions for any additional cleaning steps I might have missed";

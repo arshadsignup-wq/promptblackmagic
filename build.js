@@ -1,21 +1,21 @@
 #!/usr/bin/env node
 
 /**
- * build.js — Static site generator for Prompt Black Magic
+ * build.js - Static site generator for Prompt Black Magic
  *
  * Generates:
- *   - /prompts/<slug>/index.html  (456 pre-rendered prompt pages)
- *   - /about/index.html           (About page)
- *   - /privacy/index.html         (Privacy Policy)
- *   - /terms/index.html           (Terms of Service)
- *   - /contact/index.html         (Contact page)
- *   - /blog/index.html            (Blog index)
- *   - /blog/<slug>/index.html     (Blog articles)
- *   - sitemap.xml                 (clean URLs)
- *   - 404.html                    (branded error page)
- *   - Injects <noscript> block into index.html
+ *  - /prompts/<slug>/index.html  (456 pre-rendered prompt pages)
+ *  - /about/index.html           (About page)
+ *  - /privacy/index.html         (Privacy Policy)
+ *  - /terms/index.html           (Terms of Service)
+ *  - /contact/index.html         (Contact page)
+ *  - /blog/index.html            (Blog index)
+ *  - /blog/<slug>/index.html     (Blog articles)
+ *  - sitemap.xml                 (clean URLs)
+ *  - 404.html                    (branded error page)
+ *  - Injects <noscript> block into index.html
  *
- * Zero npm dependencies — uses only Node.js built-ins.
+ * Zero npm dependencies - uses only Node.js built-ins.
  *
  * Usage:  node build.js
  */
@@ -96,121 +96,121 @@ const FOOTER_LEGAL_LINKS = `
 
 const CATEGORY_TIPS = {
   'Facebook Ads': [
-    'Always specify your target audience demographics — age, location, interests — in the prompt so the AI tailors copy that resonates with the right people.',
+    'Always specify your target audience demographics - age, location, interests - in the prompt so the AI tailors copy that resonates with the right people.',
     'Ask the AI to generate multiple ad variations at once (3-5) so you can A/B test different hooks and angles without extra effort.',
-    'Include your product\'s unique selling proposition in the prompt. Generic benefits produce generic ads — specificity wins clicks.',
+    'Include your product\'s unique selling proposition in the prompt. Generic benefits produce generic ads - specificity wins clicks.',
     'Tell the AI what stage of the funnel the ad targets (awareness, consideration, conversion) to get copy that matches buyer intent.',
-    'Request the AI to follow Facebook\'s ad policies — avoiding exaggerated claims and prohibited content saves your ad account from bans.'
+    'Request the AI to follow Facebook\'s ad policies - avoiding exaggerated claims and prohibited content saves your ad account from bans.'
   ],
   'Business': [
     'When prompting for business strategy, provide context about your industry, company size, and current challenges for actionable advice.',
-    'Ask the AI to structure its output as a step-by-step action plan rather than general advice — it forces concrete, implementable suggestions.',
+    'Ask the AI to structure its output as a step-by-step action plan rather than general advice - it forces concrete, implementable suggestions.',
     'Include your budget constraints or resource limitations in the prompt so the AI recommends realistic solutions.',
-    'Request SWOT analysis format when evaluating opportunities — it ensures the AI considers both advantages and risks.',
+    'Request SWOT analysis format when evaluating opportunities - it ensures the AI considers both advantages and risks.',
     'For competitive analysis prompts, name your top 2-3 competitors so the AI can tailor its recommendations to your specific market position.'
   ],
   'Google Ads': [
     'Always include your target keywords in the prompt so the AI generates ad copy that matches search intent and improves Quality Score.',
-    'Specify character limits for headlines (30 chars) and descriptions (90 chars) in your prompt — Google Ads has strict formatting rules.',
+    'Specify character limits for headlines (30 chars) and descriptions (90 chars) in your prompt - Google Ads has strict formatting rules.',
     'Ask the AI to include a clear call-to-action in every ad variation. CTAs like "Get Started" or "Shop Now" significantly improve click-through rates.',
-    'Request the AI to generate responsive search ad components — multiple headlines and descriptions that Google can mix and match automatically.',
+    'Request the AI to generate responsive search ad components - multiple headlines and descriptions that Google can mix and match automatically.',
     'Include your landing page URL context so the AI writes ad copy that aligns with the page content, improving relevance and conversions.'
   ],
   'Tracking & Pixels': [
-    'Always specify which platform you\'re tracking for (Meta, Google, TikTok) — each has unique pixel implementation requirements.',
+    'Always specify which platform you\'re tracking for (Meta, Google, TikTok) - each has unique pixel implementation requirements.',
     'When asking about event tracking, describe your exact conversion funnel so the AI maps the right events to each step.',
-    'Include your website platform (Shopify, WordPress, custom) in the prompt — implementation code differs significantly between platforms.',
+    'Include your website platform (Shopify, WordPress, custom) in the prompt - implementation code differs significantly between platforms.',
     'Ask the AI to include data validation steps in tracking setups. Broken pixels waste ad spend without any feedback.',
-    'Request server-side tracking guidance alongside client-side — browser privacy updates are making client-only tracking increasingly unreliable.'
+    'Request server-side tracking guidance alongside client-side - browser privacy updates are making client-only tracking increasingly unreliable.'
   ],
   'Resume & Career': [
-    'Always include the specific job title and key requirements from the job posting when prompting for resume help — ATS systems scan for exact keyword matches.',
+    'Always include the specific job title and key requirements from the job posting when prompting for resume help - ATS systems scan for exact keyword matches.',
     'Ask the AI to quantify achievements with numbers and percentages. "Increased revenue by 34%" beats "improved sales" every time.',
     'Specify your experience level (entry, mid, senior) so the AI adjusts the tone and depth of accomplishments appropriately.',
-    'Request the AI to use strong action verbs at the start of each bullet point — words like "spearheaded," "optimized," and "launched" grab recruiter attention.',
+    'Request the AI to use strong action verbs at the start of each bullet point - words like "spearheaded," "optimized," and "launched" grab recruiter attention.',
     'Include the industry you\'re targeting so the AI uses relevant jargon and highlights transferable skills that matter in that field.'
   ],
   'Email Marketing': [
     'Always specify the type of email (welcome series, promotional, re-engagement, nurture) so the AI matches tone and structure to the purpose.',
-    'Include your brand voice guidelines in the prompt — casual vs. professional tone makes a huge difference in email engagement.',
+    'Include your brand voice guidelines in the prompt - casual vs. professional tone makes a huge difference in email engagement.',
     'Ask the AI to write multiple subject line options. Subject lines determine open rates, so test at least 3-5 variations per campaign.',
-    'Request mobile-friendly formatting — over 60% of emails are read on phones, so short paragraphs and clear CTAs are essential.',
+    'Request mobile-friendly formatting - over 60% of emails are read on phones, so short paragraphs and clear CTAs are essential.',
     'Specify the audience segment receiving the email so the AI personalizes content based on where they are in the customer journey.'
   ],
   'Content & SEO': [
     'Always include your target keyword and search intent (informational, commercial, transactional) when prompting for SEO content.',
     'Ask the AI to structure content with proper H2/H3 headings that include semantic variations of your target keyword.',
-    'Specify the content format you need — listicle, how-to guide, comparison, or pillar page — as each has different structural requirements.',
+    'Specify the content format you need - listicle, how-to guide, comparison, or pillar page - as each has different structural requirements.',
     'Request the AI to include internal linking suggestions that connect the content to related pages on your site.',
     'Include your target word count and competitor URLs so the AI creates content that can realistically compete in search results.'
   ],
   'Social Media': [
-    'Specify the platform (Instagram, LinkedIn, TikTok, X) in every prompt — each platform has different character limits, tone expectations, and content formats.',
-    'Ask the AI to include relevant hashtag suggestions — the right hashtags can increase reach by 30% or more on platforms like Instagram.',
+    'Specify the platform (Instagram, LinkedIn, TikTok, X) in every prompt - each platform has different character limits, tone expectations, and content formats.',
+    'Ask the AI to include relevant hashtag suggestions - the right hashtags can increase reach by 30% or more on platforms like Instagram.',
     'Include your posting goal (engagement, reach, clicks, saves) so the AI optimizes the content structure for that specific metric.',
-    'Request content calendar batches — asking for 5-7 posts at once creates thematic consistency across your feed.',
+    'Request content calendar batches - asking for 5-7 posts at once creates thematic consistency across your feed.',
     'Specify your brand personality (witty, authoritative, empathetic) so every post sounds authentically you, not generically AI.'
   ],
   'Sales': [
-    'Always include your prospect\'s industry and pain points in the prompt — generic sales messages get ignored, personalized ones get meetings.',
+    'Always include your prospect\'s industry and pain points in the prompt - generic sales messages get ignored, personalized ones get meetings.',
     'Ask the AI to use proven sales frameworks like SPIN, BANT, or Challenger Sale methodology in its suggestions.',
-    'Specify whether you need cold outreach, follow-up, or closing copy — each stage requires fundamentally different messaging.',
+    'Specify whether you need cold outreach, follow-up, or closing copy - each stage requires fundamentally different messaging.',
     'Request objection-handling scripts alongside your main pitch. Being prepared for pushback dramatically improves close rates.',
     'Include your product pricing tier so the AI can calibrate value propositions appropriate to the deal size.'
   ],
   'Agentic AI': [
-    'Break complex agent tasks into clear, sequential sub-tasks in your prompt — AI agents perform best with well-defined step-by-step workflows.',
+    'Break complex agent tasks into clear, sequential sub-tasks in your prompt - AI agents perform best with well-defined step-by-step workflows.',
     'Always include error-handling instructions in agent prompts. Tell the AI what to do when a step fails or produces unexpected results.',
-    'Specify the tools and APIs the agent should use — ambiguity about available resources leads to hallucinated capabilities.',
+    'Specify the tools and APIs the agent should use - ambiguity about available resources leads to hallucinated capabilities.',
     'Include success criteria so the agent knows when to stop iterating. Without clear goals, agents can loop indefinitely.',
     'Request the agent to log its reasoning at each step. Transparent decision-making makes debugging and optimization much easier.'
   ],
   'Coding': [
-    'Always specify the programming language, framework version, and runtime environment — "write a function" without context produces unusable code.',
+    'Always specify the programming language, framework version, and runtime environment - "write a function" without context produces unusable code.',
     'Ask the AI to include error handling and edge cases in generated code. Production code needs to handle failures gracefully.',
-    'Request code comments that explain the "why" not the "what" — future developers need reasoning, not obvious statement descriptions.',
+    'Request code comments that explain the "why" not the "what" - future developers need reasoning, not obvious statement descriptions.',
     'Include your existing code patterns and conventions in the prompt so generated code integrates seamlessly with your codebase.',
     'Ask for unit tests alongside the implementation. Writing tests after the fact is harder than generating them together.'
   ],
   'Productivity': [
-    'Describe your specific bottleneck when prompting for productivity help — "I\'m overwhelmed" is less useful than "I have 50 emails daily and can\'t prioritize."',
+    'Describe your specific bottleneck when prompting for productivity help - "I\'m overwhelmed" is less useful than "I have 50 emails daily and can\'t prioritize."',
     'Ask the AI to create time-blocked schedules rather than simple task lists. Allocating specific hours forces realistic planning.',
     'Include your tools and apps (Notion, Todoist, Google Calendar) so the AI recommends workflows that fit your existing setup.',
-    'Request the AI to apply the 80/20 principle — identify which 20% of tasks drive 80% of your results and prioritize those.',
+    'Request the AI to apply the 80/20 principle - identify which 20% of tasks drive 80% of your results and prioritize those.',
     'Specify your energy patterns (morning person vs. night owl) so the AI schedules deep work during your peak performance hours.'
   ],
   'Education': [
     'Specify the student level (elementary, high school, college, adult learner) so the AI adjusts complexity and vocabulary appropriately.',
-    'Ask the AI to use the Socratic method — posing questions that guide students to discover answers rather than simply providing them.',
+    'Ask the AI to use the Socratic method - posing questions that guide students to discover answers rather than simply providing them.',
     'Include the learning objective and desired outcome in every education prompt. Clear goals produce focused, effective lesson plans.',
     'Request multiple explanation approaches for the same concept. Visual learners, auditory learners, and kinesthetic learners all process information differently.',
     'Ask the AI to include assessment questions or practice problems alongside explanations to reinforce understanding.'
   ],
   'Writing': [
-    'Always specify your target audience and their reading level — writing for CEOs requires different language than writing for college students.',
+    'Always specify your target audience and their reading level - writing for CEOs requires different language than writing for college students.',
     'Include your desired word count, tone (formal, conversational, persuasive), and format (essay, blog post, report) in every writing prompt.',
     'Ask the AI to start with a hook that creates curiosity or tension. Strong openings determine whether readers continue or bounce.',
-    'Request the AI to vary sentence length and structure — monotonous rhythm puts readers to sleep, while varied pacing maintains engagement.',
+    'Request the AI to vary sentence length and structure - monotonous rhythm puts readers to sleep, while varied pacing maintains engagement.',
     'Include examples of writing styles you admire so the AI can emulate specific qualities like wit, clarity, or emotional depth.'
   ],
   'Creative': [
-    'Give the AI rich context — character backgrounds, settings, mood, and themes — before asking it to create. Creative output is only as good as the creative brief.',
+    'Give the AI rich context - character backgrounds, settings, mood, and themes - before asking it to create. Creative output is only as good as the creative brief.',
     'Ask for unexpected combinations and novel angles. Prompt the AI to "surprise you" or "combine two unrelated concepts" for truly original ideas.',
-    'Specify constraints to boost creativity — word limits, required elements, or format restrictions often produce more inventive results than total freedom.',
+    'Specify constraints to boost creativity - word limits, required elements, or format restrictions often produce more inventive results than total freedom.',
     'Request multiple creative options (5+) and then ask the AI to combine the best elements from each into a final version.',
     'Include emotional tone and sensory details in your prompts. "Write something sad" is weak; "write something that captures the quiet ache of watching someone leave" is strong.'
   ],
   'Personal Finance': [
     'Always include your income range, major expenses, and financial goals when prompting for personal finance advice.',
-    'Ask the AI to prioritize recommendations by impact — paying off high-interest debt usually beats optimizing investment allocation.',
+    'Ask the AI to prioritize recommendations by impact - paying off high-interest debt usually beats optimizing investment allocation.',
     'Specify your risk tolerance and time horizon for investment-related prompts. A 25-year-old and a retiree need fundamentally different strategies.',
     'Request step-by-step action plans with specific dollar amounts and timelines rather than general principles about saving and investing.',
-    'Include your country and tax situation — financial advice varies dramatically based on local tax laws and available investment vehicles.'
+    'Include your country and tax situation - financial advice varies dramatically based on local tax laws and available investment vehicles.'
   ],
   'Freelancing': [
-    'Include your niche, experience level, and target client type when prompting for freelancing advice — a new copywriter and a senior developer face very different challenges.',
+    'Include your niche, experience level, and target client type when prompting for freelancing advice - a new copywriter and a senior developer face very different challenges.',
     'Ask the AI to help you quantify your value proposition with specific outcomes and metrics your past clients have achieved.',
-    'Request proposal and pitch templates that emphasize results over process — clients care about what you deliver, not how you work.',
+    'Request proposal and pitch templates that emphasize results over process - clients care about what you deliver, not how you work.',
     'Include your hourly rate or project pricing so the AI can help you position, justify, and negotiate your fees effectively.',
     'Ask for scripts to handle common freelancer situations: scope creep, late payments, price objections, and project-ending conversations.'
   ],
@@ -218,30 +218,30 @@ const CATEGORY_TIPS = {
     'Always specify the project scope, team size, and timeline when prompting for project management guidance.',
     'Ask the AI to identify potential risks and blockers upfront. Proactive risk management prevents 80% of project delays.',
     'Include your methodology preference (Agile, Waterfall, Kanban) so the AI tailors frameworks and templates to your workflow.',
-    'Request communication templates — status updates, stakeholder emails, and meeting agendas — that keep everyone aligned without excessive meetings.',
+    'Request communication templates - status updates, stakeholder emails, and meeting agendas - that keep everyone aligned without excessive meetings.',
     'Ask the AI to create milestone-based project plans with clear deliverables and dependencies between tasks.'
   ],
   'Data Analysis': [
     'Always describe your dataset structure (columns, data types, size) and the business question you\'re trying to answer.',
-    'Ask the AI to suggest which statistical methods or visualizations best suit your specific data and question — don\'t let it default to generic charts.',
+    'Ask the AI to suggest which statistical methods or visualizations best suit your specific data and question - don\'t let it default to generic charts.',
     'Include your tool preferences (Excel, Python, SQL, Tableau) so the AI provides code or formulas you can actually use.',
     'Request the AI to explain its analytical reasoning, not just provide answers. Understanding the "why" lets you validate findings and apply the approach to future analyses.'
   ],
   'Customer Service': [
     'Include your company\'s tone of voice and escalation policies when prompting for customer service scripts and templates.',
-    'Ask the AI to create response templates for your top 10 most common customer complaints — these handle 80% of support volume.',
-    'Specify the communication channel (email, live chat, phone, social media) — each requires different response lengths and formality levels.',
+    'Ask the AI to create response templates for your top 10 most common customer complaints - these handle 80% of support volume.',
+    'Specify the communication channel (email, live chat, phone, social media) - each requires different response lengths and formality levels.',
     'Request the AI to include empathy statements and acknowledgment phrases. Customers who feel heard are 4x more likely to remain loyal.'
   ],
   'Health & Fitness': [
     'Always specify your current fitness level, any injuries or limitations, and specific goals (weight loss, muscle gain, endurance) in health prompts.',
-    'Ask the AI to create progressive plans that build gradually — jumping into advanced routines causes injury and burnout.',
+    'Ask the AI to create progressive plans that build gradually - jumping into advanced routines causes injury and burnout.',
     'Include your available equipment and time constraints so the AI designs workouts you can actually complete consistently.',
     'Request nutrition guidance alongside workout plans. Exercise without proper nutrition produces minimal results.'
   ],
   'Research': [
     'Define your research question clearly and specify the scope (academic, market research, competitive analysis) for focused, useful results.',
-    'Ask the AI to structure findings with methodology, key findings, limitations, and actionable recommendations — proper research format ensures completeness.',
+    'Ask the AI to structure findings with methodology, key findings, limitations, and actionable recommendations - proper research format ensures completeness.',
     'Include your existing knowledge and hypotheses so the AI can build on what you know rather than starting from basics.',
     'Request the AI to identify gaps in available information and suggest primary research methods to fill them.'
   ]
@@ -257,7 +257,7 @@ const BLOG_ARTICLES = [
     date: '2026-03-10',
     readTime: '8 min read',
     content: `
-<p>The difference between getting mediocre AI output and getting exceptional results almost always comes down to one thing: <strong>how you write your prompt</strong>. After curating hundreds of battle-tested prompts across 22 categories, we've identified the patterns that consistently produce superior results — and the mistakes that hold most people back.</p>
+<p>The difference between getting mediocre AI output and getting exceptional results almost always comes down to one thing: <strong>how you write your prompt</strong>. After curating hundreds of battle-tested prompts across 22 categories, we've identified the patterns that consistently produce superior results - and the mistakes that hold most people back.</p>
 
 <p>This guide breaks down everything we've learned about writing effective AI prompts, from foundational principles to advanced techniques used by professional prompt engineers.</p>
 
@@ -265,17 +265,17 @@ const BLOG_ARTICLES = [
 
 <p>Many people blame the AI model when they get poor results. They upgrade to the latest version, switch providers, or give up entirely. But in our experience testing hundreds of prompts across ChatGPT, Claude, and Gemini, the prompt itself accounts for roughly 80% of output quality.</p>
 
-<p>A well-crafted prompt on a basic model consistently outperforms a vague prompt on the most advanced model. This is because AI models are fundamentally pattern-matching engines — they need clear patterns in your input to produce clear patterns in their output.</p>
+<p>A well-crafted prompt on a basic model consistently outperforms a vague prompt on the most advanced model. As <a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" rel="noopener noreferrer">OpenAI's prompt engineering guide</a> explains, clear and specific instructions are the foundation of effective AI interaction.</p>
 
 <h2>The Anatomy of an Effective Prompt</h2>
 
 <p>Every high-performing prompt we've tested shares five core elements:</p>
 
 <h3>1. Role Assignment</h3>
-<p>Tell the AI who it should be. "You are a senior Facebook ads strategist with 10 years of experience managing million-dollar budgets" produces fundamentally different output than "help me with ads." The role establishes the expertise level, vocabulary, and perspective of the response. Check out our <a href="/prompts/facebook-ad-copy-that-converts/">Facebook Ad Copy That Converts</a> prompt for a perfect example of role assignment in action.</p>
+<p>Tell the AI who it should be. "You are a senior Facebook ads strategist with 10 years of experience managing million-dollar budgets" produces fundamentally different output than "help me with ads." The role establishes the expertise level, vocabulary, and perspective of the response. Check out our <a href="/prompts/facebook-ad-headline-generator/">Facebook Ad Headline Generator</a> prompt for a perfect example of role assignment in action.</p>
 
 <h3>2. Context and Background</h3>
-<p>Provide the relevant situation. Include your industry, target audience, current challenges, budget constraints, or any other details that shape the recommendation. AI can't read your mind — the more relevant context you provide, the more tailored the output becomes.</p>
+<p>Provide the relevant situation. Include your industry, target audience, current challenges, budget constraints, or any other details that shape the recommendation. AI can't read your mind - the more relevant context you provide, the more tailored the output becomes.</p>
 
 <h3>3. Specific Task Definition</h3>
 <p>State exactly what you want the AI to produce. "Write a 300-word product description for a SaaS project management tool targeting remote teams of 10-50 people" is infinitely better than "write about my product." Specificity eliminates ambiguity and gives the AI clear constraints to work within.</p>
@@ -292,7 +292,7 @@ const BLOG_ARTICLES = [
 <p><strong>Bad:</strong> "Help me with my resume."<br>
 <strong>Good:</strong> "Rewrite the experience section of my resume for a Senior Product Manager role at a Series B SaaS startup. Focus on metrics-driven achievements in user growth and retention. Current experience: 5 years at a fintech company managing a team of 8."</p>
 
-<p>Our <a href="/prompts/ats-optimized-resume-builder/">ATS-Optimized Resume Builder</a> prompt demonstrates this principle perfectly — it forces you to provide the specific details that produce a tailored, effective resume.</p>
+<p>Our <a href="/prompts/ats-optimized-resume-builder/">ATS-Optimized Resume Builder</a> prompt demonstrates this principle perfectly - it forces you to provide the specific details that produce a tailored, effective resume.</p>
 
 <h3>Not Iterating</h3>
 <p>Your first prompt rarely produces the best result. Treat prompt writing as a conversation. Start with your initial request, evaluate the output, then refine with follow-up prompts like "make the tone more conversational" or "add three more examples from the healthcare industry."</p>
@@ -306,7 +306,7 @@ const BLOG_ARTICLES = [
 <h2>Advanced Techniques</h2>
 
 <h3>Chain-of-Thought Prompting</h3>
-<p>Ask the AI to show its reasoning step-by-step before reaching a conclusion. This technique dramatically improves accuracy for complex analytical tasks. Add "Think through this step-by-step, showing your reasoning at each stage" to the end of analytical prompts.</p>
+<p>Ask the AI to show its reasoning step-by-step before reaching a conclusion. Research from <a href="https://arxiv.org/abs/2201.11903" target="_blank" rel="noopener noreferrer">Google and others</a> shows this technique dramatically improves accuracy for complex analytical tasks. Add "Think through this step-by-step, showing your reasoning at each stage" to the end of analytical prompts.</p>
 
 <h3>Few-Shot Examples</h3>
 <p>Include 2-3 examples of your desired output within the prompt. If you want the AI to write email subject lines in a specific style, show it three examples of subject lines you've written that performed well. The AI will pattern-match against your examples.</p>
@@ -322,18 +322,18 @@ const BLOG_ARTICLES = [
 <p>We developed the CRISP method after analyzing our top-performing prompts:</p>
 
 <ul>
-<li><strong>C</strong>ontext — Provide background and situational details</li>
-<li><strong>R</strong>ole — Assign an expert identity to the AI</li>
-<li><strong>I</strong>nstruction — State the specific task clearly</li>
-<li><strong>S</strong>pecifications — Define format, length, tone, and constraints</li>
-<li><strong>P</strong>urpose — Explain the end goal so the AI can optimize for it</li>
+<li><strong>C</strong>ontext - Provide background and situational details</li>
+<li><strong>R</strong>ole - Assign an expert identity to the AI</li>
+<li><strong>I</strong>nstruction - State the specific task clearly</li>
+<li><strong>S</strong>pecifications - Define format, length, tone, and constraints</li>
+<li><strong>P</strong>urpose - Explain the end goal so the AI can optimize for it</li>
 </ul>
 
-<p>Apply this framework to any prompt and you'll see immediate improvement in output quality. Browse our <a href="/">full prompt library</a> to see the CRISP method applied across every category, from <a href="/prompts/google-ads-keyword-research-prompt/">Google Ads keyword research</a> to <a href="/prompts/ai-powered-project-timeline-generator/">project timeline generation</a>.</p>
+<p>Apply this framework to any prompt and you'll see immediate improvement in output quality. Browse our <a href="/">full prompt library</a> to see the CRISP method applied across every category, from <a href="/prompts/google-ads-keyword-generation/">Google Ads keyword generation</a> to <a href="/prompts/project-charter-generator/">project charter creation</a>.</p>
 
 <h2>Start Prompting Better Today</h2>
 
-<p>The best way to improve your prompt engineering skills is to practice with proven templates and modify them for your specific needs. Every prompt in our library has been tested and refined to follow these principles — use them as starting points and adapt them to your workflow.</p>
+<p>The best way to improve your prompt engineering skills is to practice with proven templates and modify them for your specific needs. Every prompt in our library has been tested and refined to follow these principles - use them as starting points and adapt them to your workflow.</p>
 
 <p>Remember: a great prompt doesn't just get you a good answer. It gets you the <em>right</em> answer, formatted exactly how you need it, in a fraction of the time it would take to write from scratch.</p>`
   },
@@ -344,35 +344,35 @@ const BLOG_ARTICLES = [
     date: '2026-03-15',
     readTime: '6 min read',
     content: `
-<p>Running Facebook ads without AI prompts is like writing ad copy with one hand tied behind your back. After testing over 80 Facebook Ads prompts with real campaigns and real budgets, we've identified the 10 that consistently produce ad copy worth running — the ones that generate clicks, reduce cost-per-acquisition, and actually move the needle on revenue.</p>
+<p>Running Facebook ads without AI prompts is like writing ad copy with one hand tied behind your back. After testing over 80 Facebook Ads prompts with real campaigns and real budgets, we've identified the 10 that consistently produce ad copy worth running - the ones that generate clicks, reduce cost-per-acquisition, and actually move the needle on revenue.</p>
 
 <p>This isn't theory. These are the prompts our community uses daily to create high-converting Facebook ad campaigns across ecommerce, SaaS, local business, and info-product niches.</p>
 
 <h2>Why AI-Generated Ad Copy Outperforms Manual Writing</h2>
 
-<p>The average marketer writes 3-5 ad variations per campaign. AI lets you generate 20-30 variations in minutes, dramatically increasing your chances of finding a winning hook. More importantly, AI excels at the structural elements that drive conversions — urgency triggers, social proof framing, benefit-first headlines, and clear calls to action.</p>
+<p>The average marketer writes 3-5 ad variations per campaign. AI lets you generate 20-30 variations in minutes, dramatically increasing your chances of finding a winning hook. According to <a href="https://www.facebook.com/business/help/1952876258085475" target="_blank" rel="noopener noreferrer">Meta's ad best practices</a>, testing multiple creative variations is one of the top drivers of campaign performance.</p>
 
 <p>The key is using the right prompt. A bad prompt produces generic, policy-violating, forgettable ad copy. A great prompt produces scroll-stopping copy that feels like it was written by a senior copywriter who knows your audience personally.</p>
 
 <h2>The 10 Prompts That Convert</h2>
 
 <h3>1. The Direct Response Ad Builder</h3>
-<p>Our <a href="/prompts/facebook-ad-copy-that-converts/">Facebook Ad Copy That Converts</a> prompt is the most-copied prompt in our entire library. It forces you to define your target audience, unique value proposition, and desired action — then generates multiple ad variations with different hooks for A/B testing. The key is the structured output: primary text, headline, and description formatted exactly for Facebook Ads Manager.</p>
+<p>Our <a href="/prompts/facebook-ad-headline-generator/">Facebook Ad Headline Generator</a> prompt is one of the most-copied prompt in our entire library. It forces you to define your target audience, unique value proposition, and desired action - then generates multiple ad variations with different hooks for A/B testing. The key is the structured output: primary text, headline, and description formatted exactly for Facebook Ads Manager.</p>
 
 <h3>2. The Retargeting Sequence Writer</h3>
-<p>Retargeting ads need different messaging than cold ads, yet most marketers use the same copy for both. Our <a href="/prompts/retargeting-ad-sequence-writer/">Retargeting Ad Sequence Writer</a> creates a 3-touch sequence that addresses awareness, objection-handling, and urgency in the correct order. Average engagement rates with this sequence are 2-3x higher than single-touch retargeting.</p>
+<p>Retargeting ads need different messaging than cold ads, yet most marketers use the same copy for both. Our <a href="/prompts/facebook-retargeting-funnel-audit/">Facebook Retargeting Funnel Audit</a> creates a structured retargeting sequence that addresses awareness, objection-handling, and urgency in the correct order. Average engagement rates with this sequence are 2-3x higher than single-touch retargeting.</p>
 
 <h3>3. The Lookalike Audience Ad Crafter</h3>
-<p>When targeting lookalike audiences, your copy needs to educate and intrigue simultaneously — these people resemble your customers but don't know you yet. The <a href="/prompts/lookalike-audience-ad-strategy/">Lookalike Audience Ad Strategy</a> prompt creates copy that bridges the awareness gap while maintaining the specificity that keeps cost-per-click low.</p>
+<p>When targeting lookalike audiences, your copy needs to educate and intrigue simultaneously - these people resemble your customers but don't know you yet. The <a href="/prompts/facebook-b2b-lead-gen-strategy/">Facebook B2B Lead Gen Strategy</a> prompt creates copy that bridges the awareness gap while maintaining the specificity that keeps cost-per-click low.</p>
 
 <h3>4. The UGC-Style Ad Script Generator</h3>
 <p>User-generated content style ads currently have the highest conversion rates on Facebook. Our UGC prompt generates scripts that sound natural and authentic while hitting every persuasion trigger: problem identification, solution discovery, results demonstration, and social proof.</p>
 
 <h3>5. The Seasonal Campaign Builder</h3>
-<p>Black Friday, New Year, back-to-school — seasonal campaigns need urgency and relevance that generic prompts can't provide. Our seasonal prompt adapts your existing offer to the specific psychology of each buying season.</p>
+<p>Black Friday, New Year, back-to-school - seasonal campaigns need urgency and relevance that generic prompts can't provide. Our seasonal prompt adapts your existing offer to the specific psychology of each buying season.</p>
 
 <h3>6. The Lead Magnet Ad Writer</h3>
-<p>Lead generation ads fail when the value proposition isn't immediately obvious. This prompt creates ad copy that clearly communicates what the prospect gets, why it matters to them specifically, and what they need to do next — all within Facebook's character limits.</p>
+<p>Lead generation ads fail when the value proposition isn't immediately obvious. This prompt creates ad copy that clearly communicates what the prospect gets, why it matters to them specifically, and what they need to do next - all within Facebook's character limits.</p>
 
 <h3>7. The Video Ad Script Architect</h3>
 <p>Video ads dominate Facebook's algorithm, but most people don't know how to structure a video script for paid social. This prompt generates hook-first scripts with pattern interrupts every 3-5 seconds and a clear CTA placement that accounts for the average 6-second attention span.</p>
@@ -381,14 +381,14 @@ const BLOG_ARTICLES = [
 <p>When your audience is comparing options, you need ad copy that positions your product as the obvious choice without naming competitors directly. This prompt creates comparison-style messaging that highlights your unique advantages.</p>
 
 <h3>9. The Social Proof Amplifier</h3>
-<p>This prompt transforms your customer reviews, case studies, and testimonials into compelling ad copy that leverages social proof at every level — individual stories, aggregate data ("Join 10,000+ customers"), and authority signals.</p>
+<p>This prompt transforms your customer reviews, case studies, and testimonials into compelling ad copy that leverages social proof at every level - individual stories, aggregate data ("Join 10,000+ customers"), and authority signals.</p>
 
 <h3>10. The Budget Optimizer Prompt</h3>
-<p>This isn't a copy prompt — it's a strategy prompt. Feed it your current campaign data (CPA, ROAS, CTR, spend) and it provides specific recommendations for budget allocation, audience adjustments, and creative changes based on the numbers. Marketers using this prompt report an average 23% improvement in ROAS within two weeks.</p>
+<p>This isn't a copy prompt - it's a strategy prompt. Feed it your current campaign data (CPA, ROAS, CTR, spend) and it provides specific recommendations for budget allocation, audience adjustments, and creative changes based on the numbers. Marketers using this prompt report an average 23% improvement in ROAS within two weeks.</p>
 
 <h2>How to Get the Most From These Prompts</h2>
 
-<p>Don't just copy and paste. The prompts in our <a href="/">Facebook Ads category</a> are designed as frameworks — you fill in your specific product details, audience demographics, and campaign objectives. The more specific your inputs, the more targeted (and effective) the output.</p>
+<p>Don't just copy and paste. The prompts in our <a href="/">Facebook Ads category</a> are designed as frameworks - you fill in your specific product details, audience demographics, and campaign objectives. The more specific your inputs, the more targeted (and effective) the output.</p>
 
 <p>Start with 2-3 prompts that match your current campaign goals, generate multiple variations, and let Facebook's algorithm find the winners through proper A/B testing. The AI writes the copy; the data picks the winners.</p>
 
@@ -401,13 +401,13 @@ const BLOG_ARTICLES = [
     date: '2026-03-18',
     readTime: '6 min read',
     content: `
-<p>Your resume has approximately 7 seconds to make an impression on a recruiter — and that's only after it survives the Applicant Tracking System (ATS) that automatically rejects 75% of applications before a human ever sees them. AI prompts can dramatically improve both your ATS pass rate and your human impression, but only if you use them correctly.</p>
+<p>Your resume has approximately <a href="https://www.indeed.com/career-advice/resumes-cover-letters/how-long-do-employers-look-at-resumes" target="_blank" rel="noopener noreferrer">7 seconds to make an impression</a> on a recruiter - and that's only after it survives the Applicant Tracking System (ATS) that filters out the majority of applications before a human ever sees them. AI prompts can dramatically improve both your ATS pass rate and your human impression, but only if you use them correctly.</p>
 
 <p>We've curated 36 Resume & Career prompts that cover every stage of the job search process. This guide shows you how to use them strategically for maximum impact.</p>
 
 <h2>Understanding the ATS Challenge</h2>
 
-<p>Applicant Tracking Systems scan resumes for specific keywords, phrases, and formatting patterns. They score each resume against the job description and only surface the highest-scoring candidates to recruiters. This means your resume isn't just a document — it's a keyword-optimization exercise.</p>
+<p>Applicant Tracking Systems scan resumes for specific keywords, phrases, and formatting patterns. They score each resume against the job description and only surface the highest-scoring candidates to recruiters. This means your resume isn't just a document - it's a keyword-optimization exercise.</p>
 
 <p>The problem with writing resumes yourself is that you naturally use different words than the job posting. You might write "managed a team" when the ATS is scanning for "led cross-functional teams." You might say "improved processes" when the system wants "implemented operational efficiency improvements."</p>
 
@@ -415,7 +415,7 @@ const BLOG_ARTICLES = [
 
 <h2>Step 1: ATS-Optimized Resume Content</h2>
 
-<p>Start with our <a href="/prompts/ats-optimized-resume-builder/">ATS-Optimized Resume Builder</a> prompt. This is the most comprehensive resume prompt in our library — it takes your existing experience, the target job description, and your key achievements, then generates bullet points that are both ATS-friendly and compelling to human readers.</p>
+<p>Start with our <a href="/prompts/ats-optimized-resume-builder/">ATS-Optimized Resume Builder</a> prompt. This is the most comprehensive resume prompt in our library - it takes your existing experience, the target job description, and your key achievements, then generates bullet points that are both ATS-friendly and compelling to human readers.</p>
 
 <p>The key insight behind this prompt is that it doesn't just insert keywords randomly. It weaves them into achievement-focused bullet points that follow the CAR format: <strong>C</strong>hallenge (what you faced), <strong>A</strong>ction (what you did), <strong>R</strong>esult (the measurable outcome). This format satisfies both the ATS algorithm and the recruiter who wants to see impact.</p>
 
@@ -435,11 +435,11 @@ const BLOG_ARTICLES = [
 
 <p>Most cover letters are generic, forgettable, and add nothing beyond what's in the resume. Our cover letter prompts solve this by forcing a different structure: start with a specific connection to the company (recent news, product feature, company value), bridge to your relevant experience, and close with a concrete value proposition.</p>
 
-<p>The <a href="/prompts/compelling-cover-letter-generator/">Compelling Cover Letter Generator</a> creates cover letters that read like they were written by someone who genuinely researched the company — because the prompt requires you to provide that research before generating the letter.</p>
+<p>The <a href="/prompts/cover-letter-that-gets-interviews/">Cover Letter That Gets Interviews</a> creates cover letters that read like they were written by someone who genuinely researched the company - because the prompt requires you to provide that research before generating the letter.</p>
 
 <h2>Step 4: Interview Preparation</h2>
 
-<p>Landing the interview is only half the battle. Our <a href="/prompts/behavioral-interview-prep-coach/">Behavioral Interview Prep Coach</a> helps you prepare STAR-format responses (Situation, Task, Action, Result) for the most common behavioral questions in your industry.</p>
+<p>Landing the interview is only half the battle. Our <a href="/prompts/interview-prep-coach/">Interview Prep Coach</a> helps you prepare STAR-format responses (Situation, Task, Action, Result) for the most common behavioral questions in your industry.</p>
 
 <p>Feed it the job description and your resume, and it generates customized responses for questions like "Tell me about a time you handled conflict" or "Describe a situation where you had to meet a tight deadline." Each response is anchored to your actual experience, not generic templates.</p>
 
@@ -460,7 +460,7 @@ const BLOG_ARTICLES = [
     date: '2026-03-20',
     readTime: '9 min read',
     content: `
-<p>Prompt engineering is the most valuable skill of 2026 — and it's entirely learnable. Whether you're using AI for the first time or you've been prompting daily for months, there's always a higher level of output quality waiting for you. This guide maps the complete journey from beginner to professional prompt engineer, with practical exercises at every stage.</p>
+<p>Prompt engineering is one of the most in-demand skills of 2026 - and it's entirely learnable. Both <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank" rel="noopener noreferrer">Anthropic</a> and <a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" rel="noopener noreferrer">OpenAI</a> publish detailed guides on the subject. Whether you're using AI for the first time or you've been prompting daily for months, there's always a higher level of output quality waiting for you. This guide maps the complete journey from beginner to professional prompt engineer, with practical exercises at every stage.</p>
 
 <h2>Beginner Level: The Fundamentals</h2>
 
@@ -477,7 +477,7 @@ const BLOG_ARTICLES = [
 <h3>Principle 2: Assign a Role</h3>
 <p>Before giving the AI a task, tell it who to be. "You are a senior content strategist at a Fortune 500 company" sets a completely different baseline than "you are a helpful assistant." Role assignment is the single easiest technique that produces the biggest improvement in output quality.</p>
 
-<p>Try it with our <a href="/prompts/ai-business-consultant/">AI Business Consultant</a> prompt — notice how the role definition shapes the entire response.</p>
+<p>Try it with our <a href="/prompts/startup-strategy-coach/">Startup Strategy Coach</a> prompt - notice how the role definition shapes the entire response.</p>
 
 <h3>Principle 3: Define the Output Format</h3>
 <p>Don't let the AI decide how to present information. Tell it explicitly: "Format your response as a numbered list," "Use H2 headers for each section," "Present this as a comparison table with three columns." Format control prevents the most common frustration: getting good content in an unusable structure.</p>
@@ -496,7 +496,7 @@ const BLOG_ARTICLES = [
 <p>Your first prompt output is a draft, not a final product. Develop the habit of follow-up prompts that refine specific aspects: "Make the tone more assertive," "Add statistics to support point #3," "Rewrite the introduction to lead with a surprising fact." Professional prompt engineers typically refine output across 3-5 iterations.</p>
 
 <h3>Template Libraries</h3>
-<p>Stop rewriting prompts from scratch every time. Build a library of your best-performing prompts (or use ours — we have <a href="/">hundreds ready to go</a>). Templates save time and ensure consistency. Customize the variables (audience, product, goal) while keeping the proven structure intact.</p>
+<p>Stop rewriting prompts from scratch every time. Build a library of your best-performing prompts (or use ours - we have <a href="/">hundreds ready to go</a>). Templates save time and ensure consistency. Customize the variables (audience, product, goal) while keeping the proven structure intact.</p>
 
 <h3>Practice Exercise</h3>
 <p>Choose a complex task (like creating a content calendar for next month). Break it into 4-5 sequential prompts, using each output as input for the next. Compare the final result to what you'd get from a single, comprehensive prompt.</p>
@@ -506,23 +506,23 @@ const BLOG_ARTICLES = [
 <p>Advanced prompt engineering involves specialized techniques that dramatically improve accuracy, creativity, and output sophistication.</p>
 
 <h3>Few-Shot Learning</h3>
-<p>Include examples of your desired output directly in the prompt. If you want the AI to write product descriptions in a specific style, include 2-3 examples. The AI will identify patterns in your examples and replicate them — tone, length, structure, and vocabulary. This technique is how professionals get AI output that matches their brand voice exactly.</p>
+<p>Include examples of your desired output directly in the prompt. If you want the AI to write product descriptions in a specific style, include 2-3 examples. The AI will identify patterns in your examples and replicate them - tone, length, structure, and vocabulary. This technique is how professionals get AI output that matches their brand voice exactly.</p>
 
 <h3>Chain-of-Thought Reasoning</h3>
-<p>For analytical or problem-solving tasks, add "Think through this step by step, explaining your reasoning at each stage before reaching a conclusion." This technique forces the AI to show its work, which dramatically reduces errors in logic, math, and strategic reasoning. Our <a href="/prompts/data-analysis-insight-extractor/">Data Analysis Insight Extractor</a> uses this technique extensively.</p>
+<p>For analytical or problem-solving tasks, add "Think through this step by step, explaining your reasoning at each stage before reaching a conclusion." This technique forces the AI to show its work, which dramatically reduces errors in logic, math, and strategic reasoning. Our <a href="/prompts/regression-analysis-guide/">Regression Analysis Guide</a> uses this technique extensively.</p>
 
 <h3>Constraint-Based Creativity</h3>
 <p>Paradoxically, adding constraints improves creative output. "Write a LinkedIn post about leadership" produces generic content. "Write a LinkedIn post about leadership in exactly 150 words, using a personal story structure, without using the words 'leader,' 'leadership,' or 'team'" produces something genuinely original and engaging.</p>
 
 <h3>Multi-Perspective Analysis</h3>
-<p>Ask the AI to analyze the same problem from multiple viewpoints: "First, analyze this from the customer's perspective. Then from the competitor's perspective. Then from an investor's perspective. Finally, synthesize all three viewpoints into a unified recommendation." This technique is especially powerful for <a href="/prompts/competitive-analysis-framework/">competitive analysis</a> and strategic planning.</p>
+<p>Ask the AI to analyze the same problem from multiple viewpoints: "First, analyze this from the customer's perspective. Then from the competitor's perspective. Then from an investor's perspective. Finally, synthesize all three viewpoints into a unified recommendation." This technique is especially powerful for <a href="/prompts/competitor-analysis-framework/">competitor analysis</a> and strategic planning.</p>
 
 <h3>Practice Exercise</h3>
 <p>Take one of our prompts from any category and add a few-shot example. Include 2 examples of the output style you want before the main instruction. Measure how closely the AI matches your desired style compared to the base prompt alone.</p>
 
 <h2>Expert Level: Systems and Automation</h2>
 
-<p>Expert-level prompt engineering moves beyond individual prompts to creating systems — interconnected prompt workflows that produce complex deliverables with minimal human intervention.</p>
+<p>Expert-level prompt engineering moves beyond individual prompts to creating systems - interconnected prompt workflows that produce complex deliverables with minimal human intervention.</p>
 
 <h3>Prompt Pipelines</h3>
 <p>Design sequences of prompts where each output feeds into the next, creating automated workflows. Example: (1) research prompt extracts market data, (2) analysis prompt identifies opportunities, (3) strategy prompt creates a plan, (4) content prompt generates deliverables, (5) review prompt checks quality. Our <a href="/#agentic-ai">Agentic AI prompts</a> are designed for exactly this type of pipeline thinking.</p>
@@ -535,26 +535,26 @@ const BLOG_ARTICLES = [
 
 <h2>Your Learning Path</h2>
 
-<p>Prompt engineering isn't learned by reading — it's learned by doing. Start with our <a href="/">prompt library</a>, pick prompts from categories relevant to your work, and practice the techniques described at each level. Within a few weeks, you'll notice a fundamental shift in the quality and usefulness of every AI interaction.</p>
+<p>Prompt engineering isn't learned by reading - it's learned by doing. Start with our <a href="/">prompt library</a>, pick prompts from categories relevant to your work, and practice the techniques described at each level. Within a few weeks, you'll notice a fundamental shift in the quality and usefulness of every AI interaction.</p>
 
 <p>The difference between someone who uses AI and someone who <em>wields</em> AI is prompt engineering skill. Invest in yours.</p>`
   },
   {
     title: 'How to Use AI Prompts for Google Ads Optimization',
     slug: 'ai-prompts-google-ads-optimization',
-    description: 'Learn how AI prompts can improve every stage of your Google Ads workflow — from keyword research to ad copy to bid strategy optimization.',
+    description: 'Learn how AI prompts can improve every stage of your Google Ads workflow - from keyword research to ad copy to bid strategy optimization.',
     date: '2026-03-22',
     readTime: '7 min read',
     content: `
-<p>Google Ads is one of the highest-ROI marketing channels available, but it's also one of the most complex. Between keyword research, match types, ad copy variations, Quality Score optimization, bid strategies, and landing page alignment, there are dozens of variables that determine whether your campaigns are profitable or burning money.</p>
+<p>Google Ads is one of the highest-ROI marketing channels available, but it's also one of the most complex. <a href="https://support.google.com/google-ads/answer/6154846" target="_blank" rel="noopener noreferrer">Google's own optimization guide</a> identifies dozens of variables that affect campaign performance. Between keyword research, match types, ad copy variations, Quality Score optimization, bid strategies, and landing page alignment, there are dozens of variables that determine whether your campaigns are profitable or burning money.</p>
 
 <p>AI prompts can systematically improve every stage of your Google Ads workflow. We've curated 57 Google Ads-specific prompts that cover the complete campaign lifecycle, and this guide shows you how to deploy them strategically for maximum impact on your ROAS.</p>
 
 <h2>Stage 1: Keyword Research and Strategy</h2>
 
-<p>Keyword research is the foundation of every Google Ads campaign, and it's where most campaigns silently fail. Bidding on the wrong keywords — even with perfect ad copy — means paying for clicks that never convert.</p>
+<p>Keyword research is the foundation of every Google Ads campaign, and it's where most campaigns silently fail. Bidding on the wrong keywords - even with perfect ad copy - means paying for clicks that never convert.</p>
 
-<p>Our <a href="/prompts/google-ads-keyword-research-prompt/">Google Ads Keyword Research</a> prompt doesn't just generate keyword lists. It organizes keywords by search intent (informational, navigational, commercial, transactional), estimates competition level, and suggests negative keywords to exclude from the start. This structured approach prevents the most expensive mistake in Google Ads: paying for clicks with the wrong intent.</p>
+<p>Our <a href="/prompts/google-ads-keyword-generation/">Google Ads Keyword Generation</a> prompt doesn't just generate keyword lists. It organizes keywords by search intent (informational, navigational, commercial, transactional), estimates competition level, and suggests negative keywords to exclude from the start. This structured approach prevents the most expensive mistake in Google Ads: paying for clicks with the wrong intent.</p>
 
 <h3>Long-Tail Keyword Mining</h3>
 <p>Long-tail keywords (3-5 word phrases) typically have lower competition and higher conversion rates. Use our keyword expansion prompts to generate hundreds of long-tail variations from your core terms. For example, instead of just bidding on "project management software," the AI identifies specific intent phrases like "best project management tool for remote marketing teams under 20 people."</p>
@@ -564,19 +564,19 @@ const BLOG_ARTICLES = [
 
 <h2>Stage 2: Ad Copy That Earns Clicks</h2>
 
-<p>Google Ads has some of the strictest copy constraints in advertising: 30-character headlines and 90-character descriptions. Every word has to earn its place. AI prompts excel here because they can generate dozens of variations within exact character limits — something that's tedious and error-prone when done manually.</p>
+<p>Google Ads has some of the strictest copy constraints in advertising: 30-character headlines and 90-character descriptions. Every word has to earn its place. AI prompts excel here because they can generate dozens of variations within exact character limits - something that's tedious and error-prone when done manually.</p>
 
 <h3>Responsive Search Ads</h3>
-<p>Google's RSA format allows up to 15 headlines and 4 descriptions that the algorithm mixes and matches. Our RSA prompts generate the full complement of headlines and descriptions, each designed to work independently and in combination. The key is ensuring variety — each headline should test a different angle (benefit, feature, social proof, urgency, question) so Google's algorithm has meaningful options to optimize.</p>
+<p>Google's RSA format allows up to 15 headlines and 4 descriptions that the algorithm mixes and matches. Our RSA prompts generate the full complement of headlines and descriptions, each designed to work independently and in combination. The key is ensuring variety - each headline should test a different angle (benefit, feature, social proof, urgency, question) so Google's algorithm has meaningful options to optimize.</p>
 
 <h3>Ad Extensions</h3>
 <p>Extensions (sitelinks, callouts, structured snippets) increase ad real estate and click-through rates. Our prompts generate all extension types simultaneously, ensuring consistency between your main ad copy and extension messaging. Campaigns with full extensions typically see 20-30% higher CTR than ads alone.</p>
 
 <h2>Stage 3: Landing Page Alignment</h2>
 
-<p>Your Quality Score — which directly affects ad position and cost-per-click — depends heavily on landing page relevance. Our landing page analysis prompts review your page content against your target keywords and ad copy, identifying gaps in message match.</p>
+<p>Your <a href="https://support.google.com/google-ads/answer/6167118" target="_blank" rel="noopener noreferrer">Quality Score</a> - which directly affects ad position and cost-per-click - depends heavily on landing page relevance. Our landing page analysis prompts review your page content against your target keywords and ad copy, identifying gaps in message match.</p>
 
-<p>Message match means the language in your ad is echoed on your landing page. If your ad says "Free 14-day trial — no credit card required," your landing page headline should include those exact words. AI prompts can generate landing page copy that perfectly mirrors your ad messaging.</p>
+<p>Message match means the language in your ad is echoed on your landing page. If your ad says "Free 14-day trial - no credit card required," your landing page headline should include those exact words. AI prompts can generate landing page copy that perfectly mirrors your ad messaging.</p>
 
 <h2>Stage 4: Campaign Structure</h2>
 
@@ -588,7 +588,7 @@ const BLOG_ARTICLES = [
 
 <p>Once your campaigns are running, AI prompts shift from creation to optimization. Feed your campaign data (CTR, CPA, ROAS, impression share, Quality Score) into our optimization prompts, and they'll identify specific actions: which keywords to increase bids on, which to pause, where to reallocate budget, and when to test new ad variations.</p>
 
-<p>Our <a href="/prompts/google-ads-performance-analyzer/">Google Ads Performance Analyzer</a> prompt processes your data and outputs a prioritized action plan — the three highest-impact changes you can make right now to improve results.</p>
+<p>Our <a href="/prompts/google-ads-cpc-reduction-guide/">Google Ads CPC Reduction Guide</a> prompt processes your data and outputs a prioritized action plan - the three highest-impact changes you can make right now to improve results.</p>
 
 <h2>Stage 6: Scaling What Works</h2>
 
@@ -596,7 +596,7 @@ const BLOG_ARTICLES = [
 
 <h2>Putting It All Together</h2>
 
-<p>The most successful Google Ads managers we've worked with use AI prompts at every stage of the workflow, not just for ad copy. Keyword research, negative keyword identification, ad copy generation, extension writing, landing page optimization, performance analysis, and scaling strategy — each stage benefits from a structured AI prompt.</p>
+<p>The most successful Google Ads managers we've worked with use AI prompts at every stage of the workflow, not just for ad copy. Keyword research, negative keyword identification, ad copy generation, extension writing, landing page optimization, performance analysis, and scaling strategy - each stage benefits from a structured AI prompt.</p>
 
 <p>Browse our complete library of <a href="/#google-ads">57 Google Ads prompts</a> and start with the stage where your current campaigns need the most improvement. Whether you're launching a new campaign or optimizing an existing one, there's a prompt designed for exactly where you are.</p>`
   }
@@ -971,7 +971,7 @@ ${tipsHtml}
     </div>
   </footer>
 
-  <!-- Copy/Share JS (minimal — no content rendering) -->
+  <!-- Copy/Share JS (minimal - no content rendering) -->
   <script>
   (function() {
     var promptText = ${JSON.stringify(p.prompt)};
@@ -1072,33 +1072,33 @@ ${navBar()}
     <h1>About Prompt Black Magic</h1>
     <p class="last-updated">Last updated: March 2026</p>
 
-    <p>Prompt Black Magic is a free, curated library of <strong>hundreds of battle-tested AI prompts</strong> spanning 22 categories. We exist because we believe the gap between "knowing AI exists" and "getting real value from AI" is almost entirely a prompt quality problem — and we're here to close it.</p>
+    <p>Prompt Black Magic is a free, curated library of <strong>hundreds of battle-tested AI prompts</strong> spanning 22 categories. We exist because we believe the gap between "knowing AI exists" and "getting real value from AI" is almost entirely a prompt quality problem - and we're here to close it.</p>
 
     <h2>Our Mission</h2>
-    <p>AI is the most powerful tool most people aren't using effectively. Not because the technology isn't ready, but because the interface — the prompt — is where most people get stuck. Vague prompts produce vague results, and vague results make people think AI "doesn't work for them."</p>
-    <p>Our mission is simple: provide ready-to-use, expertly crafted prompts that produce genuinely useful output across every major use case — from writing Facebook ad copy to optimizing Google Ads campaigns, from building ATS-optimized resumes to managing complex projects with AI assistance.</p>
+    <p>AI is the most powerful tool most people aren't using effectively. Not because the technology isn't ready, but because the interface - the prompt - is where most people get stuck. Vague prompts produce vague results, and vague results make people think AI "doesn't work for them."</p>
+    <p>Our mission is simple: provide ready-to-use, expertly crafted prompts that produce genuinely useful output across every major use case - from writing Facebook ad copy to optimizing Google Ads campaigns, from building ATS-optimized resumes to managing complex projects with AI assistance.</p>
 
     <h2>What We Offer</h2>
     <ul>
       <li><strong>Hundreds of free prompts</strong> across 22 categories including Business, Marketing, Sales, Career, Coding, Productivity, and more</li>
       <li><strong>Detailed usage instructions</strong> with every prompt, so you know exactly how to customize it for your situation</li>
-      <li><strong>No signup required</strong> — browse, copy, and use any prompt instantly</li>
-      <li><strong>Regular updates</strong> — we continuously add new prompts and refine existing ones based on community feedback and AI model improvements</li>
+      <li><strong>No signup required</strong> - browse, copy, and use any prompt instantly</li>
+      <li><strong>Regular updates</strong> - we continuously add new prompts and refine existing ones based on community feedback and AI model improvements</li>
     </ul>
 
     <h2>Our Curation Process</h2>
     <p>Every prompt in our library goes through a rigorous selection process:</p>
     <ol>
       <li><strong>Research:</strong> We identify the most common and high-value AI use cases across industries, interviewing practitioners and analyzing what professionals actually need.</li>
-      <li><strong>Drafting:</strong> Each prompt is written using proven prompt engineering principles — clear role assignment, specific context, defined output formats, and quality constraints.</li>
+      <li><strong>Drafting:</strong> Each prompt is written using proven prompt engineering principles - clear role assignment, specific context, defined output formats, and quality constraints.</li>
       <li><strong>Testing:</strong> We test every prompt across multiple AI models (ChatGPT, Claude, Gemini) to ensure consistent quality regardless of which platform you use.</li>
       <li><strong>Refinement:</strong> Based on testing results, we iterate on wording, structure, and instructions until the prompt reliably produces high-quality output.</li>
       <li><strong>Documentation:</strong> Each prompt is published with a clear description, "How to Use" instructions, and categorized for easy discovery.</li>
     </ol>
 
     <h2>The Prompt Black Magic Team</h2>
-    <p>We're a small, focused team of prompt engineers, marketers, and developers who use AI daily in our own work. We built Prompt Black Magic because we were tired of spending 20 minutes crafting the perfect prompt every time we needed AI help — and we knew others were struggling with the same problem.</p>
-    <p>Our diverse backgrounds (advertising, software engineering, content strategy, data analysis) ensure our prompts cover real-world use cases, not theoretical exercises. Every prompt exists because someone on our team — or in our community — actually needed it.</p>
+    <p>We're a small, focused team of prompt engineers, marketers, and developers who use AI daily in our own work. We built Prompt Black Magic because we were tired of spending 20 minutes crafting the perfect prompt every time we needed AI help - and we knew others were struggling with the same problem.</p>
+    <p>Our diverse backgrounds (advertising, software engineering, content strategy, data analysis) ensure our prompts cover real-world use cases, not theoretical exercises. Every prompt exists because someone on our team - or in our community - actually needed it.</p>
 
     <h2>Contact Us</h2>
     <p>We'd love to hear from you. Whether you have prompt suggestions, feedback on existing prompts, or partnership inquiries, reach out at:</p>
@@ -1279,7 +1279,7 @@ ${navBar()}
     <h1>Contact Us</h1>
     <p class="last-updated">We'd love to hear from you</p>
 
-    <p>Whether you have a prompt suggestion, found a bug, want to give feedback, or have a partnership inquiry — we read every message and do our best to respond promptly.</p>
+    <p>Whether you have a prompt suggestion, found a bug, want to give feedback, or have a partnership inquiry - we read every message and do our best to respond promptly.</p>
 
     <h2>Email Us</h2>
     <a href="mailto:promptblackmagic@gmail.com" class="contact-email">promptblackmagic@gmail.com</a>
@@ -1288,7 +1288,7 @@ ${navBar()}
     <ul>
       <li><strong>Prompt suggestions:</strong> Have an idea for a prompt we should add? Tell us the category, use case, and any specific details that would make it useful.</li>
       <li><strong>Feedback:</strong> Found a prompt that could be improved? Let us know what you'd change and why.</li>
-      <li><strong>Bug reports:</strong> If something on the website isn't working correctly — broken links, display issues, copy button problems — please let us know with details about your browser and device.</li>
+      <li><strong>Bug reports:</strong> If something on the website isn't working correctly - broken links, display issues, copy button problems - please let us know with details about your browser and device.</li>
       <li><strong>Partnership inquiries:</strong> Interested in collaborating, guest posting, or featuring our prompts? We're open to conversations.</li>
       <li><strong>General questions:</strong> Anything else related to AI prompting, our website, or how to get the most out of our prompt library.</li>
     </ul>
@@ -1497,7 +1497,7 @@ function build() {
     fs.writeFileSync(path.join(dir, 'index.html'), generatePromptPage(i), 'utf-8');
     count++;
   }
-  console.log(`  -> ${count} prompt pages generated`);
+  console.log(` -> ${count} prompt pages generated`);
 
   // 2. Generate trust pages
   console.log('Generating trust pages...');
@@ -1511,7 +1511,7 @@ function build() {
     const pageDir = path.join(ROOT, dir);
     mkdirp(pageDir);
     fs.writeFileSync(path.join(pageDir, 'index.html'), fn(), 'utf-8');
-    console.log(`  -> /${dir}/index.html written`);
+    console.log(` -> /${dir}/index.html written`);
   }
 
   // 3. Generate blog pages
@@ -1519,23 +1519,23 @@ function build() {
   const blogDir = path.join(ROOT, 'blog');
   mkdirp(blogDir);
   fs.writeFileSync(path.join(blogDir, 'index.html'), generateBlogIndex(), 'utf-8');
-  console.log('  -> /blog/index.html written');
+  console.log(' -> /blog/index.html written');
   for (const article of BLOG_ARTICLES) {
     const articleDir = path.join(blogDir, article.slug);
     mkdirp(articleDir);
     fs.writeFileSync(path.join(articleDir, 'index.html'), generateBlogArticle(article), 'utf-8');
-    console.log(`  -> /blog/${article.slug}/index.html written`);
+    console.log(` -> /blog/${article.slug}/index.html written`);
   }
 
   // 4. Generate sitemap
   console.log('Generating sitemap.xml...');
   fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), generateSitemap(), 'utf-8');
-  console.log('  -> sitemap.xml written');
+  console.log(' -> sitemap.xml written');
 
   // 5. Generate 404
   console.log('Generating 404.html...');
   fs.writeFileSync(path.join(ROOT, '404.html'), generate404(), 'utf-8');
-  console.log('  -> 404.html written');
+  console.log(' -> 404.html written');
 
   // 6. Inject noscript into index.html
   console.log('Injecting noscript block into index.html...');
@@ -1551,7 +1551,7 @@ function build() {
     `$1$2${safeNoscript}\n  $3`
   );
   fs.writeFileSync(path.join(ROOT, 'index.html'), indexHtml, 'utf-8');
-  console.log('  -> index.html updated with noscript block');
+  console.log(' -> index.html updated with noscript block');
 
   // Summary
   const sitemapContent = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf-8');

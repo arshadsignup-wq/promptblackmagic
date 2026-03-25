@@ -163,7 +163,7 @@ Investigation protocol:
       </div>
       <ul class="tips-list">
           <li>Always include error-handling instructions in agent prompts. Tell the AI what to do when a step fails or produces unexpected results.</li>
-          <li>Specify the tools and APIs the agent should use — ambiguity about available resources leads to hallucinated capabilities.</li>
+          <li>Specify the tools and APIs the agent should use - ambiguity about available resources leads to hallucinated capabilities.</li>
           <li>Include success criteria so the agent knows when to stop iterating. Without clear goals, agents can loop indefinitely.</li>
       </ul>
     </div>
@@ -241,7 +241,7 @@ Investigation protocol:
     </div>
   </footer>
 
-  <!-- Copy/Share JS (minimal — no content rendering) -->
+  <!-- Copy/Share JS (minimal - no content rendering) -->
   <script>
   (function() {
     var promptText = "You are a bug investigation agent. Your job is to systematically diagnose and identify the root cause of a software bug through structured analysis.\n\nBug report:\n- What should happen: [EXPECTED BEHAVIOR]\n- What actually happens: [ACTUAL BEHAVIOR]\n- Error message (if any): [PASTE ERROR]\n- When it started: [WHEN DID YOU FIRST NOTICE]\n- Frequency: [ALWAYS / SOMETIMES / RANDOM]\n- Environment: [BROWSER, OS, DEVICE, APP VERSION]\n- Steps to reproduce: [NUMBERED STEPS]\n- What I've already tried: [LIST ATTEMPTED FIXES]\n\nInvestigation protocol:\n\n1. SYMPTOM ANALYSIS\n   - Classify the bug type: crash, incorrect output, performance, UI glitch, data corruption, security, integration failure\n   - Identify what changed recently (code deploys, config changes, dependency updates, infrastructure changes)\n   - Determine scope: one user, some users, or all users? One environment or all?\n\n2. HYPOTHESIS GENERATION\n   - List 5-7 possible root causes ranked by likelihood\n   - For each hypothesis, describe what evidence would confirm or eliminate it\n   - Identify the fastest test to run for each hypothesis\n\n3. DIAGNOSTIC QUESTIONS\n   - Ask me 5-10 targeted questions that will help narrow down the cause\n   - Each question should be designed to eliminate at least one hypothesis\n   - Order questions from most discriminating to least\n\n4. INVESTIGATION PLAN\n   - Provide step-by-step debugging instructions I can follow\n   - Tell me exactly what logs to check and what to look for\n   - Suggest specific test cases that isolate the problem\n   - Recommend tools or commands to gather more diagnostic information\n\n5. AFTER DIAGNOSIS\n   Once we identify the cause, provide:\n   - The fix (specific code or configuration change)\n   - How to verify the fix works\n   - What to add to prevent this bug from recurring (tests, monitoring, validation)\n   - Related areas to check for similar issues";

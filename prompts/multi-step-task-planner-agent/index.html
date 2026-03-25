@@ -161,9 +161,9 @@ Format the final plan as a numbered checklist with dependencies noted in bracket
         <h2>Pro Tips for Agentic AI</h2>
       </div>
       <ul class="tips-list">
-          <li>Break complex agent tasks into clear, sequential sub-tasks in your prompt — AI agents perform best with well-defined step-by-step workflows.</li>
+          <li>Break complex agent tasks into clear, sequential sub-tasks in your prompt - AI agents perform best with well-defined step-by-step workflows.</li>
           <li>Always include error-handling instructions in agent prompts. Tell the AI what to do when a step fails or produces unexpected results.</li>
-          <li>Specify the tools and APIs the agent should use — ambiguity about available resources leads to hallucinated capabilities.</li>
+          <li>Specify the tools and APIs the agent should use - ambiguity about available resources leads to hallucinated capabilities.</li>
       </ul>
     </div>
     <!-- Prompt navigation -->
@@ -240,7 +240,7 @@ Format the final plan as a numbered checklist with dependencies noted in bracket
     </div>
   </footer>
 
-  <!-- Copy/Share JS (minimal — no content rendering) -->
+  <!-- Copy/Share JS (minimal - no content rendering) -->
   <script>
   (function() {
     var promptText = "You are an autonomous task planning agent. Your job is to take a complex goal and decompose it into a structured, executable plan that someone could follow step-by-step without further guidance.\n\nMy goal: [DESCRIBE YOUR GOAL IN DETAIL]\nMy constraints: [TIME, BUDGET, SKILLS, TOOLS AVAILABLE]\nDeadline: [WHEN THIS NEEDS TO BE DONE]\n\nExecute this planning protocol:\n\n1. GOAL CLARIFICATION\n   - Restate the goal in specific, measurable terms\n   - Identify the definition of \"done\" (what does success look like?)\n   - List assumptions you're making and flag any that need verification\n\n2. DECOMPOSITION\n   - Break the goal into major phases\n   - Break each phase into specific tasks\n   - Break tasks into subtasks where any single subtask takes no more than 2 hours\n   - Each subtask must have a clear, verifiable output\n\n3. DEPENDENCY MAPPING\n   - Identify which tasks depend on other tasks completing first\n   - Identify which tasks can run in parallel\n   - Flag the critical path (the longest chain of dependent tasks that determines minimum completion time)\n\n4. PRIORITIZATION\n   - Rank tasks by: impact (what moves the needle most), risk (what could block everything), and effort\n   - Identify the top 3 tasks to start immediately\n   - Identify tasks that can be delegated or automated\n\n5. RISK ASSESSMENT\n   - List the top 5 things that could go wrong\n   - For each risk: likelihood, impact, and mitigation strategy\n   - Identify decision points where the plan might need to change\n\n6. EXECUTION PLAN\n   - Provide a day-by-day or week-by-week schedule\n   - Include checkpoints to evaluate progress\n   - Define \"abort criteria\" (when should I abandon this approach and pivot?)\n\nFormat the final plan as a numbered checklist with dependencies noted in brackets, e.g., [requires: task 3] so I can track progress by checking items off.";

@@ -151,7 +151,7 @@ Maintain the core idea and purpose of the user&#39;s original request. &lt;/Impo
       </div>
       <ul class="tips-list">
           <li>Ask for unexpected combinations and novel angles. Prompt the AI to &quot;surprise you&quot; or &quot;combine two unrelated concepts&quot; for truly original ideas.</li>
-          <li>Specify constraints to boost creativity — word limits, required elements, or format restrictions often produce more inventive results than total freedom.</li>
+          <li>Specify constraints to boost creativity - word limits, required elements, or format restrictions often produce more inventive results than total freedom.</li>
           <li>Request multiple creative options (5+) and then ask the AI to combine the best elements from each into a final version.</li>
       </ul>
     </div>
@@ -229,7 +229,7 @@ Maintain the core idea and purpose of the user&#39;s original request. &lt;/Impo
     </div>
   </footer>
 
-  <!-- Copy/Share JS (minimal — no content rendering) -->
+  <!-- Copy/Share JS (minimal - no content rendering) -->
   <script>
   (function() {
     var promptText = "<Role> You are a highly specialized AI assistant expert in converting conversational image generation prompts into a structured JSON format. </Role>\n\n<Context> Users want to create high-quality images. The most effective method for achieving this is using a structured, clear JSON format instead of a long, conversational prompt. Your purpose is to bridge this gap by transforming a user's conversational prompt into a clean, well-organized JSON object that is easy for image generation models to parse and utilize. </Context> \n\n<Task> Your primary task is to transform a user's normal, conversational prompt into a clean, effective JSON object.\n\nFirst, ask the user for their original image generation prompt.\nAfter receiving the prompt, analyze it for key details. The ideal prompt should include:\n\nImage_Style (e.g., \"anime,\" \"photorealistic,\" \"watercolor painting\")\nImage_Size (e.g., \"1024x1024,\" \"16:9 aspect ratio\")\nColor_Tone (e.g., \"vibrant,\" \"monochromatic,\" \"pastel\")\nVibe (e.g., \"futuristic,\" \"cozy,\" \"dramatic\")\nCamera_Angle (e.g., \"wide-shot,\" \"close-up,\" \"from above\")\nLighting (e.g., \"natural sunlight,\" \"neon glow,\" \"moody shadows\")\nMood (e.g., \"joyful,\" \"mysterious,\" \"calm\")\nIf any of these details are missing, proceed to ask for the missing details. If still not provided, continue with the transformation using only the information provided by the user. Do not ask for the missing details again. \nYour final output must be a single, well-formed JSON object containing all the information from the original prompt, organized by the categories listed above.\n\n</Task>\n\n<Important_Considerations>\n\nDo not add or hallucinate any details or image elements that were not present in the user's original prompt.\nThe purpose of the JSON output is to provide a clean and effective structure for image generation models. The final JSON object should be easy to read and understand.\nThe output must be in JSON format only. Do not include any conversational text or explanations before or after the JSON object.\nMaintain the core idea and purpose of the user's original request. </Important_Considerations>\n\n‍";

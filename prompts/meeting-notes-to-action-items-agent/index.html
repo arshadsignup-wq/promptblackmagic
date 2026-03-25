@@ -170,7 +170,7 @@ Format the output so it can be directly pasted into a project management tool or
       <ul class="tips-list">
           <li>Include success criteria so the agent knows when to stop iterating. Without clear goals, agents can loop indefinitely.</li>
           <li>Request the agent to log its reasoning at each step. Transparent decision-making makes debugging and optimization much easier.</li>
-          <li>Break complex agent tasks into clear, sequential sub-tasks in your prompt — AI agents perform best with well-defined step-by-step workflows.</li>
+          <li>Break complex agent tasks into clear, sequential sub-tasks in your prompt - AI agents perform best with well-defined step-by-step workflows.</li>
       </ul>
     </div>
     <!-- Prompt navigation -->
@@ -247,7 +247,7 @@ Format the output so it can be directly pasted into a project management tool or
     </div>
   </footer>
 
-  <!-- Copy/Share JS (minimal — no content rendering) -->
+  <!-- Copy/Share JS (minimal - no content rendering) -->
   <script>
   (function() {
     var promptText = "You are a meeting intelligence agent. I will provide raw meeting notes or a transcript. Your job is to extract every piece of actionable information and deliver a structured summary that makes follow-up effortless.\n\nMeeting notes:\n[PASTE YOUR RAW NOTES OR TRANSCRIPT HERE]\n\nExtraction protocol:\n\n1. MEETING OVERVIEW\n   - Meeting purpose (inferred from context)\n   - Participants mentioned\n   - Date/time if mentioned\n   - Duration if estimable\n\n2. DECISIONS MADE\n   - List every decision that was agreed upon\n   - Note who made or approved each decision\n   - Flag any decisions that seemed tentative or conditional\n\n3. ACTION ITEMS\n   For each action item, extract:\n   - WHAT: The specific task\n   - WHO: The person responsible (if mentioned)\n   - WHEN: Deadline or timeframe (if mentioned)\n   - PRIORITY: Inferred urgency (HIGH / MEDIUM / LOW)\n   - DEPENDS ON: Any blockers or prerequisites\n   If the owner or deadline wasn't explicitly stated, flag it as [NEEDS ASSIGNMENT] or [NEEDS DEADLINE]\n\n4. KEY DISCUSSION POINTS\n   - Summarize the major topics discussed (2-3 sentences each)\n   - Note any disagreements or concerns raised\n   - Capture important context that doesn't fit into action items\n\n5. OPEN QUESTIONS\n   - List questions that were raised but not resolved\n   - Note who raised each question\n   - Suggest who should own finding the answer\n\n6. FOLLOW-UP NEEDED\n   - Information someone promised to share\n   - Topics deferred to future meetings\n   - External dependencies (waiting on vendors, other teams, etc.)\n\n7. NEXT MEETING\n   - Suggested agenda based on open items\n   - Recommended date/cadence if mentioned\n\nFormat the output so it can be directly pasted into a project management tool or shared via email without editing.";

@@ -143,7 +143,7 @@ Here is the architecture:
       <ul class="tips-list">
           <li>Include your existing code patterns and conventions in the prompt so generated code integrates seamlessly with your codebase.</li>
           <li>Ask for unit tests alongside the implementation. Writing tests after the fact is harder than generating them together.</li>
-          <li>Always specify the programming language, framework version, and runtime environment — &quot;write a function&quot; without context produces unusable code.</li>
+          <li>Always specify the programming language, framework version, and runtime environment - &quot;write a function&quot; without context produces unusable code.</li>
       </ul>
     </div>
     <!-- Prompt navigation -->
@@ -220,7 +220,7 @@ Here is the architecture:
     </div>
   </footer>
 
-  <!-- Copy/Share JS (minimal — no content rendering) -->
+  <!-- Copy/Share JS (minimal - no content rendering) -->
   <script>
   (function() {
     var promptText = "Evaluate this system design for a production application.\n\nAnalyze these dimensions:\n1. Scalability: Can it handle 10x and 100x current load? Where are the bottlenecks?\n2. Reliability: What happens when each component fails? Are there single points of failure?\n3. Performance: What is the expected latency for key operations? Where can it be optimized?\n4. Security: Are there vulnerabilities in the data flow or access patterns?\n5. Cost: Is the architecture cost-efficient? Where is money being wasted?\n6. Maintainability: How easy is it to debug, update, and extend?\n\nFor each issue found, provide:\n- Severity (Critical / High / Medium / Low)\n- The specific problem\n- Your recommended solution\n- Trade-offs of the solution\n\nEnd with a prioritized action plan.\n\nHere is the architecture:\n[DESCRIBE YOUR ARCHITECTURE]";

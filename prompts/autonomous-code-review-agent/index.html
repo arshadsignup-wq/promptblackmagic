@@ -158,7 +158,7 @@ End with a summary: total findings by severity, overall code quality score (1-10
       </div>
       <ul class="tips-list">
           <li>Request the agent to log its reasoning at each step. Transparent decision-making makes debugging and optimization much easier.</li>
-          <li>Break complex agent tasks into clear, sequential sub-tasks in your prompt — AI agents perform best with well-defined step-by-step workflows.</li>
+          <li>Break complex agent tasks into clear, sequential sub-tasks in your prompt - AI agents perform best with well-defined step-by-step workflows.</li>
           <li>Always include error-handling instructions in agent prompts. Tell the AI what to do when a step fails or produces unexpected results.</li>
       </ul>
     </div>
@@ -236,7 +236,7 @@ End with a summary: total findings by severity, overall code quality score (1-10
     </div>
   </footer>
 
-  <!-- Copy/Share JS (minimal — no content rendering) -->
+  <!-- Copy/Share JS (minimal - no content rendering) -->
   <script>
   (function() {
     var promptText = "You are an autonomous code review agent operating as a senior staff engineer with expertise in security, performance, and maintainability. Review the following code with the rigor of a production deployment gate.\n\nReview the code I provide and execute this protocol:\n\nPASS 1 - CORRECTNESS\n- Trace the logic path for normal inputs. Does it produce correct results?\n- Trace edge cases: empty inputs, null values, boundary values, extremely large inputs\n- Check error handling: are all failure modes caught? Are errors swallowed silently?\n- Verify async operations: race conditions, unhandled promises, deadlocks\n\nPASS 2 - SECURITY\n- Check for injection vulnerabilities (SQL, XSS, command injection, path traversal)\n- Verify input validation and sanitization\n- Check authentication and authorization logic\n- Look for sensitive data exposure (logging secrets, hardcoded credentials)\n- Check dependency usage for known vulnerability patterns\n\nPASS 3 - PERFORMANCE\n- Identify O(n^2) or worse algorithms that could be optimized\n- Check for unnecessary re-renders, re-computations, or redundant API calls\n- Look for memory leaks (unclosed connections, growing arrays, event listener buildup)\n- Evaluate database query efficiency (N+1 queries, missing indexes, full table scans)\n\nPASS 4 - MAINTAINABILITY\n- Is the code readable without comments? If not, where are comments needed?\n- Are there functions doing too many things that should be split?\n- Is there duplicated logic that should be abstracted?\n- Are naming conventions consistent and descriptive?\n\nFor each finding, provide:\n- SEVERITY: CRITICAL / HIGH / MEDIUM / LOW\n- LINE(S): Where the issue occurs\n- ISSUE: What's wrong\n- FIX: The specific code change to resolve it\n\nEnd with a summary: total findings by severity, overall code quality score (1-10), and the top 3 changes that would have the highest impact.";
