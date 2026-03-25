@@ -257,7 +257,7 @@ const BLOG_ARTICLES = [
     date: '2026-03-10',
     readTime: '8 min read',
     content: `
-<p>The difference between getting mediocre AI output and getting exceptional results almost always comes down to one thing: <strong>how you write your prompt</strong>. After curating over 450 battle-tested prompts across 22 categories, we've identified the patterns that consistently produce superior results — and the mistakes that hold most people back.</p>
+<p>The difference between getting mediocre AI output and getting exceptional results almost always comes down to one thing: <strong>how you write your prompt</strong>. After curating hundreds of battle-tested prompts across 22 categories, we've identified the patterns that consistently produce superior results — and the mistakes that hold most people back.</p>
 
 <p>This guide breaks down everything we've learned about writing effective AI prompts, from foundational principles to advanced techniques used by professional prompt engineers.</p>
 
@@ -329,7 +329,7 @@ const BLOG_ARTICLES = [
 <li><strong>P</strong>urpose — Explain the end goal so the AI can optimize for it</li>
 </ul>
 
-<p>Apply this framework to any prompt and you'll see immediate improvement in output quality. Browse our full library of <a href="/">456 prompts</a> to see the CRISP method applied across every category, from <a href="/prompts/google-ads-keyword-research-prompt/">Google Ads keyword research</a> to <a href="/prompts/ai-powered-project-timeline-generator/">project timeline generation</a>.</p>
+<p>Apply this framework to any prompt and you'll see immediate improvement in output quality. Browse our <a href="/">full prompt library</a> to see the CRISP method applied across every category, from <a href="/prompts/google-ads-keyword-research-prompt/">Google Ads keyword research</a> to <a href="/prompts/ai-powered-project-timeline-generator/">project timeline generation</a>.</p>
 
 <h2>Start Prompting Better Today</h2>
 
@@ -496,7 +496,7 @@ const BLOG_ARTICLES = [
 <p>Your first prompt output is a draft, not a final product. Develop the habit of follow-up prompts that refine specific aspects: "Make the tone more assertive," "Add statistics to support point #3," "Rewrite the introduction to lead with a surprising fact." Professional prompt engineers typically refine output across 3-5 iterations.</p>
 
 <h3>Template Libraries</h3>
-<p>Stop rewriting prompts from scratch every time. Build a library of your best-performing prompts (or use ours — we have <a href="/">456 ready to go</a>). Templates save time and ensure consistency. Customize the variables (audience, product, goal) while keeping the proven structure intact.</p>
+<p>Stop rewriting prompts from scratch every time. Build a library of your best-performing prompts (or use ours — we have <a href="/">hundreds ready to go</a>). Templates save time and ensure consistency. Customize the variables (audience, product, goal) while keeping the proven structure intact.</p>
 
 <h3>Practice Exercise</h3>
 <p>Choose a complex task (like creating a content calendar for next month). Break it into 4-5 sequential prompts, using each output as input for the next. Compare the final result to what you'd get from a single, comprehensive prompt.</p>
@@ -1072,7 +1072,7 @@ ${navBar()}
     <h1>About Prompt Black Magic</h1>
     <p class="last-updated">Last updated: March 2026</p>
 
-    <p>Prompt Black Magic is a free, curated library of <strong>${PROMPTS.length} battle-tested AI prompts</strong> spanning 22 categories. We exist because we believe the gap between "knowing AI exists" and "getting real value from AI" is almost entirely a prompt quality problem — and we're here to close it.</p>
+    <p>Prompt Black Magic is a free, curated library of <strong>hundreds of battle-tested AI prompts</strong> spanning 22 categories. We exist because we believe the gap between "knowing AI exists" and "getting real value from AI" is almost entirely a prompt quality problem — and we're here to close it.</p>
 
     <h2>Our Mission</h2>
     <p>AI is the most powerful tool most people aren't using effectively. Not because the technology isn't ready, but because the interface — the prompt — is where most people get stuck. Vague prompts produce vague results, and vague results make people think AI "doesn't work for them."</p>
@@ -1080,7 +1080,7 @@ ${navBar()}
 
     <h2>What We Offer</h2>
     <ul>
-      <li><strong>${PROMPTS.length} free prompts</strong> across 22 categories including Business, Marketing, Sales, Career, Coding, Productivity, and more</li>
+      <li><strong>Hundreds of free prompts</strong> across 22 categories including Business, Marketing, Sales, Career, Coding, Productivity, and more</li>
       <li><strong>Detailed usage instructions</strong> with every prompt, so you know exactly how to customize it for your situation</li>
       <li><strong>No signup required</strong> — browse, copy, and use any prompt instantly</li>
       <li><strong>Regular updates</strong> — we continuously add new prompts and refine existing ones based on community feedback and AI model improvements</li>
@@ -1404,7 +1404,7 @@ ${navBar()}
 
     ${article.content}
 
-    <a href="/" class="article-cta">${ICONS.arrow} Browse All ${PROMPTS.length} Prompts</a>
+    <a href="/" class="article-cta">${ICONS.arrow} Browse All Prompts</a>
 
     <h2 style="margin-top:56px">More from the Blog</h2>
     <div class="blog-grid">${relatedHtml}
