@@ -3754,8 +3754,38 @@ function generateBlogIndex() {
   const description = 'Guides, tutorials, and insights on AI prompt engineering, Facebook Ads, Google Ads optimization, resume writing, and more.';
   const canonicalUrl = `${SITE_URL}/blog/`;
 
-  const cards = BLOG_ARTICLES.map(article => `
-    <a class="blog-card" href="/blog/${article.slug}/">
+  // Sort articles by date descending (newest first)
+  const sorted = [...BLOG_ARTICLES].sort((a, b) => b.date.localeCompare(a.date));
+
+  // Detect category from article slug/title for badge
+  function articleCategory(article) {
+    const s = (article.slug + ' ' + article.title).toLowerCase();
+    if (s.includes('facebook')) return 'Facebook Ads';
+    if (s.includes('google-ads')) return 'Google Ads';
+    if (s.includes('pinterest')) return 'Pinterest';
+    if (s.includes('linkedin')) return 'LinkedIn';
+    if (s.includes('social-media') || s.includes('content-creation')) return 'Social Media';
+    if (s.includes('email')) return 'Email Marketing';
+    if (s.includes('resume')) return 'Resume & Career';
+    if (s.includes('seo') || s.includes('content-and-seo') || s.includes('content-that-ranks')) return 'Content & SEO';
+    if (s.includes('tracking') || s.includes('pixel')) return 'Tracking & Pixels';
+    if (s.includes('sales') || s.includes('close-deals')) return 'Sales';
+    if (s.includes('coding') || s.includes('developer')) return 'Coding';
+    if (s.includes('agent')) return 'Agentic AI';
+    if (s.includes('productivity')) return 'Productivity';
+    if (s.includes('education') || s.includes('teacher') || s.includes('student')) return 'Education';
+    if (s.includes('freelanc') || s.includes('project')) return 'Freelancing';
+    if (s.includes('data-analysis') || s.includes('data')) return 'Data Analysis';
+    if (s.includes('creative') || s.includes('writing') || s.includes('stories')) return 'Creative Writing';
+    if (s.includes('customer-service') || s.includes('support')) return 'Customer Service';
+    if (s.includes('finance') || s.includes('budget') || s.includes('invest')) return 'Personal Finance';
+    if (s.includes('business')) return 'Business';
+    return 'AI Prompts';
+  }
+
+  const cards = sorted.map((article, i) => `
+    <a class="blog-card" href="/blog/${article.slug}/" data-blog-card="${i}">
+      <span class="blog-card-category">${articleCategory(article)}</span>
       <div class="blog-card-meta">
         <span>${article.date}</span>
         <span>${article.readTime}</span>
@@ -3765,17 +3795,70 @@ function generateBlogIndex() {
       <span class="blog-card-cta">Read Article ${ICONS.arrow}</span>
     </a>`).join('');
 
+  const totalArticles = sorted.length;
+  const perPage = 6;
+  const totalPages = Math.ceil(totalArticles / perPage);
+
   return `${headBoilerplate({ title, description, canonicalUrl })}
 ${bodyOpen()}
 ${navBar()}
 
   <div class="content-page">
-    <h1>Blog</h1>
-    <p>Guides, tutorials, and insights on getting more from AI prompts.</p>
-
-    <div class="blog-grid">${cards}
+    <div class="blog-hero">
+      <h1>Blog</h1>
+      <p>Guides, tutorials, and insights on getting more from AI prompts.</p>
+      <span class="blog-count">${totalArticles} articles</span>
     </div>
+
+    <div class="blog-grid" id="blogGrid">${cards}
+    </div>
+
+    <div class="blog-pagination" id="blogPagination"></div>
   </div>
+
+  <script>
+  (function() {
+    var PER_PAGE = ${perPage};
+    var cards = document.querySelectorAll('[data-blog-card]');
+    var total = cards.length;
+    var totalPages = Math.ceil(total / PER_PAGE);
+    var current = 1;
+
+    var firstRender = true;
+
+    function render(page) {
+      current = page;
+      var start = (page - 1) * PER_PAGE;
+      var end = start + PER_PAGE;
+      cards.forEach(function(c, i) {
+        c.style.display = (i >= start && i < end) ? '' : 'none';
+      });
+
+      var pag = document.getElementById('blogPagination');
+      if (totalPages <= 1) { pag.innerHTML = ''; return; }
+
+      var html = '<button class="pg-prev"' + (page <= 1 ? ' disabled' : '') + '>&larr; Prev</button>';
+      for (var p = 1; p <= totalPages; p++) {
+        html += '<button class="pg-num' + (p === page ? ' active' : '') + '" data-page="' + p + '">' + p + '</button>';
+      }
+      html += '<button class="pg-next"' + (page >= totalPages ? ' disabled' : '') + '>Next &rarr;</button>';
+      pag.innerHTML = html;
+
+      pag.querySelector('.pg-prev').onclick = function() { if (current > 1) render(current - 1); };
+      pag.querySelector('.pg-next').onclick = function() { if (current < totalPages) render(current + 1); };
+      pag.querySelectorAll('.pg-num').forEach(function(b) {
+        b.onclick = function() { render(parseInt(b.dataset.page)); };
+      });
+
+      if (!firstRender) {
+        window.scrollTo({ top: document.getElementById('blogGrid').offsetTop - 100, behavior: 'smooth' });
+      }
+      firstRender = false;
+    }
+
+    render(1);
+  })();
+  </script>
 ${footerHtml()}`;
 }
 
