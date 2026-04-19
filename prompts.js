@@ -4244,6 +4244,322 @@ const PROMPTS_DATA = [
     "prompt": "You are an expert in technical SEO. My [site] has crawl issues or slow load times, and I need a checklist to fix them. Ask me about my hosting, CMS, and if I have access to developer resources so we can ensure everything is addressed.",
     "category": "Content & SEO"
 }
+,
+  {
+    title: 'Advanced Schema Markup Integrator',
+    category: 'Tracking & Pixels',
+    description: 'Help implement rich snippets like FAQ, product, and review schema by evaluating your content types, CMS, and target search features.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in advanced schema markup. I want to add rich snippets for my [site], like FAQ schema, product schema, or review schema. Ask me about the content types I have, the CMS I use, and the search features I want to appear in.'
+  },
+  {
+    title: 'Authority-Building Email Copy Guide',
+    category: 'Email Marketing',
+    description: 'Write an email that positions you as an authority by sharing insider insights, predictions, or exclusive knowledge with a subtle product mention.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an authority-building copywriter. Write an email that positions me as an authority in [industry/niche]. Provide valuable insights, predictions, or insider knowledge that readers can\'t easily find elsewhere. The tone should be confident yet approachable. Include a subtle promotion for my [service/product] as a natural part of the conversation. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Advanced Social Listening Report',
+    category: 'Tracking & Pixels',
+    description: 'Track mentions, sentiment, and trending topics around your brand using advanced tools and keyword sets to generate a detailed listening report.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in advanced social listening analytics. I want to track mentions, sentiment, and trending topics around my [brand/niche]. Ask me about the tools I use or am open to using, the keywords I care about, and how detailed a report I need.'
+  },
+  {
+    title: 'Actionable Blog Call-To-Action Framework',
+    category: 'Content & SEO',
+    description: 'Help craft a compelling call-to-action for your blog that motivates readers to subscribe, comment, share, or make a purchase.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in persuasive copywriting. Help me craft an actionable and compelling call-to-action for a blog about [specific topic]. Include tips on motivating readers to take the desired action, whether it\'s subscribing, commenting, sharing, or making a purchase. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'YouTube Video Title Hook Creator',
+    category: 'Content & SEO',
+    description: 'Craft click-worthy, SEO-friendly YouTube titles by honing in on your video\'s hook, audience, and target keywords.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in crafting attention-grabbing YouTube video titles. I have a [type of content] video about [topic], and I need a clickable, SEO-friendly title. Ask me about the video\'s hook, keywords, and target audience so you can complete the task to the best of your ability.'
+  },
+  {
+    title: 'YouTube Shorts Growth Plan',
+    category: 'Content & SEO',
+    description: 'Strategize YouTube Shorts content by selecting quick topics, optimal posting frequency, and editing workflows to attract new audiences.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in YouTube shorts. I\'d like to utilize short, vertical videos to attract new audiences for my [channel]. Ask me about the quick topics I can cover, how often I can post, and my editing capabilities so you can create a plan.'
+  },
+  {
+    title: 'YouTube Monetization Expansion Guide',
+    category: 'Sales',
+    description: 'Explore ad revenue, channel memberships, and brand deals to expand your YouTube monetization based on your channel\'s size and sponsor fit.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in YouTube monetization growth. I\'m considering ad revenue, channel memberships, and brand deals for my [channel]. Ask me about my channel\'s size, typical sponsor interest, and the type of brand alignment I\'m looking for.'
+  },
+  {
+    title: 'YouTube Brand Identity Designer',
+    category: 'Creative',
+    description: 'Design a consistent look and feel across thumbnails, channel art, and intros to strengthen your YouTube brand identity.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in YouTube branding. I want a consistent look and feel across thumbnails, channel art, and intros for my [channel]. Ask me about my brand color palette, any key imagery, and how I want viewers to perceive my channel.'
+  },
+  {
+    title: 'YouTube Collaboration & Cross-Promotion Planner',
+    category: 'Content & SEO',
+    description: 'Identify ideal creator partners and plan collaborative content to share audiences and amplify your YouTube reach.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in YouTube collaboration and cross-promotion. I want to partner with other creators in my [niche], so we can share audiences. Ask me about my ideal collaborator profile, channel size, and how I see these collabs working.'
+  },
+  {
+    title: 'YouTube Analytics Insight Report',
+    category: 'Tracking & Pixels',
+    description: 'Analyze watch time, click-through rates, retention, and audience demographics to form a tailored growth plan for your YouTube channel.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in YouTube analytics. I need help interpreting watch time, click-through rate, and retention for my [channel], and forming a growth plan. Ask me about the videos that perform best, my audience demographics, and what "success" looks like for me.'
+  },
+  {
+    title: 'YouTube Algorithm Optimization Guide',
+    category: 'Content & SEO',
+    description: 'Advise on ranking higher in YouTube search and recommendations by optimizing keywords, video length, and competitor insights.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in YouTube algorithm-friendly tactics. I need advice on how to rank higher in search and recommended feeds for my [type of content]. Ask me about the keywords I target, my average video length, and any competitor channels I follow.'
+  },
+  {
+    title: 'YouTube Content Diversification Plan',
+    category: 'Resume & Career',
+    description: 'Propose new video formats-vlogs, tutorials, interviews-to diversify your channel based on audience feedback and resource capacity.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in video content diversification for YouTube. I\'d like to mix up my [channel] by adding new formats (e.g., vlogs, tutorials, interviews). Ask me about the styles I\'ve tried, audience feedback, and how much effort I can invest.'
+  },
+  {
+    title: 'Voice Search Keyword Discovery Toolkit',
+    category: 'Content & SEO',
+    description: 'Uncover conversational, longer-form queries for voice search by exploring Q&A formats, user personas, and integration strategies.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in voice search keyword research. I want to find conversational, longer queries for my [website]. Ask me about the Q&A format I might use, the user persona, and how I plan to integrate these phrases into content.'
+  },
+  {
+    title: 'Viral-Style YouTube Title Generator',
+    category: 'Social Media',
+    description: 'Create attention-grabbing YouTube titles that imply excitement or shock to boost share-ability and clicks.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in viral-style YouTube titles. My content is entertaining and share-worthy, and I want a title that implies excitement or shock for [video concept]. Ask me about the emotional hook, brand guidelines, and any relevant metrics.'
+  },
+  {
+    title: 'Case Study YouTube Script Blueprint',
+    category: 'Education',
+    description: 'Highlight a success story in a case study script by detailing the challenge, solution, and brand message.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in case study scripts for YouTube. I\'d like to highlight a success story involving [method/product], from challenge to outcome. Ask me about the case details, the main lesson, and the brand message I need to emphasize.'
+  },
+  {
+    title: 'Comedic YouTube Script Writer',
+    category: 'Writing',
+    description: 'Create a funny yet informative script suitable for a comedic YouTube video, respecting brand boundaries.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in comedic YouTube scripts. I want a funny, yet informative piece about [subject], suitable for a [time length] video. Ask me about my sense of humor, brand boundaries, and any comedic hooks I can use.'
+  },
+  {
+    title: 'Click-Worthy Headline Generator',
+    category: 'Content & SEO',
+    description: 'Guide crafting at least five SEO-optimized, curiosity-driven headline variations that attract readers and improve click-through rates.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in attention-grabbing headlines. Guide me in crafting click-worthy headlines for a blog about [specific topic]. Provide at least 5 headline variations that are engaging, specific, and optimized for SEO while appealing to readers\' curiosity or pain points. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Cinematic-Style YouTube Script',
+    category: 'Business',
+    description: 'Write a short film-inspired YouTube script blending visuals, voiceover, and minimal on-camera dialogue.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in cinematic-style YouTube scripts. I want a short film approach to [subject], blending visuals, voiceover, and minimal on-camera dialogue. Ask me about the story arc, production resources, and how I want to captivate viewers emotionally.'
+  },
+  {
+    title: 'Challenge-Style YouTube Script',
+    category: 'Creative',
+    description: 'Outline an entertaining challenge-style script with rules, participants, time limits, and outcome framing.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in challenge-style scripts for YouTube. I want to create a [type of challenge] video that\'s entertaining and easy to follow. Ask me about rules, the time limit, any participants, and how I\'ll frame the outcome.'
+  },
+  {
+    title: 'Campaign Performance Analytics Checklist',
+    category: 'Social Media',
+    description: 'Assess the results of a specific promotion by analyzing ad spend, timeframe, click-throughs, conversions, and other target metrics.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in campaign-level social media analytics. I ran a short promotion on [platform], and I want to see if it met my objectives. Ask me about the ad spend, timeframe, and the target metrics (click-through, conversions, etc.) so you can assess results effectively.'
+  },
+  {
+    title: 'Call-To-Action YouTube Title Maker',
+    category: 'Business',
+    description: 'Craft titles that include a clear call to action, motivating viewers to learn a skill or try a challenge.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in call-to-action YouTube titles. I want to encourage viewers to do something-like learn a skill or try a challenge-by reading the title. Ask me about the action I want them to take, the brand tone, and any time-sensitive phrasing.'
+  },
+  {
+    title: 'Question-Based Keyword Explorer',
+    category: 'Content & SEO',
+    description: 'Discover question-style queries beginning with How, What, or Why by examining your audience\'s FAQs, existing content, and depth requirements.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in question-based keyword research. I\'d like to rank for queries that begin with "How," "What," or "Why" in my [industry]. Ask me about my audience\'s most common questions, existing FAQ content, and how in-depth I can go.'
+  },
+  {
+    title: 'Branded YouTube Title Template',
+    category: 'Creative',
+    description: 'Incorporate your brand name and main topic into every title for consistent recognition within length limits.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in brand-forward YouTube titles. I want to incorporate my [brand name] in every title for consistent recognition. Ask me about how visible I want the brand mention, the main topic, and the text length limit.'
+  },
+  {
+    title: 'Blog Reader Engagement Techniques',
+    category: 'Content & SEO',
+    description: 'Provide tips to boost blog reader engagement through asking questions, encouraging comments, adding share buttons, and fostering community.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in reader engagement. Help me make my blog about [specific topic] more engaging for readers. Include tips on asking questions, encouraging comments, adding share buttons, and creating a sense of community around the blog. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Panel & Interview YouTube Script Outline',
+    category: 'Resume & Career',
+    description: 'Structure a multi-guest panel or interview script with goals, key questions, and tone guidelines.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in panel or interview scripts for YouTube. I want a structured outline for [number of guests], covering [topic/theme]. Ask me about the interview goals, any key questions, and how formal or casual the tone should be.'
+  },
+  {
+    title: 'Blog Post Structure Framework',
+    category: 'Writing',
+    description: 'Structure blog posts with engaging introductions, clear subheadings, bullet lists, and strong conclusions with calls to action.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are a blog structuring specialist. Guide me in structuring a blog post for [specific topic]. Include advice on writing an engaging introduction, creating clear subheadings, using bullet points or lists, and wrapping up with a strong conclusion and a call-to-action. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Blog Performance Tracking Guide',
+    category: 'Tracking & Pixels',
+    description: 'Explain how to measure blog performance metrics like traffic, time on page, bounce rate, and conversions, and use the data to improve future posts.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in blog performance tracking. Teach me how to measure the performance of a blog about [specific topic]. Include advice on tracking metrics like traffic, time on page, bounce rate, and conversions, and explain how to use this data to improve future posts. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Blog Content Repurposing Plan',
+    category: 'Content & SEO',
+    description: 'Provide a plan to repurpose a blog post into social media snippets, infographics, videos, or email newsletters to maximize reach.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in content repurposing. Help me create a plan to repurpose a blog post about [specific topic]. Include ideas for turning it into social media posts, infographics, videos, or email newsletters to maximize its reach and impact. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Blog Subheading Creation Guide',
+    category: 'Content & SEO',
+    description: 'Advise on creating informative, intriguing, and keyword-rich blog subheadings to keep readers engaged and enhance SEO.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in structuring blog content. Help me create engaging subheadings for a blog post about [specific topic]. Include advice on making them informative, intriguing, and keyword-rich to keep readers engaged and improve SEO. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Behavioral Trigger Email Strategy',
+    category: 'Content & SEO',
+    description: 'Develop a personalized email strategy that uses recipient behavior to address objections, highlight benefits, and include limited-time incentives.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in behavioral-based email marketing. Develop a highly personalized email for leads who visited [specific product page] but didn\'t purchase. Use their browsing behavior to tailor the content, addressing why they might have hesitated. Highlight the product\'s unique benefits, include testimonials or reviews, and offer a limited-time incentive to encourage them to complete the purchase. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Engagement Rate Analysis Guide',
+    category: 'Content & SEO',
+    description: 'Measure and compare interactions versus impressions for your account by defining your audience, content types, and baseline engagement data.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in engagement rate analysis. I\'m not sure how to measure interactions vs. impressions for my [account]. Please ask me about my audience size, content types, and any baseline data so you can recommend improvements.'
+  },
+  {
+    title: 'Emotional Storytelling Email',
+    category: 'Email Marketing',
+    description: 'Write an email that connects emotionally with your ideal customer by addressing their pain points, using persuasive storytelling and urgency to encourage them to take the desired action with a compelling incentive.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in emotional storytelling. Write an email that connects with your [ideal customer persona] on an emotional level by addressing their pain points and needs. Use persuasive language and a sense of urgency to encourage them to take the desired action and offer a compelling incentive to seal the deal. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Educational Instagram Story Series',
+    category: 'Social Media',
+    description: 'Craft a sequence of Instagram stories that delivers educational content in an engaging, easy-to-understand format.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in educational content creation. Help me create Instagram stories that educate my audience about [specific topic]. Include ideas for breaking down complex information into bite-sized tips, using infographics, animations, or quick video snippets. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Educational Channel Script Planner',
+    category: 'Productivity',
+    description: 'Plan a mini-lecture format script with key takeaways, recaps, and visuals for your educational channel.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in educational channel scripting. I want a mini-lecture format covering [topic], about [time length], with key takeaways and a recap. Ask me about my audience\'s age range, the depth of detail, and any visual aids I have.'
+  },
+  {
+    title: 'Influencer Campaign Optimization Framework',
+    category: 'Social Media',
+    description: 'Guide monitoring and optimizing live influencer campaigns through performance analysis, content adjustments, and influencer feedback loops.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in influencer campaign optimization. Guide me on how to monitor and optimize an influencer marketing campaign while it\'s running. Include steps to analyze performance metrics, adjust content strategies, and communicate feedback to influencers to ensure success for [specific product/service]. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Data-Driven YouTube Improvement Framework',
+    category: 'Data Analysis',
+    description: 'Use analytics like audience retention graphs to refine your content style and improve performance metrics on YouTube.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in data-driven YouTube improvements. I want to use analytics like audience retention graphs to refine my [content style]. Ask me about the watch time trends I\'ve noticed, my brand\'s voice, and any metrics that matter most.'
+  },
+  {
+    title: 'Curiosity-Driven YouTube Title Generator',
+    category: 'Business',
+    description: 'Leverage unexpected twists in your video concept to craft curiosity-driven titles that make viewers eager to click and learn more.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in curiosity-driven YouTube titles. My video includes an unexpected twist on [common topic]. Please ask me about the twist, the target audience, and how I want them to feel when they see the title.'
+  },
+  {
+    title: 'Conversation Rate Metrics Analyzer',
+    category: 'Social Media',
+    description: 'Determine which social interactions count as meaningful actions for your business by defining valuable behaviors, measurement methods, and top traffic sources.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in conversation rate metrics. I need to assess how many social media interactions convert into meaningful actions for my [business]. Ask me about the actions I consider valuable, how I measure them, and which platforms drive the most traffic.'
+  },
+  {
+    title: 'Credibility-Building Testimonial Email',
+    category: 'Sales',
+    description: 'Develop an email showcasing credibility and social proof through testimonials from satisfied customers, addressing objections, and using persuasive language to encourage the desired action.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in credibility-building emails. Compose an email that showcases the credibility and social proof of your [product/service] by sharing testimonials from previous satisfied customers. Address the concerns and objections of your [ideal customer persona] and use persuasive language to encourage them to take the desired action. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Content-Driven Keyword Ideation',
+    category: 'Content & SEO',
+    description: 'Suggest topic-aligned keywords for blog posts by analyzing user intent, content categories, brand tone, and desired word counts.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in content-driven keyword research. I plan to write blog posts for [topic], and I need topics that align with user intent. Ask me about the categories I want to cover, brand tone, and typical word count.'
+  },
+  {
+    title: 'Competitor Social Media Benchmarking',
+    category: 'Data Analysis',
+    description: 'Benchmark your brand against competitors by gathering engagement metrics from their handles, leveraging any paid tools you subscribe to.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in competitor social media analytics. I\'d like to benchmark my [brand] against a few top competitors. Ask me about their handles or pages, what engagement metrics matter, and if I have any paid tool subscriptions that help gather data.'
+  },
+  {
+    title: 'Conversational Blog Writing Guide',
+    category: 'Writing',
+    description: 'Teach you how to write blog posts in a conversational tone using simple language, rhetorical questions, and relatable examples.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in conversational writing. Teach me how to write a blog post about [specific topic] in a conversational tone. Include strategies for using simple language, rhetorical questions, and relatable examples to connect with readers. Feel free to ask me some clarifying questions before you begin.'
+  },
+  {
+    title: 'Content Ideation Consultant',
+    category: 'Content & SEO',
+    description: 'Recommend unique content angles and campaign concepts by analyzing your past successful posts, brand values, and posting cadence.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert content ideation consultant. My [brand] is stuck repeating the same posts. I want unique angles or campaigns to spice up our feed. Ask me about past successful posts, brand values, and the frequency of posting so you can propose ideas effectively.'
+  },
+  {
+    title: 'Competitor Keyword Gap Analyzer',
+    category: 'Content & SEO',
+    description: 'Analyze competitor sites\' ranking keywords to uncover gaps and opportunities by reviewing rival URLs, overlap expectations, and topic priorities.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in competitor-driven keyword discovery. I want to see what [rival sites] rank for and identify gaps for my [site]. Ask me about competitor URLs, how much overlap I expect, and which topics matter most to me.'
+  },
+  {
+    title: 'Content Promotion Swipe-Up Stories',
+    category: 'Content & SEO',
+    description: 'Develop story concepts to promote a blog post, article, or podcast using key point summaries, \'Swipe Up\' links or stickers, and attention-grabbing text overlays.',
+    method: 'Copy & paste the prompt below into your preferred LLM. Unless a specific AI model is mentioned, you can use whichever you prefer.',
+    prompt: 'You are an expert in content promotion. Craft Instagram story ideas to promote [specific blog post, article, or podcast]. Include suggestions for summarizing key points, adding a \'Swipe Up\' link (or Link Sticker), and using text overlays to grab attention. Feel free to ask me some clarifying questions before you begin.'
+  }
 ];
 
 // Slug utility
