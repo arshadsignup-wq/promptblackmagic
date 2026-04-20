@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="/styles.css">
 
   <!-- Structured Data -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI Prompt Engineering: From Beginner to Pro","description":"A structured roadmap for developing prompt engineering skills, from basic techniques to advanced strategies used by AI professionals.","url":"https://www.promptblackmagic.com/blog/prompt-engineering-beginner-to-pro/","image":"https://www.promptblackmagic.com/og-image.png","author":{"@type":"Organization","name":"Prompt Black Magic","url":"https://www.promptblackmagic.com"},"publisher":{"@type":"Organization","name":"Prompt Black Magic","url":"https://www.promptblackmagic.com","logo":{"@type":"ImageObject","url":"https://www.promptblackmagic.com/og-image.png"}},"datePublished":"2026-03-20","dateModified":"2026-04-19","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.promptblackmagic.com/blog/prompt-engineering-beginner-to-pro/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI Prompt Engineering: From Beginner to Pro","description":"A structured roadmap for developing prompt engineering skills, from basic techniques to advanced strategies used by AI professionals.","url":"https://www.promptblackmagic.com/blog/prompt-engineering-beginner-to-pro/","image":"https://www.promptblackmagic.com/og-image.png","author":{"@type":"Organization","name":"Prompt Black Magic","url":"https://www.promptblackmagic.com"},"publisher":{"@type":"Organization","name":"Prompt Black Magic","url":"https://www.promptblackmagic.com","logo":{"@type":"ImageObject","url":"https://www.promptblackmagic.com/og-image.png"}},"datePublished":"2026-03-20","dateModified":"2026-04-20","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.promptblackmagic.com/blog/prompt-engineering-beginner-to-pro/"}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.promptblackmagic.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.promptblackmagic.com/blog/"},{"@type":"ListItem","position":3,"name":"AI Prompt Engineering: From Beginner to Pro","item":"https://www.promptblackmagic.com/blog/prompt-engineering-beginner-to-pro/"}]}</script>
 
 </head>
@@ -149,6 +149,22 @@
 
 <h3>Dynamic Context Windows</h3>
 <p>For long-running projects, develop a "context document" that you update and include with each prompt. This document contains your project goals, previous decisions, constraints, and current status. It ensures every prompt in the series has full context, even if you're working across multiple sessions.</p>
+
+<h2>Prompt Engineering for Specific AI Models</h2>
+
+<p>While core prompt engineering principles work across all models, each AI has unique strengths you can leverage:</p>
+
+<h3>Claude (Anthropic)</h3>
+<p>Claude excels with structured prompts using XML tags. Wrap your inputs in descriptive tags like <code>&lt;context&gt;</code> and <code>&lt;task&gt;</code> for clearer outputs. Claude's 200K context window handles long documents without chunking, and its extended thinking mode produces deeper analysis on complex problems. Our <a href="/blog/best-claude-prompts-2026/">Best Claude Prompts</a> guide covers model-specific optimization techniques.</p>
+
+<h3>ChatGPT (OpenAI)</h3>
+<p>ChatGPT responds well to conversational prompts and persona-based instructions. Its Custom Instructions feature lets you set persistent preferences. The Code Interpreter plugin adds file upload and data analysis capabilities. For comparison shopping between models, see our <a href="/blog/claude-vs-chatgpt-2026/">Claude vs ChatGPT 2026</a> guide.</p>
+
+<h3>Gemini (Google)</h3>
+<p>Gemini's multimodal capabilities (text, image, code) mean your prompts can include visual inputs. It integrates with Google Workspace for context from your documents and emails. Gemini works best with clear, direct instructions rather than elaborate persona setups.</p>
+
+<h3>The "AI Prompt" Meta-Skill</h3>
+<p>The most valuable prompt engineering skill is not memorizing techniques for individual models - it is understanding the underlying principle that applies everywhere: <strong>specificity beats generality</strong>. An AI prompt that describes exactly what you want, who the audience is, what format you need, and what constraints exist will produce excellent results on any model. Master this principle and model-specific optimizations become minor refinements rather than essential requirements.</p>
 
 <h2>Your Learning Path</h2>
 

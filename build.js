@@ -244,6 +244,20 @@ const CATEGORY_TIPS = {
     'Ask the AI to structure findings with methodology, key findings, limitations, and actionable recommendations - proper research format ensures completeness.',
     'Include your existing knowledge and hypotheses so the AI can build on what you know rather than starting from basics.',
     'Request the AI to identify gaps in available information and suggest primary research methods to fill them.'
+  ],
+  'Healthcare': [
+    'Always include disclaimers that AI-generated healthcare content must be reviewed by qualified professionals before clinical use.',
+    'Specify the target reading level for patient materials - most health literacy guidelines recommend 6th to 8th grade level.',
+    'Include the clinical setting and specialty context so the AI tailors documentation to the right standards and terminology.',
+    'Ask the AI to cite evidence levels (RCT, meta-analysis, expert consensus) when generating clinical recommendations.',
+    'Specify whether the output is for patient-facing communication or provider-to-provider documentation - the language differs significantly.'
+  ],
+  'Legal': [
+    'Always include a disclaimer that AI-generated legal content is not legal advice and must be reviewed by a licensed attorney.',
+    'Specify the jurisdiction (federal, state, country) since laws vary dramatically and generic legal information can be misleading.',
+    'Ask the AI to flag any citations or case references for independent verification - AI models can hallucinate legal citations.',
+    'Include the audience (attorney, paralegal, client, business owner) so the AI adjusts the technical depth appropriately.',
+    'Request that the AI distinguish between established law and emerging or unsettled areas where the legal landscape is still evolving.'
   ]
 };
 const CATEGORY_WHEN_TO_USE = {
@@ -437,6 +451,22 @@ const CATEGORY_WHEN_TO_USE = {
     'Your analysis is complete but you need to structure findings into a report format that decision-makers will actually read.',
     'You are comparing multiple solutions to a business problem and need an evaluation framework with weighted criteria.',
     'You want to identify trends in your industry and need a research methodology that separates signal from noise.'
+  ],
+  'Healthcare': [
+    'You need to create patient education handouts that explain a diagnosis or procedure in language patients can actually understand.',
+    'Your clinic is standardizing SOAP note documentation and you need consistent templates that meet billing and compliance requirements.',
+    'You are preparing a medical literature review for grand rounds and need a structured synthesis of recent evidence on a clinical topic.',
+    'Your team is building clinical training scenarios for residents or nursing staff and needs realistic patient cases with assessment rubrics.',
+    'You are launching a telehealth program and need patient-facing materials, provider workflows, and documentation templates.',
+    'Your practice needs compliance documentation for HIPAA audits and you want a structured framework to build from.'
+  ],
+  'Legal': [
+    'You need to research a legal issue and want a structured summary of applicable statutes, case law, and practical implications.',
+    'You received a contract and need to identify key risks, missing clauses, and negotiation priorities before signing.',
+    'You are a law student briefing cases for class and need consistent, well-structured case briefs with holdings and reasoning.',
+    'Your client has a dispute and you need to draft a demand letter with proper legal structure and professional tone.',
+    'You are setting up a new law practice and need client intake questionnaires tailored to your practice area.',
+    'Your client received a legal document and needs a plain-language explanation of what it means and what they should do.'
   ]
 };
 
@@ -600,6 +630,20 @@ const CATEGORY_EXPECTED_RESULTS = {
     'Evaluation matrices with weighted criteria for comparing options against defined success factors.',
     'Executive research briefings that distill complex findings into actionable recommendations.',
     'Trend analysis reports that separate verified patterns from noise using defined statistical thresholds.'
+  ],
+  'Healthcare': [
+    'Patient education materials written at the specified reading level with medical terms defined in plain language.',
+    'Structured clinical documentation (SOAP notes, care plans) following standard medical documentation conventions.',
+    'Literature review summaries with evidence grading and clinical practice implications clearly separated.',
+    'Training scenarios with realistic patient presentations, assessment rubrics, and debriefing guides.',
+    'Telehealth workflow documents covering patient preparation, provider checklists, and documentation templates.'
+  ],
+  'Legal': [
+    'Structured legal research summaries organized by statute, case law, and practical implications with IRAC format.',
+    'Contract review analyses with risk ratings, missing clause identification, and suggested negotiation language.',
+    'Case briefs with procedural history, holdings, reasoning, and significance analysis in consistent format.',
+    'Demand letter drafts with proper legal structure, factual recitation, and professional tone.',
+    'Plain-language document translations that preserve legal accuracy while making content accessible to non-lawyers.'
   ]
 };
 
@@ -779,6 +823,22 @@ const CATEGORY_CUSTOMIZATION = {
     'Include your preferred sources (academic journals, industry reports, government data) for targeted source recommendations.',
     'Modify the output format to match your deliverable: executive summary, full report, slide deck, or annotated bibliography.',
     'Swap the sample variables with your actual factors of interest so the methodology addresses your real question.'
+  ],
+  'Healthcare': [
+    'Replace the generic condition name with the specific diagnosis, procedure, or medication relevant to your patient population.',
+    'Adjust the reading level target based on your audience - 6th grade for general patients, higher for health-literate populations.',
+    'Swap the specialty references with your clinical specialty so documentation follows the right conventions.',
+    'Include your facility type (hospital, clinic, telehealth) so workflows match your practice setting.',
+    'Modify the compliance framework references to match your specific regulatory requirements (HIPAA, Joint Commission, state-specific).',
+    'Add your EHR system name so documentation templates align with your charting platform.'
+  ],
+  'Legal': [
+    'Replace the jurisdiction placeholder with your specific state, federal circuit, or country for jurisdiction-accurate analysis.',
+    'Swap the practice area references with your specific legal matter type (contract, tort, employment, IP, criminal).',
+    'Adjust the audience level from attorney to client depending on who will read the output.',
+    'Include the opposing party details and relevant dates for case-specific document drafts.',
+    'Modify the citation format to match your court or firm requirements (Bluebook, ALWD, local rules).',
+    'Add your firm branding and contact information placeholders for client-facing documents.'
   ]
 };
 
@@ -804,7 +864,9 @@ const COMPLEMENTARY_CATEGORIES = {
   'Project Management': ['Productivity', 'Business', 'Freelancing'],
   'Customer Service': ['Sales', 'Email Marketing', 'Business'],
   'Health & Fitness': ['Productivity', 'Personal Finance', 'Research'],
-  'Research': ['Data Analysis', 'Education', 'Content & SEO']
+  'Research': ['Data Analysis', 'Education', 'Content & SEO'],
+  'Healthcare': ['Education', 'Research', 'Writing'],
+  'Legal': ['Business', 'Writing', 'Research']
 };
 
 const CATEGORY_BLOG_LINKS = {
@@ -829,7 +891,9 @@ const CATEGORY_BLOG_LINKS = {
   'Project Management': 'freelancing-ai-win-clients-manage-projects',
   'Customer Service': 'customer-service-ai-smart-prompts',
   'Health & Fitness': 'ai-personal-finance-save-budget-invest',
-  'Research': 'how-to-write-better-ai-prompts'
+  'Research': 'how-to-write-better-ai-prompts',
+  'Healthcare': 'ai-prompts-healthcare-professionals',
+  'Legal': 'ai-prompts-lawyers-legal-professionals'
 };
 
 // ── Blog articles ─────────────────────────────────────────────────
@@ -1117,6 +1181,22 @@ const BLOG_ARTICLES = [
 
 <h3>Dynamic Context Windows</h3>
 <p>For long-running projects, develop a "context document" that you update and include with each prompt. This document contains your project goals, previous decisions, constraints, and current status. It ensures every prompt in the series has full context, even if you're working across multiple sessions.</p>
+
+<h2>Prompt Engineering for Specific AI Models</h2>
+
+<p>While core prompt engineering principles work across all models, each AI has unique strengths you can leverage:</p>
+
+<h3>Claude (Anthropic)</h3>
+<p>Claude excels with structured prompts using XML tags. Wrap your inputs in descriptive tags like <code>&lt;context&gt;</code> and <code>&lt;task&gt;</code> for clearer outputs. Claude's 200K context window handles long documents without chunking, and its extended thinking mode produces deeper analysis on complex problems. Our <a href="/blog/best-claude-prompts-2026/">Best Claude Prompts</a> guide covers model-specific optimization techniques.</p>
+
+<h3>ChatGPT (OpenAI)</h3>
+<p>ChatGPT responds well to conversational prompts and persona-based instructions. Its Custom Instructions feature lets you set persistent preferences. The Code Interpreter plugin adds file upload and data analysis capabilities. For comparison shopping between models, see our <a href="/blog/claude-vs-chatgpt-2026/">Claude vs ChatGPT 2026</a> guide.</p>
+
+<h3>Gemini (Google)</h3>
+<p>Gemini's multimodal capabilities (text, image, code) mean your prompts can include visual inputs. It integrates with Google Workspace for context from your documents and emails. Gemini works best with clear, direct instructions rather than elaborate persona setups.</p>
+
+<h3>The "AI Prompt" Meta-Skill</h3>
+<p>The most valuable prompt engineering skill is not memorizing techniques for individual models - it is understanding the underlying principle that applies everywhere: <strong>specificity beats generality</strong>. An AI prompt that describes exactly what you want, who the audience is, what format you need, and what constraints exist will produce excellent results on any model. Master this principle and model-specific optimizations become minor refinements rather than essential requirements.</p>
 
 <h2>Your Learning Path</h2>
 
@@ -2310,6 +2390,22 @@ const BLOG_ARTICLES = [
 <h3>The Refactoring Partner</h3>
 <p>Legacy code refactoring is where AI provides some of its highest value. Feed it a messy function and ask it to refactor for readability, extract helper functions, add type annotations, and improve variable naming. Then review the refactored version to ensure it preserves the original behavior. The AI handles the tedious transformation while you validate correctness.</p>
 
+<h2>Claude Code: The Terminal-First AI Developer Tool</h2>
+
+<p>Among the AI coding tools available in 2026, <a href="/blog/claude-code-guide-2026/">Claude Code</a> stands out for developers who live in the terminal. Unlike IDE plugins that work within a single file, Claude Code operates across your entire project - reading files, running commands, executing tests, and making multi-file changes in a single operation.</p>
+
+<p>What makes Claude Code particularly effective for the BUILD Method:</p>
+
+<ul>
+<li><strong>Brief stage:</strong> Claude Code reads your CLAUDE.md file and project structure automatically, understanding your conventions before you ask for anything</li>
+<li><strong>Understand stage:</strong> Ask Claude to read specific files or modules and explain the architecture before making changes</li>
+<li><strong>Implement stage:</strong> Claude generates code that follows your existing patterns because it has read your codebase first</li>
+<li><strong>Lint stage:</strong> Claude runs your test suite, type checker, and linter, then fixes any issues it finds</li>
+<li><strong>Deploy stage:</strong> Claude can create commits, push branches, and even create pull requests directly from the terminal</li>
+</ul>
+
+<p>Our <a href="/prompts/claude-code-project-setup-prompt/">Claude Code Project Setup Prompt</a> and <a href="/prompts/claude-code-debugging-assistant/">Claude Code Debugging Assistant</a> are specifically designed for terminal-based AI development workflows.</p>
+
 <h2>Start Building Faster</h2>
 
 <p>The BUILD Method (Brief, Understand, Implement, Lint, Deploy) integrates AI into your development workflow at the stages where it adds the most value without compromising code quality. Browse our <a href="/">coding prompts</a> to find tools for code review, debugging, testing, and API development - and start shipping faster without cutting corners.</p>`
@@ -3110,6 +3206,21 @@ const BLOG_ARTICLES = [
 <li><strong>Review phase:</strong> Run the output through a different model than the one that created it (fresh perspective catches errors)</li>
 </ol>
 
+<h2>Claude vs ChatGPT: The Direct Comparison</h2>
+
+<p>Since Claude and ChatGPT account for the majority of professional AI use, here is how they compare head-to-head across specific work tasks:</p>
+
+<ul>
+<li><strong>Long document analysis:</strong> Claude's 200K token context window gives it a clear advantage over ChatGPT for analyzing contracts, research papers, and codebases. You can paste entire documents without chunking.</li>
+<li><strong>Instruction following:</strong> Claude excels at following complex, multi-part instructions precisely. When your prompt has 10 specific requirements, Claude is more likely to address all of them.</li>
+<li><strong>Web browsing and plugins:</strong> ChatGPT's ecosystem of plugins and web browsing gives it an edge for research requiring current information.</li>
+<li><strong>Code execution:</strong> ChatGPT's Code Interpreter runs Python directly, making it better for data analysis with file uploads. Claude Code works in your terminal with your actual codebase.</li>
+<li><strong>Writing quality:</strong> Claude produces more natural, less formulaic prose. ChatGPT is faster at generating high volumes of content variations.</li>
+<li><strong>API development:</strong> Both offer strong APIs. Claude's tool use and structured outputs are particularly well-suited for building AI-powered applications.</li>
+</ul>
+
+<p>For a deeper dive into choosing between these two models, read our dedicated <a href="/blog/claude-vs-chatgpt-2026/">Claude vs ChatGPT 2026</a> comparison.</p>
+
 <h2>What Matters More Than the Model</h2>
 
 <p>After all our testing, here's the most important takeaway: prompt quality matters more than model choice. A well-crafted prompt on any of these three models will outperform a vague prompt on any of them. The differences between models are real but secondary to the difference between a good prompt and a bad one.</p>
@@ -3221,6 +3332,24 @@ const BLOG_ARTICLES = [
 </ul>
 
 <p>For these use cases, vibe coding can still help with specific components, but you need a developer guiding the overall architecture and integration. Our <a href="/prompts/senior-code-reviewer/">Senior Code Reviewer</a> prompt can help you evaluate AI-generated code before deploying it.</p>
+
+<h2>Vibe Coding with Claude Code</h2>
+
+<p>Claude Code has emerged as a powerful option for vibe coding that bridges the gap between no-code tools and traditional development. Unlike browser-based tools, Claude Code works in your terminal with full access to your file system, git, and package managers.</p>
+
+<h3>Why Claude Code for Vibe Coding</h3>
+
+<p>The advantage of Claude Code over tools like Bolt or Lovable is persistence and control. Your code lives on your machine, in a real git repository, with standard deployment options. When the AI makes a mistake, you can roll back with git. When you need to customize beyond what the AI generates, you have the full codebase to work with.</p>
+
+<h3>Claude Code vs Cursor vs Bolt: Quick Comparison</h3>
+
+<ul>
+<li><strong><a href="/blog/claude-code-guide-2026/">Claude Code</a>:</strong> Terminal-based, best for developers comfortable with command line. Full system access, great for backend and infrastructure work.</li>
+<li><strong>Cursor:</strong> IDE-based, best for developers who prefer visual editing. Strong inline completions and multi-file editing.</li>
+<li><strong>Bolt/Lovable:</strong> Browser-based, best for non-developers building frontends. Instant preview, simpler workflow, but limited backend capabilities.</li>
+</ul>
+
+<p>Our <a href="/prompts/cursor-ai-project-prompt/">Cursor AI Project Prompt</a> and <a href="/prompts/vibe-coding-landing-page-generator/">Vibe Coding Landing Page Generator</a> are optimized for these different tools. Pick the one that matches your comfort level with code.</p>
 
 <h2>Getting Started Today</h2>
 
@@ -3548,6 +3677,22 @@ const BLOG_ARTICLES = [
 
 <h3>Ignoring Context Window Limits</h3>
 <p>Even large context windows have practical limits. According to <a href="https://www.anthropic.com/research" target="_blank" rel="noopener noreferrer">Anthropic's research</a>, model attention degrades in the middle of very long contexts. Place the most critical information at the beginning and end of your context, not buried in the middle.</p>
+
+<h2>Context Engineering Tools and Platforms in 2026</h2>
+
+<p>The context engineering landscape has matured significantly. Here are the tools and platforms that make context management practical:</p>
+
+<h3>RAG (Retrieval-Augmented Generation) Platforms</h3>
+<p>RAG systems automatically pull relevant documents into the AI's context based on the user's query. Instead of manually pasting context, the system retrieves what's needed from your knowledge base. Our <a href="/prompts/rag-prompt-template-designer/">RAG Prompt Template Designer</a> helps you build effective prompt templates for these systems.</p>
+
+<h3>Claude Code and CLAUDE.md Files</h3>
+<p><a href="/blog/claude-code-guide-2026/">Claude Code</a> implements context engineering through CLAUDE.md files - project documentation that Claude reads automatically at the start of every session. This is context engineering in practice: persistent project knowledge that eliminates repetitive context-setting.</p>
+
+<h3>Context Window Management</h3>
+<p>As conversations grow long, managing what stays in the AI's context window becomes critical. Our <a href="/prompts/context-window-optimizer-prompt/">Context Window Optimizer Prompt</a> helps design strategies for prioritizing, summarizing, and refreshing context in long-running AI interactions.</p>
+
+<h3>System Prompts as Context Architecture</h3>
+<p><a href="/blog/system-prompts-guide-ai-setup/">System prompts</a> are the foundation of context engineering for AI applications. They define the persistent context that shapes every interaction. Well-designed system prompts encode domain knowledge, behavioral rules, and output formatting that would otherwise need to be repeated in every user message.</p>
 
 <h2>Start Context Engineering Today</h2>
 
@@ -4039,6 +4184,24 @@ const BLOG_ARTICLES = [
 <p>Default square images rarely work for real applications. Always specify your aspect ratio: --ar 16:9 for headers, --ar 9:16 for social stories, --ar 2:3 for Pinterest pins, --ar 4:5 for Instagram portrait posts.</p>
 
 <p>For more on using AI-generated visuals in your social media strategy, read our <a href="/blog/ai-social-media-content-creation/">guide to AI social media content creation</a> - it covers how to integrate generated images into a cohesive content calendar.</p>
+
+<h2>Free AI Image Generators in 2026</h2>
+
+<p>You do not need a paid subscription to start generating professional images. Here are the best free options available:</p>
+
+<ul>
+<li><strong>Microsoft Copilot (DALL-E):</strong> Free tier with daily generation limits. Strong for photorealistic images and product mockups.</li>
+<li><strong>Google Gemini:</strong> Image generation built into the free Gemini tier. Good for quick concepts and social media visuals.</li>
+<li><strong>Stable Diffusion (local):</strong> Completely free and runs on your own hardware. Requires a GPU and some technical setup, but offers unlimited generations with no restrictions.</li>
+<li><strong>Leonardo.ai:</strong> Free tier with daily token allowance. Strong community and fine-tuned models for specific styles.</li>
+<li><strong>Ideogram:</strong> Free tier available. Excels at text rendering within images - useful for social media graphics and logos.</li>
+</ul>
+
+<h3>AI Image Prompts for Social Media</h3>
+
+<p>Social media managers need consistent, on-brand visuals at scale. Our <a href="/prompts/social-media-image-pack-creator/">Social Media Image Pack Creator</a> generates coordinated image prompts across Instagram, LinkedIn, Twitter, and Pinterest. The <a href="/prompts/ai-product-photography-generator/">AI Product Photography Generator</a> creates e-commerce-ready product shots with professional lighting and styling.</p>
+
+<p>For typography-focused graphics (quote cards, announcement posts, branded templates), the <a href="/prompts/ai-typography-art-prompt-generator/">AI Typography Art Prompt Generator</a> produces text-based artwork optimized for generators that handle text rendering well.</p>
 
 <h2>Start Creating Professional AI Images Today</h2>
 
@@ -5291,6 +5454,679 @@ const BLOG_ARTICLES = [
 <p>Related reading: <a href="/blog/ai-email-marketing-campaigns/">AI Email Marketing Campaigns</a> expands on the nurture follow-up sequences discussed in the N stage. And our <a href="/blog/boost-productivity-ai-prompts/">Boost Productivity with AI Prompts</a> guide covers the project management techniques that keep event planning on track.</p>
 
 <p>Explore our <a href="/">complete prompt library</a> for project management, email marketing, and productivity prompts that support every stage of event planning.</p>`
+  },
+  {
+    title: 'Claude Code: The Complete Guide to AI-Powered Development in 2026',
+    slug: 'claude-code-guide-2026',
+    description: 'Everything you need to know about Claude Code - the terminal-first AI coding tool from Anthropic. Setup, workflows, best practices, and real-world examples.',
+    date: '2026-04-20',
+    readTime: '12 min read',
+    content: `<p>Claude Code has changed how developers write software. Instead of switching between an IDE and a chat window, Claude Code works directly in your terminal - reading files, running commands, and writing code with full context of your project. This guide covers everything from initial setup to advanced workflows that experienced developers use daily.</p>
+
+<h2>What Is Claude Code and Why Does It Matter?</h2>
+
+<p>Claude Code is Anthropic's command-line tool that brings Claude directly into your development workflow. Unlike browser-based AI assistants, Claude Code operates in your terminal with access to your file system, git history, and project context. It reads your codebase, understands your architecture, and makes changes across multiple files in a single operation.</p>
+
+<p>The key difference from other AI coding tools is context awareness. Claude Code does not work from isolated snippets. It reads your entire project structure, configuration files, and existing patterns before suggesting changes. This means the code it generates follows your conventions, uses your existing utilities, and integrates with your architecture.</p>
+
+<h2>The FLOW Framework for Claude Code</h2>
+
+<p>We developed the FLOW framework to help developers get maximum value from Claude Code:</p>
+
+<ul>
+<li><strong>F - Files first:</strong> Always point Claude Code to the relevant files before asking it to make changes. Use CLAUDE.md files to document your project conventions so Claude has persistent context.</li>
+<li><strong>L - Let it read:</strong> Before writing any code, ask Claude to read and understand the existing implementation. "Read src/auth/ and explain the authentication flow" produces better results than "add OAuth support."</li>
+<li><strong>O - Operate incrementally:</strong> Break large tasks into smaller steps. "Add the database schema, then create the API routes, then build the frontend" works better than "build me a full-stack feature."</li>
+<li><strong>W - Verify the work:</strong> Ask Claude to run tests, check types, and verify its own output. "Run the test suite and fix any failures" catches issues before they reach production.</li>
+</ul>
+
+<h2>Getting Started: Setup and Configuration</h2>
+
+<p>Installation takes under a minute. Claude Code runs on macOS, Linux, and Windows (via WSL). Once installed, you authenticate with your Anthropic API key and start working immediately. The tool respects your existing terminal setup - shell aliases, environment variables, and PATH configurations all work as expected.</p>
+
+<p>The most important configuration step is creating a CLAUDE.md file in your project root. This file tells Claude about your project conventions, tech stack, and preferences. Think of it as onboarding documentation for your AI pair programmer. Projects with well-written CLAUDE.md files consistently produce better results because Claude starts every session with the right context.</p>
+
+<h2>Core Workflows That Save Hours Daily</h2>
+
+<h3>Multi-File Refactoring</h3>
+
+<p>Claude Code excels at changes that span multiple files. Renaming a component, updating an API interface, or migrating from one library to another - these tasks that take developers hours of find-and-replace become single commands. Claude reads the dependency graph, updates imports, adjusts tests, and ensures type safety across the change.</p>
+
+<h3>Debugging with Full Context</h3>
+
+<p>When you paste an error message into Claude Code, it does not just pattern-match against common solutions. It reads your actual code, traces the execution path, identifies the root cause, and proposes a fix that fits your codebase. Our <a href="/prompts/claude-code-debugging-assistant/">Claude Code Debugging Assistant</a> prompt provides a structured approach to this workflow.</p>
+
+<h3>Code Review and Quality</h3>
+
+<p>Ask Claude to review your changes before committing. It checks for security vulnerabilities, performance issues, missing error handling, and style inconsistencies. Unlike automated linters, Claude understands the intent behind your code and can flag logical errors that tools miss.</p>
+
+<h2>Advanced Techniques: Extended Thinking and Structured Prompts</h2>
+
+<p>For complex architectural decisions, Claude's extended thinking mode spends more time reasoning before responding. Our <a href="/prompts/claude-extended-thinking-prompt/">Claude Extended Thinking Prompt</a> activates this mode for problems that require deep analysis - system design, algorithm selection, or performance optimization.</p>
+
+<p>Claude responds particularly well to XML-structured prompts. Using tags like <code>&lt;context&gt;</code>, <code>&lt;task&gt;</code>, and <code>&lt;constraints&gt;</code> helps Claude parse complex requests accurately. The <a href="/prompts/claude-xml-structured-analysis-prompt/">Claude XML-Structured Analysis Prompt</a> demonstrates this pattern for code review and technical analysis.</p>
+
+<h2>Claude Code vs Other AI Coding Tools</h2>
+
+<p>The AI coding landscape in 2026 includes several strong options. <a href="https://cursor.com" target="_blank" rel="noopener noreferrer">Cursor</a> provides an IDE-integrated experience with inline completions. <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot</a> offers broad language support within VS Code. Claude Code takes a different approach - working in the terminal with full system access, making it particularly strong for DevOps, infrastructure, and complex refactoring tasks.</p>
+
+<p>The choice depends on your workflow. If you prefer visual IDEs, Cursor is excellent. If you live in the terminal and work across large codebases, Claude Code fits naturally. Many developers use both - Cursor for writing new code and Claude Code for refactoring, debugging, and automation tasks.</p>
+
+<h2>Building with the Claude API</h2>
+
+<p>Beyond the CLI, developers integrate Claude directly into their applications through the <a href="https://docs.anthropic.com/en/api" target="_blank" rel="noopener noreferrer">Anthropic API</a>. Our <a href="/prompts/claude-api-integration-template/">Claude API Integration Template</a> provides production-ready code for connecting Claude to your backend with proper error handling, streaming, and tool use patterns.</p>
+
+<h2>Best Practices from Experienced Users</h2>
+
+<p>After working with hundreds of developers who use Claude Code daily, these patterns consistently produce the best results:</p>
+
+<ul>
+<li><strong>Start sessions with context:</strong> "Read the README, CLAUDE.md, and the src/auth directory" before asking for changes</li>
+<li><strong>Be specific about constraints:</strong> "Use our existing logger utility, not console.log" prevents unnecessary new code</li>
+<li><strong>Ask for explanations:</strong> "Explain why you chose this approach" helps you learn and catches mistakes</li>
+<li><strong>Iterate rather than restart:</strong> "The tests fail on line 45 - fix the edge case" is better than re-prompting from scratch</li>
+</ul>
+
+<p>Related reading: Our <a href="/blog/vibe-coding-prompts-build-apps/">Vibe Coding Prompts</a> guide covers AI-assisted development workflows, and <a href="/blog/ai-coding-developers-ship-faster/">AI Coding for Developers</a> explores how AI tools are changing software development practices.</p>
+
+<p>Explore our <a href="/">complete prompt library</a> for coding, agentic AI, and productivity prompts that enhance your Claude Code workflow.</p>`
+  },
+  {
+    title: 'Claude vs ChatGPT: Which AI Is Better for Your Work in 2026?',
+    slug: 'claude-vs-chatgpt-2026',
+    description: 'An honest comparison of Claude and ChatGPT across writing, coding, analysis, and creative tasks. Find the right AI for your specific workflow.',
+    date: '2026-04-20',
+    readTime: '11 min read',
+    content: `<p>The question is no longer whether to use AI - it is which AI to use. Claude (by Anthropic) and ChatGPT (by OpenAI) are the two dominant models, and each has genuine strengths. This comparison is based on practical testing across real work tasks, not benchmarks or marketing claims.</p>
+
+<h2>The MATCH Framework for Choosing Your AI</h2>
+
+<p>We use the MATCH framework to evaluate AI models for specific tasks:</p>
+
+<ul>
+<li><strong>M - Mode of work:</strong> What type of task are you doing? (writing, coding, analysis, creative, conversation)</li>
+<li><strong>A - Accuracy needs:</strong> How critical is factual precision vs. creative exploration?</li>
+<li><strong>T - Token budget:</strong> How much context do you need to provide? Long documents favor larger context windows.</li>
+<li><strong>C - Customization:</strong> Do you need specific formatting, tone, or output structure?</li>
+<li><strong>H - Human review:</strong> Will the output be used directly or reviewed and edited?</li>
+</ul>
+
+<h2>Writing and Content Creation</h2>
+
+<p>Claude consistently produces writing that sounds more natural and less formulaic. It follows style instructions more precisely and avoids the characteristic patterns that make AI writing obvious - the excessive transition words, the predictable paragraph structures, and the tendency to add unnecessary qualifiers.</p>
+
+<p>ChatGPT is stronger at generating high volumes of content variations. Need 20 ad headlines, 15 subject lines, or 10 social media posts? ChatGPT produces diverse options quickly. For long-form writing where voice and nuance matter - blog posts, reports, customer communications - Claude typically delivers more polished first drafts.</p>
+
+<p>Try our <a href="/prompts/ai-text-humanizer/">AI Text Humanizer</a> prompt with both models to see the difference in writing quality firsthand.</p>
+
+<h2>Coding and Technical Tasks</h2>
+
+<p>Claude excels at understanding existing codebases and making changes that respect established patterns. Its strength in following complex instructions makes it particularly effective for code review, debugging, and refactoring. Claude Code (the terminal tool) gives Claude direct access to your project for an integrated development experience.</p>
+
+<p>ChatGPT with Code Interpreter handles data analysis tasks effectively - uploading CSVs, running Python scripts, and generating visualizations. For quick scripts and data manipulation, the built-in code execution is convenient.</p>
+
+<p>For serious development work - building features, debugging production issues, or working across large codebases - Claude's instruction-following precision gives it an edge. Our <a href="/prompts/claude-code-project-setup-prompt/">Claude Code Project Setup Prompt</a> demonstrates the level of structured output Claude handles well.</p>
+
+<h2>Analysis and Research</h2>
+
+<p>Both models handle analytical tasks competently, with different strengths. Claude's larger context window (200K tokens) makes it better for analyzing long documents - contracts, research papers, financial reports. You can paste an entire document and ask detailed questions without losing context.</p>
+
+<p>ChatGPT's browsing capability and integration with plugins give it an advantage for research that requires current information. However, for analyzing provided materials, Claude's precision in extracting specific details and maintaining accuracy across long documents is consistently stronger.</p>
+
+<h2>Claude vs ChatGPT: Pricing Comparison (2026)</h2>
+
+<p>Both platforms offer free tiers with limitations and paid plans for serious use:</p>
+
+<ul>
+<li><strong>Claude Pro:</strong> $20/month for higher usage limits on Claude Opus and Sonnet models</li>
+<li><strong>ChatGPT Plus:</strong> $20/month for GPT-4o access with higher limits</li>
+<li><strong>Claude API:</strong> Pay-per-token pricing, competitive for high-volume applications</li>
+<li><strong>OpenAI API:</strong> Pay-per-token with various model tiers</li>
+</ul>
+
+<p>For API users building applications, cost depends heavily on your use case. Claude's larger context window can reduce the need for complex chunking strategies, potentially lowering total costs for document-heavy applications.</p>
+
+<h2>Creative and Brainstorming Tasks</h2>
+
+<p>ChatGPT tends to be more playful and willing to explore unconventional ideas in creative brainstorming. Claude is more measured and tends to produce creative output that is polished but sometimes less surprising.</p>
+
+<p>For structured creative tasks - following a brand voice, maintaining consistency across a content series, or adapting tone for specific audiences - Claude's instruction-following is an advantage. Explore our <a href="/prompts/article-outline-builder/">Article Outline Builder</a> to see how structured creative prompting works.</p>
+
+<h2>When to Use Claude</h2>
+
+<ul>
+<li>Long document analysis (contracts, codebases, research papers)</li>
+<li>Coding tasks that require understanding existing code patterns</li>
+<li>Writing that needs to match a specific voice or follow detailed instructions</li>
+<li>Tasks where accuracy and precision matter more than speed</li>
+<li>Building AI applications via API (strong tool use, structured outputs)</li>
+</ul>
+
+<h2>When to Use ChatGPT</h2>
+
+<ul>
+<li>Quick research requiring web browsing</li>
+<li>Data analysis with file uploads and code execution</li>
+<li>Generating high volumes of content variations</li>
+<li>Creative brainstorming where unpredictability is valuable</li>
+<li>Image generation with DALL-E integration</li>
+</ul>
+
+<h2>The Practical Answer</h2>
+
+<p>Most professionals who use AI seriously in 2026 use both. The models complement each other. Claude for precision work and deep analysis. ChatGPT for quick research and creative exploration. The best approach is to try your specific tasks on both platforms and decide based on actual results, not reviews.</p>
+
+<p>For more on getting the best results from any AI model, read our <a href="/blog/how-to-write-better-ai-prompts/">How to Write Better AI Prompts</a> guide and <a href="/blog/chatgpt-vs-claude-vs-gemini-2026/">ChatGPT vs Claude vs Gemini</a> three-way comparison.</p>
+
+<p>Explore our <a href="/">complete prompt library</a> for prompts optimized across all major AI platforms.</p>`
+  },
+  {
+    title: 'Best Claude Prompts: 25 Expert-Level Prompts Optimized for Claude',
+    slug: 'best-claude-prompts-2026',
+    description: 'Expert-curated prompts designed specifically for Claude\'s strengths - XML structuring, extended thinking, long context, and precise instruction following.',
+    date: '2026-04-20',
+    readTime: '10 min read',
+    content: `<p>Claude handles prompts differently than other AI models. It excels with structured instructions, XML formatting, and detailed context. These 25 prompts are designed to leverage Claude's specific strengths - its large context window, precise instruction following, and nuanced reasoning capabilities.</p>
+
+<h2>The DEPTH Framework for Claude Prompts</h2>
+
+<p>Claude responds best to prompts built with the DEPTH framework:</p>
+
+<ul>
+<li><strong>D - Define the role:</strong> Claude performs better with a specific persona than a generic instruction</li>
+<li><strong>E - Establish context:</strong> Provide background information, constraints, and goals upfront</li>
+<li><strong>P - Provide structure:</strong> Use XML tags, numbered lists, or clear sections to organize complex requests</li>
+<li><strong>T - Think first:</strong> For complex tasks, ask Claude to analyze before acting</li>
+<li><strong>H - Handle edge cases:</strong> Tell Claude what to do when inputs are ambiguous or information is missing</li>
+</ul>
+
+<h2>Coding Prompts for Claude</h2>
+
+<h3>1. Project Setup with Full Architecture</h3>
+<p>Claude's ability to hold large contexts makes it ideal for project scaffolding. Our <a href="/prompts/claude-code-project-setup-prompt/">Claude Code Project Setup Prompt</a> generates complete project structures with configurations, conventions, and working examples in a single response.</p>
+
+<h3>2. Multi-File Debugging</h3>
+<p>Paste an error along with the relevant files and use the <a href="/prompts/claude-code-debugging-assistant/">Claude Code Debugging Assistant</a> for systematic root cause analysis. Claude traces execution paths across files better than models with smaller context windows.</p>
+
+<h3>3. Deep Code Analysis</h3>
+<p>The <a href="/prompts/claude-extended-thinking-prompt/">Claude Extended Thinking Prompt</a> activates deeper reasoning for architectural decisions, algorithm selection, and performance optimization problems.</p>
+
+<h3>4. Structured Code Review</h3>
+<p>Claude's XML parsing strength makes the <a href="/prompts/claude-xml-structured-analysis-prompt/">Claude XML-Structured Analysis Prompt</a> particularly effective. Organize input and expected output with XML tags for precise, well-organized reviews.</p>
+
+<h3>5. Long Codebase Processing</h3>
+<p>With a 200K token context window, Claude can process entire codebases. The <a href="/prompts/claude-long-document-processor/">Claude Long Document Processor</a> structures this analysis for maximum insight.</p>
+
+<h2>Business and Analysis Prompts</h2>
+
+<h3>6. SWOT Analysis with Strategic Recommendations</h3>
+<p>Our <a href="/prompts/business-swot-analysis-generator/">Business SWOT Analysis Generator</a> produces comprehensive strategic analysis with ranked recommendations. Claude's analytical depth makes it particularly strong for nuanced business assessment.</p>
+
+<h3>7. Market Research Deep Dive</h3>
+<p>The <a href="/prompts/market-research-analysis-prompt/">Market Research Analysis Prompt</a> leverages Claude's ability to synthesize complex information into structured reports with competitive analysis and opportunity assessment.</p>
+
+<h3>8. Customer Journey Mapping</h3>
+<p>Use our <a href="/prompts/customer-journey-map-builder/">Customer Journey Map Builder</a> to map complete customer experiences. Claude excels at maintaining consistency across the seven journey stages.</p>
+
+<h2>Writing and Content Prompts</h2>
+
+<h3>9. Book Planning and Outlining</h3>
+<p>Claude's large context window makes it ideal for book-length projects. The <a href="/prompts/ai-prompt-for-writing-a-book/">AI Prompt for Writing a Book</a> generates complete book plans with chapter outlines, character profiles, and writing schedules.</p>
+
+<h3>10. Career Strategy and Job Search</h3>
+<p>Our <a href="/prompts/linkedin-job-search-strategy-prompt/">LinkedIn Job Search Strategy Prompt</a> creates comprehensive job search plans. Claude's instruction-following precision produces highly actionable, personalized strategies.</p>
+
+<h2>Advanced Claude Techniques</h2>
+
+<h3>Using XML Tags for Complex Tasks</h3>
+<p>Claude was trained to understand XML-style tags as organizational structure. Wrapping your inputs in descriptive tags like <code>&lt;context&gt;</code>, <code>&lt;requirements&gt;</code>, and <code>&lt;constraints&gt;</code> significantly improves output quality for multi-part requests.</p>
+
+<h3>System Prompts for Applications</h3>
+<p>If you are building applications with the Claude API, the <a href="/prompts/claude-system-prompt-generator/">Claude System Prompt Generator</a> creates production-quality system prompts with behavioral rules, output formatting, and safety guardrails.</p>
+
+<h3>Chaining Prompts for Complex Workflows</h3>
+<p>For tasks too complex for a single prompt, break them into a chain. First ask Claude to analyze, then plan, then execute. Each step builds on the previous output, and Claude's consistency across turns means later steps accurately reference earlier analysis.</p>
+
+<h2>Tips for Getting the Best Results from Claude</h2>
+
+<ul>
+<li><strong>Be explicit about format:</strong> "Respond in bullet points" or "Use a table with columns for X, Y, Z"</li>
+<li><strong>Set the quality bar:</strong> "This will be sent to the CEO" produces different output than "quick draft"</li>
+<li><strong>Provide examples:</strong> One good example of your desired output is worth paragraphs of description</li>
+<li><strong>Ask Claude to ask you questions:</strong> "Before starting, ask me any clarifying questions" surfaces gaps in your brief</li>
+</ul>
+
+<p>For more on prompt engineering fundamentals, read our <a href="/blog/prompt-engineering-beginner-to-pro/">Prompt Engineering: Beginner to Pro</a> guide and <a href="/blog/chain-of-thought-prompting-guide/">Chain of Thought Prompting Guide</a>.</p>
+
+<p>Browse our <a href="/">complete prompt library</a> for hundreds of prompts tested across Claude, ChatGPT, and Gemini.</p>`
+  },
+  {
+    title: 'AI Prompts for Healthcare: Patient Communication, Documentation, and Clinical Decision Support',
+    slug: 'ai-prompts-healthcare-professionals',
+    description: 'Practical AI prompts for healthcare professionals covering patient education, clinical documentation, literature review, and training scenario creation.',
+    date: '2026-04-20',
+    readTime: '11 min read',
+    content: `<p>Healthcare professionals face a unique challenge with AI: the stakes are higher than in most fields. A marketing prompt that produces mediocre copy wastes time. A clinical prompt that produces inaccurate information could affect patient safety. This guide provides carefully designed prompts for healthcare use cases, with built-in safeguards and clear boundaries on when human review is essential.</p>
+
+<h2>The CARE Framework for Healthcare AI Prompts</h2>
+
+<p>Every healthcare AI prompt should follow the CARE framework:</p>
+
+<ul>
+<li><strong>C - Clinical context:</strong> Specify the clinical setting, specialty, and patient population so the AI tailors its output appropriately</li>
+<li><strong>A - Accuracy guardrails:</strong> Include instructions for the AI to flag uncertainty, cite evidence levels, and distinguish established guidelines from emerging research</li>
+<li><strong>R - Reading level:</strong> Define the target audience. Patient materials need 6th-8th grade reading level. Provider documentation needs clinical precision.</li>
+<li><strong>E - Expert review requirement:</strong> Every healthcare prompt should include a disclaimer that output must be reviewed by a qualified professional before clinical use</li>
+</ul>
+
+<h2>Patient Education and Communication</h2>
+
+<h3>Creating Patient-Friendly Materials</h3>
+
+<p>Health literacy is a critical factor in patient outcomes. Research published in the <a href="https://www.ahrq.gov/health-literacy/index.html" target="_blank" rel="noopener noreferrer">Agency for Healthcare Research and Quality</a> shows that clear communication improves medication adherence, reduces hospital readmissions, and increases patient satisfaction.</p>
+
+<p>Our <a href="/prompts/patient-education-material-generator/">Patient Education Material Generator</a> creates handouts, discharge instructions, and FAQ sheets at appropriate reading levels. The prompt includes specific instructions for plain language, visual formatting, and clear action items that patients can follow.</p>
+
+<h3>Multilingual Patient Communication</h3>
+
+<p>When adapting materials for diverse patient populations, AI can help draft initial translations that a medical interpreter then reviews. The key is maintaining medical accuracy while adjusting for cultural context - something that requires human oversight but benefits from AI as a starting point.</p>
+
+<h2>Clinical Documentation</h2>
+
+<h3>SOAP Notes and Clinical Documentation</h3>
+
+<p>Documentation consumes a significant portion of clinicians' time. AI can accelerate this process by structuring encounter notes in standard formats. Our <a href="/prompts/soap-note-assistant/">SOAP Note Assistant</a> creates templates that follow documentation conventions while prompting the clinician for specific details.</p>
+
+<p>Important: AI should assist with documentation structure and phrasing, never with clinical decision-making. The assessment and plan sections must reflect the provider's actual clinical judgment, with AI serving only as a writing aid.</p>
+
+<h3>Compliance Documentation</h3>
+
+<p>Healthcare organizations face complex regulatory requirements. The <a href="/prompts/healthcare-compliance-documentation-prompt/">Healthcare Compliance Documentation Prompt</a> helps draft HIPAA-aware frameworks, privacy policies, and audit preparation materials. These outputs always require review by compliance officers and legal counsel.</p>
+
+<h2>Medical Education and Training</h2>
+
+<h3>Clinical Training Scenarios</h3>
+
+<p>Medical simulation is a cornerstone of clinical education. Our <a href="/prompts/healthcare-staff-training-scenario-generator/">Healthcare Staff Training Scenario Generator</a> creates realistic patient cases with standardized patient scripts, expected action checklists, and debriefing guides. These scenarios can supplement existing training programs for nursing staff, residents, and allied health professionals.</p>
+
+<h3>Literature Review Support</h3>
+
+<p>Staying current with medical literature is essential but time-consuming. The <a href="/prompts/medical-literature-review-prompt/">Medical Literature Review Prompt</a> helps structure literature searches using PICO format, synthesize findings by evidence level, and identify knowledge gaps. Critical caveat: AI can help organize and summarize research structures, but every citation must be independently verified using databases like <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer">PubMed</a> or <a href="https://www.cochranelibrary.com/" target="_blank" rel="noopener noreferrer">Cochrane Library</a>.</p>
+
+<h2>Telehealth and Digital Health</h2>
+
+<p>The growth of telehealth has created new documentation and workflow needs. Our <a href="/prompts/telehealth-visit-preparation-template/">Telehealth Visit Preparation Template</a> creates patient preparation checklists, provider assessment guides adapted for remote evaluation, and documentation templates with telehealth-specific coding considerations.</p>
+
+<h2>Clinical Decision Support (Educational Use)</h2>
+
+<p>AI can serve as an educational thinking aid for clinical reasoning. The <a href="/prompts/clinical-decision-support-prompt/">Clinical Decision Support Prompt</a> generates structured differential diagnoses and workup plans for educational scenarios. This tool is designed for learning environments and case discussions - it is explicitly not a substitute for clinical judgment in actual patient care.</p>
+
+<h2>Important Limitations and Ethical Considerations</h2>
+
+<ul>
+<li><strong>AI hallucination risk:</strong> AI models can generate plausible but incorrect medical information, including fabricated citations and inaccurate drug dosages</li>
+<li><strong>Not diagnostic tools:</strong> AI prompts are documentation and education aids, never diagnostic or treatment decision tools</li>
+<li><strong>Privacy:</strong> Never input identifiable patient information (PHI) into general-purpose AI tools. Use only HIPAA-compliant platforms for clinical work</li>
+<li><strong>Bias awareness:</strong> AI training data may reflect healthcare disparities. Review outputs for bias, especially in clinical scenarios</li>
+<li><strong>Regulatory compliance:</strong> AI-generated clinical content must be reviewed within your institution's governance framework</li>
+</ul>
+
+<p>Related reading: Our <a href="/blog/ai-education-teachers-students/">AI for Education</a> guide covers how AI is transforming learning across disciplines, and <a href="/blog/how-to-write-better-ai-prompts/">How to Write Better AI Prompts</a> provides foundational prompt engineering techniques.</p>
+
+<p>Explore our <a href="/">complete prompt library</a> for healthcare, education, and research prompts designed for professional use.</p>`
+  },
+  {
+    title: 'AI Prompts for Lawyers: Legal Research, Contract Review, and Client Communication',
+    slug: 'ai-prompts-lawyers-legal-professionals',
+    description: 'Practical AI prompts for legal professionals covering research summaries, contract analysis, case briefs, demand letters, and client intake workflows.',
+    date: '2026-04-20',
+    readTime: '11 min read',
+    content: `<p>The legal profession's relationship with AI is evolving rapidly. Courts now address AI use in filings, bar associations are issuing guidance on ethical AI use, and law firms that ignore AI risk falling behind on efficiency. This guide provides practical prompts for legal workflows with clear guardrails about where AI helps and where human expertise remains essential.</p>
+
+<h2>The BRIEF Framework for Legal AI Prompts</h2>
+
+<p>Legal prompts require a specific framework we call BRIEF:</p>
+
+<ul>
+<li><strong>B - Boundaries:</strong> Define the jurisdiction, practice area, and scope of the legal question</li>
+<li><strong>R - Reliability check:</strong> Include instructions for the AI to flag uncertainty and distinguish binding authority from persuasive authority</li>
+<li><strong>I - Independent verification:</strong> Every prompt should remind users to verify citations using <a href="https://www.westlaw.com" target="_blank" rel="noopener noreferrer">Westlaw</a>, <a href="https://www.lexisnexis.com" target="_blank" rel="noopener noreferrer">LexisNexis</a>, or official court databases</li>
+<li><strong>E - Ethical compliance:</strong> Ensure prompts align with professional responsibility rules (competence, confidentiality, candor to tribunal)</li>
+<li><strong>F - Format for purpose:</strong> Structure output for its intended use (client memo, court filing, internal analysis)</li>
+</ul>
+
+<h2>Legal Research</h2>
+
+<h3>Structured Research Summaries</h3>
+
+<p>AI excels at organizing legal research into structured frameworks. Our <a href="/prompts/legal-research-summary-generator/">Legal Research Summary Generator</a> produces IRAC-formatted analysis with statutory references, case law summaries, and practical implications. The prompt includes specific instructions for the AI to distinguish between binding and persuasive authority.</p>
+
+<p>Critical limitation: AI models - including Claude and ChatGPT - can and do fabricate case citations. A 2023 federal court case famously sanctioned attorneys who submitted a brief with AI-generated citations to nonexistent cases. Every citation in AI research output must be independently verified. No exceptions.</p>
+
+<h3>Case Briefing</h3>
+
+<p>Law students and attorneys reviewing case law benefit from AI-assisted case briefing. The <a href="/prompts/case-brief-writer/">Case Brief Writer</a> produces consistently structured briefs with procedural history, material facts, issues, holdings, and reasoning. When you paste the actual court opinion, the output quality improves dramatically compared to asking the AI to brief a case from memory.</p>
+
+<h2>Contract Review and Drafting</h2>
+
+<h3>Contract Analysis Workflow</h3>
+
+<p>Contract review is one of AI's strongest legal applications because the source material is right there in the prompt. Our <a href="/prompts/contract-review-checklist-prompt/">Contract Review Checklist Prompt</a> analyzes pasted contracts for key terms, risk areas, missing clauses, and negotiation priorities.</p>
+
+<p>The workflow: paste the contract text, specify which party you represent, and the AI produces a structured review. Because it is working from the actual document rather than its training data, hallucination risk is significantly lower than in research tasks. However, it can still miss jurisdiction-specific requirements or nuanced implications that experienced attorneys catch.</p>
+
+<h3>Plain Language Translation</h3>
+
+<p>Clients often receive legal documents they cannot understand. The <a href="/prompts/legal-document-plain-language-translator/">Legal Document Plain Language Translator</a> converts complex legal text into clear explanations at an 8th-grade reading level. This is valuable for client communication, informed consent processes, and consumer-facing disclosures.</p>
+
+<h2>Client Communication and Practice Management</h2>
+
+<h3>Demand Letters</h3>
+
+<p>The <a href="/prompts/demand-letter-framework/">Demand Letter Framework</a> drafts professional demand letters with proper legal structure - factual recitation, legal basis, specific demands, and response deadlines. The AI handles formatting and tone while the attorney provides the facts and legal analysis.</p>
+
+<h3>Client Intake Systems</h3>
+
+<p>Efficient intake processes improve client experience and reduce administrative burden. Our <a href="/prompts/legal-client-intake-questionnaire-builder/">Legal Client Intake Questionnaire Builder</a> creates practice-area-specific intake forms with conflict check fields, document checklists, and conditional question logic.</p>
+
+<h2>Privacy Policies and Compliance</h2>
+
+<p>Digital businesses need legally sound privacy policies and terms of service. The <a href="/prompts/privacy-policy-and-terms-generator/">Privacy Policy and Terms Generator</a> creates comprehensive documents covering GDPR, CCPA, and industry-specific requirements. These always need attorney review before publication, but AI provides a strong starting framework that saves hours of drafting time.</p>
+
+<h2>Ethical Considerations for AI in Legal Practice</h2>
+
+<ul>
+<li><strong>Competence (Rule 1.1):</strong> Using AI tools requires understanding their limitations. Submitting AI output without review may violate competence obligations.</li>
+<li><strong>Confidentiality (Rule 1.6):</strong> Do not input client confidential information into general-purpose AI tools unless the platform has appropriate data protection agreements.</li>
+<li><strong>Candor to tribunal (Rule 3.3):</strong> AI-generated citations must be verified before inclusion in any court filing.</li>
+<li><strong>Supervision (Rules 5.1, 5.3):</strong> Attorneys must supervise AI output just as they supervise work from associates or paralegals.</li>
+<li><strong>Billing transparency:</strong> Firms should develop clear policies on how AI-assisted work is billed to clients.</li>
+</ul>
+
+<p>The <a href="https://www.americanbar.org" target="_blank" rel="noopener noreferrer">American Bar Association</a> and most state bars have issued or are developing guidance on AI use in legal practice. Stay current with your jurisdiction's requirements.</p>
+
+<p>Related reading: Our <a href="/blog/how-to-write-better-ai-prompts/">How to Write Better AI Prompts</a> covers foundational techniques, and <a href="/blog/context-engineering-vs-prompt-engineering/">Context Engineering vs Prompt Engineering</a> explains how to provide effective context for complex tasks.</p>
+
+<p>Explore our <a href="/">complete prompt library</a> for legal, business, and writing prompts designed for professional workflows.</p>`
+  },
+  {
+    title: 'System Prompts Explained: How to Set Up AI for Consistent, High-Quality Results',
+    slug: 'system-prompts-guide-ai-setup',
+    description: 'Learn how system prompts work, why they matter, and how to write them for AI applications. Includes templates and real-world examples.',
+    date: '2026-04-20',
+    readTime: '10 min read',
+    content: `<p>System prompts are the hidden instructions that define how an AI behaves. When you use ChatGPT, Claude, or any AI application, a system prompt is running behind the scenes - defining the AI's personality, capabilities, and boundaries. Understanding system prompts is the difference between getting generic AI responses and getting consistently excellent results tailored to your needs.</p>
+
+<h2>The LAYER Framework for System Prompts</h2>
+
+<p>Effective system prompts follow the LAYER framework:</p>
+
+<ul>
+<li><strong>L - Lead with identity:</strong> Define who the AI is, what it knows, and how it communicates</li>
+<li><strong>A - Add behavioral rules:</strong> Specify what the AI should always do and never do</li>
+<li><strong>Y - Yield structure:</strong> Define the default output format for different types of requests</li>
+<li><strong>E - Edge case handling:</strong> Tell the AI what to do when it encounters ambiguity, missing information, or out-of-scope requests</li>
+<li><strong>R - Reinforce with examples:</strong> Include few-shot examples showing ideal responses</li>
+</ul>
+
+<h2>What Is a System Prompt?</h2>
+
+<p>A system prompt is a set of instructions sent to an AI model before the user's message. It is like onboarding a new employee - you explain the role, the expectations, the communication style, and the boundaries before they start working.</p>
+
+<p>System prompts are used in two main contexts:</p>
+
+<ul>
+<li><strong>AI applications:</strong> Developers building chatbots, AI assistants, or automation tools use system prompts to define behavior via the API</li>
+<li><strong>Custom instructions:</strong> Platforms like ChatGPT (Custom Instructions) and Claude (Projects) let users set persistent instructions that apply to every conversation</li>
+</ul>
+
+<h2>Anatomy of an Effective System Prompt</h2>
+
+<h3>1. Role and Identity</h3>
+
+<p>Start by defining who the AI is. A specific role produces better results than a generic instruction.</p>
+
+<p>Weak: "You are a helpful assistant."</p>
+<p>Strong: "You are a senior tax accountant specializing in small business taxation for US-based LLCs and S-Corps. You have 15 years of experience and communicate complex tax concepts in plain language."</p>
+
+<h3>2. Behavioral Rules</h3>
+
+<p>Define the always-do and never-do rules. These prevent common AI failure modes:</p>
+
+<ul>
+<li>Always ask clarifying questions before providing advice on ambiguous situations</li>
+<li>Never provide specific tax filing advice without knowing the client's state of incorporation</li>
+<li>Always mention when tax law changed recently and the information might need verification</li>
+<li>Never use jargon without explaining it first</li>
+</ul>
+
+<h3>3. Output Formatting</h3>
+
+<p>Tell the AI how to structure its responses. Without formatting instructions, AI models default to long paragraphs. With them, you get consistent, scannable outputs:</p>
+
+<ul>
+<li>Use bullet points for lists of recommendations</li>
+<li>Use tables for comparing options</li>
+<li>Keep initial responses under 300 words, then expand if asked</li>
+<li>End every response with a "Next Steps" section</li>
+</ul>
+
+<h3>4. Guardrails and Limitations</h3>
+
+<p>Every system prompt should include boundaries:</p>
+
+<ul>
+<li>What topics the AI should decline to address</li>
+<li>When to recommend consulting a human expert</li>
+<li>How to handle potentially sensitive information</li>
+<li>What to do when the AI is uncertain</li>
+</ul>
+
+<h2>System Prompts for Different AI Models</h2>
+
+<p>Each model handles system prompts differently:</p>
+
+<p><strong>Claude</strong> responds well to XML-tagged system prompts with clear section headers. It follows complex multi-part instructions more precisely. Our <a href="/prompts/claude-system-prompt-generator/">Claude System Prompt Generator</a> creates optimized system prompts using Claude's preferred structure.</p>
+
+<p><strong>ChatGPT</strong> works well with conversational system prompts. It responds to tone and personality instructions effectively but may need more explicit formatting requirements.</p>
+
+<p><strong>Open source models</strong> (Llama, Mistral) often need simpler, more direct system prompts with fewer nested instructions.</p>
+
+<h2>Real-World System Prompt Examples</h2>
+
+<h3>Customer Support Bot</h3>
+<p>A customer support system prompt needs: product knowledge, escalation rules, tone guidelines, and templates for common issues. Our <a href="/prompts/ai-system-prompt-builder/">AI System Prompt Builder</a> creates these with proper safety guardrails.</p>
+
+<h3>Content Creation Assistant</h3>
+<p>Define the brand voice, content types, formatting preferences, and SEO requirements. The system prompt ensures every piece of content matches your brand standards without repeating instructions each time.</p>
+
+<h3>Code Review Assistant</h3>
+<p>Specify your tech stack, coding standards, security requirements, and review format. The AI then reviews every code submission against consistent criteria.</p>
+
+<h2>Context Engineering and System Prompts</h2>
+
+<p>System prompts are one component of the broader discipline called <a href="/blog/context-engineering-vs-prompt-engineering/">context engineering</a>. While prompt engineering focuses on crafting individual queries, context engineering designs the entire information environment that the AI operates within - system prompts, retrieved documents, conversation history, and tool definitions.</p>
+
+<h2>Common System Prompt Mistakes</h2>
+
+<ul>
+<li><strong>Too vague:</strong> "Be helpful and accurate" gives the AI no specific guidance</li>
+<li><strong>Too long:</strong> System prompts over 2,000 words often have conflicting instructions that confuse the model</li>
+<li><strong>No examples:</strong> Instructions without examples leave too much room for interpretation</li>
+<li><strong>No edge cases:</strong> Forgetting to define behavior for unusual inputs leads to inconsistent responses</li>
+<li><strong>Static:</strong> System prompts should evolve based on observed failures and user feedback</li>
+</ul>
+
+<p>Related reading: <a href="/blog/prompt-engineering-beginner-to-pro/">Prompt Engineering: Beginner to Pro</a> covers the foundations, and <a href="/blog/chain-of-thought-prompting-guide/">Chain of Thought Prompting</a> explains how to structure complex reasoning tasks.</p>
+
+<p>Browse our <a href="/">complete prompt library</a> for system prompts, coding prompts, and AI agent prompts ready to use.</p>`
+  },
+  {
+    title: 'AI Prompts for Small Business: Marketing, Operations, and Growth on a Budget',
+    slug: 'ai-prompts-small-business-marketing-growth',
+    description: 'Practical AI prompts designed for small business owners who need to handle marketing, operations, and growth without a dedicated team.',
+    date: '2026-04-20',
+    readTime: '10 min read',
+    content: `<p>Small business owners wear every hat. You are the marketer, the salesperson, the operations manager, and the accountant - often in the same afternoon. AI does not replace any of those roles, but it can make each one faster. These prompts are designed for business owners who need practical results without enterprise budgets or dedicated AI expertise.</p>
+
+<h2>The LEAN Framework for Small Business AI</h2>
+
+<p>Small businesses need AI prompts that are efficient and immediately actionable. Use the LEAN framework:</p>
+
+<ul>
+<li><strong>L - Local context:</strong> Include your specific business details - industry, location, customer base, budget constraints</li>
+<li><strong>E - Existing resources:</strong> Tell the AI what you already have (website, social accounts, email list) so it builds on your current assets</li>
+<li><strong>A - Actionable output:</strong> Request step-by-step instructions you can execute today, not strategic frameworks you need to interpret</li>
+<li><strong>N - No jargon:</strong> Ask for explanations in plain language. If the AI uses marketing terminology, ask it to define the terms.</li>
+</ul>
+
+<h2>Marketing on a Budget</h2>
+
+<h3>Social Media Content Creation</h3>
+
+<p>Consistent social media presence matters, but small business owners rarely have time for daily content creation. AI can batch-create a week of content in 30 minutes. Start with your business story, current promotions, and customer pain points, then ask the AI to generate platform-specific posts.</p>
+
+<p>Our <a href="/prompts/viral-social-media-god-prompt/">Viral Social Media God Prompt</a> creates complete content systems including hooks, platform strategies, and content calendars. For small businesses, focus on the platform where your customers actually spend time rather than trying to be everywhere.</p>
+
+<h3>Email Marketing That Converts</h3>
+
+<p>Email remains the highest-ROI marketing channel for small businesses. AI can draft welcome sequences, promotional emails, and re-engagement campaigns. The key is providing your brand voice and specific offers so the output sounds like you, not like a generic template.</p>
+
+<h3>Local SEO Content</h3>
+
+<p>For brick-and-mortar businesses, local SEO drives foot traffic. AI can help create location-specific blog posts, Google Business Profile updates, and FAQ pages that target local search queries. Our <a href="/prompts/get-seo-ranked-by-llms/">Get SEO Ranked By LLMs</a> prompt helps you create schema markup that improves visibility in both traditional search and AI-powered search tools.</p>
+
+<h2>Operations and Productivity</h2>
+
+<h3>Standard Operating Procedures</h3>
+
+<p>Documented processes make small businesses scalable. Use AI to draft SOPs for your most common workflows - customer onboarding, order fulfillment, complaint handling, inventory management. Our <a href="/prompts/meeting-agenda-generator/">Meeting Agenda Generator</a> helps structure team meetings so they stay focused and productive.</p>
+
+<h3>Customer Communication Templates</h3>
+
+<p>Create a library of email templates for common situations: quote follow-ups, appointment confirmations, payment reminders, thank you notes, and complaint responses. Having templates ready means faster response times and consistent professionalism.</p>
+
+<h2>Growth Strategy</h2>
+
+<h3>Business Strategy and Planning</h3>
+
+<p>Our <a href="/prompts/business-swot-analysis-generator/">Business SWOT Analysis Generator</a> helps small business owners think strategically about their competitive position. The <a href="/prompts/startup-go-to-market-playbook-670/">Startup Go-To-Market Playbook</a> creates growth plans with specific channel strategies and budget allocations suitable for small business budgets.</p>
+
+<h3>Customer Understanding</h3>
+
+<p>Use the <a href="/prompts/customer-journey-map-builder/">Customer Journey Map Builder</a> to visualize how customers discover, evaluate, and buy from your business. This exercise often reveals simple improvements - a clearer website CTA, a faster response to inquiries, a follow-up email after purchase - that significantly impact revenue.</p>
+
+<h2>Hiring and Team Management</h2>
+
+<p>When you are ready to hire, AI can help write job descriptions, create interview question sets, and draft onboarding checklists. The <a href="/prompts/cover-letter-that-gets-interviews/">Cover Letter That Gets Interviews</a> prompt (designed for job seekers) also teaches you what strong candidates look like - reverse-engineer it for your hiring criteria.</p>
+
+<h2>Financial Planning</h2>
+
+<p>AI can help small business owners with cash flow projections, pricing analysis, and budget planning. Provide your revenue numbers, expenses, and growth targets, and ask for scenario modeling. AI is particularly useful for "what if" analysis - what happens if you raise prices 10%, add a new product line, or hire an employee.</p>
+
+<h2>Common Mistakes Small Business Owners Make with AI</h2>
+
+<ul>
+<li><strong>Generic prompts:</strong> "Write me a marketing plan" produces generic output. Include your business specifics for useful results.</li>
+<li><strong>Skipping review:</strong> AI output is a first draft, not a final product. Review everything, especially anything customer-facing.</li>
+<li><strong>Trying to automate everything:</strong> AI handles routine tasks well. Relationship-building, creative vision, and strategic decisions still need you.</li>
+<li><strong>Ignoring your data:</strong> AI works better when you provide real numbers - your actual revenue, customer count, conversion rates.</li>
+</ul>
+
+<p>Related reading: <a href="/blog/business-owners-guide-ai-prompts/">Business Owner's Guide to AI Prompts</a> provides additional business-specific techniques, and <a href="/blog/boost-productivity-ai-prompts/">Boost Productivity with AI Prompts</a> covers efficiency strategies.</p>
+
+<p>Explore our <a href="/">complete prompt library</a> for business, marketing, sales, and productivity prompts designed for practical results.</p>`
+  },
+  {
+    title: 'AI Prompts for Teachers: Lesson Plans, Assessments, and Student Engagement',
+    slug: 'ai-prompts-teachers-lesson-plans',
+    description: 'Time-saving AI prompts for educators covering lesson plan creation, differentiated instruction, assessment design, and interactive student activities.',
+    date: '2026-04-20',
+    readTime: '10 min read',
+    content: `<p>Teachers spend roughly half their working hours on tasks other than teaching - planning lessons, grading assignments, writing reports, and creating materials. AI cannot replace the human connection that makes teaching powerful, but it can dramatically reduce the time spent on preparation and documentation, giving teachers more time for what matters: working with students.</p>
+
+<h2>The TEACH Framework for Education AI Prompts</h2>
+
+<p>Education prompts need a specific approach we call TEACH:</p>
+
+<ul>
+<li><strong>T - Target level:</strong> Always specify grade level, subject, and student ability range. A prompt for AP Chemistry requires different output than one for 3rd grade science.</li>
+<li><strong>E - Educational standards:</strong> Reference specific standards (Common Core, NGSS, state standards) so AI-generated content aligns with your curriculum requirements</li>
+<li><strong>A - Accessibility:</strong> Include provisions for differentiated instruction - ELL students, students with IEPs, gifted learners</li>
+<li><strong>C - Concrete activities:</strong> Request specific, implementable activities rather than abstract pedagogical advice</li>
+<li><strong>H - Human judgment:</strong> AI-generated educational content should be reviewed for age-appropriateness, accuracy, and alignment with your classroom culture</li>
+</ul>
+
+<h2>Lesson Planning</h2>
+
+<h3>Complete Lesson Plan Generation</h3>
+
+<p>Start with your learning objective and let AI build the full lesson structure. Provide: subject, grade level, standards addressed, available time, and available materials. The AI generates an opening hook, direct instruction plan, guided practice activities, independent practice, and assessment method.</p>
+
+<p>Our <a href="/prompts/30-day-learning-plan/">30-Day Learning Plan</a> prompt creates comprehensive learning sequences. For teachers, adapt this for unit planning - request a multi-week progression that builds concepts sequentially with formative assessment checkpoints.</p>
+
+<h3>Differentiated Instruction</h3>
+
+<p>The most time-consuming aspect of lesson planning is creating differentiated materials for diverse learners. AI can generate the same content at multiple complexity levels. Request a reading passage at three Lexile levels, math word problems with varying complexity, or science activities that accommodate different learning styles.</p>
+
+<h2>Assessment Design</h2>
+
+<h3>Creating Balanced Assessments</h3>
+
+<p>Effective assessments test multiple levels of <a href="https://www.bloomstaxonomy.net" target="_blank" rel="noopener noreferrer">Bloom's Taxonomy</a>. When prompting for assessment questions, specify the distribution: "Create 20 questions: 5 knowledge/recall, 5 understanding/application, 5 analysis/evaluation, 5 synthesis/creation."</p>
+
+<p>Include the answer key and scoring rubric in your prompt. This ensures consistency and saves grading time. For constructed-response questions, request rubrics with specific criteria and point distributions.</p>
+
+<h3>Formative Assessment Activities</h3>
+
+<p>Quick formative checks help teachers adjust instruction in real-time. AI can generate exit tickets, warm-up questions, think-pair-share prompts, and polling questions aligned with your current lesson objectives.</p>
+
+<h2>Student Engagement</h2>
+
+<h3>Interactive Activities and Games</h3>
+
+<p>Our <a href="/prompts/gpt-tutor/">GPT Tutor</a> prompt demonstrates how AI can create Socratic dialogue-based learning experiences. For classroom use, adapt this approach: generate debate topics, discussion questions, and inquiry-based learning scenarios that students can engage with actively.</p>
+
+<h3>Project-Based Learning</h3>
+
+<p>AI excels at generating project ideas that connect academic content to real-world applications. Provide your learning standards and student interests, and request project outlines with rubrics, milestones, and presentation formats.</p>
+
+<h2>Content Creation</h2>
+
+<h3>Reading Materials and Passages</h3>
+
+<p>Creating grade-appropriate reading materials takes significant time. AI can generate fiction and non-fiction passages at specific reading levels, complete with comprehension questions and vocabulary lists. Always review for accuracy and age-appropriateness.</p>
+
+<h3>Visual Aids and Graphic Organizers</h3>
+
+<p>Request descriptions of graphic organizers (Venn diagrams, concept maps, KWL charts, timeline templates) with content pre-filled for your lesson topic. While AI cannot create the visuals directly in a text interface, the detailed descriptions make creating them straightforward.</p>
+
+<h2>Administrative Tasks</h2>
+
+<h3>Parent Communication</h3>
+
+<p>Draft parent emails, newsletter updates, and progress report comments with AI. Provide student-specific details and the AI generates personalized, professional communications. The <a href="/prompts/content-clarity-editor/">Content Clarity Editor</a> can then ensure the language is clear and accessible for all families.</p>
+
+<h3>IEP and Report Writing</h3>
+
+<p>AI can help structure IEP goals, progress monitoring notes, and narrative report card comments. Provide the student's current performance levels and targets, and AI drafts measurable goals in standard IEP format. Always review these carefully - they are legal documents.</p>
+
+<h2>Professional Development</h2>
+
+<p>Use AI as a professional learning tool. Ask it to explain pedagogical research, summarize education journals, or generate discussion questions for PLC meetings. Our <a href="/prompts/critical-thinking-mode/">Critical Thinking Mode</a> prompt helps teachers engage with educational research more analytically.</p>
+
+<h2>Responsible AI Use in Education</h2>
+
+<ul>
+<li><strong>Model transparency:</strong> If you use AI to create materials, be open about it with colleagues and administrators</li>
+<li><strong>Student data privacy:</strong> Never input student names, grades, or identifiable information into public AI tools</li>
+<li><strong>Teach AI literacy:</strong> Help students understand how AI works, its limitations, and how to use it as a learning tool rather than a shortcut</li>
+<li><strong>Quality control:</strong> AI-generated educational content can contain errors. Review everything for accuracy, especially in science, math, and history</li>
+</ul>
+
+<p>Related reading: Our <a href="/blog/ai-education-teachers-students/">AI in Education</a> guide covers broader trends in educational AI, and <a href="/blog/prompt-engineering-beginner-to-pro/">Prompt Engineering: Beginner to Pro</a> helps teachers craft more effective prompts for any task.</p>
+
+<p>Explore our <a href="/">complete prompt library</a> for education, writing, and productivity prompts that save teachers hours every week.</p>`
   }
 ];
 
@@ -6164,6 +7000,11 @@ function generateBlogIndex() {
   // Detect category from article slug/title for badge
   function articleCategory(article) {
     const s = (article.slug + ' ' + article.title).toLowerCase();
+    if (s.includes('healthcare') || s.includes('medical') || s.includes('patient') || s.includes('clinical')) return 'Healthcare';
+    if (s.includes('lawyer') || s.includes('legal')) return 'Legal';
+    if (s.includes('claude') && (s.includes('code') || s.includes('prompt') || s.includes('vs'))) return 'Claude AI';
+    if (s.includes('system-prompt')) return 'Prompt Engineering';
+    if (s.includes('small-business')) return 'Small Business';
     if (s.includes('facebook')) return 'Facebook Ads';
     if (s.includes('google-ads')) return 'Google Ads';
     if (s.includes('pinterest')) return 'Pinterest';
