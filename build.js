@@ -27,6 +27,26 @@ const ROOT = __dirname;
 const SITE_URL = 'https://www.promptblackmagic.com';
 const TODAY = new Date().toISOString().split('T')[0];
 
+// ── Minification helpers (zero dependencies) ──────────────────────
+
+function minifyCSS(css) {
+  return css
+    .replace(/\/\*[\s\S]*?\*\//g, '')       // strip comments
+    .replace(/\s+/g, ' ')                   // collapse whitespace
+    .replace(/\s*([{}:;,>~+])\s*/g, '$1')   // remove spaces around syntax
+    .replace(/;}/g, '}')                     // drop last semicolon before }
+    .trim();
+}
+
+function minifyJS(js) {
+  return js
+    .replace(/\/\*[\s\S]*?\*\//g, '')       // strip block comments
+    .replace(/^[ \t]*\/\/.*$/gm, '')        // strip standalone line comments
+    .replace(/^[ \t]+/gm, '')               // remove indentation
+    .replace(/\n{2,}/g, '\n')               // collapse blank lines
+    .trim() + '\n';
+}
+
 // ── Load prompts data ──────────────────────────────────────────────
 
 const promptsSrc = fs.readFileSync(path.join(ROOT, 'prompts.js'), 'utf-8');
@@ -6172,7 +6192,7 @@ function headBoilerplate({ title, description, canonicalUrl, ogType = 'website' 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">`;
+  <link rel="stylesheet" href="/styles.min.css">`;
 }
 
 function bodyOpen() {
@@ -6384,11 +6404,13 @@ ${cItems}
   let crossCategoryHtml = '';
   if (compCats.length > 0) {
     const crossPrompts = [];
-    for (const cat of compCats) {
-      if (crossPrompts.length >= 2) break;
+    for (let ci = 0; ci < compCats.length; ci++) {
+      if (crossPrompts.length >= 4) break;
+      const cat = compCats[ci];
       const candidates = PROMPTS.filter((pr, i) => pr.category === cat && i !== idx);
       if (candidates.length > 0) {
-        crossPrompts.push(candidates[idx % candidates.length]);
+        const pick = (idx * 7 + ci * 3) % candidates.length;
+        crossPrompts.push(candidates[pick]);
       }
     }
     if (crossPrompts.length > 0) {
@@ -6491,7 +6513,7 @@ ${cItems}
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:ital,wght@0,300;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.min.css">
 
   <!-- Structured Data -->
   <script type="application/ld+json">${articleJsonLd}</script>
@@ -6679,7 +6701,7 @@ function generate404() {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.min.css">
 </head>
 <body>
   <div class="ambient-bg" aria-hidden="true">
@@ -7262,6 +7284,20 @@ function generateNoscriptBlock() {
 
 function build() {
   const startTime = Date.now();
+
+  // 0. Minify CSS & JS
+  console.log('Minifying CSS & JS...');
+  const cssRaw = fs.readFileSync(path.join(ROOT, 'styles.css'), 'utf-8');
+  fs.writeFileSync(path.join(ROOT, 'styles.min.css'), minifyCSS(cssRaw), 'utf-8');
+  console.log(` -> styles.min.css (${(cssRaw.length / 1024).toFixed(1)}KB -> ${(minifyCSS(cssRaw).length / 1024).toFixed(1)}KB)`);
+
+  const appRaw = fs.readFileSync(path.join(ROOT, 'app.js'), 'utf-8');
+  fs.writeFileSync(path.join(ROOT, 'app.min.js'), minifyJS(appRaw), 'utf-8');
+  console.log(` -> app.min.js (${(appRaw.length / 1024).toFixed(1)}KB -> ${(minifyJS(appRaw).length / 1024).toFixed(1)}KB)`);
+
+  const promptsRaw = fs.readFileSync(path.join(ROOT, 'prompts.js'), 'utf-8');
+  fs.writeFileSync(path.join(ROOT, 'prompts.min.js'), minifyJS(promptsRaw), 'utf-8');
+  console.log(` -> prompts.min.js (${(promptsRaw.length / 1024).toFixed(1)}KB -> ${(minifyJS(promptsRaw).length / 1024).toFixed(1)}KB)`);
 
   // 1. Generate prompt pages
   console.log('Generating prompt pages...');

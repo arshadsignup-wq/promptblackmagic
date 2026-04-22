@@ -1,0 +1,54 @@
+# Prompt Black Magic
+
+> A free, curated library of 675 battle-tested AI prompts across 24 categories. Browse, search, copy, and paste prompts that work with ChatGPT, Claude, Gemini, and any AI model.
+
+## Main Pages
+
+- [Home](https://www.promptblackmagic.com/): Browse all 675 prompts with search and category filters
+- [About](https://www.promptblackmagic.com/about/): Our mission, methodology, and curation process
+- [Blog](https://www.promptblackmagic.com/blog/): 50 articles on prompt engineering, AI tools, and best practices
+- [Contact](https://www.promptblackmagic.com/contact/): Get in touch
+- [Privacy Policy](https://www.promptblackmagic.com/privacy/): How we handle data
+- [Terms of Service](https://www.promptblackmagic.com/terms/): Usage terms
+
+## Categories (24)
+
+- Business (119 prompts)
+- Social Media (89 prompts)
+- Facebook Ads (81 prompts)
+- Google Ads (58 prompts)
+- Content & SEO (48 prompts)
+- Tracking & Pixels (44 prompts)
+- Resume & Career (39 prompts)
+- Email Marketing (29 prompts)
+- Coding (24 prompts)
+- Sales (23 prompts)
+- Productivity (19 prompts)
+- Agentic AI (18 prompts)
+- Creative (15 prompts)
+- Education (11 prompts)
+- Writing (11 prompts)
+- Healthcare (8 prompts)
+- Data Analysis (7 prompts)
+- Legal (7 prompts)
+- Personal Finance (5 prompts)
+- Freelancing (5 prompts)
+- Project Management (5 prompts)
+- Customer Service (4 prompts)
+- Health & Fitness (4 prompts)
+- Research (2 prompts)
+
+## How It Works
+
+1. Browse or search 675 prompts across 24 categories
+2. Find a prompt that fits your use case
+3. Copy the prompt and paste it into any AI model
+4. Customize the bracketed placeholders for your specific needs
+5. Get high-quality AI output instantly
+
+## Key Features
+
+- All prompts are free, no signup required
+- Works with any AI model (ChatGPT, Claude, Gemini, etc.)
+- Each prompt includes usage instructions and pro tips
+- Regularly updated with new prompts and categories
