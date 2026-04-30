@@ -278,6 +278,62 @@ const CATEGORY_TIPS = {
     'Ask the AI to flag any citations or case references for independent verification - AI models can hallucinate legal citations.',
     'Include the audience (attorney, paralegal, client, business owner) so the AI adjusts the technical depth appropriately.',
     'Request that the AI distinguish between established law and emerging or unsettled areas where the legal landscape is still evolving.'
+  ],
+  'Image Generation': [
+    'Always specify the exact camera, lens, and aperture in your prompt - AI image generators produce dramatically better results with technical photography terms.',
+    'Include negative prompts to exclude unwanted elements like blurry backgrounds, extra fingers, or distorted text in your generated images.',
+    'Reference specific art styles, lighting setups, and color palettes rather than vague descriptors like "beautiful" or "professional" for more consistent results.',
+    'Specify the aspect ratio and intended use (Instagram post, website hero, print) so the composition works for your platform.',
+    'Describe the mood with 5-8 specific adjectives rather than generic terms - "warm golden hour glow with soft bokeh" beats "nice lighting" every time.'
+  ],
+  'UI/UX Design': [
+    'Include your target user persona and their primary task when prompting for design recommendations - context drives better UX advice.',
+    'Specify your tech stack and design system constraints so the AI generates implementable suggestions, not theoretical ideals.',
+    'Ask for mobile-first designs and then desktop adaptations - most traffic is mobile and it forces cleaner information hierarchy.',
+    'Request specific component specifications (spacing, typography scale, color tokens) rather than vague layout descriptions.',
+    'Include your current conversion rate or usability issue so the AI can target specific improvements rather than generic best practices.'
+  ],
+  'HR & People Management': [
+    'Specify the company size, industry, and work arrangement (remote/hybrid/on-site) since HR practices vary dramatically by context.',
+    'Ask the AI to include specific behavioral examples and scoring rubrics rather than generic competency descriptions.',
+    'Include relevant employment laws and compliance requirements for your jurisdiction to avoid legally risky recommendations.',
+    'Request templates with fill-in-the-blank sections rather than finished documents - every company needs to customize HR materials.',
+    'Specify whether the output is for the employee or the manager perspective since the framing differs significantly.'
+  ],
+  'Real Estate': [
+    'Include the property type, price range, and target buyer profile so the AI tailors its output to the right market segment.',
+    'Specify your local market conditions (buyer/seller market, inventory levels) for more relevant pricing and strategy advice.',
+    'Ask the AI to include specific financial calculations with formulas shown so you can verify the math independently.',
+    'Include comparable property data when available so the AI can provide market-aware recommendations.',
+    'Request jurisdiction-specific legal considerations since real estate laws vary dramatically by state and municipality.'
+  ],
+  'Branding & Identity': [
+    'Provide 2-3 competitor brand examples so the AI can differentiate your positioning rather than creating something generic.',
+    'Specify your target audience demographics and psychographics - brand voice should resonate with who you are trying to reach.',
+    'Ask for specific hex color codes, font names, and spacing values rather than vague visual direction.',
+    'Include your brand values and personality adjectives as constraints so every recommendation stays on-brand.',
+    'Request "do and do not" examples for brand voice - showing what to avoid is as valuable as showing what to do.'
+  ],
+  'E-Commerce': [
+    'Include your average order value and current conversion rate so the AI can prioritize high-impact recommendations.',
+    'Specify your platform (Shopify, WooCommerce, custom) since optimization tactics differ by platform capabilities.',
+    'Ask for A/B test ideas alongside each recommendation so you can validate changes before committing.',
+    'Include your shipping model and return policy details since they significantly impact conversion and copy strategy.',
+    'Request mobile-specific optimizations separately - mobile e-commerce has different UX requirements than desktop.'
+  ],
+  'Personal Development': [
+    'Be specific about your constraints (time available, budget, current obligations) so the AI creates realistic plans you can actually follow.',
+    'Ask for measurable milestones and check-in schedules rather than vague aspirational advice.',
+    'Include what you have already tried so the AI avoids recommending approaches that did not work for you.',
+    'Request accountability structures and failure recovery protocols - plans without follow-through systems rarely stick.',
+    'Specify your preferred tools (Notion, paper, apps) so the AI designs systems that fit your actual workflow.'
+  ],
+  'Video & Multimedia': [
+    'Specify your platform (YouTube, TikTok, Instagram Reels) since optimal format, length, and style differ dramatically.',
+    'Include your current audience size and engagement rate so the AI tailors growth strategy to your stage.',
+    'Ask for specific hooks and opening lines - the first 3 seconds determine whether viewers watch or scroll past.',
+    'Request B-roll and visual direction notes alongside scripts so you have a complete filming guide.',
+    'Include your equipment setup (phone vs camera, mic type, lighting) so production recommendations match your capabilities.'
   ]
 };
 const CATEGORY_WHEN_TO_USE = {
@@ -487,6 +543,70 @@ const CATEGORY_WHEN_TO_USE = {
     'Your client has a dispute and you need to draft a demand letter with proper legal structure and professional tone.',
     'You are setting up a new law practice and need client intake questionnaires tailored to your practice area.',
     'Your client received a legal document and needs a plain-language explanation of what it means and what they should do.'
+  ],
+  'Image Generation': [
+    'You need product photography for your e-commerce store but cannot afford a professional photographer or studio rental.',
+    'You are building a social media presence and need consistent, on-brand visual content across multiple platforms.',
+    'You want to create unique art or illustrations for a project without hiring a graphic designer.',
+    'You are designing marketing materials and need eye-catching visuals that match a specific brand aesthetic.',
+    'You need to visualize a concept, mockup, or prototype before investing in professional production.',
+    'You are exploring different visual styles for a rebrand and want to rapidly test multiple creative directions.'
+  ],
+  'UI/UX Design': [
+    'You are launching a new product and need a landing page that converts visitors into customers or leads.',
+    'Your mobile app has high download rates but poor retention, and you suspect the onboarding flow is the problem.',
+    'You are redesigning your website and need a clear creative brief to hand to your designer or agency.',
+    'Your e-commerce product pages have traffic but low add-to-cart rates, and you need conversion-focused improvements.',
+    'You are building a SaaS dashboard and need to organize complex data into an intuitive, actionable interface.',
+    'Your checkout flow has a high abandonment rate and you need specific fixes to reduce friction.'
+  ],
+  'HR & People Management': [
+    'You are hiring for a critical role and your job postings are getting low-quality applicants or very few responses.',
+    'Your team is growing and you need a structured onboarding program that gets new hires productive faster.',
+    'You are preparing for performance review season and need a fair, consistent evaluation framework.',
+    'Employee turnover is higher than you would like and you need a data-driven retention strategy.',
+    'You are conducting interviews and want to eliminate bias with structured scorecards and behavioral questions.',
+    'You want to build an employer brand that attracts top talent without relying solely on recruiters.'
+  ],
+  'Real Estate': [
+    'You are listing a property and need compelling description copy that drives showings and offers.',
+    'You are evaluating a potential investment property and need a comprehensive financial analysis before making an offer.',
+    'You are hosting an open house and want a complete playbook from marketing to follow-up to maximize leads.',
+    'You manage rental properties and need systems for tenant screening, maintenance, and rent collection.',
+    'You are analyzing whether to buy or rent in your market and need an objective financial comparison.',
+    'You are preparing a comparative market analysis and need a structured approach to pricing a property accurately.'
+  ],
+  'Branding & Identity': [
+    'You are launching a new business and need to define your brand voice, visual identity, and positioning from scratch.',
+    'Your brand messaging feels inconsistent across channels and you need a unified voice guide for your team.',
+    'You are entering a competitive market and need a positioning strategy that clearly differentiates you.',
+    'You are rebranding and need a comprehensive identity brief to guide your designer or branding agency.',
+    'Your marketing copy sounds generic and you want to develop a distinctive brand personality that stands out.',
+    'You are onboarding new team members or freelance writers who need to learn your brand voice quickly.'
+  ],
+  'E-Commerce': [
+    'You are launching a Shopify store and need a comprehensive checklist to avoid costly mistakes at launch.',
+    'Your product descriptions are not converting and you need persuasive copy optimized for each sales channel.',
+    'Your cart abandonment rate is above 70% and you need a multi-channel recovery system to recapture lost sales.',
+    'You are expanding to new sales channels (Amazon, social commerce) and need platform-specific product copy.',
+    'You want to increase average order value and need cross-sell and upsell strategies for your product pages.',
+    'Your checkout flow has too many steps and you need to streamline it for higher completion rates.'
+  ],
+  'Personal Development': [
+    'You have ambitious goals but struggle with consistency and need a daily system that creates accountability.',
+    'You are considering a career change and need a structured plan for transitioning without burning bridges.',
+    'You are experiencing burnout and need practical recovery strategies that go beyond generic self-care advice.',
+    'You want to build better habits but previous attempts have failed, and you need a system that sticks.',
+    'You are feeling stuck in your personal or professional growth and need a framework for identifying what to change.',
+    'You want to improve your decision-making process and need structured frameworks for high-stakes choices.'
+  ],
+  'Video & Multimedia': [
+    'You are starting a YouTube channel and need professional scripts that keep viewers watching until the end.',
+    'You want to grow on TikTok or Instagram Reels but do not know what content formats work best for your niche.',
+    'You are launching a podcast and need everything from concept to launch strategy to growth tactics.',
+    'You have long-form content (blogs, podcasts, videos) and want to repurpose it into 15+ pieces for other platforms.',
+    'You need to create video content consistently but struggle with ideas and scripting efficiency.',
+    'You are creating a course or webinar and need to structure video content for maximum engagement and retention.'
   ]
 };
 
@@ -664,6 +784,62 @@ const CATEGORY_EXPECTED_RESULTS = {
     'Case briefs with procedural history, holdings, reasoning, and significance analysis in consistent format.',
     'Demand letter drafts with proper legal structure, factual recitation, and professional tone.',
     'Plain-language document translations that preserve legal accuracy while making content accessible to non-lawyers.'
+  ],
+  'Image Generation': [
+    'Detailed, copy-paste ready prompts for AI image generators with camera settings, lighting specs, and style keywords.',
+    'Multiple variations of the same concept covering different styles, angles, and moods for A/B testing.',
+    'Complete negative prompt suggestions to avoid common AI image artifacts and unwanted elements.',
+    'Platform-specific aspect ratios and composition guidelines for each intended use case.',
+    'Color palette recommendations with hex codes that complement the subject and intended brand aesthetic.'
+  ],
+  'UI/UX Design': [
+    'Detailed page layouts with section-by-section wireframe descriptions, component specs, and content hierarchy.',
+    'Conversion-optimized copy for headlines, CTAs, error messages, and micro-copy throughout the interface.',
+    'Mobile-responsive design specifications with breakpoint behavior and touch-target considerations.',
+    'User flow diagrams with decision points, error states, and edge case handling documented.',
+    'Design system tokens including typography scales, spacing systems, and color semantics.'
+  ],
+  'HR & People Management': [
+    'Ready-to-use templates with specific questions, scoring criteria, and evaluation frameworks.',
+    'Day-by-day or week-by-week schedules with activities, milestones, and check-in agendas.',
+    'Communication scripts for difficult conversations including feedback delivery and termination discussions.',
+    'Data-driven frameworks with metrics, benchmarks, and ROI calculations for HR initiatives.',
+    'Bias-mitigation checklists and compliance considerations integrated into every process.'
+  ],
+  'Real Estate': [
+    'MLS-ready listing descriptions with emotional hooks, feature highlights, and SEO keywords.',
+    'Complete financial analysis with cash flow projections, return metrics, and stress-test scenarios.',
+    'Multi-channel marketing copy (social media, email, print) tailored to the property and buyer profile.',
+    'Step-by-step operational playbooks with scripts, templates, and follow-up sequences.',
+    'Legal-aware documentation templates with jurisdiction-specific compliance reminders.'
+  ],
+  'Branding & Identity': [
+    'Complete brand voice guides with vocabulary lists, tone spectrums, and channel-specific examples.',
+    'Positioning statements in multiple formats (one-sentence, one-paragraph, elevator pitch) for different contexts.',
+    'Visual identity specifications with color codes, typography pairings, and design system foundations.',
+    'Before-and-after copy rewrites demonstrating generic content transformed into on-brand messaging.',
+    'Quick-reference brand cards that any team member can use to write consistently on-brand.'
+  ],
+  'E-Commerce': [
+    'Platform-specific product copy optimized for Shopify, Amazon, and social commerce channels.',
+    'Multi-channel cart recovery sequences with email copy, SMS messages, and retargeting ad text.',
+    'Pre-launch checklists with priority rankings (critical, important, nice-to-have) for each item.',
+    'Conversion-focused page layouts with persuasion elements, trust signals, and CTA positioning.',
+    'A/B test recommendations with specific variables to test and success metrics to track.'
+  ],
+  'Personal Development': [
+    'Structured daily, weekly, and quarterly systems with specific templates, questions, and tracking methods.',
+    'Actionable plans with week-by-week milestones, decision points, and measurable progress indicators.',
+    'Boundary-setting scripts and communication templates for common workplace situations.',
+    'Self-assessment frameworks that identify root causes rather than surface-level symptoms.',
+    'Accountability structures with check-in schedules, progress metrics, and failure recovery protocols.'
+  ],
+  'Video & Multimedia': [
+    'Complete video scripts with timestamps, B-roll directions, on-screen text cues, and retention hooks.',
+    'Content calendars with 30 days of specific ideas, hooks, captions, and posting schedules.',
+    'Launch strategies with pre-launch timelines, day-one tactics, and growth playbooks.',
+    'Platform-optimized content with format specifications, hashtag strategies, and engagement tactics.',
+    'Production workflows for batch-creating content efficiently with minimal equipment.'
   ]
 };
 
@@ -859,6 +1035,70 @@ const CATEGORY_CUSTOMIZATION = {
     'Include the opposing party details and relevant dates for case-specific document drafts.',
     'Modify the citation format to match your court or firm requirements (Bluebook, ALWD, local rules).',
     'Add your firm branding and contact information placeholders for client-facing documents.'
+  ],
+  'Image Generation': [
+    'Replace the product description with your actual product name, dimensions, materials, and key visual features.',
+    'Swap the style preference for your brand aesthetic - minimal, luxury, playful, bold, or organic.',
+    'Change the platform specification to match where the image will be used (Instagram square, website banner, print ad).',
+    'Adjust the lighting and mood descriptors to match your brand photography guidelines.',
+    'Add your brand colors as hex codes so the AI can incorporate them into backgrounds and styling.',
+    'Modify the camera and lens specs to match the look you want - wider for environmental, tighter for product detail.'
+  ],
+  'UI/UX Design': [
+    'Replace the product description with your actual product, its core value proposition, and primary user action.',
+    'Swap the target audience with your specific user persona including their technical sophistication level.',
+    'Change the platform specification to match your tech stack (React, Shopify, WordPress, custom).',
+    'Adjust the design style references to match your existing brand guidelines and visual identity.',
+    'Include your current analytics data (bounce rate, conversion rate, page speed) for more targeted recommendations.',
+    'Add your specific business constraints (budget, timeline, team capabilities) for realistic implementation plans.'
+  ],
+  'HR & People Management': [
+    'Replace the role title with your actual position including level, department, and reporting structure.',
+    'Swap the company size and industry references with your specific organizational context.',
+    'Adjust the competency frameworks to match your company values and the skills most critical for the role.',
+    'Include your local employment law jurisdiction since HR practices must comply with regional regulations.',
+    'Modify the compensation and benefits references to match what your organization actually offers.',
+    'Add your existing HR tools and systems (ATS, HRIS, performance platform) for integrated recommendations.'
+  ],
+  'Real Estate': [
+    'Replace the property details with your actual address, specs, features, and recent upgrades.',
+    'Swap the financial figures with your real purchase price, rates, taxes, and rental estimates.',
+    'Adjust the target buyer or investor profile to match your specific market and property positioning.',
+    'Include your local market data (days on market, comparable sales, inventory levels) for accurate analysis.',
+    'Modify the legal and compliance references to match your state or municipality regulations.',
+    'Add your brokerage branding and contact details for client-facing marketing materials.'
+  ],
+  'Branding & Identity': [
+    'Replace the brand name and industry with your actual business details and market context.',
+    'Swap the personality adjectives with words that genuinely describe how you want your brand to feel.',
+    'Adjust the competitor references to your real competitors so differentiation advice is actionable.',
+    'Include your existing brand elements (colors, fonts, logo) if you are evolving rather than starting fresh.',
+    'Modify the channel examples to match the platforms where you actually communicate with customers.',
+    'Add your team size and content production capacity for realistic implementation recommendations.'
+  ],
+  'E-Commerce': [
+    'Replace the product details with your actual product name, specs, price, and unique selling points.',
+    'Swap the platform references to match your actual store setup (Shopify, WooCommerce, BigCommerce).',
+    'Adjust the target customer profile to match your actual buyer demographics and purchase behavior.',
+    'Include your shipping model, return policy, and payment options for accurate checkout optimization.',
+    'Modify the pricing and discount strategy to match your margins and competitive positioning.',
+    'Add your current traffic and conversion data so recommendations prioritize the highest-impact changes.'
+  ],
+  'Personal Development': [
+    'Replace the goals with your actual, specific objectives including timelines and measurable outcomes.',
+    'Swap the current situation description with honest details about where you are and what is holding you back.',
+    'Adjust the time commitments to match your realistic availability, not your aspirational schedule.',
+    'Include your preferred tools and methods so the system fits your existing workflow.',
+    'Modify the accountability structures based on whether you have a partner, coach, or are self-directed.',
+    'Add your past experiences with similar systems, noting what worked and what did not.'
+  ],
+  'Video & Multimedia': [
+    'Replace the niche and topic with your actual content focus and the specific subject of this video.',
+    'Swap the audience description with your real viewer demographics and what they come to you for.',
+    'Adjust the video length and format to match your platform requirements and audience preferences.',
+    'Include your current subscriber or follower count so growth tactics match your stage.',
+    'Modify the production notes based on your actual equipment and editing capabilities.',
+    'Add your monetization model (ads, sponsorships, products, courses) so CTAs align with your revenue strategy.'
   ]
 };
 
@@ -886,7 +1126,15 @@ const COMPLEMENTARY_CATEGORIES = {
   'Health & Fitness': ['Productivity', 'Personal Finance', 'Research'],
   'Research': ['Data Analysis', 'Education', 'Content & SEO'],
   'Healthcare': ['Education', 'Research', 'Writing'],
-  'Legal': ['Business', 'Writing', 'Research']
+  'Legal': ['Business', 'Writing', 'Research'],
+  'Image Generation': ['Creative', 'Social Media', 'Branding & Identity'],
+  'UI/UX Design': ['Coding', 'E-Commerce', 'Branding & Identity'],
+  'HR & People Management': ['Business', 'Project Management', 'Education'],
+  'Real Estate': ['Business', 'Personal Finance', 'Sales'],
+  'Branding & Identity': ['Social Media', 'Creative', 'Content & SEO'],
+  'E-Commerce': ['UI/UX Design', 'Email Marketing', 'Sales'],
+  'Personal Development': ['Productivity', 'Resume & Career', 'Health & Fitness'],
+  'Video & Multimedia': ['Social Media', 'Content & SEO', 'Creative']
 };
 
 const CATEGORY_BLOG_LINKS = {
@@ -913,7 +1161,15 @@ const CATEGORY_BLOG_LINKS = {
   'Health & Fitness': 'ai-personal-finance-save-budget-invest',
   'Research': 'how-to-write-better-ai-prompts',
   'Healthcare': 'ai-prompts-healthcare-professionals',
-  'Legal': 'ai-prompts-lawyers-legal-professionals'
+  'Legal': 'ai-prompts-lawyers-legal-professionals',
+  'Image Generation': 'ai-image-generation-prompts-midjourney-dall-e',
+  'UI/UX Design': 'how-to-write-better-ai-prompts',
+  'HR & People Management': 'ai-prompts-hr-recruiting-professionals',
+  'Real Estate': 'ai-prompts-real-estate-agents',
+  'Branding & Identity': 'how-to-write-better-ai-prompts',
+  'E-Commerce': 'ai-prompts-ecommerce-product-descriptions',
+  'Personal Development': 'boost-productivity-ai-prompts',
+  'Video & Multimedia': 'youtube-ai-prompts-grow-channel'
 };
 
 // ── Blog articles ─────────────────────────────────────────────────
