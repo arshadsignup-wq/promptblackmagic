@@ -1,10 +1,10 @@
 # Prompt Black Magic
 
-> A free, curated library of 717 battle-tested AI prompts across 32 categories. Browse, search, copy, and paste prompts that work with ChatGPT, Claude, Gemini, and any AI model.
+> A free, curated library of 944 battle-tested AI prompts across 32 categories. Browse, search, copy, and paste prompts that work with ChatGPT, Claude, Gemini, and any AI model.
 
 ## Main Pages
 
-- [Home](https://www.promptblackmagic.com/): Browse all 717 prompts with search and category filters
+- [Home](https://www.promptblackmagic.com/): Browse all 944 prompts with search and category filters
 - [About](https://www.promptblackmagic.com/about/): Our mission, methodology, and curation process
 - [Blog](https://www.promptblackmagic.com/blog/): 50 articles on prompt engineering, AI tools, and best practices
 - [Contact](https://www.promptblackmagic.com/contact/): Get in touch
@@ -13,42 +13,42 @@
 
 ## Categories (32)
 
-- Business (119 prompts)
-- Social Media (89 prompts)
+- Business (134 prompts)
+- Social Media (94 prompts)
 - Facebook Ads (81 prompts)
 - Google Ads (58 prompts)
-- Content & SEO (48 prompts)
+- Content & SEO (56 prompts)
 - Tracking & Pixels (44 prompts)
+- Image Generation (44 prompts)
 - Resume & Career (39 prompts)
-- Email Marketing (29 prompts)
-- Coding (26 prompts)
-- Sales (23 prompts)
+- Coding (38 prompts)
+- UI/UX Design (37 prompts)
+- Sales (36 prompts)
+- Email Marketing (34 prompts)
+- Productivity (29 prompts)
+- Writing (21 prompts)
 - Agentic AI (21 prompts)
-- Productivity (19 prompts)
-- Creative (15 prompts)
-- Education (11 prompts)
-- Writing (11 prompts)
-- Image Generation (8 prompts)
-- Data Analysis (8 prompts)
+- Education (18 prompts)
+- Creative (16 prompts)
+- Data Analysis (16 prompts)
+- HR & People Management (16 prompts)
+- Personal Development (13 prompts)
+- Legal (12 prompts)
+- Branding & Identity (12 prompts)
+- E-Commerce (12 prompts)
+- Video & Multimedia (12 prompts)
+- Personal Finance (10 prompts)
+- Real Estate (9 prompts)
 - Healthcare (8 prompts)
-- Legal (7 prompts)
-- UI/UX Design (6 prompts)
-- HR & People Management (6 prompts)
-- Personal Finance (5 prompts)
-- Freelancing (5 prompts)
+- Freelancing (6 prompts)
 - Project Management (5 prompts)
-- Customer Service (4 prompts)
-- Health & Fitness (4 prompts)
-- Real Estate (4 prompts)
-- Branding & Identity (3 prompts)
-- E-Commerce (3 prompts)
-- Personal Development (3 prompts)
-- Video & Multimedia (3 prompts)
-- Research (2 prompts)
+- Customer Service (5 prompts)
+- Health & Fitness (5 prompts)
+- Research (3 prompts)
 
 ## How It Works
 
-1. Browse or search 717 prompts across 32 categories
+1. Browse or search 944 prompts across 32 categories
 2. Find a prompt that fits your use case
 3. Copy the prompt and paste it into any AI model
 4. Customize the bracketed placeholders for your specific needs

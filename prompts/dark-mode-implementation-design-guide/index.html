@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5784937598297489"
+     crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J49B7Y5X7E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J49B7Y5X7E');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode Implementation Design Guide | Prompt Black Magic</title>
+  <meta name="description" content="Provide your current light mode design and get a complete dark mode design system - color mapping, elevation rules, image handling, and edge cases.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#08060f">
+  <link rel="canonical" href="https://www.promptblackmagic.com/prompts/dark-mode-implementation-design-guide/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dark Mode Implementation Design Guide | Prompt Black Magic">
+  <meta property="og:description" content="Provide your current light mode design and get a complete dark mode design system - color mapping, elevation rules, image handling, and edge cases.">
+  <meta property="og:url" content="https://www.promptblackmagic.com/prompts/dark-mode-implementation-design-guide/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Prompt Black Magic">
+  <meta property="og:image" content="https://www.promptblackmagic.com/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dark Mode Implementation Design Guide | Prompt Black Magic">
+  <meta name="twitter:description" content="Provide your current light mode design and get a complete dark mode design system - color mapping, elevation rules, image handling, and edge cases.">
+  <meta name="twitter:image" content="https://www.promptblackmagic.com/og-image.png">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#10038;</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:ital,wght@0,300;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/styles.min.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Dark Mode Implementation Design Guide","description":"Provide your current light mode design and get a complete dark mode design system - color mapping, elevation rules, image handling, and edge cases.","url":"https://www.promptblackmagic.com/prompts/dark-mode-implementation-design-guide/","image":"https://www.promptblackmagic.com/og-image.png","author":{"@type":"Organization","name":"Prompt Black Magic","url":"https://www.promptblackmagic.com"},"publisher":{"@type":"Organization","name":"Prompt Black Magic","url":"https://www.promptblackmagic.com","logo":{"@type":"ImageObject","url":"https://www.promptblackmagic.com/og-image.png"}},"datePublished":"2026-02-24","dateModified":"2026-05-02","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.promptblackmagic.com/prompts/dark-mode-implementation-design-guide/"},"articleSection":"UI/UX Design"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.promptblackmagic.com/"},{"@type":"ListItem","position":2,"name":"UI/UX Design","item":"https://www.promptblackmagic.com/#ui-ux-design"},{"@type":"ListItem","position":3,"name":"Dark Mode Implementation Design Guide","item":"https://www.promptblackmagic.com/prompts/dark-mode-implementation-design-guide/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Use: Dark Mode Implementation Design Guide","description":"Provide your current light mode design and get a complete dark mode design system - color mapping, elevation rules, image handling, and edge cases.","step":[{"@type":"HowToStep","position":1,"text":"Paste into any LLM with your light mode color values. Use the output to build dark mode in your design system and CSS."}]}</script>
+</head>
+<body>
+
+  <!-- Ambient floating orbs -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ─── DETAIL PAGE ─── -->
+  <div class="detail-page" id="detail-page">
+
+    <!-- Top bar -->
+    <nav class="detail-topbar">
+      <a href="/" class="back-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> All Prompts</a>
+      <span class="detail-prompt-number">770 / 944</span>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/#ui-ux-design">UI/UX Design</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Dark Mode Implementation Design Guide</span>
+    </nav>
+
+    <!-- Hero banner -->
+    <div class="detail-hero">
+      <div class="detail-hero-glow"></div>
+      <span class="detail-category">UI/UX Design</span>
+      <h1 class="detail-title">Dark Mode Implementation Design Guide</h1>
+      <p class="detail-description">Provide your current light mode design and get a complete dark mode design system - color mapping, elevation rules, image handling, and edge cases.</p>
+      <p class="detail-author">By The Prompt Black Magic Team</p>
+    </div>
+
+    <!-- How to use -->
+    <div class="detail-section detail-section-method">
+      <div class="detail-section-label">
+        <span class="detail-section-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
+        <h2>How to Use</h2>
+      </div>
+      <div class="detail-method-content">
+        <p>Paste into any LLM with your light mode color values. Use the output to build dark mode in your design system and CSS.</p>
+      </div>
+    </div>
+
+    <!-- The Prompt -->
+    <div class="detail-section detail-section-prompt">
+      <div class="detail-section-label">
+        <span class="detail-section-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+        <h2>The Prompt</h2>
+        <button class="copy-btn detail-copy-inline" id="copy-inline">
+          <span class="btn-text"><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span> Copy</span>
+        </button>
+      </div>
+      <div class="detail-prompt-wrapper">
+        <pre class="detail-prompt">You are a dark mode specialist who has implemented dark themes for products with 50M+ users, handling edge cases that most teams miss.
+
+Current light mode colors: [LIST YOUR PRIMARY, SECONDARY, NEUTRAL, SEMANTIC COLORS]
+Design system: [MATERIAL/IOS/CUSTOM]
+Product type: [CONTENT-HEAVY/DATA-DENSE/MEDIA/E-COMMERCE/PRODUCTIVITY]
+Brand colors: [PRIMARY BRAND COLOR AND IF IT MUST STAY EXACT]
+
+Design a complete dark mode system:
+
+**1. Background Surface Hierarchy**
+- Level 0 (page background): color value
+- Level 1 (cards, containers): color value
+- Level 2 (elevated elements, modals): color value
+- Level 3 (highest elevation): color value
+- Rule: lighter surfaces = higher elevation in dark mode
+- Exact hex/HSL values for each level
+- Surface opacity approach vs solid colors
+
+**2. Text Color System**
+- Primary text: color value, contrast ratio vs each surface
+- Secondary text: color value, contrast ratio
+- Disabled text: color value, minimum contrast
+- Link text: color value (different from light mode?)
+- Rule: pure white (#FFFFFF) is too harsh - use off-white
+- Inverse text (for colored backgrounds)
+
+**3. Brand Color Adaptation**
+- Primary brand color: light mode value to dark mode value
+- Desaturation rules for vibrant colors on dark backgrounds
+- Tonal palette generation for dark surfaces
+- Semantic colors mapping (success, warning, error, info)
+- How accent colors change to maintain contrast
+
+**4. Border and Divider System**
+- Border colors for each surface level
+- Divider line colors and opacity
+- When to use borders vs elevation (shadow vs no shadow)
+- Focus ring color adaptation
+
+**5. Image and Media Handling**
+- Photo treatment: no filter, slight dim, or vignette?
+- Illustration adaptation strategy
+- Logo variants (do you need a light version?)
+- Icon color inversion rules
+- Chart and data viz color adaptation
+- Shadow handling (reduce or replace with borders)
+
+**6. Component-Specific Adaptations**
+- Input fields: background, border, placeholder color
+- Buttons: primary, secondary, ghost - dark mode versions
+- Cards: background, border, shadow changes
+- Navigation: active/inactive states
+- Modals and overlays: backdrop opacity, surface color
+- Toast notifications: background, text, icon colors
+- Toggle switches, checkboxes, radio buttons
+- Tables and data grids: stripe color, header color
+
+**7. Implementation Strategy**
+- CSS custom properties approach
+- prefers-color-scheme media query
+- Manual toggle placement and behavior
+- System preference vs user preference priority
+- Transition animation between modes (duration, property)
+- Storage: localStorage, cookie, or user preference API
+- SSR/SSG: preventing flash of wrong theme
+
+**8. Testing Checklist**
+- [ ] Every text color meets 4.5:1 contrast on its background
+- [ ] Images don&#39;t blind users in dark rooms
+- [ ] Charts and graphs remain readable
+- [ ] Focus states visible in dark mode
+- [ ] No component is invisible (same bg as parent)
+- [ ] Third-party embeds handled (iframes, widgets)
+- [ ] Print styles still use light colors
+- [ ] Email templates have separate dark mode styles
+
+Provide exact color values for every element. Include before/after comparisons for each category.</pre>
+      </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="detail-actions">
+      <button class="copy-btn detail-copy-cta" id="copy-cta">
+        <span class="btn-text"><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span> Copy This Prompt</span>
+      </button>
+      <button class="copy-btn detail-share-btn" id="share-btn">
+        <span class="btn-text"><span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span> Copy Link</span>
+      </button>
+    </div>
+
+    <!-- Pro Tips -->
+    <div class="tips-section">
+      <div class="detail-section-label">
+        <span class="detail-section-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+        <h2>Pro Tips for UI/UX Design</h2>
+      </div>
+      <ul class="tips-list">
+          <li>Include your current conversion rate or usability issue so the AI can target specific improvements rather than generic best practices.</li>
+          <li>Include your target user persona and their primary task when prompting for design recommendations - context drives better UX advice.</li>
+          <li>Specify your tech stack and design system constraints so the AI generates implementable suggestions, not theoretical ideals.</li>
+      </ul>
+    </div>
+
+    <div class="enrichment-section">
+      <h2>When to Use This Prompt</h2>
+      <ul class="enrichment-list when-to-use">
+          <li>Your mobile app has high download rates but poor retention, and you suspect the onboarding flow is the problem.</li>
+          <li>You are redesigning your website and need a clear creative brief to hand to your designer or agency.</li>
+          <li>Your e-commerce product pages have traffic but low add-to-cart rates, and you need conversion-focused improvements.</li>
+      </ul>
+    </div>
+
+    <div class="enrichment-section">
+      <h2>Expected Results</h2>
+      <ul class="enrichment-list expected-results">
+          <li>Detailed page layouts with section-by-section wireframe descriptions, component specs, and content hierarchy.</li>
+          <li>Conversion-optimized copy for headlines, CTAs, error messages, and micro-copy throughout the interface.</li>
+          <li>Mobile-responsive design specifications with breakpoint behavior and touch-target considerations.</li>
+      </ul>
+    </div>
+
+    <div class="enrichment-section">
+      <h2>How to Customize This Prompt</h2>
+      <ul class="enrichment-list customization">
+          <li>Adjust the design style references to match your existing brand guidelines and visual identity.</li>
+          <li>Include your current analytics data (bounce rate, conversion rate, page speed) for more targeted recommendations.</li>
+          <li>Add your specific business constraints (budget, timeline, team capabilities) for realistic implementation plans.</li>
+      </ul>
+    </div>
+
+    <div class="prompt-blog-link">
+      <a href="/blog/how-to-write-better-ai-prompts/">Read more about UI/UX Design prompts &rarr;</a>
+    </div>
+
+    <!-- Prompt navigation -->
+    <div class="detail-nav-footer">
+      <a href="/prompts/notification-system-ux-design/" class="detail-nav-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg><span>Notification System UX Design</span></a>
+      <a href="/prompts/pricing-page-conversion-ux-design/" class="detail-nav-btn detail-nav-next"><span>Pricing Page Conversion UX Design</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></a>
+    </div>
+
+    <!-- Related prompts -->
+    
+      <section class="related-prompts">
+        <h2 class="related-heading">More UI/UX Design Prompts</h2>
+        <div class="related-grid">
+        <a class="related-card" href="/prompts/landing-page-conversion-architect/">
+          <h3 class="related-card-title">Landing Page Conversion Architect</h3>
+          <p class="related-card-desc">Describe your product and audience to get a complete high-converting landing page structure with copy, layout, and CT...</p>
+          <span class="related-card-cta">View Prompt <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a class="related-card" href="/prompts/mobile-app-ux-audit-prompt/">
+          <h3 class="related-card-title">Mobile App UX Audit Prompt</h3>
+          <p class="related-card-desc">Describe your mobile app&#39;s current flow and get a comprehensive UX audit with specific fixes for navigation, onboardi...</p>
+          <span class="related-card-cta">View Prompt <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a class="related-card" href="/prompts/saas-dashboard-design-blueprint/">
+          <h3 class="related-card-title">SaaS Dashboard Design Blueprint</h3>
+          <p class="related-card-desc">Get a complete dashboard design system with layout, data visualization strategy, and component specifications for you...</p>
+          <span class="related-card-cta">View Prompt <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a class="related-card" href="/prompts/website-redesign-creative-brief-generator/">
+          <h3 class="related-card-title">Website Redesign Creative Brief Generator</h3>
+          <p class="related-card-desc">Answer a few questions about your business and get a complete creative brief for a website redesign that any designer...</p>
+          <span class="related-card-cta">View Prompt <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a></div>
+      </section>
+
+    <!-- Cross-category prompts -->
+    
+      <section class="related-prompts">
+        <h2 class="related-heading cross-category-heading">You Might Also Like</h2>
+        <div class="related-grid">
+        <a class="related-card" href="/prompts/code-review-checklist-standards/">
+          <span class="related-card-cat">Coding</span>
+          <h3 class="related-card-title">Code Review Checklist &amp; Standards</h3>
+          <p class="related-card-desc">Define your tech stack and get a comprehensive code review checklist, PR template, and team coding standards document.</p>
+          <span class="related-card-cta">View Prompt <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a class="related-card" href="/prompts/customer-loyalty-and-rewards-program/">
+          <span class="related-card-cat">E-Commerce</span>
+          <h3 class="related-card-title">Customer Loyalty and Rewards Program</h3>
+          <p class="related-card-desc">Define your business model and get a complete loyalty program design - point structures, tier systems, reward mechani...</p>
+          <span class="related-card-cta">View Prompt <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a class="related-card" href="/prompts/brand-positioning-statement-generator/">
+          <span class="related-card-cat">Branding &amp; Identity</span>
+          <h3 class="related-card-title">Brand Positioning Statement Generator</h3>
+          <p class="related-card-desc">Answer key questions about your market and get a positioning statement, competitive differentiation map, and messagin...</p>
+          <span class="related-card-cta">View Prompt <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a></div>
+      </section>
+
+    <noscript>
+      <p style="text-align:center; color:#a9a3b8; margin-top:24px;">Copy buttons require JavaScript. You can manually select and copy the prompt text above.</p>
+    </noscript>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-sigil" aria-hidden="true">&#10038;</span>
+          <span class="footer-name">Prompt Black Magic</span>
+        </div>
+        <p class="footer-tagline">Battle-tested prompts for every AI model. No fluff. Just results.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h2 class="footer-heading">Stay Updated</h2>
+          <p class="footer-note">New prompts added regularly.<br>Bookmark this page to stay ahead.</p>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-heading">Get in Touch</h2>
+          <a href="mailto:promptblackmagic@gmail.com" class="footer-email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+            promptblackmagic@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal-links">
+        <a href="/about/">About</a><span class="divider">|</span>
+        <a href="/blog/">Blog</a><span class="divider">|</span>
+        <a href="/privacy/">Privacy Policy</a><span class="divider">|</span>
+        <a href="/terms/">Terms of Service</a><span class="divider">|</span>
+        <a href="/contact/">Contact</a>
+      </div>
+      <p class="copyright">Prompt Black Magic &copy; 2026. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Copy/Share JS (minimal - no content rendering) -->
+  <script>
+  (function() {
+    var promptText = "You are a dark mode specialist who has implemented dark themes for products with 50M+ users, handling edge cases that most teams miss.\n\nCurrent light mode colors: [LIST YOUR PRIMARY, SECONDARY, NEUTRAL, SEMANTIC COLORS]\nDesign system: [MATERIAL/IOS/CUSTOM]\nProduct type: [CONTENT-HEAVY/DATA-DENSE/MEDIA/E-COMMERCE/PRODUCTIVITY]\nBrand colors: [PRIMARY BRAND COLOR AND IF IT MUST STAY EXACT]\n\nDesign a complete dark mode system:\n\n**1. Background Surface Hierarchy**\n- Level 0 (page background): color value\n- Level 1 (cards, containers): color value\n- Level 2 (elevated elements, modals): color value\n- Level 3 (highest elevation): color value\n- Rule: lighter surfaces = higher elevation in dark mode\n- Exact hex/HSL values for each level\n- Surface opacity approach vs solid colors\n\n**2. Text Color System**\n- Primary text: color value, contrast ratio vs each surface\n- Secondary text: color value, contrast ratio\n- Disabled text: color value, minimum contrast\n- Link text: color value (different from light mode?)\n- Rule: pure white (#FFFFFF) is too harsh - use off-white\n- Inverse text (for colored backgrounds)\n\n**3. Brand Color Adaptation**\n- Primary brand color: light mode value to dark mode value\n- Desaturation rules for vibrant colors on dark backgrounds\n- Tonal palette generation for dark surfaces\n- Semantic colors mapping (success, warning, error, info)\n- How accent colors change to maintain contrast\n\n**4. Border and Divider System**\n- Border colors for each surface level\n- Divider line colors and opacity\n- When to use borders vs elevation (shadow vs no shadow)\n- Focus ring color adaptation\n\n**5. Image and Media Handling**\n- Photo treatment: no filter, slight dim, or vignette?\n- Illustration adaptation strategy\n- Logo variants (do you need a light version?)\n- Icon color inversion rules\n- Chart and data viz color adaptation\n- Shadow handling (reduce or replace with borders)\n\n**6. Component-Specific Adaptations**\n- Input fields: background, border, placeholder color\n- Buttons: primary, secondary, ghost - dark mode versions\n- Cards: background, border, shadow changes\n- Navigation: active/inactive states\n- Modals and overlays: backdrop opacity, surface color\n- Toast notifications: background, text, icon colors\n- Toggle switches, checkboxes, radio buttons\n- Tables and data grids: stripe color, header color\n\n**7. Implementation Strategy**\n- CSS custom properties approach\n- prefers-color-scheme media query\n- Manual toggle placement and behavior\n- System preference vs user preference priority\n- Transition animation between modes (duration, property)\n- Storage: localStorage, cookie, or user preference API\n- SSR/SSG: preventing flash of wrong theme\n\n**8. Testing Checklist**\n- [ ] Every text color meets 4.5:1 contrast on its background\n- [ ] Images don't blind users in dark rooms\n- [ ] Charts and graphs remain readable\n- [ ] Focus states visible in dark mode\n- [ ] No component is invisible (same bg as parent)\n- [ ] Third-party embeds handled (iframes, widgets)\n- [ ] Print styles still use light colors\n- [ ] Email templates have separate dark mode styles\n\nProvide exact color values for every element. Include before/after comparisons for each category.";
+    var copyIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+    var checkIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+    var shareIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>';
+    var timeout;
+
+    function handleCopy(btn, label) {
+      navigator.clipboard.writeText(promptText).then(function() {
+        btn.classList.add('copied');
+        btn.querySelector('.btn-text').innerHTML = '<span class="icon">' + checkIcon + '</span> Copied!';
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+          btn.classList.remove('copied');
+          btn.querySelector('.btn-text').innerHTML = '<span class="icon">' + copyIcon + '</span> ' + label;
+        }, 2500);
+      });
+    }
+
+    document.getElementById('copy-inline').addEventListener('click', function() { handleCopy(this, 'Copy'); });
+    document.getElementById('copy-cta').addEventListener('click', function() { handleCopy(this, 'Copy This Prompt'); });
+
+    var shareTimeout;
+    var shareBtn = document.getElementById('share-btn');
+    shareBtn.addEventListener('click', function() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        shareBtn.classList.add('copied');
+        shareBtn.querySelector('.btn-text').innerHTML = '<span class="icon">' + checkIcon + '</span> Link Copied!';
+        clearTimeout(shareTimeout);
+        shareTimeout = setTimeout(function() {
+          shareBtn.classList.remove('copied');
+          shareBtn.querySelector('.btn-text').innerHTML = '<span class="icon">' + shareIcon + '</span> Copy Link';
+        }, 2500);
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>
