@@ -87,6 +87,136 @@ function mkdirp(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
+// Simple deterministic hash for a string (returns a positive integer)
+function simpleHash(str) {
+  let hash = 5381;
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) + hash + str.charCodeAt(i)) & 0x7fffffff;
+  }
+  return hash;
+}
+
+// Generate a unique "Why This Prompt Works" analysis for each prompt
+function generateWhyItWorks(prompt) {
+  const title = prompt.title;
+  const desc = prompt.description;
+  const category = prompt.category;
+  const promptText = prompt.prompt || '';
+  const hash = simpleHash(title);
+  const descHash = simpleHash(desc);
+
+  // Detect prompt engineering techniques used in the prompt
+  const allTechniques = [];
+  if (/you are|act as|role|expert|specialist/i.test(promptText)) allTechniques.push('role assignment');
+  if (/step[- ]by[- ]step|first.*then|1\.|phase/i.test(promptText)) allTechniques.push('sequential task breakdown');
+  if (/format|markdown|bullet|table|json|template/i.test(promptText)) allTechniques.push('output formatting');
+  if (/context|background|situation|scenario/i.test(promptText)) allTechniques.push('context framing');
+  if (/constraint|avoid|do not|never|must not/i.test(promptText)) allTechniques.push('negative constraints');
+  if (/example|sample|like this|for instance/i.test(promptText)) allTechniques.push('few-shot examples');
+  if (/tone|voice|style|professional|casual/i.test(promptText)) allTechniques.push('tone calibration');
+  if (/audience|reader|user|customer|client/i.test(promptText)) allTechniques.push('audience specification');
+  if (/goal|objective|outcome|result|deliver/i.test(promptText)) allTechniques.push('success criteria');
+  if (/specific|detailed|comprehensive|thorough/i.test(promptText)) allTechniques.push('depth requirements');
+  if (/analyze|evaluate|assess|compare/i.test(promptText)) allTechniques.push('analytical framing');
+  if (/creative|brainstorm|generate|ideas/i.test(promptText)) allTechniques.push('creative divergence');
+  if (/list|enumerate|outline|summarize/i.test(promptText)) allTechniques.push('structured enumeration');
+  if (/why|because|reason|explain/i.test(promptText)) allTechniques.push('reasoning elicitation');
+
+  if (allTechniques.length < 2) {
+    allTechniques.push('clear task definition', 'structured output guidance');
+  }
+
+  // Select 2-3 techniques based on hash for variety
+  const techStart = hash % allTechniques.length;
+  const techCount = 2 + (hash % 2);
+  const selectedTech = [];
+  for (let i = 0; i < techCount && i < allTechniques.length; i++) {
+    selectedTech.push(allTechniques[(techStart + i) % allTechniques.length]);
+  }
+  const techniqueList = selectedTech.join(' and ');
+
+  // Extract key action words from description for unique content
+  const descWords = desc.split(/\s+/);
+  const actionPhrase = descWords.slice(0, Math.min(8, descWords.length)).join(' ').toLowerCase();
+
+  // Prompt characteristics
+  const promptLength = promptText.split(/\s+/).length;
+  const complexity = promptLength > 300 ? 'in-depth' : promptLength > 150 ? 'well-structured' : promptLength > 80 ? 'carefully crafted' : 'concise';
+  const sentenceCount = (promptText.match(/[.!?]\s/g) || []).length + 1;
+  const hasMultipleSections = promptLength > 100;
+
+  // Category-specific outcome descriptions
+  const outcomes = {
+    'Facebook Ads': 'scroll-stopping ad copy that complies with platform policies and speaks directly to your target audience',
+    'Business': 'a clear strategic framework with specific action steps tailored to your business context',
+    'Google Ads': 'keyword-aligned ad components that improve Quality Score and reduce cost per click',
+    'Social Media': 'content formatted for your specific platform that encourages saves, shares, and meaningful engagement',
+    'Tracking & Pixels': 'implementation-ready tracking code with validation steps to confirm accurate data collection',
+    'Resume & Career': 'keyword-optimized career materials that pass automated screening and impress human reviewers',
+    'Email Marketing': 'high-converting email copy with subject lines, body text, and CTAs aligned to your campaign goal',
+    'Content & SEO': 'search-intent-matched content with proper heading structure and semantic keyword coverage',
+    'Sales': 'buyer-psychology-informed messaging that handles objections and moves deals forward',
+    'Agentic AI': 'reliable agent workflows with decision logic, error recovery, and clear completion criteria',
+    'Coding': 'production-quality code that handles edge cases and follows your stack conventions',
+    'Productivity': 'implementable systems with specific tools, timeframes, and accountability structures',
+    'Education': 'learning experiences scaffolded to your students\' level with built-in comprehension checks',
+    'Writing': 'publication-ready content that matches your target tone, audience, and word count requirements',
+    'Creative': 'original creative directions with enough specificity to execute without additional briefing',
+    'Data Analysis': 'actionable analytical insights with methodology documentation and visualization recommendations',
+    'Image Generation': 'technically precise visual prompts with camera settings, lighting, and style parameters that produce consistent results',
+    'UI/UX Design': 'user-centered design specifications with component details, interaction states, and accessibility considerations',
+    'HR & People Management': 'legally informed HR materials with scoring rubrics and bias-reduction measures built in',
+    'Real Estate': 'market-appropriate materials with financial calculations, legal considerations, and buyer psychology',
+    'Branding & Identity': 'brand-differentiating assets with specific color codes, typography, and voice guidelines',
+    'E-Commerce': 'conversion-tested product content optimized for your specific platform and buyer journey stage',
+    'Personal Development': 'habit-formation systems with progressive milestones and recovery protocols for setbacks',
+    'Video & Multimedia': 'attention-optimized scripts with hooks, pacing cues, and platform-specific format guidance',
+    'Personal Finance': 'situation-specific financial plans with actual numbers, timelines, and risk-adjusted recommendations',
+    'Freelancing': 'client-facing materials that communicate expertise and justify your pricing through demonstrated value',
+    'Project Management': 'stakeholder-aligned project documentation with risk mitigation and resource allocation built in',
+    'Customer Service': 'empathy-driven response frameworks that de-escalate issues while protecting brand reputation',
+    'Health & Fitness': 'evidence-based plans with progressive overload, recovery scheduling, and modification options',
+    'Research': 'methodologically sound research outputs with clear limitations and actionable recommendations',
+    'Healthcare': 'clinically appropriate documentation that meets compliance standards and patient literacy guidelines',
+    'Legal': 'properly structured legal analysis with jurisdiction awareness and appropriate professional disclaimers'
+  };
+  const outcome = outcomes[category] || 'professional-grade output you can use without extensive revision';
+
+  // 12 distinct sentence patterns for the opening
+  const openers = [
+    `"${title}" delivers consistent results because it tells the AI exactly what role to play, what context matters, and what format the output should take.`,
+    `The reason "${title}" outperforms a generic request is structural: it uses ${techniqueList} to constrain the AI's response toward ${outcome}.`,
+    `"${title}" works by removing ambiguity from the AI interaction. Instead of hoping the model guesses your intent, this ${complexity} prompt defines the task boundaries explicitly.`,
+    `What separates "${title}" from an off-the-cuff AI question is precision. It applies ${techniqueList}, which gives the model enough direction to produce ${outcome}.`,
+    `"${title}" succeeds because it mirrors how AI models are trained to respond - with clear instructions, specific constraints, and defined success criteria.`,
+    `This prompt produces reliable output because it leverages ${techniqueList}. Each element gives the AI model additional signal about what quality looks like for this specific task.`,
+    `"${title}" is built on a principle most AI users overlook: models perform dramatically better when given ${techniqueList} rather than open-ended questions.`,
+    `The effectiveness of "${title}" comes from its ${complexity} structure. By incorporating ${techniqueList}, it channels the AI's capabilities toward producing exactly what you need.`,
+    `"${title}" eliminates the most common reason AI output disappoints - vague instructions. This prompt uses ${techniqueList} to define both what the output should include and how it should be structured.`,
+    `What makes "${title}" worth using over writing your own prompt is the engineering behind it. The ${techniqueList} built into this ${complexity} prompt took multiple iterations to refine.`,
+    `"${title}" applies research-backed prompting principles: ${techniqueList}. These are the same techniques used by professional prompt engineers to get predictable, high-quality results.`,
+    `This prompt works across ChatGPT, Claude, and Gemini because it uses universal prompting principles - ${techniqueList} - rather than model-specific tricks that break when you switch platforms.`
+  ];
+
+  // 8 distinct sentence patterns for the closing
+  const closers = [
+    `The output you receive will be ${outcome}, ready to use with minimal editing.`,
+    `You can expect ${outcome} - the kind of result that normally requires several rounds of prompt refinement.`,
+    `The end result is ${outcome}, delivered on the first try rather than after multiple failed attempts.`,
+    `This means you get ${outcome} without the trial-and-error that wastes most people's time with AI.`,
+    `What you get back is ${outcome} - production-ready rather than a rough draft that needs heavy reworking.`,
+    `The AI will produce ${outcome}, because the prompt's structure leaves no room for generic filler.`,
+    `Expect ${outcome}. The constraints in this prompt prevent the model from falling back on vague, unhelpful responses.`,
+    `Your output will be ${outcome} - the difference between useful AI assistance and a response you immediately delete.`
+  ];
+
+  // Select opener and closer using different hash values to maximize uniqueness
+  const opener = openers[hash % openers.length];
+  const closer = closers[descHash % closers.length];
+
+  return `${opener} ${closer}`;
+}
+
 // SVG icons (reused across pages)
 const ICONS = {
   copy: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
@@ -1182,7 +1312,7 @@ const BLOG_ARTICLES = [
     date: '2026-03-10',
     readTime: '8 min read',
     content: `
-<p>The difference between getting mediocre AI output and getting exceptional results almost always comes down to one thing: <strong>how you write your prompt</strong>. After curating hundreds of battle-tested prompts across 22 categories, we've identified the patterns that consistently produce superior results - and the mistakes that hold most people back.</p>
+<p>The difference between getting mediocre AI output and getting exceptional results almost always comes down to one thing: <strong>how you write your prompt</strong>. After curating hundreds of battle-tested prompts across 32 categories, we've identified the patterns that consistently produce superior results - and the mistakes that hold most people back.</p>
 
 <p>This guide breaks down everything we've learned about writing effective AI prompts, from foundational principles to advanced techniques used by professional prompt engineers.</p>
 
@@ -3267,7 +3397,7 @@ const BLOG_ARTICLES = [
     date: '2026-04-17',
     readTime: '9 min read',
     content: `
-<p>After curating and testing hundreds of AI prompts across 22 categories, we've seen a clear pattern: the same 14 mistakes show up again and again in prompts that underperform. These aren't obscure edge cases. They're habits that nearly every AI user develops naturally - and they're the reason most people think AI "doesn't work" for their use case.</p>
+<p>After curating and testing hundreds of AI prompts across 32 categories, we've seen a clear pattern: the same 14 mistakes show up again and again in prompts that underperform. These aren't obscure edge cases. They're habits that nearly every AI user develops naturally - and they're the reason most people think AI "doesn't work" for their use case.</p>
 
 <p>The good news is that every one of these mistakes has a concrete fix. We've organized them around a framework we call the <strong>CLEAR Checklist</strong> - a five-point system you can run through before submitting any prompt to dramatically improve your output quality.</p>
 
@@ -4940,7 +5070,7 @@ const BLOG_ARTICLES = [
     date: '2026-05-01',
     readTime: '9 min read',
     content: `
-<p>After curating and testing hundreds of AI prompts across 22 categories, we noticed something that changed how we think about prompt engineering entirely: the prompts that consistently produce the best results don't just share good intentions - they share a common structure. Regardless of whether the prompt is for writing Facebook ad headlines, building an ATS-optimized resume, crafting a cold email sequence, or cleaning a messy dataset, the highest-performing prompts follow the same underlying architecture. We call it the <strong>CRAFT Framework</strong>, and once you learn it, you'll never write a mediocre prompt again.</p>
+<p>After curating and testing hundreds of AI prompts across 32 categories, we noticed something that changed how we think about prompt engineering entirely: the prompts that consistently produce the best results don't just share good intentions - they share a common structure. Regardless of whether the prompt is for writing Facebook ad headlines, building an ATS-optimized resume, crafting a cold email sequence, or cleaning a messy dataset, the highest-performing prompts follow the same underlying architecture. We call it the <strong>CRAFT Framework</strong>, and once you learn it, you'll never write a mediocre prompt again.</p>
 
 <p>This guide breaks down each element of CRAFT with real examples from our prompt library, practical exercises, and the specific mistakes that each element prevents.</p>
 
@@ -5325,7 +5455,7 @@ const BLOG_ARTICLES = [
 
 <p>Related reading: <a href="/blog/boost-productivity-ai-prompts/">Boost Productivity with AI Prompts</a> covers individual productivity techniques that become even more powerful when shared across a team. And our <a href="/blog/prompt-engineering-beginner-to-pro/">Prompt Engineering: From Beginner to Pro</a> guide helps team members write better prompts to contribute to the library.</p>
 
-<p>Explore our <a href="/">complete prompt library</a> to see how hundreds of prompts are organized across 22 categories - use it as a model for structuring your own team's collection.</p>`
+<p>Explore our <a href="/">complete prompt library</a> to see how hundreds of prompts are organized across 32 categories - use it as a model for structuring your own team's collection.</p>`
   },
   {
     title: 'AI for HR and Recruiting: Job Descriptions, Screening, and Onboarding',
@@ -6560,16 +6690,20 @@ function generatePromptPage(idx) {
       </section>`;
   }
 
+  // Prompt-specific enrichment: use a hash of the title for unique selection
+  // This ensures each prompt gets a different combination even within the same category
+  const titleHash = simpleHash(p.title);
+  const descWords = p.description.split(/\s+/).slice(0, 6).join(' ');
+
   // Pro Tips
   const tips = CATEGORY_TIPS[p.category] || [];
   let tipsHtml = '';
   if (tips.length > 0) {
-    // Pick 3 tips using index rotation for variety
     const tipCount = Math.min(3, tips.length);
-    const startTip = idx % tips.length;
+    const startTip = titleHash % tips.length;
     const selectedTips = [];
     for (let t = 0; t < tipCount; t++) {
-      selectedTips.push(tips[(startTip + t) % tips.length]);
+      selectedTips.push(tips[(startTip + t * 2) % tips.length]);
     }
     const tipsLis = selectedTips.map(tip => `          <li>${escapeHtml(tip)}</li>`).join('\n');
     tipsHtml = `
@@ -6577,8 +6711,9 @@ function generatePromptPage(idx) {
     <div class="tips-section">
       <div class="detail-section-label">
         <span class="detail-section-icon">${ICONS.lightbulb}</span>
-        <h2>Pro Tips for ${escapeHtml(p.category)}</h2>
+        <h2>Pro Tips for Using "${escapeHtml(p.title)}"</h2>
       </div>
+      <p class="enrichment-intro">These ${escapeHtml(p.category.toLowerCase())} tips will help you get stronger results when using "${escapeHtml(p.title)}" and similar prompts in this category.</p>
       <ul class="tips-list">
 ${tipsLis}
       </ul>
@@ -6590,15 +6725,16 @@ ${tipsLis}
   let whenToUseHtml = '';
   if (whenToUse.length > 0) {
     const wCount = Math.min(3, whenToUse.length);
-    const wStart = idx % whenToUse.length;
+    const wStart = (titleHash + 3) % whenToUse.length;
     const wSelected = [];
     for (let w = 0; w < wCount; w++) {
-      wSelected.push(whenToUse[(wStart + w) % whenToUse.length]);
+      wSelected.push(whenToUse[(wStart + w * 2) % whenToUse.length]);
     }
     const wItems = wSelected.map(s => `          <li>${escapeHtml(s)}</li>`).join('\n');
     whenToUseHtml = `
     <div class="enrichment-section">
-      <h2>When to Use This Prompt</h2>
+      <h2>When to Use "${escapeHtml(p.title)}"</h2>
+      <p class="enrichment-intro">"${escapeHtml(p.title)}" is particularly useful in these situations. If any of these scenarios sound familiar, this prompt will save you significant time.</p>
       <ul class="enrichment-list when-to-use">
 ${wItems}
       </ul>
@@ -6610,15 +6746,16 @@ ${wItems}
   let expectedResultsHtml = '';
   if (expectedResults.length > 0) {
     const eCount = Math.min(3, expectedResults.length);
-    const eStart = (idx + 1) % expectedResults.length;
+    const eStart = (titleHash + 7) % expectedResults.length;
     const eSelected = [];
     for (let e = 0; e < eCount; e++) {
-      eSelected.push(expectedResults[(eStart + e) % expectedResults.length]);
+      eSelected.push(expectedResults[(eStart + e * 2) % expectedResults.length]);
     }
     const eItems = eSelected.map(s => `          <li>${escapeHtml(s)}</li>`).join('\n');
     expectedResultsHtml = `
     <div class="enrichment-section">
-      <h2>Expected Results</h2>
+      <h2>What You Will Get from "${escapeHtml(p.title)}"</h2>
+      <p class="enrichment-intro">When you use "${escapeHtml(p.title)}" with ChatGPT, Claude, or Gemini, here is what to expect in the AI output.</p>
       <ul class="enrichment-list expected-results">
 ${eItems}
       </ul>
@@ -6630,20 +6767,29 @@ ${eItems}
   let customizationHtml = '';
   if (customization.length > 0) {
     const cCount = Math.min(3, customization.length);
-    const cStart = (idx + 2) % customization.length;
+    const cStart = (titleHash + 11) % customization.length;
     const cSelected = [];
     for (let c = 0; c < cCount; c++) {
-      cSelected.push(customization[(cStart + c) % customization.length]);
+      cSelected.push(customization[(cStart + c * 2) % customization.length]);
     }
     const cItems = cSelected.map(s => `          <li>${escapeHtml(s)}</li>`).join('\n');
     customizationHtml = `
     <div class="enrichment-section">
-      <h2>How to Customize This Prompt</h2>
+      <h2>How to Customize "${escapeHtml(p.title)}"</h2>
+      <p class="enrichment-intro">Adapt "${escapeHtml(p.title)}" to your specific situation by modifying these key areas. The more context you add, the better the results.</p>
       <ul class="enrichment-list customization">
 ${cItems}
       </ul>
     </div>`;
   }
+
+  // Why This Prompt Works (unique per prompt)
+  const whyItWorksText = generateWhyItWorks(p);
+  const whyItWorksHtml = `
+    <div class="enrichment-section why-it-works">
+      <h2>Why "${escapeHtml(p.title)}" Works</h2>
+      <p class="why-it-works-text">${escapeHtml(whyItWorksText)}</p>
+    </div>`;
 
   // Prompt-to-blog backlink
   const blogSlug = CATEGORY_BLOG_LINKS[p.category];
@@ -6693,7 +6839,7 @@ ${cItems}
     "description": p.description,
     "url": canonicalUrl,
     "image": `${SITE_URL}/og-image.png`,
-    "author": { "@type": "Organization", "name": "Prompt Black Magic", "url": SITE_URL },
+    "author": { "@type": "Person", "name": "Arshad Hossain", "url": SITE_URL + "/about/" },
     "publisher": { "@type": "Organization", "name": "Prompt Black Magic", "url": SITE_URL, "logo": { "@type": "ImageObject", "url": `${SITE_URL}/og-image.png` } },
     "datePublished": "2026-02-24",
     "dateModified": TODAY,
@@ -6809,7 +6955,7 @@ ${cItems}
       <span class="detail-category">${escapeHtml(p.category)}</span>
       <h1 class="detail-title">${escapeHtml(p.title)}</h1>
       <p class="detail-description">${escapeHtml(p.description)}</p>
-      <p class="detail-author">By The Prompt Black Magic Team</p>
+      <p class="detail-author">By Arshad Hossain</p>
     </div>
 
     <!-- How to use -->
@@ -6846,6 +6992,7 @@ ${cItems}
         <span class="btn-text"><span class="icon">${ICONS.share}</span> Copy Link</span>
       </button>
     </div>
+${whyItWorksHtml}
 ${tipsHtml}
 ${whenToUseHtml}
 ${expectedResultsHtml}
@@ -6988,7 +7135,7 @@ function generate404() {
 
 function generateAboutPage() {
   const title = 'About Prompt Black Magic';
-  const description = 'Learn about the Prompt Black Magic team, our mission to make AI accessible, and how we curate battle-tested prompts across 22 categories.';
+  const description = 'Learn about Prompt Black Magic, founded by Arshad Hossain. We curate battle-tested AI prompts across 32 categories to help professionals get better results from AI.';
   const canonicalUrl = `${SITE_URL}/about/`;
 
   return `${headBoilerplate({ title, description, canonicalUrl })}
@@ -6997,50 +7144,52 @@ ${navBar()}
 
   <div class="content-page">
     <h1>About Prompt Black Magic</h1>
-    <p class="last-updated">Last updated: March 2026</p>
+    <p class="last-updated">Last updated: May 2026</p>
 
-    <p>Prompt Black Magic is a free, curated library of <strong>hundreds of battle-tested AI prompts</strong> spanning 22 categories. We exist because we believe the gap between "knowing AI exists" and "getting real value from AI" is almost entirely a prompt quality problem - and we're here to close it.</p>
+    <p>Prompt Black Magic is a free, curated library of <strong>hundreds of battle-tested AI prompts</strong> spanning 32 categories. We exist because the gap between "knowing AI exists" and "getting real value from AI" is almost entirely a prompt quality problem - and we are here to close it.</p>
 
     <h2>Our Mission</h2>
-    <p>AI is the most powerful tool most people aren't using effectively. Not because the technology isn't ready, but because the interface - the prompt - is where most people get stuck. Vague prompts produce vague results, and vague results make people think AI "doesn't work for them."</p>
+    <p>AI is the most powerful tool most people are not using effectively. Not because the technology is not ready, but because the interface - the prompt - is where most people get stuck. Vague prompts produce vague results, and vague results make people think AI "does not work for them."</p>
     <p>Our mission is simple: provide ready-to-use, expertly crafted prompts that produce genuinely useful output across every major use case - from writing Facebook ad copy to optimizing Google Ads campaigns, from building ATS-optimized resumes to managing complex projects with AI assistance.</p>
+
+    <h2>Who We Are</h2>
+    <p><strong>Prompt Black Magic</strong> was founded by <strong>Arshad Hossain</strong>, a digital marketer and AI practitioner based in Sydney, Australia. After spending years working across paid advertising, SEO, content strategy, and software development, Arshad noticed the same pattern everywhere: people had access to powerful AI tools but consistently struggled to get useful output from them.</p>
+    <p>The problem was never the AI model - it was the prompt. A well-structured prompt with clear role assignment, specific context, and defined output format produces dramatically better results than a vague question. Prompt Black Magic was built to give professionals a head start by providing prompts that already follow these principles.</p>
+    <p>Today the site serves thousands of marketers, developers, educators, freelancers, and business owners who rely on our prompt library as part of their daily workflow.</p>
 
     <h2>What We Offer</h2>
     <ul>
-      <li><strong>Hundreds of free prompts</strong> across 22 categories including Business, Marketing, Sales, Career, Coding, Productivity, and more</li>
+      <li><strong>Hundreds of free prompts</strong> across 32 categories including Business, Facebook Ads, Google Ads, Social Media, Sales, Coding, Resume & Career, Image Generation, Healthcare, Legal, and more</li>
       <li><strong>Detailed usage instructions</strong> with every prompt, so you know exactly how to customize it for your situation</li>
       <li><strong>No signup required</strong> - browse, copy, and use any prompt instantly</li>
-      <li><strong>Regular updates</strong> - we continuously add new prompts and refine existing ones based on community feedback and AI model improvements</li>
+      <li><strong>Regular updates</strong> - we continuously add new prompts and refine existing ones based on user feedback and AI model improvements</li>
+      <li><strong>In-depth blog articles</strong> covering prompt engineering techniques, AI strategy guides, and category-specific tutorials</li>
     </ul>
 
     <h2>Our Curation Process</h2>
-    <p>Every prompt in our library goes through a rigorous selection process:</p>
+    <p>Every prompt in our library goes through a rigorous selection process before publication:</p>
     <ol>
-      <li><strong>Research:</strong> We identify the most common and high-value AI use cases across industries, interviewing practitioners and analyzing what professionals actually need.</li>
+      <li><strong>Research:</strong> We identify the most common and high-value AI use cases across industries, studying what professionals actually need in their day-to-day work.</li>
       <li><strong>Drafting:</strong> Each prompt is written using proven prompt engineering principles - clear role assignment, specific context, defined output formats, and quality constraints.</li>
       <li><strong>Testing:</strong> We test every prompt across multiple AI models (ChatGPT, Claude, Gemini) to ensure consistent quality regardless of which platform you use.</li>
       <li><strong>Refinement:</strong> Based on testing results, we iterate on wording, structure, and instructions until the prompt reliably produces high-quality output.</li>
-      <li><strong>Documentation:</strong> Each prompt is published with a clear description, "How to Use" instructions, and categorized for easy discovery.</li>
+      <li><strong>Documentation:</strong> Each prompt is published with a clear description, "How to Use" instructions, pro tips, expected results, and customization guidance.</li>
     </ol>
-
-    <h2>The Prompt Black Magic Team</h2>
-    <p>We're a small, focused team of prompt engineers, marketers, and developers who use AI daily in our own work. We built Prompt Black Magic because we were tired of spending 20 minutes crafting the perfect prompt every time we needed AI help - and we knew others were struggling with the same problem.</p>
-    <p>Our diverse backgrounds (advertising, software engineering, content strategy, data analysis) ensure our prompts cover real-world use cases, not theoretical exercises. Every prompt exists because someone on our team - or in our community - actually needed it.</p>
 
     <h2>Our Methodology</h2>
     <p>We do not just write prompts and hope for the best. Every prompt goes through our five-stage methodology before it reaches you:</p>
     <div class="methodology-steps">
       <div class="methodology-step">
         <h3>1. Real-World Research</h3>
-        <p>We start by identifying what practitioners actually need. We analyze industry forums, interview professionals, and study the most common AI use cases across business, marketing, sales, development, and education. Every prompt solves a problem someone has right now.</p>
+        <p>We start by identifying what practitioners actually need. We analyze industry forums, study competitor tools, and track the most common AI use cases across business, marketing, sales, development, and education. Every prompt solves a problem someone has right now.</p>
       </div>
       <div class="methodology-step">
         <h3>2. Prompt Engineering</h3>
-        <p>Each prompt is written using proven prompt engineering principles: clear role assignment, specific context framing, structured output format, and quality constraints. We follow the latest research on what makes AI produce its best output.</p>
+        <p>Each prompt is written using proven prompt engineering principles: clear role assignment, specific context framing, structured output format, and quality constraints. We follow the latest research from OpenAI, Anthropic, and Google on what makes AI produce its best output.</p>
       </div>
       <div class="methodology-step">
         <h3>3. Multi-Model Testing</h3>
-        <p>We test every prompt across ChatGPT, Claude, Gemini, and other leading AI models. A prompt only makes our library if it performs consistently well across platforms, so you get reliable results regardless of which AI you use.</p>
+        <p>We test every prompt across ChatGPT (GPT-4o), Claude (Sonnet and Opus), Gemini Pro, and other leading AI models. A prompt only makes our library if it performs consistently well across platforms, so you get reliable results regardless of which AI you use.</p>
       </div>
       <div class="methodology-step">
         <h3>4. Iterative Refinement</h3>
@@ -7048,13 +7197,14 @@ ${navBar()}
       </div>
       <div class="methodology-step">
         <h3>5. Documentation and Categorization</h3>
-        <p>Each prompt is published with a clear description, step-by-step usage instructions, pro tips for the category, and related prompts you might find useful. Everything is organized for quick discovery and immediate use.</p>
+        <p>Each prompt is published with a clear description, step-by-step usage instructions, pro tips, expected results, customization guidance, and related prompts. Everything is organized for quick discovery and immediate use.</p>
       </div>
     </div>
 
     <h2>Contact Us</h2>
-    <p>We'd love to hear from you. Whether you have prompt suggestions, feedback on existing prompts, or partnership inquiries, reach out at:</p>
+    <p>Have a prompt suggestion, feedback on an existing prompt, or a partnership inquiry? We would love to hear from you:</p>
     <a href="mailto:promptblackmagic@gmail.com" class="contact-email">promptblackmagic@gmail.com</a>
+    <p style="margin-top:12px;color:var(--text-muted);font-size:0.88rem;">Prompt Black Magic is operated by Arshad Hossain. Based in Sydney, Australia.</p>
   </div>
 
   <!-- Organization Schema -->
@@ -7065,8 +7215,10 @@ ${navBar()}
     "name": "Prompt Black Magic",
     "url": SITE_URL,
     "logo": SITE_URL + "/og-image.png",
-    "description": "A curated library of battle-tested AI prompts across 22 categories. Free, no signup required.",
+    "description": "A curated library of battle-tested AI prompts across 32 categories. Free, no signup required.",
     "email": "promptblackmagic@gmail.com",
+    "founder": { "@type": "Person", "name": "Arshad Hossain" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Sydney", "addressCountry": "AU" },
     "sameAs": []
   })}
   </script>
@@ -7398,7 +7550,7 @@ function generateBlogArticle(article) {
     "description": article.description,
     "url": canonicalUrl,
     "image": `${SITE_URL}/og-image.png`,
-    "author": { "@type": "Organization", "name": "Prompt Black Magic", "url": SITE_URL },
+    "author": { "@type": "Person", "name": "Arshad Hossain", "url": SITE_URL + "/about/" },
     "publisher": { "@type": "Organization", "name": "Prompt Black Magic", "url": SITE_URL, "logo": { "@type": "ImageObject", "url": `${SITE_URL}/og-image.png` } },
     "datePublished": article.date,
     "dateModified": TODAY,
@@ -7451,7 +7603,7 @@ ${navBar()}
       <div class="article-meta">
         <span>${article.date}</span>
         <span>${article.readTime}</span>
-        <span>By The Prompt Black Magic Team</span>
+        <span>By Arshad Hossain</span>
       </div>
       <h1>${escapeHtml(article.title)}</h1>
     </div>
@@ -7618,8 +7770,8 @@ function build() {
     /(<main class="prompts-grid"[^>]*>[\s\S]*?)(<!-- Rendered by app\.js -->)?\s*(<\/main>)/,
     `$1$2${safeNoscript}\n  $3`
   );
-  // 7. Inject blog preview into index.html
-  const recentArticles = BLOG_ARTICLES.slice(-3).reverse();
+  // 7. Inject blog preview into index.html (show 6 articles for more editorial presence)
+  const recentArticles = BLOG_ARTICLES.slice(-6).reverse();
   const blogPreviewCards = recentArticles.map(a => `
       <a class="blog-card" href="/blog/${a.slug}/">
         <div class="blog-card-meta">
@@ -7633,12 +7785,22 @@ function build() {
   const blogPreviewHtml = `
     <section class="blog-preview">
       <h2>Latest from the Blog</h2>
+      <p class="blog-preview-intro">In-depth guides on prompt engineering, AI strategy, and getting better results from every AI model. Each article includes practical techniques you can apply immediately.</p>
       <div class="blog-grid">${blogPreviewCards}
       </div>
-      <a href="/blog/" class="article-cta" style="margin-top:24px;display:inline-flex">${ICONS.arrow} View All Articles</a>
+      <a href="/blog/" class="article-cta" style="margin-top:24px;display:inline-flex">${ICONS.arrow} View All 50 Articles</a>
     </section>`;
   const safeBlogPreview = blogPreviewHtml.replace(/\$/g, '$$$$');
-  indexHtml = indexHtml.replace('<!-- BLOG_PREVIEW_PLACEHOLDER -->', safeBlogPreview);
+  // Replace existing blog preview section OR placeholder
+  if (indexHtml.includes('<!-- BLOG_PREVIEW_PLACEHOLDER -->')) {
+    indexHtml = indexHtml.replace('<!-- BLOG_PREVIEW_PLACEHOLDER -->', safeBlogPreview);
+  } else {
+    // Replace existing blog-preview section from previous builds
+    indexHtml = indexHtml.replace(
+      /\s*<section class="blog-preview">[\s\S]*?<\/section>/,
+      '\n' + blogPreviewHtml
+    );
+  }
 
   fs.writeFileSync(path.join(ROOT, 'index.html'), indexHtml, 'utf-8');
   console.log(' -> index.html updated with noscript block and blog preview');
