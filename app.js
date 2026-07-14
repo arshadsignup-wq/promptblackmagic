@@ -120,6 +120,14 @@
       renderPrompts();
     });
 
+    // Nav scroll effect
+    var topNav = document.getElementById('top-nav');
+    if (topNav) {
+      window.addEventListener('scroll', function () {
+        topNav.classList.toggle('scrolled', window.scrollY > 40);
+      }, { passive: true });
+    }
+
     // Back to top
     if (backToTop) {
       window.addEventListener('scroll', function () {
